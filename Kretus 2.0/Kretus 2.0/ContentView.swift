@@ -31,6 +31,7 @@ struct ContentView: View {
                     Text("Documentation")
                 }
         }
+        .background(Color.white)
     }
 }
 

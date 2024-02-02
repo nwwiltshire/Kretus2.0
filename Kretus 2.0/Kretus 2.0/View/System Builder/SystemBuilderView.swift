@@ -10,7 +10,7 @@ import SwiftUI
 struct SystemBuilderView: View {
     
     // System user will build and summary will be derived from
-    let systemBuild: System
+    @ObservedObject var systemBuild: System
 
     var body: some View {
         ScrollView {
@@ -26,11 +26,11 @@ struct SystemBuilderView: View {
                     .foregroundColor(.secondary)
             }
             .padding(.all)
-            .background(Color.white)
             .navigationTitle(systemBuild.name)
         }
     }
 }
+
 
 struct SystemBuilderView_Previews: PreviewProvider {
     static var previews: some View {

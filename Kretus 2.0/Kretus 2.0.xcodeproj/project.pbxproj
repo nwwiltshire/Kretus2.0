@@ -21,7 +21,6 @@
 		30A712D22B589E18009C0268 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D12B589E18009C0268 /* Products.swift */; };
 		30A712D62B590025009C0268 /* upc.json in Resources */ = {isa = PBXBuildFile; fileRef = 30A712D52B590025009C0268 /* upc.json */; };
 		30A712D82B590225009C0268 /* UPCProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* UPCProducts.swift */; };
-		30D6007A2B6B4F94005CF5BB /* SubSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D600792B6B4F94005CF5BB /* SubSystemView.swift */; };
 		30D6007C2B6B5C7A005CF5BB /* UPCSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6007B2B6B5C7A005CF5BB /* UPCSystem.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
 		30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */; };
@@ -43,7 +42,6 @@
 		30A712D12B589E18009C0268 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		30A712D52B590025009C0268 /* upc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = upc.json; sourceTree = "<group>"; };
 		30A712D72B590225009C0268 /* UPCProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCProducts.swift; sourceTree = "<group>"; };
-		30D600792B6B4F94005CF5BB /* SubSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSystemView.swift; sourceTree = "<group>"; };
 		30D6007B2B6B5C7A005CF5BB /* UPCSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystem.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
 		30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGridView.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 			children = (
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
 				303C69892B6B3F6900C58041 /* CoatEditorView.swift */,
-				30D600792B6B4F94005CF5BB /* SubSystemView.swift */,
 			);
 			path = "System Builder";
 			sourceTree = "<group>";
@@ -239,7 +236,6 @@
 				30A712D22B589E18009C0268 /* Products.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30D6007C2B6B5C7A005CF5BB /* UPCSystem.swift in Sources */,
-				30D6007A2B6B4F94005CF5BB /* SubSystemView.swift in Sources */,
 				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,
