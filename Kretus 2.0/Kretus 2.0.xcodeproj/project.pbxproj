@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302E567F2B71A7E30063EB5C /* SubTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* SubTypePicker.swift */; };
+		302E567F2B71A7E30063EB5C /* SubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */; };
 		302E56812B7211BC0063EB5C /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* ColorPicker.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
 		303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* DocumentationView.swift */; };
@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		302E567E2B71A7E30063EB5C /* SubTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTypePicker.swift; sourceTree = "<group>"; };
+		302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSystemPicker.swift; sourceTree = "<group>"; };
 		302E56802B7211BC0063EB5C /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
 		303C697C2B6B094900C58041 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
-				302E567E2B71A7E30063EB5C /* SubTypePicker.swift */,
+				302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */,
 				302E56802B7211BC0063EB5C /* ColorPicker.swift */,
 				303C69892B6B3F6900C58041 /* CoatEditorView.swift */,
 			);
@@ -231,7 +231,7 @@
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
 				302E56812B7211BC0063EB5C /* ColorPicker.swift in Sources */,
-				302E567F2B71A7E30063EB5C /* SubTypePicker.swift in Sources */,
+				302E567F2B71A7E30063EB5C /* SubSystemPicker.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* CoatEditorView.swift in Sources */,

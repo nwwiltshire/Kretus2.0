@@ -17,8 +17,10 @@ class System: ObservableObject {
     let viewColor: String
     
     let availableSubTypes: [SubType]
+    let availableSystemColors: [SystemColor]
     
     @Published var subType: SubType
+    @Published var systemColor: SystemColor
     @Published var baseCoat: Coat
     @Published var primeCoat: Coat
     @Published var topCoat: Coat
@@ -31,7 +33,9 @@ class System: ObservableObject {
          imageName: String,
          viewColor: String,
          availableSubTypes: [SubType],
+         availableSystemColors: [SystemColor],
          subType: SubType,
+         systemColor: SystemColor,
          baseCoat: Coat,
          primeCoat: Coat,
          topCoat: Coat,
@@ -44,7 +48,9 @@ class System: ObservableObject {
         self.imageName = imageName
         self.viewColor = viewColor
         self.availableSubTypes = availableSubTypes
+        self.availableSystemColors = availableSystemColors
         self.subType = subType
+        self.systemColor = systemColor
         self.baseCoat = baseCoat
         self.primeCoat = primeCoat
         self.topCoat = topCoat
@@ -69,22 +75,23 @@ class System: ObservableObject {
     }
     
     enum SystemColor: CaseIterable, Identifiable, CustomStringConvertible {
-        case none, black, blue, bone, brown, clay, gray, green, mustard, red
+        case none, unpigmented, black, blue, bone, brown, clay, gray, green, mustard, red
         
         var id: Self { self }
         
         var description: String {
             switch self {
             case .none: return "N/A"
-            case .black: return "Black"
-            case .blue: return "Blue"
-            case .bone: return "Bone"
-            case .brown: return "Brown"
-            case .clay: return "Clay"
-            case .gray: return "Gray"
-            case .green: return "Green"
-            case .mustard: return "Mustard"
-            case .red: return "Red"
+            case .unpigmented: return "Unpigmented (UPC)"
+            case .black: return "Black (UPC)"
+            case .blue: return "Blue (UPC)"
+            case .bone: return "Bone (UPC)"
+            case .brown: return "Brown (UPC)"
+            case .clay: return "Clay (UPC)"
+            case .gray: return "Gray (UPC)"
+            case .green: return "Green (UPC)"
+            case .mustard: return "Mustard (UPC)"
+            case .red: return "Red (UPC)"
             }
         }
     }
@@ -127,7 +134,9 @@ class System: ObservableObject {
                         imageName: "default",
                         viewColor: "UPC",
                         availableSubTypes: [.rc, .tt, .sl, .mf],
+                        availableSystemColors: [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red],
                         subType: .none,
+                        systemColor: .unpigmented,
                         baseCoat: UPCCoat(),
                         primeCoat: UPCCoat(),
                         topCoat: UPCCoat(),

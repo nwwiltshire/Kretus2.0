@@ -8,35 +8,42 @@
 import Foundation
 import SwiftUI
 
-struct SubTypePicker: View {
+struct SubSystemPicker: View {
     
     @ObservedObject var system: System
     
+    @State private var selectedSubSystem: System.SubType = .rc {
+        didSet {
+            system.subType = selectedSubSystem
+        }
+    }
+    
     var body: some View {
         HStack {
-            Text("Select Sub Type")
+            Text("Sub System")
                 .font(.headline)
                 .padding()
             
-            Picker(selection: $system.subType, label: Text("")) {
+            Picker(selection: $selectedSubSystem, label: Text("")) {
                 ForEach(system.availableSubTypes, id: \.self) { subType in
                     Text(subType.description).tag(subType)
                 }
             }
+            .padding()
             .pickerStyle(MenuPickerStyle())
         }
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color(system.viewColor).opacity(0.25))
         )
-        .padding()
     }
 }
 
 
 
 
-struct SubTypePicker_Previews: PreviewProvider {
+
+struct SubSystemPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCSystem(id: 0,
@@ -45,7 +52,9 @@ struct SubTypePicker_Previews: PreviewProvider {
                                    imageName: "default",
                                    viewColor: "UPC",
                                    availableSubTypes: [.rc, .tt, .sl, .mf],
+                                   availableSystemColors: [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red],
                                    subType: .none,
+                                   systemColor: .unpigmented,
                                    baseCoat: UPCCoat(),
                                    primeCoat: UPCCoat(),
                                    topCoat: UPCCoat(),
@@ -53,6 +62,6 @@ struct SubTypePicker_Previews: PreviewProvider {
                                    totalkitsNeeded: [])
 
         // Pass the mock System instance into SystemBuilderView
-        SubTypePicker(system: mockSystem)
+        SubSystemPicker(system: mockSystem)
     }
 }
