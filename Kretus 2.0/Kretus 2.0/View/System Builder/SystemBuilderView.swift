@@ -24,6 +24,8 @@ struct SystemBuilderView: View {
                 Text(systemBuild.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                
+                SubTypePicker(system: systemBuild)
             }
             .padding(.all)
             .navigationTitle(systemBuild.name)
@@ -35,17 +37,18 @@ struct SystemBuilderView: View {
 struct SystemBuilderView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem(id: 0,
-                                name: "UPC 1-Coat",
-                                description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
-                                imageName: "default",
-                                viewColor: "UPC",
-                                subType: .rc,
-                                baseCoat: UPCCoat(),
-                                primeCoat: UPCCoat(),
-                                topCoat: UPCCoat(),
-                                squareFt: 0,
-                                totalkitsNeeded: [])
+        let mockSystem = System(id: 0,
+                                           name: "UPC 1-Coat",
+                                           description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
+                                           imageName: "default",
+                                           viewColor: "UPC",
+                                           availableSubTypes: [.rc, .tt, .sl, .mf],
+                                           subType: .none,
+                                           baseCoat: UPCCoat(),
+                                           primeCoat: UPCCoat(),
+                                           topCoat: UPCCoat(),
+                                           squareFt: 0,
+                                           totalkitsNeeded: [])
 
         // Pass the mock System instance into SystemBuilderView
         SystemBuilderView(systemBuild: mockSystem)
