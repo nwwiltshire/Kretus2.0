@@ -10,12 +10,6 @@ import SwiftUI
 @main
 struct Kretus_2_0App: App {
     
-    init() {
-        
-        print(upcList)
-        
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()

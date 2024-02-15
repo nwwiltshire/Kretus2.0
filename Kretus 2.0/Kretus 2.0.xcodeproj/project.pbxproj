@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302E567F2B71A7E30063EB5C /* SubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */; };
+		302E56812B7211BC0063EB5C /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* ColorPicker.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
 		303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* DocumentationView.swift */; };
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
@@ -21,12 +23,16 @@
 		30A712D22B589E18009C0268 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D12B589E18009C0268 /* Products.swift */; };
 		30A712D62B590025009C0268 /* upc.json in Resources */ = {isa = PBXBuildFile; fileRef = 30A712D52B590025009C0268 /* upc.json */; };
 		30A712D82B590225009C0268 /* UPCProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* UPCProducts.swift */; };
-		30D6007C2B6B5C7A005CF5BB /* UPCSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6007B2B6B5C7A005CF5BB /* UPCSystem.swift */; };
+		30AC30232B7EAE740073BB93 /* SystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30222B7EAE740073BB93 /* SystemCommitButton.swift */; };
+		30ED659F2B733825001E636D /* SqftForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED659E2B733825001E636D /* SqftForm.swift */; };
+		30ED65A12B75E5FA001E636D /* hasCoatPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED65A02B75E5FA001E636D /* hasCoatPicker.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
 		30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSystemPicker.swift; sourceTree = "<group>"; };
+		302E56802B7211BC0063EB5C /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
 		303C697C2B6B094900C58041 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
@@ -42,7 +48,9 @@
 		30A712D12B589E18009C0268 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		30A712D52B590025009C0268 /* upc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = upc.json; sourceTree = "<group>"; };
 		30A712D72B590225009C0268 /* UPCProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCProducts.swift; sourceTree = "<group>"; };
-		30D6007B2B6B5C7A005CF5BB /* UPCSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystem.swift; sourceTree = "<group>"; };
+		30AC30222B7EAE740073BB93 /* SystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCommitButton.swift; sourceTree = "<group>"; };
+		30ED659E2B733825001E636D /* SqftForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqftForm.swift; sourceTree = "<group>"; };
+		30ED65A02B75E5FA001E636D /* hasCoatPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hasCoatPicker.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
 		30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
-				303C69892B6B3F6900C58041 /* CoatEditorView.swift */,
+				30AC30222B7EAE740073BB93 /* SystemCommitButton.swift */,
+				30ED65A02B75E5FA001E636D /* hasCoatPicker.swift */,
+				30ED659E2B733825001E636D /* SqftForm.swift */,
+				302E567E2B71A7E30063EB5C /* SubSystemPicker.swift */,
+				302E56802B7211BC0063EB5C /* ColorPicker.swift */,
 			);
 			path = "System Builder";
 			sourceTree = "<group>";
@@ -123,6 +135,14 @@
 			path = Coats;
 			sourceTree = "<group>";
 		};
+		30AC30242B7EB9C20073BB93 /* Coat Editor */ = {
+			isa = PBXGroup;
+			children = (
+				303C69892B6B3F6900C58041 /* CoatEditorView.swift */,
+			);
+			path = "Coat Editor";
+			sourceTree = "<group>";
+		};
 		30F3BA352B5B7A48002EF4B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				30A712C22B58968F009C0268 /* System.swift */,
-				30D6007B2B6B5C7A005CF5BB /* UPCSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -145,6 +164,7 @@
 		30F3BA392B5C9B2B002EF4B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30AC30242B7EB9C20073BB93 /* Coat Editor */,
 				303C69862B6B3A0800C58041 /* System Builder */,
 				30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */,
 				303C697A2B6B091F00C58041 /* SelectLineView.swift */,
@@ -227,6 +247,8 @@
 			files = (
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
+				302E56812B7211BC0063EB5C /* ColorPicker.swift in Sources */,
+				302E567F2B71A7E30063EB5C /* SubSystemPicker.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* CoatEditorView.swift in Sources */,
@@ -234,8 +256,10 @@
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
 				303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */,
 				30A712D22B589E18009C0268 /* Products.swift in Sources */,
+				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
-				30D6007C2B6B5C7A005CF5BB /* UPCSystem.swift in Sources */,
+				30AC30232B7EAE740073BB93 /* SystemCommitButton.swift in Sources */,
+				30ED65A12B75E5FA001E636D /* hasCoatPicker.swift in Sources */,
 				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,

@@ -35,13 +35,6 @@ struct SystemGridView: View {
                             // Grid Elements
                             VStack {
                                 
-                                /*
-                                // Display System Image
-                                Image(system.imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                 */
-                                
                                 // Display System name
                                 Text(system.name)
                                     .font(.title)
