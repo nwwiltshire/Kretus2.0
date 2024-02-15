@@ -19,6 +19,10 @@ class System: ObservableObject {
     let availableSubTypes: [SubType]
     let availableSystemColors: [SystemColor]
     
+    @Published var hasBaseCoat: Bool
+    @Published var hasPrimeCoat: Bool
+    @Published var hasTopCoat: Bool
+    
     @Published var subType: SubType
     @Published var systemColor: SystemColor
     @Published var baseCoat: Coat
@@ -34,6 +38,9 @@ class System: ObservableObject {
          viewColor: String,
          availableSubTypes: [SubType],
          availableSystemColors: [SystemColor],
+         hasBaseCoat: Bool,
+         hasPrimeCoat: Bool,
+         hasTopCoat: Bool,
          subType: SubType,
          systemColor: SystemColor,
          baseCoat: Coat,
@@ -49,6 +56,9 @@ class System: ObservableObject {
         self.viewColor = viewColor
         self.availableSubTypes = availableSubTypes
         self.availableSystemColors = availableSystemColors
+        self.hasBaseCoat = hasBaseCoat
+        self.hasPrimeCoat = hasPrimeCoat
+        self.hasTopCoat = hasTopCoat
         self.subType = subType
         self.systemColor = systemColor
         self.baseCoat = baseCoat
@@ -131,10 +141,13 @@ class System: ObservableObject {
         return [UPCSystem(id: 0,
                         name: "UPC 1-Coat",
                         description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
-                        imageName: "default",
+                        imageName: "upc1coat-background",
                         viewColor: "UPC",
                         availableSubTypes: [.rc, .tt, .sl, .mf],
                         availableSystemColors: [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red],
+                        hasBaseCoat: true,
+                        hasPrimeCoat: false,
+                        hasTopCoat: false,
                         subType: .none,
                         systemColor: .unpigmented,
                         baseCoat: UPCCoat(),
@@ -142,6 +155,29 @@ class System: ObservableObject {
                         topCoat: UPCCoat(),
                         squareFt: 0,
                         totalkitsNeeded: [])]
+        
+    }
+    
+    static func getTestSystem() -> System {
+        
+        return UPCSystem(id: 0,
+                        name: "UPC 1-Coat",
+                        description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
+                        imageName: "upc1coat-background",
+                        viewColor: "UPC",
+                        availableSubTypes: [.rc, .tt, .sl, .mf],
+                        availableSystemColors: [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red],
+                        hasBaseCoat: true,
+                        hasPrimeCoat: false,
+                        hasTopCoat: false,
+                        subType: .none,
+                        systemColor: .unpigmented,
+                        baseCoat: UPCCoat(),
+                        primeCoat: UPCCoat(),
+                        topCoat: UPCCoat(),
+                        squareFt: 0,
+                        totalkitsNeeded: [])
+        
     }
 }
 

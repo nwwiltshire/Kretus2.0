@@ -24,18 +24,20 @@ struct SubSystemPicker: View {
                 .font(.headline)
                 .padding()
             
+            Spacer()
+            
             Picker(selection: $selectedSubSystem, label: Text("")) {
                 ForEach(system.availableSubTypes, id: \.self) { subType in
                     Text(subType.description).tag(subType)
                 }
             }
-            .padding()
             .pickerStyle(MenuPickerStyle())
         }
+        .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color(system.viewColor).opacity(0.25))
-        )
+            )
     }
 }
 
@@ -46,20 +48,7 @@ struct SubSystemPicker: View {
 struct SubSystemPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem(id: 0,
-                                   name: "UPC 1-Coat",
-                                   description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
-                                   imageName: "default",
-                                   viewColor: "UPC",
-                                   availableSubTypes: [.rc, .tt, .sl, .mf],
-                                   availableSystemColors: [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red],
-                                   subType: .none,
-                                   systemColor: .unpigmented,
-                                   baseCoat: UPCCoat(),
-                                   primeCoat: UPCCoat(),
-                                   topCoat: UPCCoat(),
-                                   squareFt: 0,
-                                   totalkitsNeeded: [])
+        let mockSystem = System.getTestSystem()
 
         // Pass the mock System instance into SystemBuilderView
         SubSystemPicker(system: mockSystem)
