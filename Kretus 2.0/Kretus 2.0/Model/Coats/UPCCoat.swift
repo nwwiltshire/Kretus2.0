@@ -9,6 +9,62 @@ import Foundation
 
 class UPCCoat: Coat {
     
+    var subType: UPCSystem.SubType
+    var speed: UPCSystem.Speed
+    
+    var partA: Product
+    var partB: Product
+    var partC: Product
+    
+    init(id: Int,
+         name: String,
+         productsNeeded: [Product],
+         kitsNeeded: [Kit],
+         subType: UPCSystem.SubType,
+         speed: UPCSystem.Speed,
+         partA: Product,
+         partB: Product,
+         partC: Product) {
+        
+        self.subType = subType
+        self.speed = speed
+        self.partA = partA
+        self.partB = partB
+        self.partC = partC
+        
+        super.init(id: id, name: name, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
+        
+    }
+    
+    init() {
+        
+        self.subType = .rc
+        self.speed = .ap
+        self.partA = Product()
+        self.partB = Product()
+        self.partC = Product()
+        
+        super.init(id: 0,
+                   name: "Default",
+                   productsNeeded: [],
+                   kitsNeeded: [])
+    }
+    
+    enum CoatType {
+        case base, prime, top
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
+            }
+        }
+    }
+
+    
     override func findProductsABC() {
         
         switch self.subType {
@@ -111,4 +167,3 @@ class UPCCoat: Coat {
         
     }
 }
-

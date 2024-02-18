@@ -8,15 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct SubSystemPicker: View {
+struct UPCSubSystemPicker: View {
     
-    @ObservedObject var system: System
-    
-    @State private var selectedSubSystem: System.SubType = .rc {
-        didSet {
-            system.subType = selectedSubSystem
-        }
-    }
+    @ObservedObject var upcSystem: UPCSystem
     
     var body: some View {
         HStack {
@@ -26,8 +20,8 @@ struct SubSystemPicker: View {
             
             Spacer()
             
-            Picker(selection: $selectedSubSystem, label: Text("")) {
-                ForEach(system.availableSubTypes, id: \.self) { subType in
+            Picker(selection: $upcSystem.subType, label: Text("")) {
+                ForEach(UPCSystem.SubType.allCases, id: \.self) { subType in
                     Text(subType.description).tag(subType)
                 }
             }
@@ -36,7 +30,7 @@ struct SubSystemPicker: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(system.viewColor).opacity(0.25))
+                .fill(Color(upcSystem.viewColor).opacity(0.25))
             )
     }
 }
@@ -45,12 +39,12 @@ struct SubSystemPicker: View {
 
 
 
-struct SubSystemPicker_Previews: PreviewProvider {
+struct UPCSubSystemPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = System.getTestSystem()
+        let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        SubSystemPicker(system: mockSystem)
+        UPCSubSystemPicker(upcSystem: mockSystem)
     }
 }

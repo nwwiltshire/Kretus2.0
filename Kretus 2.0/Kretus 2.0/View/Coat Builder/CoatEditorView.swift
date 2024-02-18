@@ -13,19 +13,7 @@ struct CoatEditorView: View {
     
     var body: some View {
         
-        VStack {
-            if (system.hasBaseCoat) {
-                Text("Base Coat")
-            }
-            
-            if (system.hasPrimeCoat) {
-                Text("Prime Coat")
-            }
-            
-            if (system.hasTopCoat) {
-                Text("Top Coat")
-            }
-        }
+        Text("Coat Editor")
         
         
         /*

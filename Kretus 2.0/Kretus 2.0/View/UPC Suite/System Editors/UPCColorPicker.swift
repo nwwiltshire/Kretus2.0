@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct ColorPicker: View {
+struct UPCColorPicker: View {
     
-    @ObservedObject var system: System
+    @ObservedObject var upcSystem: UPCSystem
     
-    @State private var selectedColor: System.SystemColor = .unpigmented
+    @State private var selectedColor: UPCSystem.SystemColor = .unpigmented
     
     let layout = [
         
@@ -25,7 +25,7 @@ struct ColorPicker: View {
         VStack {
             DisclosureGroup("Choose System Color") {
                 LazyVGrid(columns: layout, spacing: 20) {
-                    ForEach(system.availableSystemColors, id: \.self) { color in
+                    ForEach(upcSystem.availableSystemColors, id: \.self) { color in
                         Button(action: {
                             self.selectedColor = color
                             // control goes here
@@ -64,12 +64,12 @@ struct ColorPicker: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(system.viewColor).opacity(0.25))
+                .fill(Color(upcSystem.viewColor).opacity(0.25))
         )
     }
     
     
-    func checkmarkColor(for color: System.SystemColor) -> Color {
+    func checkmarkColor(for color: UPCSystem.SystemColor) -> Color {
         // Convert the SwiftUI color to a UIColor
         let uiColor = UIColor(Color(color.description))
         
@@ -83,12 +83,12 @@ struct ColorPicker: View {
 
 
 
-struct ColorPicker_Previews: PreviewProvider {
+struct UPCColorPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = System.getTestSystem()
+        let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        ColorPicker(system: mockSystem)
+        UPCColorPicker(upcSystem: mockSystem)
     }
 }

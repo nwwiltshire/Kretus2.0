@@ -30,7 +30,7 @@ struct SystemGridView: View {
                     
                     // Populates Grid
                     ForEach(systems, id: \.id) { system in
-                        NavigationLink(destination: SystemBuilderView(systemBuild: system)) {
+                        NavigationLink(destination: SystemBuilderView(currentBuild: system)) {
                             
                             // Grid Elements
                             VStack {
