@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Coat {
+class Coat: ObservableObject {
     
     let id: Int
     let name: String
     
-    var productsNeeded: [Product]
-    var kitsNeeded: [Kit]
+    @Published var productsNeeded: [Product]
+    @Published var kitsNeeded: [Kit]
     
     
     

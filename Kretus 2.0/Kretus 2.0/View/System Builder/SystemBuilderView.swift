@@ -26,9 +26,8 @@ struct SystemBuilderView: View {
                     .font(.headline)
                 
                 // Display System Description
-                Text(currentBuild.description)
+                Text("Modify the System to your needs, and proceed to specify your Coat Options.")
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
                 
                 SqftForm(system: currentBuild)
                 

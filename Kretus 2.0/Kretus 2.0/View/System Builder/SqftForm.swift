@@ -7,38 +7,40 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 struct SqftForm: View {
     
     @ObservedObject var system: System
     
-    @State private var selectedSquareFt: Int = 50 {
-        didSet {
-            system.squareFt = selectedSquareFt
-        }
-    }
-    
     var body: some View {
         VStack {
             
-                    Text("Total Square Feet:")
-                        .font(.headline)
-                        .padding()
+            Text("Total Square Feet:")
+                .font(.headline)
+                .padding()
             
-                    TextField("Enter Square Feet", value: $selectedSquareFt, formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color(.white).opacity(0.25))
-                        )
-                }
+            TextField("Enter Square Feet", value: $system.squareFt, formatter: NumberFormatter())
+                .keyboardType(.numberPad)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(system.viewColor).opacity(0.25))
+                        .fill(Color(.white).opacity(0.25))
                 )
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(system.viewColor).opacity(0.25))
+        )
+        .onTapGesture {
+            hideKeyboard()
+        }
     }
+}
+
+func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }
 
 

@@ -15,9 +15,9 @@ class UPCSystem: System {
     
     @Published var subType: SubType
     @Published var systemColor: SystemColor
-    @Published var baseCoat: Coat
-    @Published var primeCoat: Coat?
-    @Published var topCoat: Coat?
+    @Published var baseCoat: UPCCoat
+    @Published var primeCoat: UPCCoat?
+    @Published var topCoat: UPCCoat?
     @Published var uvResistance: Bool
     
     init(id: Int,
@@ -31,9 +31,9 @@ class UPCSystem: System {
          availableSystemColors: [SystemColor],
          subType: SubType,
          systemColor: SystemColor,
-         baseCoat: Coat,
-         primeCoat: Coat,
-         topCoat: Coat,
+         baseCoat: UPCCoat,
+         primeCoat: UPCCoat,
+         topCoat: UPCCoat,
          uvResistance: Bool) {
         
         self.availableSubTypes = availableSubTypes
@@ -106,15 +106,18 @@ class UPCSystem: System {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thin, medium, thick
+        case thinRC, mediumRC, thickRC, thin, medium, thick
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .thin: return "Thin"
-            case .medium: return "Medium"
-            case .thick: return "Thick"
+            case .thinRC: return "8-12 mils"
+            case .mediumRC: return "15-20 mils"
+            case .thickRC: return "25-30 mils"
+            case .thin: return "1/8\""
+            case .medium: return "3/16\""
+            case .thick: return "1/4\""
             }
         }
     }
@@ -134,13 +137,12 @@ class UPCSystem: System {
     }
     
     enum Texture {
-        case none, antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
+        case antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .none: return "N/A"
             case .antiSlip60: return "Anti Slip 60"
             case .antiSlip36: return "Anti Slip 36"
             case .antiSlip24: return "Anti Slip 24"

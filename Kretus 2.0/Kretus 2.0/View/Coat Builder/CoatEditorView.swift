@@ -15,13 +15,6 @@ struct CoatEditorView: View {
         
         Text("Coat Editor")
         
-        
-        /*
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color(system.viewColor).opacity(0.25))
-         */
     }
 }
 

@@ -9,12 +9,15 @@ import Foundation
 
 class UPCCoat: Coat {
     
-    var subType: UPCSystem.SubType
-    var speed: UPCSystem.Speed
+    @Published var subType: UPCSystem.SubType
+    @Published var speed: UPCSystem.Speed
     
-    var partA: Product
-    var partB: Product
-    var partC: Product
+    @Published var partA: Product
+    @Published var partB: Product
+    @Published var partC: Product
+    
+    @Published var thickness: UPCSystem.Thickness
+    @Published var wasteFactor: Int
     
     init(id: Int,
          name: String,
@@ -24,13 +27,17 @@ class UPCCoat: Coat {
          speed: UPCSystem.Speed,
          partA: Product,
          partB: Product,
-         partC: Product) {
+         partC: Product,
+         thickness: UPCSystem.Thickness,
+         wasteFactor: Int) {
         
         self.subType = subType
         self.speed = speed
         self.partA = partA
         self.partB = partB
         self.partC = partC
+        self.wasteFactor = wasteFactor
+        self.thickness = thickness
         
         super.init(id: id, name: name, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
         
@@ -43,6 +50,8 @@ class UPCCoat: Coat {
         self.partA = Product()
         self.partB = Product()
         self.partC = Product()
+        self.wasteFactor = 0
+        self.thickness = .thinRC
         
         super.init(id: 0,
                    name: "Default",

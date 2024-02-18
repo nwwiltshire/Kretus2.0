@@ -26,6 +26,7 @@
 		30AC30232B7EAE740073BB93 /* SystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30222B7EAE740073BB93 /* SystemCommitButton.swift */; };
 		30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30252B7EC67F0073BB93 /* UPCSystem.swift */; };
 		30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */; };
+		30AC302D2B8194280073BB93 /* UPCBaseCoatEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302C2B8194280073BB93 /* UPCBaseCoatEditor.swift */; };
 		30ED659F2B733825001E636D /* SqftForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED659E2B733825001E636D /* SqftForm.swift */; };
 		30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
@@ -53,6 +54,7 @@
 		30AC30222B7EAE740073BB93 /* SystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCommitButton.swift; sourceTree = "<group>"; };
 		30AC30252B7EC67F0073BB93 /* UPCSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystem.swift; sourceTree = "<group>"; };
 		30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemSuite.swift; sourceTree = "<group>"; };
+		30AC302C2B8194280073BB93 /* UPCBaseCoatEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBaseCoatEditor.swift; sourceTree = "<group>"; };
 		30ED659E2B733825001E636D /* SqftForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqftForm.swift; sourceTree = "<group>"; };
 		30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatOptions.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		30AC30292B8177E70073BB93 /* Coat Editors */ = {
 			isa = PBXGroup;
 			children = (
+				30AC302C2B8194280073BB93 /* UPCBaseCoatEditor.swift */,
 			);
 			path = "Coat Editors";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
+				30AC302D2B8194280073BB93 /* UPCBaseCoatEditor.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* CoatEditorView.swift in Sources */,
 				30A712C32B58968F009C0268 /* System.swift in Sources */,
