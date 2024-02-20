@@ -136,19 +136,34 @@ class UPCSystem: System {
         }
     }
     
-    enum Texture {
-        case antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
+    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
+        case none, antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
         
         var id: Self { self }
         
         var description: String {
             switch self {
+            case .none: return "No Texture"
             case .antiSlip60: return "Anti Slip 60"
             case .antiSlip36: return "Anti Slip 36"
             case .antiSlip24: return "Anti Slip 24"
             case .industrialSand60: return "Industrial Sand 60"
             case .industrialSand30: return "Industrial Sand 30"
             case .industrialSand20: return "Industrial Sand 20"
+            }
+        }
+    }
+    
+    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
+        case base, prime, top
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
             }
         }
     }

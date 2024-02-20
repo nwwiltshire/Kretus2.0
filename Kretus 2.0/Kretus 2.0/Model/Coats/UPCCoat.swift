@@ -9,6 +9,7 @@ import Foundation
 
 class UPCCoat: Coat {
     
+    @Published var coatType: UPCSystem.CoatType
     @Published var subType: UPCSystem.SubType
     @Published var speed: UPCSystem.Speed
     
@@ -18,19 +19,25 @@ class UPCCoat: Coat {
     
     @Published var thickness: UPCSystem.Thickness
     @Published var wasteFactor: Int
+    @Published var texture1: UPCSystem.Texture
+    @Published var texture2: UPCSystem.Texture
     
     init(id: Int,
          name: String,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
+         coatType: UPCSystem.CoatType,
          subType: UPCSystem.SubType,
          speed: UPCSystem.Speed,
          partA: Product,
          partB: Product,
          partC: Product,
          thickness: UPCSystem.Thickness,
-         wasteFactor: Int) {
+         wasteFactor: Int,
+         texture1: UPCSystem.Texture,
+         texture2: UPCSystem.Texture) {
         
+        self.coatType = coatType
         self.subType = subType
         self.speed = speed
         self.partA = partA
@@ -38,6 +45,8 @@ class UPCCoat: Coat {
         self.partC = partC
         self.wasteFactor = wasteFactor
         self.thickness = thickness
+        self.texture1 = texture1
+        self.texture2 = texture2
         
         super.init(id: id, name: name, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
         
@@ -45,6 +54,7 @@ class UPCCoat: Coat {
     
     init() {
         
+        self.coatType = .base
         self.subType = .rc
         self.speed = .ap
         self.partA = Product()
@@ -52,25 +62,13 @@ class UPCCoat: Coat {
         self.partC = Product()
         self.wasteFactor = 0
         self.thickness = .thinRC
+        self.texture1 = .none
+        self.texture2 = .none
         
         super.init(id: 0,
                    name: "Default",
                    productsNeeded: [],
                    kitsNeeded: [])
-    }
-    
-    enum CoatType {
-        case base, prime, top
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .base: return "Base Coat"
-            case .prime: return "Prime Coat"
-            case .top: return "Top Coat"
-            }
-        }
     }
 
     

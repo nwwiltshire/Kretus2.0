@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct UPCBaseCoatEditor: View {
+struct UPCThicknessPicker: View {
     
     @ObservedObject var coat: UPCCoat
     
@@ -42,12 +42,12 @@ struct UPCBaseCoatEditor: View {
     }
 }
 
-struct UPCBaseCoatEditor_Previews: PreviewProvider {
+struct UPCThicknessPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCCoat()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCBaseCoatEditor(coat: mockSystem)
+        UPCThicknessPicker(coat: mockSystem)
     }
 }
