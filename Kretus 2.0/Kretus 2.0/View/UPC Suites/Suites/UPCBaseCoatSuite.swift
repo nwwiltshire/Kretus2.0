@@ -4,7 +4,6 @@
 //
 //  Created by Nick Wiltshire on 2/19/24.
 //
-
 import Foundation
 import SwiftUI
 
@@ -14,10 +13,18 @@ struct UPCBaseCoatSuite: View {
     
     var body: some View {
         VStack {
+            Text("Base Coat")
+                .font(.title2)
+            
             UPCThicknessPicker(coat: upcCoat)
             UPCSpeedPicker(coat: upcCoat)
             UPCWasteFactorOptions(coat: upcCoat)
         }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(.gray).opacity(0.25))
+        )
     }
 }
 
@@ -34,3 +41,4 @@ struct UPCBaseCoatSuite_Previews: PreviewProvider {
         UPCBaseCoatSuite(upcCoat: mockCoat)
     }
 }
+

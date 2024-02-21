@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct SystemCommitButton: View {
+struct UPCSystemCommitButton: View {
     
-    @ObservedObject var system: System
+    @ObservedObject var upcSystem: UPCSystem
     
     var body: some View {
-        NavigationLink(destination: CoatEditorView(system: system)) {
+        NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)) {
             HStack {
                 Text("Coat Options")
                     .font(.title)
@@ -36,12 +36,12 @@ struct SystemCommitButton: View {
 
 
 
-struct SystemCommitButton_Previews: PreviewProvider {
+struct UPCSystemCommitButton_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = System.getTestSystem()
+        let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        SystemCommitButton(system: mockSystem)
+        UPCSystemCommitButton(upcSystem: mockSystem)
     }
 }

@@ -14,7 +14,7 @@ struct UPCSpeedPicker: View {
     
     var body: some View {
         HStack {
-            Text("Sub System")
+            Text("Speed")
                 .font(.headline)
                 .padding()
             

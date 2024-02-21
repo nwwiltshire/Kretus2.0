@@ -15,8 +15,6 @@ class Coat: ObservableObject {
     @Published var productsNeeded: [Product]
     @Published var kitsNeeded: [Kit]
     
-    
-    
     init(id: Int,
          name: String,
          productsNeeded: [Product],
@@ -26,6 +24,17 @@ class Coat: ObservableObject {
         self.name = name
         self.productsNeeded = productsNeeded
         self.kitsNeeded = kitsNeeded
+        
+    }
+    
+    func printCoatTest() -> String {
+        
+        var output = ""
+        output += "Coat ID: \(id)\n"
+        output += "Coat Name: \(name)\n"
+        output += "Products Needed: \(productsNeeded)\n"
+        output += "Kits Needed: \(kitsNeeded)\n"
+        return output
         
     }
     

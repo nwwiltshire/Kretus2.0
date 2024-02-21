@@ -17,6 +17,7 @@ struct UPCSystemSuite: View {
             UPCCoatOptions(upcSystem: upcSystem)
             UPCSubSystemPicker(upcSystem: upcSystem)
             UPCColorPicker(upcSystem: upcSystem)
+            UPCSystemCommitButton(upcSystem: upcSystem)
         }
     }
 }

@@ -14,10 +14,18 @@ struct UPCTopCoatSuite: View {
     
     var body: some View {
         VStack {
+            Text("Top Coat")
+                .font(.title2)
+            
             UPCSpeedPicker(coat: upcCoat)
             UPCTexturePicker(coat: upcCoat)
             UPCWasteFactorOptions(coat: upcCoat)
         }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(.gray).opacity(0.25))
+        )
     }
 }
 

@@ -167,5 +167,37 @@ class UPCSystem: System {
             }
         }
     }
+
+    override func printSystemTest() -> String {
+        var output = ""
+        output += "System ID: \(id)\n"
+        output += "System Name: \(name)\n"
+        output += "Description: \(description)\n"
+        output += "Image Name: \(imageName)\n"
+        output += "View Color: \(viewColor)\n"
+        output += "Square Feet: \(squareFt)\n"
+        output += "Total Kits Needed: \(totalkitsNeeded)\n"
+        output += "Available Sub Types: \(availableSubTypes)\n"
+        output += "Available System Colors: \(availableSystemColors)\n"
+        output += "Sub Type: \(subType)\n"
+        output += "System Color: \(systemColor)\n"
+        output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
+        
+        if let primeCoat = primeCoat {
+            output += "\nPrime Coat:\n\n\(primeCoat.printCoatTest())\n"
+        } else {
+            output += "\nPrime Coat: None\n"
+        }
+        
+        if let topCoat = topCoat {
+            output += "\nTop Coat:\n\n\(topCoat.printCoatTest())\n"
+        } else {
+            output += "\nTop Coat: None\n"
+        }
+        
+        output += "UV Resistance: \(uvResistance ? "Yes" : "No")\n"
+        return output
+    }
+
     
 }

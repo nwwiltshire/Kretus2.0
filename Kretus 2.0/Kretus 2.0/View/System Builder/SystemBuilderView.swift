@@ -35,8 +35,6 @@ struct SystemBuilderView: View {
                     UPCSystemSuite(upcSystem: upcSystem)
                 }
                 
-                SystemCommitButton(system: currentBuild)
-                
             }
             .padding(.all)
             .navigationTitle("System Options")

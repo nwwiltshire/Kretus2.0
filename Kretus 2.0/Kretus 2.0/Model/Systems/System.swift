@@ -46,4 +46,18 @@ class System: ObservableObject {
         return UPCSystem()
         
     }
+    
+    func printSystemTest() -> String {
+        
+        var output = ""
+        output += "System ID: \(id)\n"
+        output += "System Name: \(name)\n"
+        output += "Description: \(description)\n"
+        output += "Image Name: \(imageName)\n"
+        output += "View Color: \(viewColor)\n"
+        output += "Square Feet: \(squareFt)\n"
+        output += "Total Kits Needed: \(totalkitsNeeded)\n"
+        return output
+        
+    }
 }

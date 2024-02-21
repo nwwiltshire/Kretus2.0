@@ -161,6 +161,26 @@ class UPCCoat: Coat {
             }
         }
     }
+
+    override func printCoatTest() -> String {
+        var output = ""
+        output += "Coat ID: \(id)\n"
+        output += "Coat Name: \(name)\n"
+        output += "Products Needed: \(productsNeeded)\n"
+        output += "Kits Needed: \(kitsNeeded)\n"
+        output += "Coat Type: \(coatType)\n"
+        output += "Sub Type: \(subType)\n"
+        output += "Speed: \(speed)\n"
+        output += "Part A: \(partA)\n"
+        output += "Part B: \(partB)\n"
+        output += "Part C: \(partC)\n"
+        output += "Thickness: \(thickness)\n"
+        output += "Waste Factor: \(wasteFactor)\n"
+        output += "Texture 1: \(texture1)\n"
+        output += "Texture 2: \(texture2)\n"
+        return output
+    }
+
     
     override func findProductsColorant() {
         
