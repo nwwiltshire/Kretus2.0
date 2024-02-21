@@ -24,10 +24,11 @@ struct SystemGridView: View {
         NavigationView {
             
             ScrollView {
-                
+        
                 VStack {
+                    
                     HStack {
-                        Text("Select a System to begin building.")
+                        Text("Select a System to begin.")
                             .multilineTextAlignment(.leading)
                             .font(.subheadline)
                             .padding()

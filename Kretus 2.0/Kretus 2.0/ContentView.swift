@@ -10,6 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+            HomeView()
+                .tabItem() {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
             SystemGridView()
                 .tabItem() {
                     Image(systemName: "hammer")
@@ -28,7 +33,7 @@ struct ContentView: View {
             DocumentationView()
                 .tabItem() {
                     Image(systemName: "magazine")
-                    Text("Documentation")
+                    Text("Info")
                 }
         }
         .background(Color.white)
