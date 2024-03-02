@@ -26,7 +26,7 @@ class UPCSystem: System {
          imageName: String,
          viewColor: String,
          squareFt: Int,
-         totalkitsNeeded: [Kit],
+         kitsNeeded: [Kit],
          availableSubTypes: [SubType],
          availableSystemColors: [SystemColor],
          subType: SubType,
@@ -45,7 +45,7 @@ class UPCSystem: System {
         self.topCoat = topCoat
         self.uvResistance = uvResistance
         
-        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, totalkitsNeeded: totalkitsNeeded)
+        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded)
         
     }
     
@@ -65,7 +65,7 @@ class UPCSystem: System {
         imageName: "upc1coat-background",
         viewColor: "UPC",
         squareFt: 0,
-        totalkitsNeeded: []
+        kitsNeeded: []
         )
     }
     
@@ -176,7 +176,7 @@ class UPCSystem: System {
         output += "Image Name: \(imageName)\n"
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
-        output += "Total Kits Needed: \(totalkitsNeeded)\n"
+        output += "Total Kits Needed: \(kitsNeeded)\n"
         output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Available System Colors: \(availableSystemColors)\n"
         output += "Sub Type: \(subType)\n"

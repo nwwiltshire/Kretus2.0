@@ -16,7 +16,7 @@ class System: ObservableObject {
     let viewColor: String
     
     @Published var squareFt: Int
-    @Published var totalkitsNeeded: [Kit]
+    @Published var kitsNeeded: [Kit]
     
     init(id: Int,
          name: String,
@@ -24,7 +24,7 @@ class System: ObservableObject {
          imageName: String,
          viewColor: String,
          squareFt: Int,
-         totalkitsNeeded: [Kit])
+         kitsNeeded: [Kit])
          {
         self.id = id
         self.name = name
@@ -32,7 +32,7 @@ class System: ObservableObject {
         self.imageName = imageName
         self.viewColor = viewColor
         self.squareFt = squareFt
-        self.totalkitsNeeded = totalkitsNeeded
+        self.kitsNeeded = kitsNeeded
     }
     
     static func getAllSystems() -> [System] {
@@ -56,7 +56,7 @@ class System: ObservableObject {
         output += "Image Name: \(imageName)\n"
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
-        output += "Total Kits Needed: \(totalkitsNeeded)\n"
+        output += "Kits Needed: \(kitsNeeded)\n"
         return output
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3019218C2B89362F009DB65C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019218B2B89362F009DB65C /* Build.swift */; };
 		302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */; };
 		302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCColorPicker.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3019218B2B89362F009DB65C /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSubSystemPicker.swift; sourceTree = "<group>"; };
 		302E56802B7211BC0063EB5C /* UPCColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorPicker.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		3019218A2B893399009DB65C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3019218B2B89362F009DB65C /* Build.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3019218C2B89362F009DB65C /* Build.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
