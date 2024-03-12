@@ -17,6 +17,7 @@
 		303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
+		309B977E2B9FCF4100C4E51B /* Kits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kits.swift */; };
 		30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B32B589654009C0268 /* Kretus_2_0App.swift */; };
 		30A712B62B589654009C0268 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B52B589654009C0268 /* ContentView.swift */; };
 		30A712B82B589656009C0268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A712B72B589656009C0268 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatEditorView.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
+		309B977D2B9FCF4100C4E51B /* Kits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kits.swift; sourceTree = "<group>"; };
 		30A712B02B589654009C0268 /* Kretus 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kretus 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A712B32B589654009C0268 /* Kretus_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kretus_2_0App.swift; sourceTree = "<group>"; };
 		30A712B52B589654009C0268 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = "System Builder";
 			sourceTree = "<group>";
 		};
+		309B977C2B9FCF3600C4E51B /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				309B977D2B9FCF4100C4E51B /* Kits.swift */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
 		30A712A72B589654009C0268 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		30A712C12B58967A009C0268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				309B977C2B9FCF3600C4E51B /* Kits */,
 				3019218A2B893399009DB65C /* Data */,
 				30F3BA362B5B7A7C002EF4B5 /* Systems */,
 				30F3BA352B5B7A48002EF4B5 /* Products */,
@@ -348,6 +359,7 @@
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,
 				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
+				309B977E2B9FCF4100C4E51B /* Kits.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,
 				30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */,
@@ -492,6 +504,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +534,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

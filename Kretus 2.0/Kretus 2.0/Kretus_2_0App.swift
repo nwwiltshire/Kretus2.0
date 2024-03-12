@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Kretus_2_0App: App {
@@ -14,5 +15,6 @@ struct Kretus_2_0App: App {
         WindowGroup {
             SplashView()
         }
+        .modelContainer(for: Build.self)
     }
 }

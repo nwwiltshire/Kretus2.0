@@ -13,11 +13,3 @@ struct Product: Codable {
     var name: String = "Default"
 
 }
-
-struct Kit {
-    
-    var product: Product
-    var quantity: Int = 0
-    
-}
-

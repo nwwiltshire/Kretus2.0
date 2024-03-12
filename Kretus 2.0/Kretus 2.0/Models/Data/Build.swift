@@ -12,10 +12,13 @@ import SwiftData
 @Model
 final class Build {
     var name: String
+    var squareFt: Int
     
-    init(name: String) {
+    
+    init(name: String,
+         squareFt: Int) {
         self.name = name
+        self.squareFt = squareFt
     }
 }
-
 
