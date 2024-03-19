@@ -15,6 +15,6 @@ struct Kretus_2_0App: App {
         WindowGroup {
             SplashView()
         }
-        .modelContainer(for: Build.self)
+        .modelContainer(for: UPCSystemData.self)
     }
 }

@@ -24,19 +24,11 @@ struct CoatEditorView: View {
                 if (upcSystem.topCoat != nil) {
                     UPCTopCoatSuite(upcCoat: upcSystem.topCoat!)
                 }
+                
+                UPCBuildSubmitButton(upcSystem: upcSystem)
             }
             .padding(.all)
             .navigationTitle("System Options")
-            
-            Button(action: {
-                testOutput = upcSystem.printSystemTest()
-            }) {
-                Text("Print System Test")
-            }
-            ScrollView {
-                Text(testOutput)
-            }
-            
         }
     }
 }

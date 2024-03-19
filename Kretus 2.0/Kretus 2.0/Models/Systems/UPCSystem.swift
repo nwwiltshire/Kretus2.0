@@ -84,6 +84,8 @@ class UPCSystem: System {
         }
     }
     
+    // Hardeners ^^^
+    
     enum SystemColor: CaseIterable, Identifiable, CustomStringConvertible {
         case unpigmented, black, blue, bone, brown, clay, gray, green, mustard, red
         
@@ -199,5 +201,10 @@ class UPCSystem: System {
         return output
     }
 
+    func createUPCCoat(squareFt: Int) -> UPCCoat {
+        let upcCoat = UPCCoat()
+        upcCoat.squareFt = squareFt
+        return upcCoat
+      }
     
 }

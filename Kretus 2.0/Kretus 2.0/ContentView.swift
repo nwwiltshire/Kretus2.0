@@ -20,15 +20,15 @@ struct ContentView: View {
                     Image(systemName: "hammer")
                     Text("System Builder")
                 }
-            SelectLineView()
-                .tabItem() {
-                    Image(systemName: "shippingbox")
-                    Text("Select Line")
-                }
             YourSystemsView()
                 .tabItem() {
                     Image(systemName: "folder")
                     Text("Your Systems")
+                }
+            SelectLineView()
+                .tabItem() {
+                    Image(systemName: "shippingbox")
+                    Text("Select Line")
                 }
             DocumentationView()
                 .tabItem() {

@@ -12,23 +12,34 @@ class UPCCoat: Coat {
     @Published var coatType: UPCSystem.CoatType
     @Published var subType: UPCSystem.SubType
     @Published var speed: UPCSystem.Speed
+    @Published var covRate: Int
     
     @Published var partA: Product
     @Published var partB: Product
     @Published var partC: Product
     
-    @Published var thickness: UPCSystem.Thickness
+    @Published var thickness: UPCSystem.Thickness {
+            didSet {
+                updateCovRate()
+            }
+        }
+    
     @Published var wasteFactor: Int
     @Published var texture1: UPCSystem.Texture
     @Published var texture2: UPCSystem.Texture
     
+    // Coverage Rate (focus is more on just how much product you need)
+    // Coverage Rate is only dependent on thickness
+    
     init(id: Int,
          name: String,
+         squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
          coatType: UPCSystem.CoatType,
          subType: UPCSystem.SubType,
          speed: UPCSystem.Speed,
+         covRate: Int,
          partA: Product,
          partB: Product,
          partC: Product,
@@ -40,6 +51,7 @@ class UPCCoat: Coat {
         self.coatType = coatType
         self.subType = subType
         self.speed = speed
+        self.covRate = covRate
         self.partA = partA
         self.partB = partB
         self.partC = partC
@@ -48,7 +60,7 @@ class UPCCoat: Coat {
         self.texture1 = texture1
         self.texture2 = texture2
         
-        super.init(id: id, name: name, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
+        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
         
     }
     
@@ -57,6 +69,7 @@ class UPCCoat: Coat {
         self.coatType = .base
         self.subType = .rc
         self.speed = .ap
+        self.covRate = 0 // set to default value for default thickness
         self.partA = Product()
         self.partB = Product()
         self.partC = Product()
@@ -67,9 +80,27 @@ class UPCCoat: Coat {
         
         super.init(id: 0,
                    name: "Default",
+                   squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [])
     }
+    
+    private func updateCovRate() {
+            switch thickness {
+            case .thinRC:
+                covRate = 400 // set these variables to correct values later vv
+            case .mediumRC:
+                covRate = 500
+            case .thickRC:
+                covRate = 600
+            case .thin:
+                covRate = 100
+            case .medium:
+                covRate = 200
+            case .thick:
+                covRate = 300
+            }
+        }
 
     
     override func findProductsABC() {
@@ -163,14 +194,17 @@ class UPCCoat: Coat {
     }
 
     override func printCoatTest() -> String {
+        
         var output = ""
         output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
+        output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"
         output += "Kits Needed: \(kitsNeeded)\n"
         output += "Coat Type: \(coatType)\n"
         output += "Sub Type: \(subType)\n"
         output += "Speed: \(speed)\n"
+        output += "Coverage Rate: \(covRate)\n"
         output += "Part A: \(partA)\n"
         output += "Part B: \(partB)\n"
         output += "Part C: \(partC)\n"
@@ -185,12 +219,6 @@ class UPCCoat: Coat {
     override func findProductsColorant() {
         
         // switch to find products
-        
-    }
-    
-    override func calcKits(squareFeet: Int) {
-        
-        // This will replace quant function
         
     }
 }

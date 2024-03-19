@@ -36,7 +36,9 @@ func load<T: Decodable>(_ filename: String) -> T {
 }
 
 
+// Add: Aggregate or liquid bool (technically bool representing if it can be sqft/gal or sqft/kit.
 
+// Add: Thickness Ranges (in old app it's displayed in system/coat specs)
 
-
+// Add: Unit of measure for thickness
 

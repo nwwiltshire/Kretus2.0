@@ -10,18 +10,21 @@ import Foundation
 class Coat: ObservableObject {
     
     let id: Int
-    let name: String
+    var name: String
+    var squareFt: Int
     
     @Published var productsNeeded: [Product]
     @Published var kitsNeeded: [Kit]
     
     init(id: Int,
          name: String,
+         squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit]) {
         
         self.id = id
         self.name = name
+        self.squareFt = squareFt
         self.productsNeeded = productsNeeded
         self.kitsNeeded = kitsNeeded
         
@@ -32,11 +35,25 @@ class Coat: ObservableObject {
         var output = ""
         output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
+        output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"
         output += "Kits Needed: \(kitsNeeded)\n"
         return output
         
     }
+    
+    func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
+        
+      for product in products {
+          
+        // Calculate quantity of kits needed for this product
+        let quantity = squareFt / covRate
+        
+        // Create a Kit object and append it to the kitsNeeded array
+        kitsNeeded.append(Kit(product: product, quantity: quantity))
+      }
+    }
+
     
     func findProductsABC() {
         
@@ -47,12 +64,6 @@ class Coat: ObservableObject {
     func findProductsColorant() {
         
         // switch to find products
-        
-    }
-    
-    func calcKits(squareFeet: Int) {
-        
-        // This will replace quant function
         
     }
 }
