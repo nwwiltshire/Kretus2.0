@@ -17,4 +17,9 @@ final class KitData {
       self.product = product
       self.quantity = quantity
     }
+    
+    init() {
+        self.product = ProductData()
+        self.quantity = 0
+    }
 }

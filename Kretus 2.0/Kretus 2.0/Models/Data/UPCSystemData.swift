@@ -14,6 +14,9 @@ final class UPCSystemData {
     let name: String
     let imageName: String
     let viewColor: String
+    
+    let availableSubTypes: [SubType]
+    let availableSystemColors: [SystemColor]
 
     var subType: SubType
     var systemColor: SystemColor
@@ -24,12 +27,14 @@ final class UPCSystemData {
 
     var squareFt: Int
     var kitsNeeded: [KitData]
-
+    
     // Initializer with all parameters
-    init(name: String, imageName: String, viewColor: String, subType: SubType, systemColor: SystemColor, baseCoat: UPCCoatData, primeCoat: UPCCoatData? = nil, topCoat: UPCCoatData? = nil, uvResistance: Bool, squareFt: Int, kitsNeeded: [KitData]) {
+    init(name: String, imageName: String, viewColor: String, availableSubTypes: [SubType], availableSystemColors: [SystemColor], subType: SubType, systemColor: SystemColor, baseCoat: UPCCoatData, primeCoat: UPCCoatData? = nil, topCoat: UPCCoatData? = nil, uvResistance: Bool, squareFt: Int, kitsNeeded: [KitData]) {
     self.name = name
     self.imageName = imageName
     self.viewColor = viewColor
+    self.availableSubTypes = availableSubTypes
+    self.availableSystemColors = availableSystemColors
     self.subType = subType
     self.systemColor = systemColor
     self.baseCoat = baseCoat
@@ -38,6 +43,21 @@ final class UPCSystemData {
     self.uvResistance = uvResistance
     self.squareFt = squareFt
     self.kitsNeeded = kitsNeeded
+    }
+    
+    init() {
+        
+        self.name = "UPC 1-Coat"
+        self.imageName = "upc1coat-background"
+        self.availableSubTypes = [.rc, .tt, .sl, .mf]
+        self.availableSystemColors = [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red]
+        self.viewColor = "UPC"
+        self.squareFt = 0
+        self.kitsNeeded = []
+        self.subType = .rc
+        self.systemColor = .unpigmented
+        self.baseCoat = UPCCoatData()
+        self.uvResistance = false
     }
 
 
@@ -141,6 +161,13 @@ final class UPCSystemData {
             }
         }
     }
+    
+    func createUPCCoat(squareFt: Int) -> UPCCoatData {
+        let upcCoat = UPCCoatData()
+        upcCoat.squareFt = squareFt
+        return upcCoat
+    }
+    
 }
 
 

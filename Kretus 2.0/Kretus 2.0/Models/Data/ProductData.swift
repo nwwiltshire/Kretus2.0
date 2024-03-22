@@ -10,12 +10,18 @@ import SwiftData
 
 @Model
 final class ProductData {
-  let id: String
-  let name: String
-  
-  init(id: String, name: String) {
-    self.id = id
-    self.name = name
-  }
+    let id: String
+    let name: String
+
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
+    
+    init() {
+        self.id = "Default ID"
+        self.name = "Default Name"
+    }
+    
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct UPCSystemSuite: View {
     
-    @ObservedObject var upcSystem: UPCSystem
+    @State var upcSystem: UPCSystemData
     
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct UPCSystemSuite: View {
 struct UPCSystemSuite_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem()
+        let mockSystem = UPCSystemData()
 
         // Pass the mock System instance into SystemBuilderView
         UPCSystemSuite(upcSystem: mockSystem)

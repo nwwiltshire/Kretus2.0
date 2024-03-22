@@ -10,7 +10,7 @@ import SwiftUI
 
 struct UPCSubSystemPicker: View {
     
-    @ObservedObject var upcSystem: UPCSystem
+    @State var upcSystem: UPCSystemData
     
     var body: some View {
         HStack {
@@ -42,7 +42,7 @@ struct UPCSubSystemPicker: View {
 struct UPCSubSystemPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem()
+        let mockSystem = UPCSystemData()
 
         // Pass the mock System instance into SystemBuilderView
         UPCSubSystemPicker(upcSystem: mockSystem)

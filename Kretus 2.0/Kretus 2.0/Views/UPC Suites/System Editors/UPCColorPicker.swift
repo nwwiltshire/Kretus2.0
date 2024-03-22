@@ -10,9 +10,9 @@ import SwiftUI
 
 struct UPCColorPicker: View {
     
-    @ObservedObject var upcSystem: UPCSystem
+    @State var upcSystem: UPCSystemData
     
-    @State private var selectedColor: UPCSystem.SystemColor = .unpigmented
+    @State private var selectedColor: UPCSystemData.SystemColor = .unpigmented
     
     let layout = [
         
@@ -86,7 +86,7 @@ struct UPCColorPicker: View {
 struct UPCColorPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem()
+        let mockSystem = UPCSystemData()
 
         // Pass the mock System instance into SystemBuilderView
         UPCColorPicker(upcSystem: mockSystem)
