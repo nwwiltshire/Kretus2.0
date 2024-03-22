@@ -9,8 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-struct KitData {
-    
+final class KitData {
     var product: ProductData
     var quantity: Int
         

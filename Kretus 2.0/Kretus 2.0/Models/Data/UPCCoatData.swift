@@ -10,38 +10,38 @@ import SwiftData
 
 @Model
 final class UPCCoatData {
-  var name: String
-  var squareFt: Int
+    var name: String
+    var squareFt: Int
+
+    var coatType: UPCSystemData.CoatType
+    var subType: UPCSystemData.SubType
+    var speed: UPCSystemData.Speed
+    var covRate: Int
+
+    var partA: ProductData
+    var partB: ProductData
+    var partC: ProductData
+
+    var thickness: UPCSystemData.Thickness
+
+    var wasteFactor: Int
+    var texture1: UPCSystemData.Texture
+    var texture2: UPCSystemData.Texture
   
-  var coatType: String
-  var subType: String
-  var speed: String
-  var covRate: Int
-  
-  var partA: Product
-  var partB: Product
-  var partC: Product
-  
-  var thickness: String
-  
-  var wasteFactor: Int
-  var texture1: String
-  var texture2: String
-  
-  init(name: String, squareFt: Int, coatType: String, subType: String, speed: String, covRate: Int, partA: Product, partB: Product, partC: Product, thickness: String, wasteFactor: Int, texture1: String, texture2: String) {
-    self.name = name
-    self.squareFt = squareFt
-    self.coatType = coatType
-    self.subType = subType
-    self.speed = speed
-    self.covRate = covRate
-    self.partA = partA
-    self.partB = partB
-    self.partC = partC
-    self.thickness = thickness
-    self.wasteFactor = wasteFactor
-    self.texture1 = texture1
-    self.texture2 = texture2
-  }
+    init(name: String, squareFt: Int, coatType: UPCSystemData.CoatType, subType: UPCSystemData.SubType, speed: UPCSystemData.Speed, covRate: Int, partA: ProductData, partB: ProductData, partC: ProductData, thickness: UPCSystemData.Thickness, wasteFactor: Int, texture1: UPCSystemData.Texture, texture2: UPCSystemData.Texture) {
+        self.name = name
+        self.squareFt = squareFt
+        self.coatType = coatType
+        self.subType = subType
+        self.speed = speed
+        self.covRate = covRate
+        self.partA = partA
+        self.partB = partB
+        self.partC = partC
+        self.thickness = thickness
+        self.wasteFactor = wasteFactor
+        self.texture1 = texture1
+        self.texture2 = texture2
+    }
 }
 

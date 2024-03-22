@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-struct ProductData {
+final class ProductData {
   let id: String
   let name: String
   
