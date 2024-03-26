@@ -9,27 +9,31 @@ import Foundation
 import SwiftUI
 
 struct UPCSystemCommitButton: View {
-    
-    @ObservedObject var upcSystem: UPCSystem
-    
-    var body: some View {
-        NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)) {
-            HStack {
-                Text("Coat Options")
-                    .font(.title)
-                    .padding()
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .padding()
-            }
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-        }
-    }
+  
+  @ObservedObject var upcSystem: UPCSystem
+  
+  var body: some View {
+    NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)) {
+      HStack {
+        Text("Coat Options")
+          .font(.title)
+          .padding()
         
+        Spacer()
+        
+        Button(action: {
+          // Creates base coat.
+            self.upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType)
+        }) {
+          Image(systemName: "chevron.right")
+            .padding()
+        }
+      }
+      .background(Color.blue)
+      .foregroundColor(.white)
+      .cornerRadius(10)
+    }
+  }
 }
 
 

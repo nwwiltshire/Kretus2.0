@@ -201,9 +201,11 @@ class UPCSystem: System {
         return output
     }
 
-    func createUPCCoat(squareFt: Int) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
+        upcCoat.coatType = coatType
+        upcCoat.subType = subType
         return upcCoat
       }
     

@@ -23,14 +23,14 @@ struct UPCCoatOptions: View {
             
             Toggle(isOn: Binding(
                 get: { self.upcSystem.primeCoat != nil },
-                set: { if !$0 { self.upcSystem.primeCoat = nil } else { self.upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt) } } // Set this later, override others as well
+                set: { if !$0 { self.upcSystem.primeCoat = nil } else { self.upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: upcSystem.subType) } } // Set this later, override others as well
             )) {
                 Text("Prime Coat")
             }
             
             Toggle(isOn: Binding(
                 get: { self.upcSystem.topCoat != nil },
-                set: { if !$0 { self.upcSystem.topCoat = nil } else { self.upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt) } }
+                set: { if !$0 { self.upcSystem.topCoat = nil } else { self.upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: upcSystem.subType) } }
             )) {
                 Text("Top Coat")
             }

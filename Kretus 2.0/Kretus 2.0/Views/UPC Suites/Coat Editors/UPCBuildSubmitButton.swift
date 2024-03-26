@@ -14,13 +14,23 @@ struct UPCBuildSubmitButton: View {
     
     @State private var showNewView = false
     
+    // State variable to hold the printed system test
+    @State private var printedText: String? = nil
+    
     var body: some View {
-        
+
         Button(action: {
-              self.showNewView = true
-            }) {
-              Text("Save System")
-            }
+          // Update the state variable with the printed system test
+          printedText = upcSystem.printSystemTest()
+        }) {
+          Text("View System")
+        }
+
+        if let printedText = printedText {
+          ScrollView {
+            Text(printedText)
+          }
+        }
         
         /*
         NavigationLink(destination: UPCBuildSuite(upcSystem: upcSystem)) {

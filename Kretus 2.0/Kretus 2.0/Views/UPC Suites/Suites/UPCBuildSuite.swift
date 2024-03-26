@@ -15,11 +15,8 @@ struct UPCBuildSuite: View {
     var body: some View {
         
         VStack {
-              Text("This is your Build")
+              Text(upcSystem.printSystemTest())
                 .padding()
-              NavigationLink(destination: UPCCoatOptions(upcSystem: upcSystem)) {
-                Text("Cancel")
-              }
             }
         
     }
