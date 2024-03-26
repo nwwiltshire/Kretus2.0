@@ -13,25 +13,24 @@ struct UPCSystemCommitButton: View {
   @ObservedObject var upcSystem: UPCSystem
   
   var body: some View {
-    NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)) {
+    NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)
+        // Creates base coat
+        .onAppear {
+            upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType)
+        }) {
       HStack {
         Text("Coat Options")
           .font(.title)
           .padding()
         
         Spacer()
-        
-        Button(action: {
-          // Creates base coat.
-            self.upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType)
-        }) {
-          Image(systemName: "chevron.right")
-            .padding()
-        }
+          
+        Image(systemName: "chevron.right")
       }
       .background(Color.blue)
       .foregroundColor(.white)
       .cornerRadius(10)
+    
     }
   }
 }
