@@ -26,6 +26,7 @@ struct UPCSystemCommitButton: View {
         Spacer()
           
         Image(systemName: "chevron.right")
+              .padding()
       }
       .background(Color.blue)
       .foregroundColor(.white)

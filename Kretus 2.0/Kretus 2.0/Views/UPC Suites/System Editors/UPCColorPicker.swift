@@ -28,6 +28,7 @@ struct UPCColorPicker: View {
                     ForEach(upcSystem.availableSystemColors, id: \.self) { color in
                         Button(action: {
                             self.selectedColor = color
+                            upcSystem.systemColor = selectedColor
                             // control goes here
                         }) {
                             VStack {
