@@ -206,6 +206,11 @@ class UPCSystem: System {
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.subType = subType
+        
+        if (subType != .rc) {
+            upcCoat.thickness = .thin
+        }
+        
         return upcCoat
       }
     
