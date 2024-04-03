@@ -20,6 +20,7 @@
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
+		309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */; };
 		30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B32B589654009C0268 /* Kretus_2_0App.swift */; };
 		30A712B62B589654009C0268 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B52B589654009C0268 /* ContentView.swift */; };
 		30A712B82B589656009C0268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A712B72B589656009C0268 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		30B287292BAA3CD7006D3003 /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B287282BAA3CD7006D3003 /* ProductData.swift */; };
 		30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2872A2BAA3D40006D3003 /* KitData.swift */; };
 		30D010612BAA3B4400F5F1F1 /* UPCCoatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D010602BAA3B4400F5F1F1 /* UPCCoatData.swift */; };
+		30D365A02BBDEA96004A67C1 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3659F2BBDEA96004A67C1 /* PDFView.swift */; };
 		30ED659F2B733825001E636D /* SqftForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED659E2B733825001E636D /* SqftForm.swift */; };
 		30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
@@ -62,6 +64,7 @@
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
+		309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Kretus-Product-Catalog.pdf"; path = "../../../Kretus/Kretus-Product-Catalog.pdf"; sourceTree = SOURCE_ROOT; };
 		30A712B02B589654009C0268 /* Kretus 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kretus 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A712B32B589654009C0268 /* Kretus_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kretus_2_0App.swift; sourceTree = "<group>"; };
 		30A712B52B589654009C0268 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		30B287282BAA3CD7006D3003 /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		30B2872A2BAA3D40006D3003 /* KitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitData.swift; sourceTree = "<group>"; };
 		30D010602BAA3B4400F5F1F1 /* UPCCoatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatData.swift; sourceTree = "<group>"; };
+		30D3659F2BBDEA96004A67C1 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
 		30ED659E2B733825001E636D /* SqftForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqftForm.swift; sourceTree = "<group>"; };
 		30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatOptions.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 			path = Kits;
 			sourceTree = "<group>";
 		};
+		309F5DB52BB4FAE000F4FAF6 /* PDFs */ = {
+			isa = PBXGroup;
+			children = (
+				309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */,
+			);
+			path = PDFs;
+			sourceTree = "<group>";
+		};
 		30A712A72B589654009C0268 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 		30A712B22B589654009C0268 /* Kretus 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				309F5DB52BB4FAE000F4FAF6 /* PDFs */,
 				30F3BA392B5C9B2B002EF4B5 /* Views */,
 				30A712C12B58967A009C0268 /* Models */,
 				30A712B32B589654009C0268 /* Kretus_2_0App.swift */,
@@ -240,6 +253,7 @@
 				30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */,
 				303C697A2B6B091F00C58041 /* SelectLineView.swift */,
 				303C697C2B6B094900C58041 /* DocumentationView.swift */,
+				30D3659F2BBDEA96004A67C1 /* PDFView.swift */,
 				303C697E2B6B0CA200C58041 /* YourSystemsView.swift */,
 				3086DDE62B8693AD00B94B38 /* HomeView.swift */,
 				3086DDE82B86953200B94B38 /* Splash View.swift */,
@@ -336,6 +350,7 @@
 			files = (
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
 				30A712B82B589656009C0268 /* Assets.xcassets in Resources */,
+				309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */,
 				30A712D62B590025009C0268 /* upc.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +376,7 @@
 				30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */,
 				30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */,
 				3086DDE92B86953200B94B38 /* Splash View.swift in Sources */,
+				30D365A02BBDEA96004A67C1 /* PDFView.swift in Sources */,
 				309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */,

@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import PDFKit
+import Foundation
+
 
 struct DocumentationView: View {
     var body: some View {
-        VStack {
-            Text("Documentation")
+        Text("Documentation")
         }
-        .padding()
-    }
 }
 
-#Preview {
-    DocumentationView()
+struct DocumentationView_Previews: PreviewProvider {
+    static var previews: some View {
+        DocumentationView()
+    }
 }

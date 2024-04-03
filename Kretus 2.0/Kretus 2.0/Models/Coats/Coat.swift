@@ -44,6 +44,8 @@ class Coat: ObservableObject {
     
     func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
         
+        kitsNeeded.removeAll()
+        
       for product in products {
           
         // Calculate quantity of kits needed for this product
@@ -55,7 +57,7 @@ class Coat: ObservableObject {
     }
 
     
-    func findProductsABC() {
+    func findProductsABC(products: [Product]) {
         
         // switch to find products
         

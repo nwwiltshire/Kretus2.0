@@ -9,6 +9,9 @@ import Foundation
 
 var upcList: [Product] = load("upc.json")
 
+func loadUpcList() -> [Product] {
+    return load("upc.json")
+}
 
 func load<T: Decodable>(_ filename: String) -> T {
     
