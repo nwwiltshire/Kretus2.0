@@ -26,13 +26,34 @@ struct UPCBuildSuite: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.gray).opacity(0.25))
+                    .fill(Color(upcSystem.viewColor).opacity(0.25))
             )
-            
             VStack {
-                Text("Base Coat\n")
+                Text("Base Coat")
                     .font(.title3)
-                Text("Kits Needed: \(upcSystem.baseCoat.kitsNeeded)")
+                    .padding()
+                Text("Kits Needed")
+                HStack {
+                    Text("Name")
+                    Spacer()
+                    Text("ID")
+                    Spacer()
+                    Text("Quantity")
+                }
+                ForEach(upcSystem.baseCoat.kitsNeeded, id: \.id) { kit in
+                            VStack {
+                                HStack {
+                                    Text(kit.product.name)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.product.id)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.quantity.description)
+                                        .font(.caption)
+                                }
+                            }
+                        }
                 Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
                 Text("Thickness: \(upcSystem.baseCoat.thickness)")
                 Text("Part A: \(upcSystem.baseCoat.partA)")
@@ -42,43 +63,91 @@ struct UPCBuildSuite: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.gray).opacity(0.25))
+                    .fill(Color(upcSystem.viewColor).opacity(0.25))
             )
+                if ((upcSystem.primeCoat) != nil) {
+                    VStack {
+                        Text("Prime Coat")
+                            .font(.title3)
+                            .padding()
+                        Text("Kits Needed")
+                        HStack {
+                            Text("Name")
+                            Spacer()
+                            Text("ID")
+                            Spacer()
+                            Text("Quantity")
+                        }
+                        
+                        ForEach(upcSystem.primeCoat!.kitsNeeded, id: \.id) { kit in
+                                    VStack {
+                                        HStack {
+                                            Text(kit.product.name)
+                                                .font(.caption)
+                                            Spacer()
+                                            Text(kit.product.id)
+                                                .font(.caption)
+                                            Spacer()
+                                            Text(kit.quantity.description)
+                                                .font(.caption)
+                                        }
+                                    }
+                                }
+                        Spacer()
+                        Text("Coverage Rate: \(upcSystem.primeCoat!.covRate)")
+                        Text("Thickness: \(upcSystem.primeCoat!.thickness)")
+                        Text("Part A: \(upcSystem.primeCoat!.partA)")
+                        Text("Part B: \(upcSystem.primeCoat!.partB)")
+                        Text("Part C: \(upcSystem.primeCoat!.partC)")
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(upcSystem.viewColor).opacity(0.25))
+                    )
+                }
             
-            VStack {
-                Text("Prime Coat\n")
-                    .font(.title3)
-                Text("Kits Needed: \(upcSystem.primeCoat?.kitsNeeded ?? [])")
-                Text("Coverage Rate: \(upcSystem.primeCoat?.covRate ?? 0)")
-                Text("Thickness: \(upcSystem.primeCoat?.thickness ?? .thinRC)")
-                Text("Part A: \(upcSystem.primeCoat?.partA ?? Product())")
-                Text("Part B: \(upcSystem.primeCoat?.partB ?? Product())")
-                Text("Part C: \(upcSystem.primeCoat?.partC ?? Product())")
+            if ((upcSystem.topCoat) != nil) {
+                VStack {
+                    Text("Top Coat")
+                        .font(.title3)
+                        .padding()
+                    Text("Kits Needed")
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        Text("ID")
+                        Spacer()
+                        Text("Quantity")
+                    }
+                    
+                    ForEach(upcSystem.topCoat!.kitsNeeded, id: \.id) { kit in
+                                VStack {
+                                    HStack {
+                                        Text(kit.product.name)
+                                            .font(.caption)
+                                        Spacer()
+                                        Text(kit.product.id)
+                                            .font(.caption)
+                                        Spacer()
+                                        Text(kit.quantity.description)
+                                            .font(.caption)
+                                    }
+                                }
+                            }
+                    Spacer()
+                    Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
+                    Text("Thickness: \(upcSystem.topCoat!.thickness)")
+                    Text("Part A: \(upcSystem.topCoat!.partA)")
+                    Text("Part B: \(upcSystem.topCoat!.partB)")
+                    Text("Part C: \(upcSystem.topCoat!.partC)")
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(upcSystem.viewColor).opacity(0.25))
+                )
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.gray).opacity(0.25))
-            )
-            
-            VStack {
-                Text("Top Coat\n")
-                    .font(.title3)
-                Text("Kits Needed: \(upcSystem.topCoat?.kitsNeeded ?? [])")
-                Text("Coverage Rate: \(upcSystem.topCoat?.covRate ?? 0)")
-                Text("Thickness: \(upcSystem.topCoat?.thickness ?? .thinRC)")
-                Text("Part A: \(upcSystem.topCoat?.partA ?? Product())")
-                Text("Part B: \(upcSystem.topCoat?.partB ?? Product())")
-                Text("Part C: \(upcSystem.topCoat?.partC ?? Product())")
-                Text("Texture 1: \(upcSystem.topCoat?.texture1 ?? .none)")
-                Text("Texture 2: \(upcSystem.topCoat?.texture2 ?? .none)")
-                Text("UV Resistance: \(upcSystem.uvResistance)")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.gray).opacity(0.25))
-            )
         }
     }
     
@@ -92,9 +161,15 @@ struct UPCBuildSuite_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCSystem()
+        
+        let testKits = [Kit(product: Product(id: "1234", name: "Test 1"), quantity: 1), Kit(product: Product(id: "12345", name: "Test 2"), quantity: 2), Kit(product: Product(id: "123456", name: "Test 3"), quantity: 3)]
+        
+        
+        mockSystem.baseCoat.kitsNeeded = testKits
 
         // Pass the mock System instance into SystemBuilderView
-        UPCBuildSuite(upcSystem: mockSystem)
+        return UPCBuildSuite(upcSystem: mockSystem)
     }
 }
+
 

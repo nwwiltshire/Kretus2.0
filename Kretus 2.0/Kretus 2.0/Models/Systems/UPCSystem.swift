@@ -65,7 +65,7 @@ class UPCSystem: System {
         imageName: "upc1coat-background",
         viewColor: "UPC",
         squareFt: 0,
-        kitsNeeded: []
+        kitsNeeded: [Kit()]
         )
     }
     

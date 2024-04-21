@@ -11,7 +11,7 @@ struct Kit: Identifiable {
     
     var id = UUID()
     
-    var product: Product
+    var product: Product = Product()
     var quantity: Int = 0
         
 }
