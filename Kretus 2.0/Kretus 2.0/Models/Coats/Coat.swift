@@ -68,4 +68,10 @@ class Coat: ObservableObject {
         // switch to find products
         
     }
+    
+    func setValues() {
+        
+        // call necessary functions to properly set coat values
+        
+    }
 }

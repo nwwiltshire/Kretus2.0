@@ -283,6 +283,19 @@ class UPCCoat: Coat {
             }
         }
     }
+    
+    override func setValues() {
+        
+        updateCovRate()
+        var availableProductsUPC = loadUpcList()
+        
+        findProductsABC(products: availableProductsUPC)
+        
+        availableProductsUPC.removeAll()
+        
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        
+    }
 
     
     override func findProductsABC(products: [Product]) {
@@ -379,18 +392,10 @@ class UPCCoat: Coat {
         productsNeeded.append(partA)
         productsNeeded.append(partB)
         productsNeeded.append(partC)
-        
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+
     }
 
     override func printCoatTest() -> String {
-        
-        updateCovRate()
-        var availableProductsUPC = loadUpcList()
-        
-        findProductsABC(products: availableProductsUPC)
-        
-        availableProductsUPC.removeAll()
         
         var output = ""
         output += "Coat ID: \(id)\n"

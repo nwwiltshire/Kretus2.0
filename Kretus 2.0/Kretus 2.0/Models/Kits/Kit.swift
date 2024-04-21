@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Kit {
+struct Kit: Identifiable {
+    
+    var id = UUID()
     
     var product: Product
     var quantity: Int = 0

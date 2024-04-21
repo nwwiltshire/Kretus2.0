@@ -17,6 +17,12 @@ struct UPCSystemCommitButton: View {
         // Creates base coat
         .onAppear {
             upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType)
+            if ((upcSystem.primeCoat) != nil) {
+                upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: upcSystem.subType)
+            }
+            if ((upcSystem.topCoat) != nil) {
+                upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: upcSystem.subType)
+            }
         }) {
       HStack {
         Text("Coat Options")

@@ -183,15 +183,18 @@ class UPCSystem: System {
         output += "Available System Colors: \(availableSystemColors)\n"
         output += "Sub Type: \(subType)\n"
         output += "System Color: \(systemColor)\n"
+        baseCoat.setValues()
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
+            primeCoat.setValues()
             output += "\nPrime Coat:\n\n\(primeCoat.printCoatTest())\n"
         } else {
             output += "\nPrime Coat: None\n"
         }
         
         if let topCoat = topCoat {
+            topCoat.setValues()
             output += "\nTop Coat:\n\n\(topCoat.printCoatTest())\n"
         } else {
             output += "\nTop Coat: None\n"
