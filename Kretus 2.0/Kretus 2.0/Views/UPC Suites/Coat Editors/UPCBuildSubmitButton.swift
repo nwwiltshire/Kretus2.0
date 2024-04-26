@@ -20,7 +20,7 @@ struct UPCBuildSubmitButton: View {
         
         Button(action: {
             showSheet.toggle()
-            printedText = upcSystem.printSystemTest()
+            upcSystem.getAllKits()
         }) {
             HStack {
               Text("View System")
@@ -41,6 +41,7 @@ struct UPCBuildSubmitButton: View {
                 UPCBuildSuite(upcSystem: upcSystem)
             }
             Button("Dismiss", action: { showSheet.toggle() })
+                .padding()
         }
     }
 }

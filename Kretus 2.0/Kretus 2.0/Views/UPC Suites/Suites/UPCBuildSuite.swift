@@ -22,6 +22,28 @@ struct UPCBuildSuite: View {
                     .font(.title3)
                 Text("Square Feet: \(upcSystem.squareFt)")
                 Text("System Color: \(upcSystem.systemColor)")
+                Text("\nTotal Kits Needed:")
+                HStack {
+                    Text("ID")
+                    Spacer()
+                    Text("Name")
+                    Spacer()
+                    Text("Quantity")
+                }
+                ForEach(upcSystem.kitsNeeded, id: \.id) { kit in
+                            VStack {
+                                HStack {
+                                    Text(kit.product.id)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.product.name)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.quantity.description)
+                                        .font(.caption)
+                                }
+                            }
+                        }
             }
             .padding()
             .background(
@@ -31,22 +53,23 @@ struct UPCBuildSuite: View {
             VStack {
                 Text("Base Coat")
                     .font(.title3)
-                    .padding()
-                Text("Kits Needed")
+                Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
+                Text("Thickness: \(upcSystem.baseCoat.thickness)")
+                Text("\nKits Needed:")
                 HStack {
-                    Text("Name")
-                    Spacer()
                     Text("ID")
+                    Spacer()
+                    Text("Name")
                     Spacer()
                     Text("Quantity")
                 }
                 ForEach(upcSystem.baseCoat.kitsNeeded, id: \.id) { kit in
                             VStack {
                                 HStack {
-                                    Text(kit.product.name)
+                                    Text(kit.product.id)
                                         .font(.caption)
                                     Spacer()
-                                    Text(kit.product.id)
+                                    Text(kit.product.name)
                                         .font(.caption)
                                     Spacer()
                                     Text(kit.quantity.description)
@@ -54,11 +77,6 @@ struct UPCBuildSuite: View {
                                 }
                             }
                         }
-                Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
-                Text("Thickness: \(upcSystem.baseCoat.thickness)")
-                Text("Part A: \(upcSystem.baseCoat.partA)")
-                Text("Part B: \(upcSystem.baseCoat.partB)")
-                Text("Part C: \(upcSystem.baseCoat.partC)")
             }
             .padding()
             .background(
@@ -69,12 +87,13 @@ struct UPCBuildSuite: View {
                     VStack {
                         Text("Prime Coat")
                             .font(.title3)
-                            .padding()
-                        Text("Kits Needed")
+                        Text("Coverage Rate: \(upcSystem.primeCoat!.covRate)")
+                        Text("Thickness: \(upcSystem.primeCoat!.thickness)")
+                        Text("\nKits Needed:")
                         HStack {
-                            Text("Name")
-                            Spacer()
                             Text("ID")
+                            Spacer()
+                            Text("Name")
                             Spacer()
                             Text("Quantity")
                         }
@@ -82,10 +101,10 @@ struct UPCBuildSuite: View {
                         ForEach(upcSystem.primeCoat!.kitsNeeded, id: \.id) { kit in
                                     VStack {
                                         HStack {
-                                            Text(kit.product.name)
+                                            Text(kit.product.id)
                                                 .font(.caption)
                                             Spacer()
-                                            Text(kit.product.id)
+                                            Text(kit.product.name)
                                                 .font(.caption)
                                             Spacer()
                                             Text(kit.quantity.description)
@@ -93,12 +112,6 @@ struct UPCBuildSuite: View {
                                         }
                                     }
                                 }
-                        Spacer()
-                        Text("Coverage Rate: \(upcSystem.primeCoat!.covRate)")
-                        Text("Thickness: \(upcSystem.primeCoat!.thickness)")
-                        Text("Part A: \(upcSystem.primeCoat!.partA)")
-                        Text("Part B: \(upcSystem.primeCoat!.partB)")
-                        Text("Part C: \(upcSystem.primeCoat!.partC)")
                     }
                     .padding()
                     .background(
@@ -111,12 +124,13 @@ struct UPCBuildSuite: View {
                 VStack {
                     Text("Top Coat")
                         .font(.title3)
-                        .padding()
-                    Text("Kits Needed")
+                    Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
+                    Text("Thickness: \(upcSystem.topCoat!.thickness)")
+                    Text("\nKits Needed:")
                     HStack {
-                        Text("Name")
-                        Spacer()
                         Text("ID")
+                        Spacer()
+                        Text("Name")
                         Spacer()
                         Text("Quantity")
                     }
@@ -124,10 +138,10 @@ struct UPCBuildSuite: View {
                     ForEach(upcSystem.topCoat!.kitsNeeded, id: \.id) { kit in
                                 VStack {
                                     HStack {
-                                        Text(kit.product.name)
+                                        Text(kit.product.id)
                                             .font(.caption)
                                         Spacer()
-                                        Text(kit.product.id)
+                                        Text(kit.product.name)
                                             .font(.caption)
                                         Spacer()
                                         Text(kit.quantity.description)
@@ -135,12 +149,6 @@ struct UPCBuildSuite: View {
                                     }
                                 }
                             }
-                    Spacer()
-                    Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
-                    Text("Thickness: \(upcSystem.topCoat!.thickness)")
-                    Text("Part A: \(upcSystem.topCoat!.partA)")
-                    Text("Part B: \(upcSystem.topCoat!.partB)")
-                    Text("Part C: \(upcSystem.topCoat!.partC)")
                 }
                 .padding()
                 .background(

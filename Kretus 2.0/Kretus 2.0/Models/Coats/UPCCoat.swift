@@ -23,6 +23,9 @@ class UPCCoat: Coat {
     @Published var partB: Product
     @Published var partC: Product
     
+    @Published var coatColor: UPCSystem.SystemColor
+    @Published var colorant: Product
+    
     @Published var thickness: UPCSystem.Thickness {
             didSet {
                 updateCovRate()
@@ -48,6 +51,8 @@ class UPCCoat: Coat {
          partA: Product,
          partB: Product,
          partC: Product,
+         coatColor: UPCSystem.SystemColor,
+         colorant: Product,
          thickness: UPCSystem.Thickness,
          wasteFactor: Int,
          texture1: UPCSystem.Texture,
@@ -60,6 +65,8 @@ class UPCCoat: Coat {
         self.partA = partA
         self.partB = partB
         self.partC = partC
+        self.coatColor = coatColor
+        self.colorant = colorant
         self.wasteFactor = wasteFactor
         self.thickness = thickness
         self.texture1 = texture1
@@ -78,6 +85,8 @@ class UPCCoat: Coat {
         self.partA = Product()
         self.partB = Product()
         self.partC = Product()
+        self.coatColor = .unpigmented
+        self.colorant = Product()
         self.wasteFactor = 0
         self.thickness = .thinRC
         self.texture1 = .none
@@ -289,7 +298,7 @@ class UPCCoat: Coat {
         updateCovRate()
         var availableProductsUPC = loadUpcList()
         
-        findProductsABC(products: availableProductsUPC)
+        findProducts(products: availableProductsUPC)
         
         availableProductsUPC.removeAll()
         
@@ -298,7 +307,7 @@ class UPCCoat: Coat {
     }
 
     
-    override func findProductsABC(products: [Product]) {
+    override func findProducts(products: [Product]) {
         
         switch self.subType {
             
@@ -387,11 +396,49 @@ class UPCCoat: Coat {
             }
         }
         
+        switch self.coatColor {
+        case .unpigmented:
+            self.colorant = Product()
+        case .black:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBK-EA"})!
+        case .blue:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBL-EA"})!
+        case .bone:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLWG-EA"})!
+        case .brown:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBR-EA"})!
+        case .clay:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCL-EA"})!
+        case .gray:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGY-EA"})!
+        case .green:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGR-EA"})!
+        case .mustard:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCY-EA"})!
+        case .red:
+            self.colorant = products.first(where: {$0.id == "EX-KUPCCLRD-EA"})!
+        }
+        
         productsNeeded.removeAll()
         
         productsNeeded.append(partA)
         productsNeeded.append(partB)
         productsNeeded.append(partC)
+        
+        if (self.colorant.id != "Default") {
+            productsNeeded.append(colorant)
+        }
+        
+        if (self.coatType == .top) {
+            
+            if (self.texture1 != .none) {
+                productsNeeded.append(findTexture(texture: self.texture1, products: upcList))
+            }
+            
+            if (self.texture2 != .none) {
+                productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
+            }
+        }
 
     }
 
@@ -416,11 +463,25 @@ class UPCCoat: Coat {
         output += "Texture 2: \(texture2)\n"
         return output
     }
-
     
-    override func findProductsColorant() {
+    func findTexture(texture: UPCSystem.Texture, products: [Product]) -> Product {
         
-        // switch to find products
+        switch texture {
+        case .none:
+            return Product()
+        case .antiSlip60:
+            return products.first(where: {$0.id == "EX-KASAO60-01"})!
+        case .antiSlip36:
+            return products.first(where: {$0.id == "EX-KASAO36-01"})!
+        case .antiSlip24:
+            return products.first(where: {$0.id == "EX-KASA246-01"})!
+        case .industrialSand60:
+            return products.first(where: {$0.id == "116"})!
+        case .industrialSand30:
+            return products.first(where: {$0.id == "115"})!
+        case .industrialSand20:
+            return products.first(where: {$0.id == "114"})!
+        }
         
     }
 }

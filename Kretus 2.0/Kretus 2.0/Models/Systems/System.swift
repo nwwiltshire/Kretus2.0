@@ -60,4 +60,10 @@ class System: ObservableObject {
         return output
         
     }
+    
+    func getAllKits() {
+        
+        // Calculates kits for all coats and appends them to system array
+        
+    }
 }

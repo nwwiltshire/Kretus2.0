@@ -29,7 +29,6 @@ struct UPCColorPicker: View {
                         Button(action: {
                             self.selectedColor = color
                             upcSystem.systemColor = selectedColor
-                            // control goes here
                         }) {
                             VStack {
                                 

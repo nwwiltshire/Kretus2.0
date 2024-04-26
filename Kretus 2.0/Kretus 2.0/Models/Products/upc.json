@@ -86,5 +86,29 @@
     {
         "id": "EX-KUPCCLRD-EA",
         "name": "UPC Colorant - Red"
+    },
+    {
+        "id": "EX-KASAO36-01",
+        "name": "Anti-Slip A.O. 36 10 lbs"
+    },
+    {
+        "id": "EX-KASAO60-01",
+        "name": "Anti-Slip A.O. 60 10 lbs"
+    },
+    {
+        "id": "EX-KASA246-01",
+        "name": "Anti-Slip A.O. 24 10 lbs"
+    },
+    {
+        "id": "114",
+        "name": "Industrial Sand #20"
+    },
+    {
+        "id": "115",
+        "name": "Industrial Sand #30"
+    },
+    {
+        "id": "116",
+        "name": "Industrial Sand #60"
     }
 ]

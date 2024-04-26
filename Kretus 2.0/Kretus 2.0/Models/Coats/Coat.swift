@@ -57,21 +57,15 @@ class Coat: ObservableObject {
     }
 
     
-    func findProductsABC(products: [Product]) {
+    func findProducts(products: [Product]) {
         
-        // switch to find products
-        
-    }
-    
-    func findProductsColorant() {
-        
-        // switch to find products
+        // Switch to find products
         
     }
     
     func setValues() {
         
-        // call necessary functions to properly set coat values
+        // Call necessary functions to properly set coat values
         
     }
 }
