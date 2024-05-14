@@ -54,7 +54,6 @@ struct UPCBuildSuite: View {
             VStack {
                 Text("Base Coat")
                     .font(.title3)
-                Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
                 Text("Thickness: \(upcSystem.baseCoat.thickness)")
                 Text("\nKits Needed:")
                 HStack {
@@ -89,7 +88,6 @@ struct UPCBuildSuite: View {
                     VStack {
                         Text("Prime Coat")
                             .font(.title3)
-                        Text("Coverage Rate: \(upcSystem.primeCoat!.covRate)")
                         Text("Thickness: \(upcSystem.primeCoat!.thickness)")
                         Text("\nKits Needed:")
                         HStack {
@@ -127,7 +125,6 @@ struct UPCBuildSuite: View {
                 VStack {
                     Text("Top Coat")
                         .font(.title3)
-                    Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
                     Text("Thickness: \(upcSystem.topCoat!.thickness)")
                     Text("\nKits Needed:")
                     HStack {
