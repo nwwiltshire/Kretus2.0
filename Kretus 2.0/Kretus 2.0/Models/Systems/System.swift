@@ -17,6 +17,7 @@ class System: ObservableObject {
     
     @Published var squareFt: Int
     @Published var kitsNeeded: [Kit]
+    @Published var totalWasteFactor: Int
     
     init(id: Int,
          name: String,
@@ -24,7 +25,8 @@ class System: ObservableObject {
          imageName: String,
          viewColor: String,
          squareFt: Int,
-         kitsNeeded: [Kit])
+         kitsNeeded: [Kit],
+         totalWasteFactor: Int)
          {
         self.id = id
         self.name = name
@@ -33,6 +35,7 @@ class System: ObservableObject {
         self.viewColor = viewColor
         self.squareFt = squareFt
         self.kitsNeeded = kitsNeeded
+        self.totalWasteFactor = totalWasteFactor
     }
     
     static func getAllSystems() -> [System] {

@@ -12,8 +12,8 @@ struct ContentView: View {
         TabView {
             SystemGridView()
                 .tabItem() {
-                    Image(systemName: "hammer")
-                    Text("System Builder")
+                    Image(systemName: "plusminus.circle.fill")
+                    Text("Calculator")
                 }
             YourSystemsView()
                 .tabItem() {

@@ -15,6 +15,9 @@ struct SystemBuilderView: View {
     var body: some View {
         ScrollView {
             VStack {
+                // Display System Description
+                Text("Modify the System to your needs, and proceed to specify your Coat Options.")
+                    .font(.subheadline)
                 // Display System Image
                 Image(currentBuild.imageName)
                     .resizable()
@@ -24,10 +27,6 @@ struct SystemBuilderView: View {
                 // Display System Name
                 Text(currentBuild.name)
                     .font(.headline)
-                
-                // Display System Description
-                Text("Modify the System to your needs, and proceed to specify your Coat Options.")
-                    .font(.subheadline)
                 
                 SqftForm(system: currentBuild)
                 

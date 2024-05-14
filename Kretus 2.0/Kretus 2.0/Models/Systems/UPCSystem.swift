@@ -34,7 +34,8 @@ class UPCSystem: System {
          baseCoat: UPCCoat,
          primeCoat: UPCCoat,
          topCoat: UPCCoat,
-         uvResistance: Bool) {
+         uvResistance: Bool,
+         totalWasteFactor: Int) {
         
         self.availableSubTypes = availableSubTypes
         self.availableSystemColors = availableSystemColors
@@ -45,7 +46,7 @@ class UPCSystem: System {
         self.topCoat = topCoat
         self.uvResistance = uvResistance
         
-        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded)
+        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
     }
     
@@ -65,7 +66,8 @@ class UPCSystem: System {
         imageName: "upc1coat-background",
         viewColor: "UPC",
         squareFt: 0,
-        kitsNeeded: [Kit()]
+        kitsNeeded: [Kit()],
+        totalWasteFactor: 0
         )
     }
     
@@ -215,23 +217,31 @@ class UPCSystem: System {
             upcCoat.thickness = .thin
         }
         
+        if (coatType == .top && uvResistance == true) {
+            upcCoat.uvResistance = true
+        }
+        
         return upcCoat
       }
     
     override func getAllKits() {
-      kitsNeeded.removeAll()
-      baseCoat.setValues()
-      updateKits(with: baseCoat.kitsNeeded)
+        kitsNeeded.removeAll()
+        totalWasteFactor = 0
+        baseCoat.setValues()
+        updateKits(with: baseCoat.kitsNeeded)
+        totalWasteFactor += baseCoat.wasteFactor
 
-      if let primeCoat = primeCoat {
-        primeCoat.setValues()
-        updateKits(with: primeCoat.kitsNeeded)
-      }
+        if let primeCoat = primeCoat {
+            primeCoat.setValues()
+            updateKits(with: primeCoat.kitsNeeded)
+            totalWasteFactor += primeCoat.wasteFactor
+        }
 
-      if let topCoat = topCoat {
-        topCoat.setValues()
-        updateKits(with: topCoat.kitsNeeded)
-      }
+        if let topCoat = topCoat {
+            topCoat.setValues()
+            updateKits(with: topCoat.kitsNeeded)
+            totalWasteFactor += topCoat.wasteFactor
+        }
     }
 
     func updateKits(with newKits: [Kit]) {

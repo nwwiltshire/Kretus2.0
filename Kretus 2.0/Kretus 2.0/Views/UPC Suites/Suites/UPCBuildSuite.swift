@@ -18,7 +18,7 @@ struct UPCBuildSuite: View {
                 .font(.title)
                 .padding()
             VStack {
-                Text("System\n")
+                Text("Total System\n")
                     .font(.title3)
                 Text("Square Feet: \(upcSystem.squareFt)")
                 Text("System Color: \(upcSystem.systemColor)")
@@ -44,6 +44,7 @@ struct UPCBuildSuite: View {
                                 }
                             }
                         }
+                Text("Total kits from waste factor: \(upcSystem.totalWasteFactor)")
             }
             .padding()
             .background(
@@ -77,6 +78,7 @@ struct UPCBuildSuite: View {
                                 }
                             }
                         }
+                Text("Kits from waste factor: \(upcSystem.baseCoat.wasteFactor)")
             }
             .padding()
             .background(
@@ -112,6 +114,7 @@ struct UPCBuildSuite: View {
                                         }
                                     }
                                 }
+                        Text("Kits from waste factor: \(upcSystem.primeCoat!.wasteFactor)")
                     }
                     .padding()
                     .background(
@@ -149,6 +152,7 @@ struct UPCBuildSuite: View {
                                     }
                                 }
                             }
+                    Text("Kits from waste factor: \(upcSystem.topCoat!.wasteFactor)")
                 }
                 .padding()
                 .background(

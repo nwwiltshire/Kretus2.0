@@ -1,114 +1,147 @@
 [
     {
         "id": "EX-KUPCARC-EA",
-        "name": "UPC Part A - RC/TT, 6 lbs"
+        "name": "UPC Part A - RC/TT, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCRCZ6-EA",
-        "name": "UPC Part B - RC/TT - EZ, 6 lbs"
+        "name": "UPC Part B - RC/TT - EZ, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCRCA6-EA",
-        "name": "UPC Part B - RC/TT - AP, 6 lbs"
+        "name": "UPC Part B - RC/TT - AP, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-BRCUVAP6-EA",
-        "name": "UPC Part B - RC/TT - UV AP, 6 lbs"
+        "name": "UPC Part B - RC/TT - UV AP, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCRCF6-EA",
-        "name": "UPC Part B - RC/TT - FC, 6 lbs"
+        "name": "UPC Part B - RC/TT - FC, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCRFC-EA",
-        "name": "UPC Part C - RC, 6 lbs"
+        "name": "UPC Part C - RC, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCTTC4-EA",
-        "name": "UPC Part C - TT, 6 lbs"
+        "name": "UPC Part C - TT, 6 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCASL8-EA",
-        "name": "UPC Part A - SL/MF, 8 lbs"
+        "name": "UPC Part A - SL/MF, 8 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCSLZ8-EA",
-        "name": "UPC Part B - SL/MF - EZ, 8 lbs"
+        "name": "UPC Part B - SL/MF - EZ, 8 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCSLB8-EA",
-        "name": "UPC Part B - SL/MF - AP, 8 lbs"
+        "name": "UPC Part B - SL/MF - AP, 8 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCSLF8-EA",
-        "name": "UPC Part B - SL/MF - FC, 8 lbs"
+        "name": "UPC Part B - SL/MF - FC, 8 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCSLC2-EA",
-        "name": "UPC Part C - SL, 25 lbs"
+        "name": "UPC Part C - SL, 25 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCMFC-EA",
-        "name": "UPC Part C - MF, 40 lbs"
+        "name": "UPC Part C - MF, 40 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLBK-EA",
-        "name": "UPC Colorant - Black"
+        "name": "UPC Colorant - Black",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLBL-EA",
-        "name": "UPC Colorant - Blue"
+        "name": "UPC Colorant - Blue",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLWG-EA",
-        "name": "UPC Colorant - Bone"
+        "name": "UPC Colorant - Bone",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLBR-EA",
-        "name": "UPC Colorant - Brown"
+        "name": "UPC Colorant - Brown",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLCL-EA",
-        "name": "UPC Colorant - Clay"
+        "name": "UPC Colorant - Clay",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLGY-EA",
-        "name": "UPC Colorant - Gray"
+        "name": "UPC Colorant - Gray",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLGR-EA",
-        "name": "UPC Colorant - Green"
+        "name": "UPC Colorant - Green",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLCY-EA",
-        "name": "UPC Colorant - Mustard"
+        "name": "UPC Colorant - Mustard",
+        "mixRatio": 0
     },
     {
         "id": "EX-KUPCCLRD-EA",
-        "name": "UPC Colorant - Red"
+        "name": "UPC Colorant - Red",
+        "mixRatio": 0
     },
     {
         "id": "EX-KASAO36-01",
-        "name": "Anti-Slip A.O. 36 10 lbs"
+        "name": "Anti-Slip A.O. 36, 10 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KASAO60-01",
-        "name": "Anti-Slip A.O. 60 10 lbs"
+        "name": "Anti-Slip A.O. 60, 10 lbs",
+        "mixRatio": 0
     },
     {
         "id": "EX-KASA246-01",
-        "name": "Anti-Slip A.O. 24 10 lbs"
+        "name": "Anti-Slip A.O. 24, 10 lbs",
+        "mixRatio": 0
     },
     {
         "id": "114",
-        "name": "Industrial Sand #20"
+        "name": "Industrial Sand #20",
+        "mixRatio": 0
     },
     {
         "id": "115",
-        "name": "Industrial Sand #30"
+        "name": "Industrial Sand #30",
+        "mixRatio": 0
     },
     {
         "id": "116",
-        "name": "Industrial Sand #60"
+        "name": "Industrial Sand #60",
+        "mixRatio": 0
+    },
+    {
+        "id": "EX-KPACEL-08",
+        "name": "Poly Accelerant, 8 oz",
+        "mixRatio": 0
     }
 ]

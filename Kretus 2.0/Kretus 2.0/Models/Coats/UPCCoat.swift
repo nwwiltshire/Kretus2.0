@@ -32,9 +32,9 @@ class UPCCoat: Coat {
             }
         }
     
-    @Published var wasteFactor: Int
     @Published var texture1: UPCSystem.Texture
     @Published var texture2: UPCSystem.Texture
+    @Published var uvResistance: Bool
     
     // Coverage Rate (focus is more on just how much product you need)
     // Coverage Rate is only dependent on thickness
@@ -54,9 +54,10 @@ class UPCCoat: Coat {
          coatColor: UPCSystem.SystemColor,
          colorant: Product,
          thickness: UPCSystem.Thickness,
-         wasteFactor: Int,
          texture1: UPCSystem.Texture,
-         texture2: UPCSystem.Texture) {
+         texture2: UPCSystem.Texture,
+         uvResistance: Bool,
+         wasteFactor: Int) {
         
         self.coatType = coatType
         self.subType = subType
@@ -67,12 +68,12 @@ class UPCCoat: Coat {
         self.partC = partC
         self.coatColor = coatColor
         self.colorant = colorant
-        self.wasteFactor = wasteFactor
         self.thickness = thickness
         self.texture1 = texture1
         self.texture2 = texture2
+        self.uvResistance = uvResistance
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded)
+        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -87,16 +88,17 @@ class UPCCoat: Coat {
         self.partC = Product()
         self.coatColor = .unpigmented
         self.colorant = Product()
-        self.wasteFactor = 0
         self.thickness = .thinRC
         self.texture1 = .none
         self.texture2 = .none
+        self.uvResistance = false
         
         super.init(id: 0,
                    name: "Default",
                    squareFt: 0,
                    productsNeeded: [],
-                   kitsNeeded: [])
+                   kitsNeeded: [],
+                   wasteFactor: 0)
     }
     
     private func updateCovRate() {
@@ -106,62 +108,64 @@ class UPCCoat: Coat {
             case .rc:
                 switch thickness {
                 case .thinRC:
-                    covRate = 1 // set these variables to correct values later vv
+                    covRate = 190
                 case .mediumRC:
-                    covRate = 2
+                    covRate = 120
                 case .thickRC:
-                    covRate = 3
+                    covRate = 80
+                // 0's because switch statements must be exhaustive
                 case .thin:
-                    covRate = 4
+                    covRate = 0
                 case .medium:
-                    covRate = 5
+                    covRate = 0
                 case .thick:
-                    covRate = 6
+                    covRate = 0
                 }
             case .tt:
                 switch thickness {
+                // 0's because switch statements must be exhaustive
                 case .thinRC:
-                    covRate = 7 // set these variables to correct values later vv
+                    covRate = 0
                 case .mediumRC:
-                    covRate = 8
+                    covRate = 0
                 case .thickRC:
-                    covRate = 9
+                    covRate = 0
                 case .thin:
-                    covRate = 10
+                    covRate = 24
                 case .medium:
-                    covRate = 11
+                    covRate = 14
                 case .thick:
-                    covRate = 12
+                    covRate = 10
                 }
             case .sl:
                 switch thickness {
                 case .thinRC:
-                    covRate = 13 // set these variables to correct values later vv
+                    covRate = 0
                 case .mediumRC:
-                    covRate = 14
+                    covRate = 0
                 case .thickRC:
-                    covRate = 15
+                    covRate = 0
                 case .thin:
-                    covRate = 16
+                    covRate = 50
                 case .medium:
-                    covRate = 17
+                    covRate = 35
                 case .thick:
-                    covRate = 18
+                    covRate = 25
                 }
             case .mf:
                 switch thickness {
                 case .thinRC:
-                    covRate = 19 // set these variables to correct values later vv
+                    covRate = 0
                 case .mediumRC:
-                    covRate = 20
+                    covRate = 0
                 case .thickRC:
-                    covRate = 21
+                    covRate = 0
                 case .thin:
-                    covRate = 22
+                    covRate = 60
                 case .medium:
-                    covRate = 23
+                    covRate = 35
                 case .thick:
-                    covRate = 24
+                    covRate = 25
                 }
             }
         case .prime:
@@ -438,6 +442,10 @@ class UPCCoat: Coat {
             if (self.texture2 != .none) {
                 productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
             }
+            
+            if (self.uvResistance == true) {
+                productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
+            }
         }
 
     }
@@ -482,6 +490,5 @@ class UPCCoat: Coat {
         case .industrialSand20:
             return products.first(where: {$0.id == "114"})!
         }
-        
     }
 }

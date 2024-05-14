@@ -16,17 +16,21 @@ class Coat: ObservableObject {
     @Published var productsNeeded: [Product]
     @Published var kitsNeeded: [Kit]
     
+    @Published var wasteFactor: Int
+    
     init(id: Int,
          name: String,
          squareFt: Int,
          productsNeeded: [Product],
-         kitsNeeded: [Kit]) {
+         kitsNeeded: [Kit],
+         wasteFactor: Int) {
         
         self.id = id
         self.name = name
         self.squareFt = squareFt
         self.productsNeeded = productsNeeded
         self.kitsNeeded = kitsNeeded
+        self.wasteFactor = wasteFactor
         
     }
     
@@ -38,6 +42,7 @@ class Coat: ObservableObject {
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"
         output += "Kits Needed: \(kitsNeeded)\n"
+        output += "Waste Factor: \(wasteFactor)\n"
         return output
         
     }
@@ -49,7 +54,7 @@ class Coat: ObservableObject {
       for product in products {
           
         // Calculate quantity of kits needed for this product
-        let quantity = squareFt / covRate
+        let quantity = ((squareFt / covRate) * product.mixRatio) + wasteFactor
         
         // Create a Kit object and append it to the kitsNeeded array
         kitsNeeded.append(Kit(product: product, quantity: quantity))

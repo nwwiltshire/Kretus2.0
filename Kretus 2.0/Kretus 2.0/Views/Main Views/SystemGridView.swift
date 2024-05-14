@@ -72,7 +72,7 @@ struct SystemGridView: View {
                     .padding(.all)
                     
                 }
-                .navigationTitle("System Builder")
+                .navigationTitle("System Calculator")
             }
         }
     }
