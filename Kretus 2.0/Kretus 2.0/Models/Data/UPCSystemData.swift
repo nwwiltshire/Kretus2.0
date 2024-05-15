@@ -25,7 +25,6 @@ final class UPCSystemData {
     var squareFt: Int
     var kitsNeeded: [KitData]
 
-    // Initializer with all parameters
     init(name: String, imageName: String, viewColor: String, subType: SubType, systemColor: SystemColor, baseCoat: UPCCoatData, primeCoat: UPCCoatData? = nil, topCoat: UPCCoatData? = nil, uvResistance: Bool, squareFt: Int, kitsNeeded: [KitData]) {
     self.name = name
     self.imageName = imageName

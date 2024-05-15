@@ -173,17 +173,17 @@ class UPCCoat: Coat {
             case .rc:
                 switch thickness {
                 case .thinRC:
-                    covRate = 25 // set these variables to correct values later vv
+                    covRate = 190
                 case .mediumRC:
-                    covRate = 26
+                    covRate = 120
                 case .thickRC:
-                    covRate = 27
+                    covRate = 80
                 case .thin:
-                    covRate = 28
+                    covRate = 0
                 case .medium:
-                    covRate = 29
+                    covRate = 0
                 case .thick:
-                    covRate = 30
+                    covRate = 0
                 }
             case .tt:
                 switch thickness {
@@ -236,17 +236,17 @@ class UPCCoat: Coat {
             case .rc:
                 switch thickness {
                 case .thinRC:
-                    covRate = 49 // set these variables to correct values later vv
+                    covRate = 190
                 case .mediumRC:
-                    covRate = 50
+                    covRate = 120
                 case .thickRC:
-                    covRate = 51
+                    covRate = 80
                 case .thin:
-                    covRate = 52
+                    covRate = 0
                 case .medium:
-                    covRate = 53
+                    covRate = 0
                 case .thick:
-                    covRate = 54
+                    covRate = 0
                 }
             case .tt:
                 switch thickness {

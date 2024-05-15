@@ -11,6 +11,5 @@ struct Product: Codable, Identifiable {
     
     var id: String = "Default"
     var name: String = "Default"
-    var mixRatio: Int = 0
 
 }

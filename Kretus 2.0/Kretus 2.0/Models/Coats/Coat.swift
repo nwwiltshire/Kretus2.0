@@ -51,14 +51,14 @@ class Coat: ObservableObject {
         
         kitsNeeded.removeAll()
         
-      for product in products {
+        for product in products {
           
-        // Calculate quantity of kits needed for this product
-        let quantity = ((squareFt / covRate) * product.mixRatio) + wasteFactor
+            // Calculate quantity of kits needed for this product
+            let quantity = (squareFt / covRate) + wasteFactor
         
-        // Create a Kit object and append it to the kitsNeeded array
-        kitsNeeded.append(Kit(product: product, quantity: quantity))
-      }
+            // Create a Kit object and append it to the kitsNeeded array
+            kitsNeeded.append(Kit(product: product, quantity: quantity))
+        }
     }
 
     
