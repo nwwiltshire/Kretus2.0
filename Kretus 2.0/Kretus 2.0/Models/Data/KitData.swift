@@ -10,11 +10,32 @@ import SwiftData
 
 @Model
 final class KitData {
-    var product: ProductData
-    var quantity: Int
+    let id: String
+    let name: String
+    let quantity: Int
+    let kitType: KitType
         
-    init(product: ProductData, quantity: Int) {
-      self.product = product
-      self.quantity = quantity
+    init(id: String, name: String, quantity: Int, kitType: KitType) {
+        self.id = id
+        self.name = name
+        self.quantity = quantity
+        self.kitType = kitType
+    }
+    
+    enum KitType: CaseIterable, Codable, Identifiable, CustomStringConvertible {
+        case base, prime, top, texture, colorant, accelerant
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
+            case .texture: return "Texture"
+            case .colorant: return "Colorant"
+            case .accelerant: return "Accelerant"
+            }
+        }
     }
 }

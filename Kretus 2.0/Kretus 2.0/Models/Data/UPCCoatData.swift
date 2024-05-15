@@ -18,9 +18,9 @@ final class UPCCoatData {
     var speed: UPCSystemData.Speed
     var covRate: Int
 
-    var partA: ProductData
-    var partB: ProductData
-    var partC: ProductData
+    var partA: KitData
+    var partB: KitData
+    var partC: KitData
 
     var thickness: UPCSystemData.Thickness
 
@@ -28,7 +28,7 @@ final class UPCCoatData {
     var texture1: UPCSystemData.Texture
     var texture2: UPCSystemData.Texture
   
-    init(name: String, squareFt: Int, coatType: UPCSystemData.CoatType, subType: UPCSystemData.SubType, speed: UPCSystemData.Speed, covRate: Int, partA: ProductData, partB: ProductData, partC: ProductData, thickness: UPCSystemData.Thickness, wasteFactor: Int, texture1: UPCSystemData.Texture, texture2: UPCSystemData.Texture) {
+    init(name: String, squareFt: Int, coatType: UPCSystemData.CoatType, subType: UPCSystemData.SubType, speed: UPCSystemData.Speed, covRate: Int, partA: KitData, partB: KitData, partC: KitData, thickness: UPCSystemData.Thickness, wasteFactor: Int, texture1: UPCSystemData.Texture, texture2: UPCSystemData.Texture) {
         self.name = name
         self.squareFt = squareFt
         self.coatType = coatType
