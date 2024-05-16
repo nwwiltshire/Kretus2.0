@@ -49,11 +49,10 @@ struct UPCSaveSystemView: View {
     private func save(upcSystem: UPCSystem) {
         let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kitsNeeded: [])
         
-        //context.append(newSystem)
+        context.insert(newSystem)
         
         // Save the changes to persistent storage
         do {
-            print("here")
           try context.save()
           // Handle success (optional)
         } catch {
