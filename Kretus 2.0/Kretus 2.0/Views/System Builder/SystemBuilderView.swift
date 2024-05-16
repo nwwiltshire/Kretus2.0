@@ -11,32 +11,48 @@ struct SystemBuilderView: View {
     
     // System user will build and summary will be derived from
     @ObservedObject var currentBuild: System
+    
+    @Binding var showEditors: Bool
 
     var body: some View {
-        ScrollView {
-            VStack {
-                // Display System Description
-                Text("Modify the System to your needs, and proceed to specify your Coat Options.")
-                    .font(.subheadline)
-                // Display System Image
-                Image(currentBuild.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
-                // Display System Name
-                Text(currentBuild.name)
-                    .font(.headline)
-                
-                SqftForm(system: currentBuild)
-                
-                if let upcSystem = currentBuild as? UPCSystem {
-                    UPCSystemSuite(upcSystem: upcSystem)
+        VStack {
+            NavigationStack {
+                ScrollView {
+                    VStack {
+                        // Display System Description
+                        Text("Modify the System to your needs, and proceed to specify your Coat Options.")
+                            .font(.subheadline)
+                        // Display System Image
+                        Image(currentBuild.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                        // Display System Name
+                        Text(currentBuild.name)
+                            .font(.headline)
+                        
+                        SqftForm(system: currentBuild)
+                        
+                        if let upcSystem = currentBuild as? UPCSystem {
+                            UPCSystemSuite(upcSystem: upcSystem)
+                        }
+                        
+                    }
+                    .padding(.all)
+                    .navigationTitle("System Options")
                 }
-                
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("\(currentBuild.name) Calculator")
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done", role: .cancel) {
+                            showEditors = false
+                        }
+                    }
+                }
             }
-            .padding(.all)
-            .navigationTitle("System Options")
         }
     }
 }
@@ -48,7 +64,7 @@ struct SystemBuilderView_Previews: PreviewProvider {
         let mockSystem = System.getTestSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        SystemBuilderView(currentBuild: mockSystem)
+        SystemBuilderView(currentBuild: mockSystem, showEditors: .constant(true))
     }
 }
 

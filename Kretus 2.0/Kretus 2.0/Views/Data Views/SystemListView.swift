@@ -27,7 +27,7 @@ struct SystemListView: View {
                     .onDelete(perform: removeSystem)
                 }
             } else {
-                Text("No systems yet!")
+                Text("No saved systems yet!")
             }
         }
     }

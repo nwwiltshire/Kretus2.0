@@ -19,11 +19,14 @@ struct UPCSaveSystemView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Text("Enter a name and description for your system.")
-                TextField("Name", text: $nameFromUser)
-                TextField("Description", text: $descriptionFromUser)
-            }
+                Form {
+                    Text("Enter a name and description for your system.")
+                        .bold()
+                    TextField("Name", text: $nameFromUser)
+                    TextField("Description", text: $descriptionFromUser)
+                    UPCTotalSystem(upcSystem: upcSystem)
+                        .padding()
+                }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Save System")
