@@ -65,7 +65,7 @@ class UPCSystem: System {
         description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
         imageName: "upc1coat-background",
         viewColor: "UPC",
-        squareFt: 0,
+        squareFt: 50,
         kitsNeeded: [Kit()],
         totalWasteFactor: 0
         )

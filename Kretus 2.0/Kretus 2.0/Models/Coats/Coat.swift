@@ -48,18 +48,17 @@ class Coat: ObservableObject {
     }
     
     func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
+      kitsNeeded.removeAll()
+      
+      for product in products {
+        // Calculate quantity using ceil to round up
+        let quantity = Int(ceil(Double(squareFt) / Double(covRate))) + wasteFactor
         
-        kitsNeeded.removeAll()
-        
-        for product in products {
-          
-            // Calculate quantity of kits needed for this product
-            let quantity = (squareFt / covRate) + wasteFactor
-        
-            // Create a Kit object and append it to the kitsNeeded array
-            kitsNeeded.append(Kit(product: product, quantity: quantity))
-        }
+        // Create a Kit object and append it to the kitsNeeded array
+        kitsNeeded.append(Kit(product: product, quantity: quantity))
+      }
     }
+
 
     
     func findProducts(products: [Product]) {
