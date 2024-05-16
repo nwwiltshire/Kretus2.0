@@ -21,7 +21,7 @@ struct SystemGridView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             ScrollView {
         

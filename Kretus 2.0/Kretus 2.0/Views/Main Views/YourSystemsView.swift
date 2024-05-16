@@ -10,16 +10,13 @@ import SwiftData
 
 struct YourSystemsView: View {
     
-    @Query private var systems: [SystemData]
-    
     var body: some View {
-        if !systems.isEmpty {
-                ForEach(systems) { system in
-                    Text(system.nameFromUser)
-                }
-            } else {
-                Text("No Systems yet.")
+        NavigationStack {
+            VStack {
+                SystemListView()
             }
+            .navigationTitle("Your Systems")
+        }
     }
 }
 

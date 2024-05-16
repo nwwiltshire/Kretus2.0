@@ -47,7 +47,7 @@ struct UPCSaveSystemView: View {
     }
     
     private func save(upcSystem: UPCSystem) {
-        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kitsNeeded: [])
+        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kitsNeeded: convertUPCKits(upcKits: upcSystem.kitsNeeded))
         
         context.insert(newSystem)
         
@@ -59,6 +59,18 @@ struct UPCSaveSystemView: View {
           // Handle error (optional)
           print(error.localizedDescription)
         }
+    }
+    
+    private func convertUPCKits(upcKits: [Kit]) -> [KitData] {
+        var convertedKits: [KitData] = []
+        
+        for upcKit in upcKits {
+            let kitData = KitData(id: upcKit.product.id, name: upcKit.product.name, quantity: upcKit.quantity)
+            convertedKits.append(kitData)
+        }
+        
+        return convertedKits
+        
     }
 }
 

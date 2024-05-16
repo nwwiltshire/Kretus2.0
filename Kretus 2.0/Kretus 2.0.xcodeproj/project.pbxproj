@@ -42,6 +42,7 @@
 		30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */; };
 		30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2872A2BAA3D40006D3003 /* KitData.swift */; };
 		30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */; };
+		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
 		30ED659F2B733825001E636D /* SqftForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED659E2B733825001E636D /* SqftForm.swift */; };
 		30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
@@ -85,6 +86,7 @@
 		30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTopCoatSuite.swift; sourceTree = "<group>"; };
 		30B2872A2BAA3D40006D3003 /* KitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitData.swift; sourceTree = "<group>"; };
 		30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSaveSystemView.swift; sourceTree = "<group>"; };
+		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		30ED659E2B733825001E636D /* SqftForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqftForm.swift; sourceTree = "<group>"; };
 		30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatOptions.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
@@ -198,7 +200,6 @@
 		30AC30272B8177590073BB93 /* UPC Suites */ = {
 			isa = PBXGroup;
 			children = (
-				30CC55842BF585CA00B7D409 /* Data Editors */,
 				30AC30342B8441CE0073BB93 /* Suites */,
 				30AC30292B8177E70073BB93 /* Coat Editors */,
 				30AC30282B8177C30073BB93 /* System Editors */,
@@ -255,12 +256,13 @@
 			path = "Main Views";
 			sourceTree = "<group>";
 		};
-		30CC55842BF585CA00B7D409 /* Data Editors */ = {
+		30CC55842BF585CA00B7D409 /* Data Views */ = {
 			isa = PBXGroup;
 			children = (
 				30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */,
+				30CC55872BF6854900B7D409 /* SystemListView.swift */,
 			);
-			path = "Data Editors";
+			path = "Data Views";
 			sourceTree = "<group>";
 		};
 		30F3BA352B5B7A48002EF4B5 /* Products */ = {
@@ -285,6 +287,7 @@
 		30F3BA392B5C9B2B002EF4B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30CC55842BF585CA00B7D409 /* Data Views */,
 				30AC303B2B8690500073BB93 /* Main Views */,
 				30AC30272B8177590073BB93 /* UPC Suites */,
 				303C69862B6B3A0800C58041 /* System Builder */,
@@ -395,6 +398,7 @@
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,
 				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
+				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,

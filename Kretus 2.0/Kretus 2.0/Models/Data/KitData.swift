@@ -13,15 +13,14 @@ final class KitData {
     let id: String
     let name: String
     let quantity: Int
-    let kitType: KitType
         
-    init(id: String, name: String, quantity: Int, kitType: KitType) {
+    init(id: String, name: String, quantity: Int) {
         self.id = id
         self.name = name
         self.quantity = quantity
-        self.kitType = kitType
     }
     
+    // Possibly Implement later
     enum KitType: CaseIterable, Codable, Identifiable, CustomStringConvertible {
         case base, prime, top, texture, colorant, accelerant
         
