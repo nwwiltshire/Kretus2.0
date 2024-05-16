@@ -12,79 +12,81 @@ struct UPCBuildSuite: View {
     
     @ObservedObject var upcSystem: UPCSystem
     
+    //let systemData: UPCSystemData?
+    
+    @State private var isEditing = false
+    
     var body: some View {
-        VStack {
-            Text("\(upcSystem.name)")
-                .font(.title)
+        ScrollView {
+            VStack {
+                VStack {
+                    Text("Total System\n")
+                        .font(.title3)
+                    Text("Square Feet: \(upcSystem.squareFt)")
+                    Text("System Color: \(upcSystem.systemColor)")
+                    Text("\nTotal Kits Needed:")
+                    HStack {
+                        Text("ID")
+                        Spacer()
+                        Text("Name")
+                        Spacer()
+                        Text("Quantity")
+                    }
+                    ForEach(upcSystem.kitsNeeded, id: \.id) { kit in
+                        VStack {
+                            HStack {
+                                Text(kit.product.id)
+                                    .font(.caption)
+                                Spacer()
+                                Text(kit.product.name)
+                                    .font(.caption)
+                                Spacer()
+                                Text(kit.quantity.description)
+                                    .font(.caption)
+                            }
+                        }
+                    }
+                    Text("Total kits from waste factor: \(upcSystem.totalWasteFactor)")
+                }
                 .padding()
-            VStack {
-                Text("Total System\n")
-                    .font(.title3)
-                Text("Square Feet: \(upcSystem.squareFt)")
-                Text("System Color: \(upcSystem.systemColor)")
-                Text("\nTotal Kits Needed:")
-                HStack {
-                    Text("ID")
-                    Spacer()
-                    Text("Name")
-                    Spacer()
-                    Text("Quantity")
-                }
-                ForEach(upcSystem.kitsNeeded, id: \.id) { kit in
-                            VStack {
-                                HStack {
-                                    Text(kit.product.id)
-                                        .font(.caption)
-                                    Spacer()
-                                    Text(kit.product.name)
-                                        .font(.caption)
-                                    Spacer()
-                                    Text(kit.quantity.description)
-                                        .font(.caption)
-                                }
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(upcSystem.viewColor).opacity(0.25))
+                )
+                VStack {
+                    Text("Base Coat")
+                        .font(.title3)
+                    Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
+                    Text("Thickness: \(upcSystem.baseCoat.thickness)")
+                    Text("\nKits Needed:")
+                    HStack {
+                        Text("ID")
+                        Spacer()
+                        Text("Name")
+                        Spacer()
+                        Text("Quantity")
+                    }
+                    ForEach(upcSystem.baseCoat.kitsNeeded, id: \.id) { kit in
+                        VStack {
+                            HStack {
+                                Text(kit.product.id)
+                                    .font(.caption)
+                                Spacer()
+                                Text(kit.product.name)
+                                    .font(.caption)
+                                Spacer()
+                                Text(kit.quantity.description)
+                                    .font(.caption)
                             }
                         }
-                Text("Total kits from waste factor: \(upcSystem.totalWasteFactor)")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(upcSystem.viewColor).opacity(0.25))
-            )
-            VStack {
-                Text("Base Coat")
-                    .font(.title3)
-                Text("Coverage Rate: \(upcSystem.baseCoat.covRate)")
-                Text("Thickness: \(upcSystem.baseCoat.thickness)")
-                Text("\nKits Needed:")
-                HStack {
-                    Text("ID")
-                    Spacer()
-                    Text("Name")
-                    Spacer()
-                    Text("Quantity")
+                    }
+                    Text("Kits from waste factor: \(upcSystem.baseCoat.wasteFactor)")
                 }
-                ForEach(upcSystem.baseCoat.kitsNeeded, id: \.id) { kit in
-                            VStack {
-                                HStack {
-                                    Text(kit.product.id)
-                                        .font(.caption)
-                                    Spacer()
-                                    Text(kit.product.name)
-                                        .font(.caption)
-                                    Spacer()
-                                    Text(kit.quantity.description)
-                                        .font(.caption)
-                                }
-                            }
-                        }
-                Text("Kits from waste factor: \(upcSystem.baseCoat.wasteFactor)")
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(upcSystem.viewColor).opacity(0.25))
-            )
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(upcSystem.viewColor).opacity(0.25))
+                )
                 if ((upcSystem.primeCoat) != nil) {
                     VStack {
                         Text("Prime Coat")
@@ -101,19 +103,19 @@ struct UPCBuildSuite: View {
                         }
                         
                         ForEach(upcSystem.primeCoat!.kitsNeeded, id: \.id) { kit in
-                                    VStack {
-                                        HStack {
-                                            Text(kit.product.id)
-                                                .font(.caption)
-                                            Spacer()
-                                            Text(kit.product.name)
-                                                .font(.caption)
-                                            Spacer()
-                                            Text(kit.quantity.description)
-                                                .font(.caption)
-                                        }
-                                    }
+                            VStack {
+                                HStack {
+                                    Text(kit.product.id)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.product.name)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.quantity.description)
+                                        .font(.caption)
                                 }
+                            }
+                        }
                         Text("Kits from waste factor: \(upcSystem.primeCoat!.wasteFactor)")
                     }
                     .padding()
@@ -122,45 +124,69 @@ struct UPCBuildSuite: View {
                             .fill(Color(upcSystem.viewColor).opacity(0.25))
                     )
                 }
-            
-            if ((upcSystem.topCoat) != nil) {
-                VStack {
-                    Text("Top Coat")
-                        .font(.title3)
-                    Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
-                    Text("Thickness: \(upcSystem.topCoat!.thickness)")
-                    Text("\nKits Needed:")
-                    HStack {
-                        Text("ID")
-                        Spacer()
-                        Text("Name")
-                        Spacer()
-                        Text("Quantity")
-                    }
-                    
-                    ForEach(upcSystem.topCoat!.kitsNeeded, id: \.id) { kit in
-                                VStack {
-                                    HStack {
-                                        Text(kit.product.id)
-                                            .font(.caption)
-                                        Spacer()
-                                        Text(kit.product.name)
-                                            .font(.caption)
-                                        Spacer()
-                                        Text(kit.quantity.description)
-                                            .font(.caption)
-                                    }
+                
+                if ((upcSystem.topCoat) != nil) {
+                    VStack {
+                        Text("Top Coat")
+                            .font(.title3)
+                        Text("Coverage Rate: \(upcSystem.topCoat!.covRate)")
+                        Text("Thickness: \(upcSystem.topCoat!.thickness)")
+                        Text("\nKits Needed:")
+                        HStack {
+                            Text("ID")
+                            Spacer()
+                            Text("Name")
+                            Spacer()
+                            Text("Quantity")
+                        }
+                        
+                        ForEach(upcSystem.topCoat!.kitsNeeded, id: \.id) { kit in
+                            VStack {
+                                HStack {
+                                    Text(kit.product.id)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.product.name)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kit.quantity.description)
+                                        .font(.caption)
                                 }
                             }
-                    Text("Kits from waste factor: \(upcSystem.topCoat!.wasteFactor)")
+                        }
+                        Text("Kits from waste factor: \(upcSystem.topCoat!.wasteFactor)")
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(upcSystem.viewColor).opacity(0.25))
+                    )
                 }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(upcSystem.viewColor).opacity(0.25))
-                )
             }
+            Button(action: {
+                isEditing = true
+            }) {
+                HStack {
+                    Text("Save System")
+                        .font(.title)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.up")
+                        .padding()
+                }
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
+
         }
+        .navigationTitle(upcSystem.name)
+        .sheet(isPresented: $isEditing) {
+            UPCSaveSystemView(upcSystem: upcSystem)
+        }
+        
     }
     
 }

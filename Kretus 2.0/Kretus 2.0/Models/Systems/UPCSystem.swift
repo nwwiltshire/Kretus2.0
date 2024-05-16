@@ -22,8 +22,7 @@ class UPCSystem: System {
     @Published var topCoat: UPCCoat?
     @Published var uvResistance: Bool
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          description: String,
          imageName: String,
          viewColor: String,
@@ -48,7 +47,7 @@ class UPCSystem: System {
         self.topCoat = topCoat
         self.uvResistance = uvResistance
         
-        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
+        super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
     }
     
@@ -62,7 +61,6 @@ class UPCSystem: System {
         self.uvResistance = false
         
         super.init(
-        id: 0,
         name: "UPC 1-Coat",
         description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
         imageName: "upc1coat-background",
@@ -176,7 +174,6 @@ class UPCSystem: System {
 
     override func printSystemTest() -> String {
         var output = ""
-        output += "System ID: \(id)\n"
         output += "System Name: \(name)\n"
         output += "Description: \(description)\n"
         output += "Image Name: \(imageName)\n"

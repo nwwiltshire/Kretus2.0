@@ -7,9 +7,8 @@
 import Combine
 import Foundation
 
-class System: ObservableObject {
-    
-    let id: Int
+class System: ObservableObject, Identifiable {
+
     let name: String
     let description: String
     let imageName: String
@@ -19,8 +18,7 @@ class System: ObservableObject {
     @Published var kitsNeeded: [Kit]
     @Published var totalWasteFactor: Int
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          description: String,
          imageName: String,
          viewColor: String,
@@ -28,7 +26,6 @@ class System: ObservableObject {
          kitsNeeded: [Kit],
          totalWasteFactor: Int)
          {
-        self.id = id
         self.name = name
         self.description = description
         self.imageName = imageName
@@ -53,7 +50,6 @@ class System: ObservableObject {
     func printSystemTest() -> String {
         
         var output = ""
-        output += "System ID: \(id)\n"
         output += "System Name: \(name)\n"
         output += "Description: \(description)\n"
         output += "Image Name: \(imageName)\n"

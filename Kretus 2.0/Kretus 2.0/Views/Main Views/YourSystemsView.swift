@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct YourSystemsView: View {
+    
+    @Query private var systems: [SystemData]
+    
     var body: some View {
-        VStack {
-            Text("Your Systems")
-        }
-        .padding()
+        if !systems.isEmpty {
+                ForEach(systems) { system in
+                    Text(system.nameFromUser)
+                }
+            } else {
+                Text("No Systems yet.")
+            }
     }
 }
 

@@ -17,31 +17,23 @@ struct UPCBuildSubmitButton: View {
     @State private var printedText: String? = nil
     
     var body: some View {
-        
-        Button(action: {
-            showSheet.toggle()
-            upcSystem.getAllKits()
-        }) {
-            HStack {
-              Text("View System")
-                .font(.title)
-                .padding()
-              
-              Spacer()
-                
-              Image(systemName: "chevron.up")
+        NavigationLink(destination: UPCBuildSuite(upcSystem: upcSystem)
+            .onAppear {
+                upcSystem.getAllKits()
+            }) {
+                HStack {
+                  Text("View System Calculation")
+                    .font(.title)
                     .padding()
-            }
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-        }
-        .sheet(isPresented: $showSheet) {
-            ScrollView {
-                UPCBuildSuite(upcSystem: upcSystem)
-            }
-            Button("Dismiss", action: { showSheet.toggle() })
-                .padding()
+                  
+                  Spacer()
+                    
+                  Image(systemName: "chevron.right")
+                        .padding()
+                }
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
         }
     }
 }
