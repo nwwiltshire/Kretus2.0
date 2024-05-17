@@ -40,52 +40,6 @@ struct SystemListView: View {
     }
 }
 
-struct DetailView: View {
-  let system: SystemData
-
-    var body: some View {
-        NavigationStack {
-            VStack {
-                Text("System Type: \(system.name)")
-                    .font(.headline)
-                Text("Description: \(system.descriptionFromUser)")
-                Text("Square Feet: \(system.squareFt)")
-                Text("System Color: \(system.systemColor)")
-                VStack {
-                    Text("\nTotal Kits Needed:")
-                    HStack {
-                        Text("ID")
-                        Spacer()
-                        Text("Name")
-                        Spacer()
-                        Text("Quantity")
-                    }
-                    ForEach(system.kitsNeeded, id: \.id) { kit in
-                        VStack {
-                            HStack {
-                                Text(kit.id)
-                                    .font(.caption)
-                                Spacer()
-                                Text(kit.name)
-                                    .font(.caption)
-                                Spacer()
-                                Text(kit.quantity.description)
-                                    .font(.caption)
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(system.viewColor).opacity(0.25))
-                )
-            }
-            .navigationTitle(system.nameFromUser)
-        }
-    }
-}
-
 struct SystemListView_Previews: PreviewProvider {
   static var previews: some View {
     SystemListView()

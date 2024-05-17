@@ -13,6 +13,14 @@ struct YourSystemsView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                HStack {
+                    Text("View your saved systems here.")
+                        .multilineTextAlignment(.leading)
+                        .font(.subheadline)
+                        .padding()
+                    
+                    Spacer()
+                }
                 SystemListView()
             }
             .navigationTitle("Your Systems")
