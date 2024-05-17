@@ -13,6 +13,7 @@ struct UPCSystemSuite: View {
     @ObservedObject var upcSystem: UPCSystem
     
     var body: some View {
+        
         VStack {
             UPCCoatOptions(upcSystem: upcSystem)
             UPCSubSystemPicker(upcSystem: upcSystem)

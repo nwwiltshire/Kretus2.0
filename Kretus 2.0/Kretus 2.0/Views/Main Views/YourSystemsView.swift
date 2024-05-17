@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct YourSystemsView: View {
+    
     var body: some View {
-        VStack {
-            Text("Your Systems")
+        NavigationStack {
+            HStack {
+                Text("View your saved systems here.")
+                    .font(.subheadline)
+                    .padding()
+            }
+            VStack {
+                SystemListView()
+            }
+            .navigationTitle("Your Systems")
         }
-        .padding()
     }
 }
 

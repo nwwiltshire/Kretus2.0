@@ -18,10 +18,12 @@ struct SystemGridView: View {
             
         ]
     
+    @State public var showEditors = false
+    
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             ScrollView {
         
@@ -41,7 +43,9 @@ struct SystemGridView: View {
                         
                         // Populates Grid
                         ForEach(systems, id: \.id) { system in
-                            NavigationLink(destination: SystemBuilderView(currentBuild: system)) {
+                            Button(action: {
+                                showEditors = true
+                            }) {
                                 
                                 // Grid Elements
                                 VStack {
@@ -67,12 +71,15 @@ struct SystemGridView: View {
                                 .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
                                 
                             }
-                        }
-                    }
+                            .sheet(isPresented: $showEditors) {
+                                SystemBuilderView(currentBuild: system, showEditors: $showEditors)
+                                }
+                            }
                     .padding(.all)
                     
                 }
-                .navigationTitle("System Builder")
+                .navigationTitle("System Calculator")
+                }
             }
         }
     }

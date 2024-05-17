@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
+
 
 class UPCSystem: System {
     
@@ -20,13 +22,12 @@ class UPCSystem: System {
     @Published var topCoat: UPCCoat?
     @Published var uvResistance: Bool
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          description: String,
          imageName: String,
          viewColor: String,
          squareFt: Int,
-         totalkitsNeeded: [Kit],
+         kitsNeeded: [Kit],
          availableSubTypes: [SubType],
          availableSystemColors: [SystemColor],
          subType: SubType,
@@ -34,7 +35,8 @@ class UPCSystem: System {
          baseCoat: UPCCoat,
          primeCoat: UPCCoat,
          topCoat: UPCCoat,
-         uvResistance: Bool) {
+         uvResistance: Bool,
+         totalWasteFactor: Int) {
         
         self.availableSubTypes = availableSubTypes
         self.availableSystemColors = availableSystemColors
@@ -45,7 +47,7 @@ class UPCSystem: System {
         self.topCoat = topCoat
         self.uvResistance = uvResistance
         
-        super.init(id: id, name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, totalkitsNeeded: totalkitsNeeded)
+        super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
     }
     
@@ -59,13 +61,13 @@ class UPCSystem: System {
         self.uvResistance = false
         
         super.init(
-        id: 0,
         name: "UPC 1-Coat",
         description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
         imageName: "upc1coat-background",
         viewColor: "UPC",
-        squareFt: 0,
-        totalkitsNeeded: []
+        squareFt: 50,
+        kitsNeeded: [Kit()],
+        totalWasteFactor: 0
         )
     }
     
@@ -83,6 +85,8 @@ class UPCSystem: System {
             }
         }
     }
+    
+    // Hardeners ^^^
     
     enum SystemColor: CaseIterable, Identifiable, CustomStringConvertible {
         case unpigmented, black, blue, bone, brown, clay, gray, green, mustard, red
@@ -170,26 +174,28 @@ class UPCSystem: System {
 
     override func printSystemTest() -> String {
         var output = ""
-        output += "System ID: \(id)\n"
         output += "System Name: \(name)\n"
         output += "Description: \(description)\n"
         output += "Image Name: \(imageName)\n"
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
-        output += "Total Kits Needed: \(totalkitsNeeded)\n"
+        output += "Total Kits Needed: \(kitsNeeded)\n"
         output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Available System Colors: \(availableSystemColors)\n"
         output += "Sub Type: \(subType)\n"
         output += "System Color: \(systemColor)\n"
+        baseCoat.setValues()
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
+            primeCoat.setValues()
             output += "\nPrime Coat:\n\n\(primeCoat.printCoatTest())\n"
         } else {
             output += "\nPrime Coat: None\n"
         }
         
         if let topCoat = topCoat {
+            topCoat.setValues()
             output += "\nTop Coat:\n\n\(topCoat.printCoatTest())\n"
         } else {
             output += "\nTop Coat: None\n"
@@ -198,6 +204,59 @@ class UPCSystem: System {
         output += "UV Resistance: \(uvResistance ? "Yes" : "No")\n"
         return output
     }
+
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> UPCCoat {
+        let upcCoat = UPCCoat()
+        upcCoat.squareFt = squareFt
+        upcCoat.coatType = coatType
+        upcCoat.subType = subType
+        upcCoat.coatColor = coatColor
+        
+        if (subType != .rc) {
+            upcCoat.thickness = .thin
+        }
+        
+        if (coatType == .top && uvResistance == true) {
+            upcCoat.uvResistance = true
+        }
+        
+        return upcCoat
+      }
+    
+    override func getAllKits() {
+        kitsNeeded.removeAll()
+        totalWasteFactor = 0
+        baseCoat.setValues()
+        updateKits(with: baseCoat.kitsNeeded)
+        totalWasteFactor += baseCoat.wasteFactor
+
+        if let primeCoat = primeCoat {
+            primeCoat.setValues()
+            updateKits(with: primeCoat.kitsNeeded)
+            totalWasteFactor += primeCoat.wasteFactor
+        }
+
+        if let topCoat = topCoat {
+            topCoat.setValues()
+            updateKits(with: topCoat.kitsNeeded)
+            totalWasteFactor += topCoat.wasteFactor
+        }
+    }
+
+    func updateKits(with newKits: [Kit]) {
+      for kit in newKits {
+        // Check if a kit with the same product ID already exists
+        let existingKitIndex = kitsNeeded.firstIndex(where: { $0.product.id == kit.product.id })
+        if let existingIndex = existingKitIndex {
+          // Update the quantity of the existing kit
+          kitsNeeded[existingIndex].quantity += kit.quantity
+        } else {
+          // Add the new kit to kitsNeeded
+          kitsNeeded.append(kit)
+        }
+      }
+    }
+
 
     
 }

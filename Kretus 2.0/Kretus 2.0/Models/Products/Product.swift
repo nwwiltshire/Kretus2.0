@@ -7,17 +7,9 @@
 
 import Foundation
 
-struct Product: Codable {
+struct Product: Codable, Identifiable {
     
     var id: String = "Default"
     var name: String = "Default"
 
 }
-
-struct Kit {
-    
-    var product: Product
-    var quantity: Int = 0
-    
-}
-

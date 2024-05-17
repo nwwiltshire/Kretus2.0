@@ -10,27 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            HomeView()
-                .tabItem() {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
             SystemGridView()
                 .tabItem() {
-                    Image(systemName: "hammer")
-                    Text("System Builder")
-                }
-            SelectLineView()
-                .tabItem() {
-                    Image(systemName: "shippingbox")
-                    Text("Select Line")
+                    Image(systemName: "plusminus.circle.fill")
+                    Text("Calculator")
                 }
             YourSystemsView()
                 .tabItem() {
                     Image(systemName: "folder")
                     Text("Your Systems")
                 }
-            DocumentationView()
+            SelectLineView()
+                .tabItem() {
+                    Image(systemName: "shippingbox")
+                    Text("Select Line")
+                }
+            InformationView()
                 .tabItem() {
                     Image(systemName: "magazine")
                     Text("Info")

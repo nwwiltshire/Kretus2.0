@@ -20,8 +20,7 @@ struct SqftForm: View {
                 .font(.headline)
                 .padding()
             
-            TextField("Enter Square Feet", value: $system.squareFt, formatter: NumberFormatter())
-                .keyboardType(.numberPad)
+            TextField("Enter Square Feet", value: $system.squareFt, format: .number)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
@@ -33,14 +32,7 @@ struct SqftForm: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color(system.viewColor).opacity(0.25))
         )
-        .onTapGesture {
-            hideKeyboard()
-        }
     }
-}
-
-func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }
 
 

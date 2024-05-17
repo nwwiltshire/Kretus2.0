@@ -10,20 +10,27 @@ import Foundation
 class Coat: ObservableObject {
     
     let id: Int
-    let name: String
+    var name: String
+    var squareFt: Int
     
     @Published var productsNeeded: [Product]
     @Published var kitsNeeded: [Kit]
     
+    @Published var wasteFactor: Int
+    
     init(id: Int,
          name: String,
+         squareFt: Int,
          productsNeeded: [Product],
-         kitsNeeded: [Kit]) {
+         kitsNeeded: [Kit],
+         wasteFactor: Int) {
         
         self.id = id
         self.name = name
+        self.squareFt = squareFt
         self.productsNeeded = productsNeeded
         self.kitsNeeded = kitsNeeded
+        self.wasteFactor = wasteFactor
         
     }
     
@@ -32,27 +39,37 @@ class Coat: ObservableObject {
         var output = ""
         output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
+        output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"
         output += "Kits Needed: \(kitsNeeded)\n"
+        output += "Waste Factor: \(wasteFactor)\n"
         return output
         
     }
     
-    func findProductsABC() {
+    func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
+      kitsNeeded.removeAll()
+      
+      for product in products {
+        // Calculate quantity using ceil to round up
+        let quantity = Int(ceil(Double(squareFt) / Double(covRate))) + wasteFactor
         
-        // switch to find products
+        // Create a Kit object and append it to the kitsNeeded array
+        kitsNeeded.append(Kit(product: product, quantity: quantity))
+      }
+    }
+
+
+    
+    func findProducts(products: [Product]) {
+        
+        // Switch to find products
         
     }
     
-    func findProductsColorant() {
+    func setValues() {
         
-        // switch to find products
-        
-    }
-    
-    func calcKits(squareFeet: Int) {
-        
-        // This will replace quant function
+        // Call necessary functions to properly set coat values
         
     }
 }

@@ -15,6 +15,9 @@ struct CoatEditorView: View {
     var body: some View {
         VStack {
             ScrollView {
+                Text("Modify the coats to your needs, and proceed to view your calculated System.")
+                    .font(.subheadline)
+                
                 UPCBaseCoatSuite(upcCoat: upcSystem.baseCoat)
                 
                 if (upcSystem.primeCoat != nil) {
@@ -24,20 +27,12 @@ struct CoatEditorView: View {
                 if (upcSystem.topCoat != nil) {
                     UPCTopCoatSuite(upcCoat: upcSystem.topCoat!)
                 }
+                
+                UPCBuildSubmitButton(upcSystem: upcSystem)
             }
             .padding(.all)
-            .navigationTitle("System Options")
-            
-            Button(action: {
-                testOutput = upcSystem.printSystemTest()
-            }) {
-                Text("Print System Test")
-            }
-            ScrollView {
-                Text(testOutput)
-            }
-            
         }
+        .navigationTitle("Coat Options")
     }
 }
 
