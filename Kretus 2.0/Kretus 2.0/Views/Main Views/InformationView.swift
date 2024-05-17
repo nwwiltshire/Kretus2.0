@@ -10,11 +10,11 @@ import PDFKit
 import Foundation
 
 
-struct DocumentationView: View {
+struct InformationView: View {
     
     @State var hierarchy: [PDFUrl.PDFGroup: [PDFUrl.PDFType: [PDFUrl]]] = [:]
     
-    let groupedByGroup = Dictionary(grouping: Kretus_2_0App.pdfURLS, by: { $0.group })
+    let groupedByGroup = Dictionary(grouping: DetailView.pdfURLS, by: { $0.group })
     
     var body: some View {
         NavigationStack {
@@ -37,7 +37,7 @@ struct DocumentationView: View {
                     }
                 }
             }
-            .navigationTitle("Documentation")
+            .navigationTitle("Information")
         }
         .onAppear() {
             
@@ -70,8 +70,8 @@ struct PDFTypeView: View {
     }
 }
 
-struct DocumentationView_Previews: PreviewProvider {
+struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
-        DocumentationView()
+        InformationView()
     }
 }

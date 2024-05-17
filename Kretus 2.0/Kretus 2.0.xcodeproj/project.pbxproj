@@ -30,7 +30,7 @@
 		302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCColorPicker.swift */; };
 		302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F02BF7F200005CC281 /* KitRelationship.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
-		303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* DocumentationView.swift */; };
+		303C697D2B6B094900C58041 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* InformationView.swift */; };
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
 		303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69872B6B3A2600C58041 /* SystemBuilderView.swift */; };
 		303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */; };
@@ -64,7 +64,7 @@
 		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
 		30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */; };
 		30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */; };
-		30CC55912BF6C45E00B7D409 /* UPC-Installation-Guide.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55902BF6C45E00B7D409 /* UPC-Installation-Guide.pdf */; };
+		30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */; };
 		30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55932BF6C57700B7D409 /* PDFUrl.swift */; };
 		30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55952BF6C73100B7D409 /* DetailView.swift */; };
 		30CC55982BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */; };
@@ -98,7 +98,7 @@
 		302E56802B7211BC0063EB5C /* UPCColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorPicker.swift; sourceTree = "<group>"; };
 		302F51F02BF7F200005CC281 /* KitRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitRelationship.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
-		303C697C2B6B094900C58041 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
+		303C697C2B6B094900C58041 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
 		303C69872B6B3A2600C58041 /* SystemBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBuilderView.swift; sourceTree = "<group>"; };
 		303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatEditorView.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTotalSystem.swift; sourceTree = "<group>"; };
 		30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
-		30CC55902BF6C45E00B7D409 /* UPC-Installation-Guide.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-Installation-Guide.pdf"; path = "../../../../../../Downloads/UPC-Installation-Guide.pdf"; sourceTree = "<group>"; };
+		30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-IG.pdf"; path = "../../../../../../Downloads/UPC-IG.pdf"; sourceTree = "<group>"; };
 		30CC55932BF6C57700B7D409 /* PDFUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFUrl.swift; sourceTree = "<group>"; };
 		30CC55952BF6C73100B7D409 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-SDS-Colorant.pdf"; path = "../../../../../../Downloads/UPC-SDS-Colorant.pdf"; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 				302A6C452BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf */,
 				302A6C432BF6F39A00706714 /* UPC-TDS-WC-FC.pdf */,
 				309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */,
-				30CC55902BF6C45E00B7D409 /* UPC-Installation-Guide.pdf */,
+				30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */,
 				30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */,
 			);
 			path = PDFs;
@@ -330,7 +330,7 @@
 			children = (
 				30F3BA3A2B5C9B50002EF4B5 /* SystemGridView.swift */,
 				303C697A2B6B091F00C58041 /* SelectLineView.swift */,
-				303C697C2B6B094900C58041 /* DocumentationView.swift */,
+				303C697C2B6B094900C58041 /* InformationView.swift */,
 				303C697E2B6B0CA200C58041 /* YourSystemsView.swift */,
 				3086DDE62B8693AD00B94B38 /* HomeView.swift */,
 				3086DDE82B86953200B94B38 /* Splash View.swift */,
@@ -457,7 +457,7 @@
 				302A6C5F2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf in Resources */,
 				302A6C562BF6F39A00706714 /* UPC-TDS-RC-FC.pdf in Resources */,
 				30CC55982BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf in Resources */,
-				30CC55912BF6C45E00B7D409 /* UPC-Installation-Guide.pdf in Resources */,
+				30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */,
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
 				302A6C592BF6F39A00706714 /* UPC-TDS-RC-AP.pdf in Resources */,
 				302A6C5C2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf in Resources */,
@@ -510,7 +510,7 @@
 				30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */,
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
 				30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */,
-				303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */,
+				303C697D2B6B094900C58041 /* InformationView.swift in Sources */,
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,

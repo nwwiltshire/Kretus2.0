@@ -15,22 +15,30 @@ struct SystemListView: View {
 
     var body: some View {
         NavigationStack {
-            if (!systems.isEmpty) {
+            if !systems.isEmpty {
+                let groupedSystems = Dictionary(grouping: systems, by: { $0.name })
                 List {
-                    ForEach(systems) { system in
-                        NavigationLink(
-                            destination: DetailView(system: system),
-                            label: {
-                                Text(system.nameFromUser)
+                    ForEach(groupedSystems.keys.sorted(), id: \.self) { key in
+                        Section(header: Text(key)) {
+                            ForEach(groupedSystems[key]!, id: \.id) { system in
+                                NavigationLink(
+                                    destination: DetailView(system: system),
+                                    label: {
+                                        Text(system.nameFromUser)
+                                    }
+                                )
                             }
-                        )}
+                        }
+                    }
                     .onDelete(perform: removeSystem)
                 }
             } else {
                 Text("No saved systems yet!")
             }
+
         }
     }
+    
     
     private func removeSystem(at indexSet: IndexSet) {
         for index in indexSet {

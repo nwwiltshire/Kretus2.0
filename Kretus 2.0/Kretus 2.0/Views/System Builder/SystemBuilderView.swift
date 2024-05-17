@@ -46,8 +46,8 @@ struct SystemBuilderView: View {
                     ToolbarItem(placement: .principal) {
                         Text("\(currentBuild.name) Calculator")
                     }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Done", role: .cancel) {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", role: .cancel) {
                             showEditors = false
                         }
                     }

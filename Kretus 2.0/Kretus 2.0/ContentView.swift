@@ -25,7 +25,7 @@ struct ContentView: View {
                     Image(systemName: "shippingbox")
                     Text("Select Line")
                 }
-            DocumentationView()
+            InformationView()
                 .tabItem() {
                     Image(systemName: "magazine")
                     Text("Info")
