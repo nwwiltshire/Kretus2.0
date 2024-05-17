@@ -50,7 +50,9 @@ struct UPCSaveSystemView: View {
     }
     
     private func save(upcSystem: UPCSystem) {
-        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kitsNeeded: convertUPCKits(upcKits: upcSystem.kitsNeeded))
+        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertUPCKits(systemData: newSystem, upcKits: upcSystem.kitsNeeded)
         
         context.insert(newSystem)
         
@@ -64,16 +66,16 @@ struct UPCSaveSystemView: View {
         }
     }
     
-    private func convertUPCKits(upcKits: [Kit]) -> [KitData] {
-        var convertedKits: [KitData] = []
-        
-        for upcKit in upcKits {
-            let kitData = KitData(id: upcKit.product.id, name: upcKit.product.name, quantity: upcKit.quantity)
-            convertedKits.append(kitData)
-        }
-        
-        return convertedKits
-        
+    private func convertUPCKits(systemData: SystemData, upcKits: [Kit]) -> [KitRelationship] {
+      var convertedKits: [KitRelationship] = []
+
+      for upcKit in upcKits {
+        let kitData = KitData(id: upcKit.product.id, name: upcKit.product.name, quantity: upcKit.quantity)
+        let relationship = KitRelationship(systemData: systemData, kit: kitData)
+        convertedKits.append(relationship)
+      }
+
+      return convertedKits
     }
 }
 

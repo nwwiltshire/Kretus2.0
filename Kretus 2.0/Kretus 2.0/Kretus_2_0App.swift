@@ -16,6 +16,7 @@ struct Kretus_2_0App: App {
             SplashView()
         }
         .modelContainer(for: SystemData.self)
+        
     }
     
     static var pdfURLS: [PDFUrl] = [PDFUrl(url: Bundle.main.url(forResource: "Kretus-Product-Catalog", withExtension: "pdf")!, title: "Product Catalog", group: .general, type: .general),

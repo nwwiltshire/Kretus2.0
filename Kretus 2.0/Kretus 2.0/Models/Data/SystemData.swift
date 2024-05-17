@@ -21,9 +21,9 @@ final class SystemData {
     var systemColor: String
 
     var squareFt: Int
-    var kitsNeeded: [KitData]
+    var kits: [KitRelationship]
 
-    init(name: String, nameFromUser: String, descriptionFromUser: String, imageName: String, viewColor: String, subType: String, systemColor: String, squareFt: Int, kitsNeeded: [KitData]) {
+    init(name: String, nameFromUser: String, descriptionFromUser: String, imageName: String, viewColor: String, subType: String, systemColor: String, squareFt: Int, kits: [KitRelationship]) {
         self.name = name
         self.nameFromUser = nameFromUser
         self.descriptionFromUser = descriptionFromUser
@@ -32,7 +32,7 @@ final class SystemData {
         self.subType = subType
         self.systemColor = systemColor
         self.squareFt = squareFt
-        self.kitsNeeded = kitsNeeded
+        self.kits = kits
     }
 }
 

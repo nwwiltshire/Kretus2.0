@@ -33,16 +33,16 @@ struct DetailView: View {
                         Spacer()
                         Text("Quantity")
                     }
-                    ForEach(system.kitsNeeded, id: \.id) { kit in
+                    ForEach(system.kits, id: \.id) { kitRelationship in
                         VStack {
                             HStack {
-                                Text(kit.id)
+                                Text(kitRelationship.kit.id)
                                     .font(.caption)
                                 Spacer()
-                                Text(kit.name)
+                                Text(kitRelationship.kit.name)
                                     .font(.caption)
                                 Spacer()
-                                Text(kit.quantity.description)
+                                Text(kitRelationship.kit.quantity.description)
                                     .font(.caption)
                             }
                         }

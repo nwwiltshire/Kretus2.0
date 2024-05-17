@@ -28,6 +28,7 @@
 		302A6C632BF6F39A00706714 /* UPC-TDS-SL-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C512BF6F39A00706714 /* UPC-TDS-SL-FC.pdf */; };
 		302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */; };
 		302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCColorPicker.swift */; };
+		302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F02BF7F200005CC281 /* KitRelationship.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
 		303C697D2B6B094900C58041 /* DocumentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* DocumentationView.swift */; };
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
@@ -95,6 +96,7 @@
 		302A6C512BF6F39A00706714 /* UPC-TDS-SL-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-SL-FC.pdf"; sourceTree = "<group>"; };
 		302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSubSystemPicker.swift; sourceTree = "<group>"; };
 		302E56802B7211BC0063EB5C /* UPCColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorPicker.swift; sourceTree = "<group>"; };
+		302F51F02BF7F200005CC281 /* KitRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitRelationship.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
 		303C697C2B6B094900C58041 /* DocumentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationView.swift; sourceTree = "<group>"; };
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				3019218B2B89362F009DB65C /* SystemData.swift */,
 				30B2872A2BAA3D40006D3003 /* KitData.swift */,
+				302F51F02BF7F200005CC281 /* KitRelationship.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
+				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,
 				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */,
