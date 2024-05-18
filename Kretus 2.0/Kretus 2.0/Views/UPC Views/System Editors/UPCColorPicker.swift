@@ -25,7 +25,7 @@ struct UPCColorPicker: View {
         VStack {
             DisclosureGroup("Choose System Color") {
                 LazyVGrid(columns: layout, spacing: 20) {
-                    ForEach(upcSystem.availableSystemColors, id: \.self) { color in
+                    ForEach(UPCSystem.SystemColor.allCases, id: \.self) { color in
                         Button(action: {
                             self.selectedColor = color
                             upcSystem.systemColor = selectedColor

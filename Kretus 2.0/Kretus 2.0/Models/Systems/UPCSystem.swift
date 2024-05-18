@@ -12,9 +12,6 @@ import SwiftData
 
 class UPCSystem: System {
     
-    let availableSubTypes: [SubType]
-    let availableSystemColors: [SystemColor]
-    
     @Published var subType: SubType
     @Published var systemColor: SystemColor
     @Published var baseCoat: UPCCoat
@@ -28,8 +25,6 @@ class UPCSystem: System {
          viewColor: String,
          squareFt: Int,
          kitsNeeded: [Kit],
-         availableSubTypes: [SubType],
-         availableSystemColors: [SystemColor],
          subType: SubType,
          systemColor: SystemColor,
          baseCoat: UPCCoat,
@@ -38,8 +33,6 @@ class UPCSystem: System {
          uvResistance: Bool,
          totalWasteFactor: Int) {
         
-        self.availableSubTypes = availableSubTypes
-        self.availableSystemColors = availableSystemColors
         self.subType = subType
         self.systemColor = systemColor
         self.baseCoat = baseCoat
@@ -52,9 +45,6 @@ class UPCSystem: System {
     }
     
     init() {
-        
-        self.availableSubTypes = [.rc, .tt, .sl, .mf]
-        self.availableSystemColors = [.unpigmented, .black, .blue, .bone, .brown, .clay, .gray, .green, .mustard, .red]
         self.subType = .rc
         self.systemColor = .unpigmented
         self.baseCoat = UPCCoat()
@@ -180,8 +170,6 @@ class UPCSystem: System {
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Total Kits Needed: \(kitsNeeded)\n"
-        output += "Available Sub Types: \(availableSubTypes)\n"
-        output += "Available System Colors: \(availableSystemColors)\n"
         output += "Sub Type: \(subType)\n"
         output += "System Color: \(systemColor)\n"
         baseCoat.setValues()
