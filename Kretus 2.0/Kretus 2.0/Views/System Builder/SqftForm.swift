@@ -10,30 +10,31 @@ import SwiftUI
 import UIKit
 
 struct SqftForm: View {
-    
     @ObservedObject var system: System
-    
+
     var body: some View {
         VStack {
-            
-            Text("Total Square Feet:")
+        Text("Total Square Feet:")
                 .font(.headline)
                 .padding()
-            
-            TextField("Enter Square Feet", value: $system.squareFt, format: .number)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(.white).opacity(0.25))
-                )
+
+        TextField("Enter Square Feet", value: Binding(get: { system.squareFt }, set: { newValue in
+        system.squareFt = newValue
+        }), format: .number)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color(.white).opacity(0.25))
+            )
         }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color(system.viewColor).opacity(0.25))
-        )
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color(system.viewColor).opacity(0.25))
+            )
     }
 }
+
 
 
 

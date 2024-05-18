@@ -61,7 +61,8 @@ struct PDFTypeView: View {
                     .padding()
             }
             ForEach(pdfUrls, id: \.id) { pdfUrl in
-                NavigationLink(destination: PDFViewer(url: pdfUrl.url)) {
+                NavigationLink(destination: PDFViewer(url: pdfUrl.url)
+                    .navigationTitle("PDF Viewer")) {
                     Text(pdfUrl.title)
                 }
             }

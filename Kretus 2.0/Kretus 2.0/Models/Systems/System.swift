@@ -35,6 +35,8 @@ class System: ObservableObject, Identifiable {
         self.totalWasteFactor = totalWasteFactor
     }
     
+    
+    
     static func getAllSystems() -> [System] {
             
         return [UPCSystem()]
