@@ -13,7 +13,7 @@ struct UPCSystemCommitButton: View {
   @ObservedObject var upcSystem: UPCSystem
   
   var body: some View {
-    NavigationLink(destination: CoatEditorView(upcSystem: upcSystem)
+    NavigationLink(destination: UPCCoatEditorView(upcSystem: upcSystem)
         // Creates base coat
         .onAppear {
             upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType, coatColor: upcSystem.systemColor)

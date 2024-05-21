@@ -66,6 +66,9 @@
 		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
 		30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */; };
 		30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */; };
+		30CAD9302BFD401B00060449 /* ColorChipCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */; };
+		30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */; };
+		30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */; };
 		30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */; };
 		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
 		30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */; };
@@ -141,6 +144,9 @@
 		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
 		30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystemSuite.swift; sourceTree = "<group>"; };
 		30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSubSystemPicker.swift; sourceTree = "<group>"; };
+		30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipCoatOptions.swift; sourceTree = "<group>"; };
+		30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystemCommitButton.swift; sourceTree = "<group>"; };
+		30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipCoatEditorView.swift; sourceTree = "<group>"; };
 		30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSaveSystemView.swift; sourceTree = "<group>"; };
 		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTotalSystem.swift; sourceTree = "<group>"; };
@@ -375,7 +381,10 @@
 			isa = PBXGroup;
 			children = (
 				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
+				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
 				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
+				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
+				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
 			);
 			path = Suites;
 			sourceTree = "<group>";
@@ -530,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3019218C2B89362F009DB65C /* SystemData.swift in Sources */,
+				30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
 				30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */,
@@ -540,6 +550,7 @@
 				302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */,
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
+				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
 				30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
@@ -572,6 +583,7 @@
 				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,
 				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
+				30CAD9302BFD401B00060449 /* ColorChipCoatOptions.swift in Sources */,
 				309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,
 				30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */,

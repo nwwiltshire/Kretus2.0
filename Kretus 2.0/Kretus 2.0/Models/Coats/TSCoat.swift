@@ -406,7 +406,7 @@ class TSCoat: Coat {
         //updateCovRate()
         var availableProductsTS = loadTsList()
         
-        findProducts(products: availableProductsTS)
+        //findProducts(products: availableProductsTS)
         
         availableProductsTS.removeAll()
         

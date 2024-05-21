@@ -15,8 +15,8 @@ struct UPCSystemSuite: View {
     var body: some View {
         
         VStack {
-            UPCCoatOptions(upcSystem: upcSystem)
             UPCSubSystemPicker(upcSystem: upcSystem)
+            UPCCoatOptions(upcSystem: upcSystem)
             UPCColorPicker(upcSystem: upcSystem)
             UPCSystemCommitButton(upcSystem: upcSystem)
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoatEditorView: View {
+struct UPCCoatEditorView: View {
     
     @ObservedObject var upcSystem: UPCSystem
     @State private var testOutput = ""
@@ -36,12 +36,12 @@ struct CoatEditorView: View {
     }
 }
 
-struct CoatEditorView_Previews: PreviewProvider {
+struct UPCCoatEditorView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        CoatEditorView(upcSystem: mockSystem)
+        UPCCoatEditorView(upcSystem: mockSystem)
     }
 }

@@ -50,7 +50,7 @@ class ColorChipSystem: System {
     init() {
         
         self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
-        self.subType = .rc
+        self.subType = .ts
         self.baseCoat = TSCoat() // update later
         self.broadCast = .quarter
         
@@ -93,6 +93,21 @@ class ColorChipSystem: System {
             }
         }
     }
+    
+    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
+        case base, prime, top, mvr
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
+            case .mvr: return "MVR Coat"
+            }
+        }
+    }
 
     override func printSystemTest() -> String {
         var output = ""
@@ -104,7 +119,7 @@ class ColorChipSystem: System {
         output += "Total Kits Needed: \(kitsNeeded)\n"
         output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Sub Type: \(subType)\n"
-        //output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
+        output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
             primeCoat.setValues()
@@ -164,5 +179,15 @@ class ColorChipSystem: System {
             totalWasteFactor += mvrCoat.wasteFactor
         }
     }
+    
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, uvResistance: Bool) -> UPCCoat {
+        let upcCoat = UPCCoat()
+        upcCoat.squareFt = squareFt
+        upcCoat.coatType = coatType
+        upcCoat.subType = subType
+        upcCoat.uvResistance = uvResistance
+        
+        return upcCoat
+      }
     
 }

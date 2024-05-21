@@ -17,15 +17,8 @@ struct ColorChipSystemSuite: View {
         VStack {
             
             ColorChipSubSystemPicker(colorChipSystem: colorChipSystem)
-            
-            // UPC Example:
-            
-            /*
-            UPCCoatOptions(upcSystem: upcSystem)
-            UPCSubSystemPicker(upcSystem: upcSystem)
-            UPCColorPicker(upcSystem: upcSystem)
-            UPCSystemCommitButton(upcSystem: upcSystem)
-             */
+            ColorChipCoatOptions(colorChipSystem: colorChipSystem)
+            ColorChipSystemCommitButton(colorChipSystem: colorChipSystem)
             
             
             

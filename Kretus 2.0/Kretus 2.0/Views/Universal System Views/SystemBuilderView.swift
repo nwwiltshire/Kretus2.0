@@ -38,6 +38,10 @@ struct SystemBuilderView: View {
                             UPCSystemSuite(upcSystem: upcSystem)
                         }
                         
+                        if let colorChipSystem = currentBuild as? ColorChipSystem {
+                            ColorChipSystemSuite(colorChipSystem: colorChipSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")
