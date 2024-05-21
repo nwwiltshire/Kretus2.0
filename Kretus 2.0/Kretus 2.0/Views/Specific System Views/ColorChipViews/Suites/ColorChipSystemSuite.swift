@@ -16,7 +16,7 @@ struct ColorChipSystemSuite: View {
         
         VStack {
             
-            Text("Test")
+            ColorChipSubSystemPicker(colorChipSystem: colorChipSystem)
             
             // UPC Example:
             
@@ -26,6 +26,8 @@ struct ColorChipSystemSuite: View {
             UPCColorPicker(upcSystem: upcSystem)
             UPCSystemCommitButton(upcSystem: upcSystem)
              */
+            
+            
             
         }
     }

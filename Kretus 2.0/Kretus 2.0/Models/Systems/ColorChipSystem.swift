@@ -66,17 +66,17 @@ class ColorChipSystem: System {
     }
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case rc, rcuv, sl, pa, ts
+        case ts, pa, rc, rcuv, sl
         
         var id: Self { self }
         
         var description: String {
             switch self {
+            case .ts: return "TS (Top Shelf Epoxy)"
+            case .pa: return "PA (Polyaspartic)"
             case .rc: return "RC (Roll Coat)"
             case .rcuv: return "RC UV (Roll Coat w/ UV)"
             case .sl: return "SL (Self Leveling)"
-            case .pa: return "PA (Polyaspartic)"
-            case .ts: return "TS (Top Shelf Epoxy)"
             }
         }
     }
