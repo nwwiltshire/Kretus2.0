@@ -49,7 +49,7 @@
 		30A712C62B589904009C0268 /* Coat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712C52B589904009C0268 /* Coat.swift */; };
 		30A712D22B589E18009C0268 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D12B589E18009C0268 /* Product.swift */; };
 		30A712D62B590025009C0268 /* upc.json in Resources */ = {isa = PBXBuildFile; fileRef = 30A712D52B590025009C0268 /* upc.json */; };
-		30A712D82B590225009C0268 /* UPCProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* UPCProducts.swift */; };
+		30A712D82B590225009C0268 /* GetProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* GetProducts.swift */; };
 		30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30222B7EAE740073BB93 /* UPCSystemCommitButton.swift */; };
 		30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30252B7EC67F0073BB93 /* UPCSystem.swift */; };
 		30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */; };
@@ -61,6 +61,10 @@
 		30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */; };
 		30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */; };
 		30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2872A2BAA3D40006D3003 /* KitData.swift */; };
+		30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9202BFBCF3900060449 /* TSCoat.swift */; };
+		30CAD9232BFBDFB200060449 /* ts.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9222BFBDFB200060449 /* ts.json */; };
+		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
+		30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */; };
 		30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */; };
 		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
 		30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */; };
@@ -119,7 +123,7 @@
 		30A712C52B589904009C0268 /* Coat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coat.swift; sourceTree = "<group>"; };
 		30A712D12B589E18009C0268 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		30A712D52B590025009C0268 /* upc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = upc.json; sourceTree = "<group>"; };
-		30A712D72B590225009C0268 /* UPCProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCProducts.swift; sourceTree = "<group>"; };
+		30A712D72B590225009C0268 /* GetProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
 		30AC30222B7EAE740073BB93 /* UPCSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemCommitButton.swift; sourceTree = "<group>"; };
 		30AC30252B7EC67F0073BB93 /* UPCSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystem.swift; sourceTree = "<group>"; };
 		30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemSuite.swift; sourceTree = "<group>"; };
@@ -131,6 +135,10 @@
 		30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCPrimeCoatSuite.swift; sourceTree = "<group>"; };
 		30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTopCoatSuite.swift; sourceTree = "<group>"; };
 		30B2872A2BAA3D40006D3003 /* KitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitData.swift; sourceTree = "<group>"; };
+		30CAD9202BFBCF3900060449 /* TSCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoat.swift; sourceTree = "<group>"; };
+		30CAD9222BFBDFB200060449 /* ts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ts.json; sourceTree = "<group>"; };
+		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
+		30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystemSuite.swift; sourceTree = "<group>"; };
 		30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSaveSystemView.swift; sourceTree = "<group>"; };
 		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
 		30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTotalSystem.swift; sourceTree = "<group>"; };
@@ -169,18 +177,19 @@
 		302A6C642BF7052500706714 /* Product Data */ = {
 			isa = PBXGroup;
 			children = (
+				30CAD9222BFBDFB200060449 /* ts.json */,
 				30A712D52B590025009C0268 /* upc.json */,
 			);
 			path = "Product Data";
 			sourceTree = "<group>";
 		};
-		303C69862B6B3A0800C58041 /* System Builder */ = {
+		303C69862B6B3A0800C58041 /* Universal System Views */ = {
 			isa = PBXGroup;
 			children = (
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
 				30ED659E2B733825001E636D /* SqftForm.swift */,
 			);
-			path = "System Builder";
+			path = "Universal System Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -276,6 +285,8 @@
 			children = (
 				30A712C52B589904009C0268 /* Coat.swift */,
 				30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */,
+				30CAD9202BFBCF3900060449 /* TSCoat.swift */,
+				30CAD9262BFC1FC500060449 /* PACoat.swift */,
 			);
 			path = Coats;
 			sourceTree = "<group>";
@@ -341,6 +352,31 @@
 			path = "Main Views";
 			sourceTree = "<group>";
 		};
+		30CAD9282BFC2F1900060449 /* ColorChipViews */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD92A2BFC38F700060449 /* Suites */,
+			);
+			path = ColorChipViews;
+			sourceTree = "<group>";
+		};
+		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD9282BFC2F1900060449 /* ColorChipViews */,
+				30AC30272B8177590073BB93 /* UPC Views */,
+			);
+			path = "Specific System Views";
+			sourceTree = "<group>";
+		};
+		30CAD92A2BFC38F700060449 /* Suites */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
+			);
+			path = Suites;
+			sourceTree = "<group>";
+		};
 		30CC55842BF585CA00B7D409 /* Data Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				30A712D12B589E18009C0268 /* Product.swift */,
-				30A712D72B590225009C0268 /* UPCProducts.swift */,
+				30A712D72B590225009C0268 /* GetProducts.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -391,8 +427,8 @@
 			children = (
 				30CC55842BF585CA00B7D409 /* Data Views */,
 				30AC303B2B8690500073BB93 /* Main Views */,
-				30AC30272B8177590073BB93 /* UPC Views */,
-				303C69862B6B3A0800C58041 /* System Builder */,
+				303C69862B6B3A0800C58041 /* Universal System Views */,
+				30CAD9292BFC38BF00060449 /* Specific System Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +496,7 @@
 				302A6C5F2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf in Resources */,
 				302A6C562BF6F39A00706714 /* UPC-TDS-RC-FC.pdf in Resources */,
 				30CC55982BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf in Resources */,
+				30CAD9232BFBDFB200060449 /* ts.json in Resources */,
 				30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */,
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
 				302A6C592BF6F39A00706714 /* UPC-TDS-RC-AP.pdf in Resources */,
@@ -492,6 +529,7 @@
 				3019218C2B89362F009DB65C /* SystemData.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
+				30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
 				30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */,
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
@@ -515,14 +553,16 @@
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
 				30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */,
 				303C697D2B6B094900C58041 /* InformationView.swift in Sources */,
+				30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */,
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
+				30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */,
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,
-				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
+				30A712D82B590225009C0268 /* GetProducts.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
 				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,

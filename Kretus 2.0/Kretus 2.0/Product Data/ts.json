@@ -1,0 +1,158 @@
+[
+    {
+        "id": "EX-KTSARBG-01",
+        "name": "TSE Part A: A Resin - Beige, 1 gal"
+    },
+    {
+        "id": "EX-KTSARBL-01",
+        "name": "TSE Part A: A Resin - Black, 1 gal"
+    },
+    {
+        "id": "EX-KTSARCL-01",
+        "name": "TSE Part A: A Resin - Clear, 1 gal"
+    },
+    {
+        "id": "EX-KTSARDG-01",
+        "name": "TSE Part A: A Resin - Dark Gray, 1 gal"
+    },
+    {
+        "id": "EX-KTSAREG-01",
+        "name": "TSE Part A: A Resin - Enchanted Green, 1 gal"
+    },
+    {
+        "id": "EX-KTSARHB-01",
+        "name": "TSE Part A: A Resin - Handicap Blue, 1 gal"
+    },
+    {
+        "id": "EX-KTSARLT-01",
+        "name": "TSE Part A: A Resin - Latte, 1 gal"
+    },
+    {
+        "id": "EX-KTSARLG-01",
+        "name": "TSE Part A: A Resin - Light Gray, 1 gal"
+    },
+    {
+        "id": "EX-KTSARMG-01",
+        "name": "TSE Part A: A Resin - Medium Gray, 1 gal"
+    },
+    {
+        "id": "EX-KTSARMH-01",
+        "name": "TSE Part A: A Resin - Mocha, 1 gal"
+    },
+    {
+        "id": "EX-KTSARSB-01",
+        "name": "TSE Part A: A Resin - Safety Blue, 1 gal"
+    },
+    {
+        "id": "EX-KTSARSR-01",
+        "name": "TSE Part A: A Resin - Safety Red, 1 gal"
+    },
+    {
+        "id": "EX-KTSARSY-01",
+        "name": "TSE Part A: A Resin - Safety Yellow, 1 gal"
+    },
+    {
+        "id": "EX-KTSARSG-01",
+        "name": "TSE Part A: A Resin - Shadow Gray, 1 gal"
+    },
+    {
+        "id": "EX-KTSARTN-01",
+        "name": "TSE Part A: A Resin - Tan, 1 gal"
+    },
+    {
+        "id": "EX-KTSARTR-01",
+        "name": "TSE Part A: A Resin - Tile Red, 1 gal"
+    },
+    {
+        "id": "EX-KTSARWH-01",
+        "name": "TSE Part A: A Resin - White, 1 gal"
+    },
+    {
+        "id": "EX-KTSEAPB-EA",
+        "name": "TSE Part B: AP, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSEZB-EA",
+        "name": "TSE Part B: EZ, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSEFB-EA",
+        "name": "TSE Part B: Fast, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSETHB-EA",
+        "name": "TSE Part B: TH, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSEMVZB-EA",
+        "name": "TSE Part B: MVR - EZ, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSEMVFB-EA",
+        "name": "TSE Part B: MVR - FC, 1/2 gal"
+    },
+    {
+        "id": "EX-KTSECLBG-EA",
+        "name": "TSE Colorant: Beige, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLBL-EA",
+        "name": "TSE Colorant: Black, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLDG-EA",
+        "name": "TSE Colorant: Dark Gray, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLEG-EA",
+        "name": "TSE Colorant: Enchanted Green, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLHB-EA",
+        "name": "TSE Colorant: Handicap Blue, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLLT-EA",
+        "name": "TSE Colorant: Latte, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLLG-EA",
+        "name": "TSE Colorant: Light Gray, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLMG-EA",
+        "name": "TSE Colorant: Medium Gray, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLMC-EA",
+        "name": "TSE Colorant: Mocha, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLSB-EA",
+        "name": "TSE Colorant: Safety Blue, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLSR-EA",
+        "name": "TSE Colorant: Safety Red, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLSY-EA",
+        "name": "TSE Colorant: Safety Yellow, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLSG-EA",
+        "name": "TSE Colorant: Shadow Gray, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLTN-EA",
+        "name": "TSE Colorant: Tan, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLTR-EA",
+        "name": "TSE Colorant: Tile Red, 16 oz"
+    },
+    {
+        "id": "EX-KTSECLWH-EA",
+        "name": "TSE Colorant: White, 16 oz"
+    }
+]

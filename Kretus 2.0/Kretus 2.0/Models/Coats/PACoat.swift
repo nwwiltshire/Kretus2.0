@@ -1,62 +1,42 @@
 //
-//  UPC.swift
+//  PACoat.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 1/20/24.
+//  Created by Nick Wiltshire on 5/20/24.
 //
 
 import Foundation
 
-class UPCCoat: Coat {
+class PACoat: Coat {
     
-    @Published var coatType: UPCSystem.CoatType {
-        didSet {
-            updateCovRate()
-        }
-    }
+    @Published var coatType: PACoat.CoatType
+    @Published var subType: PACoat.SubType
     
-    @Published var subType: UPCSystem.SubType
-    @Published var speed: UPCSystem.Speed
+    @Published var speed: PACoat.Speed
     @Published var covRate: Int
     
     @Published var partA: Product
     @Published var partB: Product
-    @Published var partC: Product
     
-    @Published var coatColor: UPCSystem.SystemColor
+    @Published var coatColorant: PACoat.CoatColorant
     @Published var colorant: Product
     
-    @Published var thickness: UPCSystem.Thickness {
-            didSet {
-                updateCovRate()
-            }
-        }
-    
-    @Published var texture1: UPCSystem.Texture
-    @Published var texture2: UPCSystem.Texture
-    @Published var uvResistance: Bool
-    
-    // Coverage Rate (focus is more on just how much product you need)
-    // Coverage Rate is only dependent on thickness
+    @Published var thickness: TSCoat.Thickness
     
     init(id: Int,
          name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: UPCSystem.CoatType,
-         subType: UPCSystem.SubType,
-         speed: UPCSystem.Speed,
+         coatType: PACoat.CoatType,
+         subType: PACoat.SubType,
+         speed: PACoat.Speed,
          covRate: Int,
          partA: Product,
          partB: Product,
-         partC: Product,
-         coatColor: UPCSystem.SystemColor,
+         coatColorant: PACoat.CoatColorant,
          colorant: Product,
-         thickness: UPCSystem.Thickness,
-         texture1: UPCSystem.Texture,
-         texture2: UPCSystem.Texture,
-         uvResistance: Bool,
+         thickness: TSCoat.Thickness,
          wasteFactor: Int) {
         
         self.coatType = coatType
@@ -65,13 +45,9 @@ class UPCCoat: Coat {
         self.covRate = covRate
         self.partA = partA
         self.partB = partB
-        self.partC = partC
-        self.coatColor = coatColor
+        self.coatColorant = coatColorant
         self.colorant = colorant
         self.thickness = thickness
-        self.texture1 = texture1
-        self.texture2 = texture2
-        self.uvResistance = uvResistance
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -80,18 +56,14 @@ class UPCCoat: Coat {
     init() {
         
         self.coatType = .base
-        self.subType = .rc
-        self.speed = .ap
-        self.covRate = 190 // set to default value for default thickness
+        self.subType = .poly72
+        self.speed = .ez
+        self.covRate = 0 // set to default value for default thickness
         self.partA = Product()
         self.partB = Product()
-        self.partC = Product()
-        self.coatColor = .unpigmented
+        self.coatColorant = .noColor
         self.colorant = Product()
-        self.thickness = .thinRC
-        self.texture1 = .none
-        self.texture2 = .none
-        self.uvResistance = false
+        self.thickness = .base
         
         super.init(id: 0,
                    name: "Default",
@@ -101,6 +73,99 @@ class UPCCoat: Coat {
                    wasteFactor: 0)
     }
     
+    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
+        case base, prime, top
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
+            }
+        }
+    }
+    
+    enum Speed: CaseIterable, Identifiable, CustomStringConvertible {
+        case ez, fast
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .ez: return "EZ - Clear"
+            case .fast: return "Fast - Clear"
+                
+            }
+        }
+    }
+    
+    enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
+        case poly72, poly85, poly92LO
+        
+        var id: Self {self}
+        
+        var description: String {
+            switch self {
+                
+            case .poly72: return "Polyaspartic 72"
+            case .poly85: return "Polyaspartic 85"
+            case .poly92LO: return "Polyaspartic 92 Low Odor"
+                
+            }
+        }
+    }
+    
+    enum CoatColorant: CaseIterable, Identifiable, CustomStringConvertible {
+        case noColor, beige, black, darkGray, enchantedGreen, handicapBlue, Latte, lightGray, mediumGray,
+             mocha, safetyBlue, safetyRed, safetyYellow, shadowGray, tan, tileRed, white
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+                
+            case .noColor: return "No Color (Pre-pigmented Part A)"
+            case .beige: return "Beige"
+            case .black: return "Black"
+            case .darkGray: return "Dark Gray"
+            case .enchantedGreen: return "Enchanted Green"
+            case .handicapBlue: return "Handicap Blue"
+            case .Latte: return "Latte"
+            case .lightGray: return "Light Gray"
+            case .mediumGray: return "Medium Gray"
+            case .mocha: return "Mocha"
+            case .safetyBlue: return "Safety Blue"
+            case .safetyRed: return "Safety Red"
+            case .safetyYellow: return "Safety Yellow"
+            case .shadowGray: return "Shadow Gray"
+            case .tan: return "Tan"
+            case .tileRed: return "Tile Red"
+            case .white: return "White"
+                
+            }
+        }
+    }
+    
+    enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
+        case base, prime, top1
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+                
+            case .base: return "8-12 mils"
+            case .prime: return "2-3 mils"
+            case .top1: return "8-12 mils"
+                
+            }
+        }
+    }
+    
+    
+    /*
     private func updateCovRate() {
         switch coatType {
         case .base:
@@ -113,23 +178,21 @@ class UPCCoat: Coat {
                     covRate = 120
                 case .thickRC:
                     covRate = 80
-                // 0's because switch statements must be exhaustive
                 case .thin:
-                    covRate = 0
+                    break
                 case .medium:
-                    covRate = 0
+                    break
                 case .thick:
-                    covRate = 0
+                    break
                 }
             case .tt:
                 switch thickness {
-                // 0's because switch statements must be exhaustive
                 case .thinRC:
-                    covRate = 0
+                    break
                 case .mediumRC:
-                    covRate = 0
+                    break
                 case .thickRC:
-                    covRate = 0
+                    break
                 case .thin:
                     covRate = 24
                 case .medium:
@@ -140,11 +203,11 @@ class UPCCoat: Coat {
             case .sl:
                 switch thickness {
                 case .thinRC:
-                    covRate = 0
+                    break
                 case .mediumRC:
-                    covRate = 0
+                    break
                 case .thickRC:
-                    covRate = 0
+                    break
                 case .thin:
                     covRate = 50
                 case .medium:
@@ -155,11 +218,11 @@ class UPCCoat: Coat {
             case .mf:
                 switch thickness {
                 case .thinRC:
-                    covRate = 0
+                    break
                 case .mediumRC:
-                    covRate = 0
+                    break
                 case .thickRC:
-                    covRate = 0
+                    break
                 case .thin:
                     covRate = 60
                 case .medium:
@@ -179,11 +242,11 @@ class UPCCoat: Coat {
                 case .thickRC:
                     covRate = 80
                 case .thin:
-                    covRate = 0
+                    break
                 case .medium:
-                    covRate = 0
+                    break
                 case .thick:
-                    covRate = 0
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -294,23 +357,39 @@ class UPCCoat: Coat {
                     covRate = 72
                 }
             }
+        case .mvr:
+            switch thickness {
+            case .thinRC:
+                covRate = 0
+            case .mediumRC:
+                covRate = 0
+            case .thickRC:
+                covRate = 0
+            case .thin:
+                covRate = 0
+            case .medium:
+                covRate = 0
+            case .thick:
+                covRate = 0
+            }
         }
     }
+     */
     
     override func setValues() {
         
-        updateCovRate()
-        var availableProductsUPC = loadUpcList()
+        //updateCovRate()
+        var availableProductsTS = loadTsList()
         
-        findProducts(products: availableProductsUPC)
+        findProducts(products: availableProductsTS)
         
-        availableProductsUPC.removeAll()
+        availableProductsTS.removeAll()
         
         calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
 
-    
+    /*
     override func findProducts(products: [Product]) {
         
         switch self.subType {
@@ -449,6 +528,7 @@ class UPCCoat: Coat {
         }
 
     }
+     */
 
     override func printCoatTest() -> String {
         
@@ -459,36 +539,12 @@ class UPCCoat: Coat {
         output += "Products Needed: \(productsNeeded)\n"
         output += "Kits Needed: \(kitsNeeded)\n"
         output += "Coat Type: \(coatType)\n"
-        output += "Sub Type: \(subType)\n"
         output += "Speed: \(speed)\n"
         output += "Coverage Rate: \(covRate)\n"
         output += "Part A: \(partA)\n"
         output += "Part B: \(partB)\n"
-        output += "Part C: \(partC)\n"
         output += "Thickness: \(thickness)\n"
         output += "Waste Factor: \(wasteFactor)\n"
-        output += "Texture 1: \(texture1)\n"
-        output += "Texture 2: \(texture2)\n"
         return output
-    }
-    
-    func findTexture(texture: UPCSystem.Texture, products: [Product]) -> Product {
-        
-        switch texture {
-        case .none:
-            return Product()
-        case .antiSlip60:
-            return products.first(where: {$0.id == "EX-KASAO60-01"})!
-        case .antiSlip36:
-            return products.first(where: {$0.id == "EX-KASAO36-01"})!
-        case .antiSlip24:
-            return products.first(where: {$0.id == "EX-KASA246-01"})!
-        case .industrialSand60:
-            return products.first(where: {$0.id == "116"})!
-        case .industrialSand30:
-            return products.first(where: {$0.id == "115"})!
-        case .industrialSand20:
-            return products.first(where: {$0.id == "114"})!
-        }
     }
 }

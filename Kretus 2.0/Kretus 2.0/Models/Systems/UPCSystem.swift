@@ -231,20 +231,6 @@ class UPCSystem: System {
         }
     }
 
-    func updateKits(with newKits: [Kit]) {
-      for kit in newKits {
-        // Check if a kit with the same product ID already exists
-        let existingKitIndex = kitsNeeded.firstIndex(where: { $0.product.id == kit.product.id })
-        if let existingIndex = existingKitIndex {
-          // Update the quantity of the existing kit
-          kitsNeeded[existingIndex].quantity += kit.quantity
-        } else {
-          // Add the new kit to kitsNeeded
-          kitsNeeded.append(kit)
-        }
-      }
-    }
-
 
     
 }

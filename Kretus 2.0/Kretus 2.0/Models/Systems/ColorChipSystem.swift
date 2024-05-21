@@ -11,14 +11,14 @@ import SwiftUI
 class ColorChipSystem: System {
     
     let availableSubTypes: [SubType]
-    let availableSystemColors: [SystemColor]
     
     @Published var subType: SubType
-    @Published var systemColor: SystemColor
-    @Published var baseCoat: UPCCoat
-    @Published var primeCoat: UPCCoat?
-    @Published var topCoat: UPCCoat?
-    @Published var uvResistance: Bool
+    @Published var baseCoat: Coat
+    @Published var primeCoat: Coat?
+    @Published var topCoat: Coat?
+    @Published var mvrCoat: Coat?
+    
+    @Published var broadCast: ColorChipSystem.Broadcast
     
     init(name: String,
          description: String,
@@ -27,23 +27,21 @@ class ColorChipSystem: System {
          squareFt: Int,
          kitsNeeded: [Kit],
          availableSubTypes: [SubType],
-         availableSystemColors: [SystemColor],
          subType: SubType,
-         systemColor: SystemColor,
-         baseCoat: UPCCoat,
-         primeCoat: UPCCoat,
-         topCoat: UPCCoat,
-         uvResistance: Bool,
+         baseCoat: Coat,
+         primeCoat: Coat,
+         topCoat: Coat,
+         mvrCoat: Coat,
+         broadCast: ColorChipSystem.Broadcast,
          totalWasteFactor: Int) {
         
         self.availableSubTypes = availableSubTypes
-        self.availableSystemColors = availableSystemColors
         self.subType = subType
-        self.systemColor = systemColor
         self.baseCoat = baseCoat
         self.primeCoat = primeCoat
         self.topCoat = topCoat
-        self.uvResistance = uvResistance
+        self.mvrCoat = mvrCoat
+        self.broadCast = broadCast
         
         super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
@@ -52,17 +50,15 @@ class ColorChipSystem: System {
     init() {
         
         self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
-        self.availableSystemColors = [.upcUnpigmented, .upcBlack, .upcBlue, .upcBone, .upcBrown, .upcClay, .upcGray, .upcGreen, .upcMustard, .upcRed]
         self.subType = .rc
-        self.systemColor = .upcUnpigmented
-        self.baseCoat = UPCCoat()
-        self.uvResistance = false
+        self.baseCoat = TSCoat() // update later
+        self.broadCast = .quarter
         
         super.init(
-        name: "UPC 1-Coat",
-        description: "Low odor, 100% solids, 3-component system with mix-and-match versatility.",
-        imageName: "upc1coat-background",
-        viewColor: "UPC",
+        name: "Color Chip",
+        description: "Stand up to continuous heavy traffic in high-use spaces, camouflage dust and debris, improve resistance, and add vibrant or soft color to any room.",
+        imageName: "colorChip-background",
+        viewColor: "ColorChip",
         squareFt: 50,
         kitsNeeded: [Kit()],
         totalWasteFactor: 0
@@ -85,88 +81,15 @@ class ColorChipSystem: System {
         }
     }
     
-    // Hardeners ^^^
-    
-    enum SystemColor: CaseIterable, Identifiable, CustomStringConvertible {
-        case upcUnpigmented, upcBlack, upcBlue, upcBone, upcBrown, upcClay, upcGray, upcGreen, upcMustard, upcRed
+    enum Broadcast: CaseIterable, Identifiable, CustomStringConvertible {
+        case quarter, eighth
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .upcUnpigmented: return "Unpigmented (UPC)"
-            case .upcBlack: return "Black (UPC)"
-            case .upcBlue: return "Blue (UPC)"
-            case .upcBone: return "Bone (UPC)"
-            case .upcBrown: return "Brown (UPC)"
-            case .upcClay: return "Clay (UPC)"
-            case .upcGray: return "Gray (UPC)"
-            case .upcGreen: return "Green (UPC)"
-            case .upcMustard: return "Mustard (UPC)"
-            case .upcRed: return "Red (UPC)"
-            }
-        }
-    }
-    
-    enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thinRC, mediumRC, thickRC, thin, medium, thick
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .thinRC: return "8-12 mils"
-            case .mediumRC: return "15-20 mils"
-            case .thickRC: return "25-30 mils"
-            case .thin: return "1/8\""
-            case .medium: return "3/16\""
-            case .thick: return "1/4\""
-            }
-        }
-    }
-    
-    enum Speed: CaseIterable, Identifiable, CustomStringConvertible {
-        case ez, ap, fc
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .ez: return "EZ (Easy)"
-            case .ap: return "AP (Average Pace)"
-            case .fc: return "FC (Fast Cure)"
-            }
-        }
-    }
-    
-    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
-        case none, antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .none: return "No Texture"
-            case .antiSlip60: return "Anti Slip 60"
-            case .antiSlip36: return "Anti Slip 36"
-            case .antiSlip24: return "Anti Slip 24"
-            case .industrialSand60: return "Industrial Sand 60"
-            case .industrialSand30: return "Industrial Sand 30"
-            case .industrialSand20: return "Industrial Sand 20"
-            }
-        }
-    }
-    
-    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .base: return "Base Coat"
-            case .prime: return "Prime Coat"
-            case .top: return "Top Coat"
+            case .quarter: return "1/4\""
+            case .eighth: return "1/8\""
             }
         }
     }
@@ -180,11 +103,8 @@ class ColorChipSystem: System {
         output += "Square Feet: \(squareFt)\n"
         output += "Total Kits Needed: \(kitsNeeded)\n"
         output += "Available Sub Types: \(availableSubTypes)\n"
-        output += "Available System Colors: \(availableSystemColors)\n"
         output += "Sub Type: \(subType)\n"
-        output += "System Color: \(systemColor)\n"
-        baseCoat.setValues()
-        output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
+        //output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
             primeCoat.setValues()
@@ -199,28 +119,25 @@ class ColorChipSystem: System {
         } else {
             output += "\nTop Coat: None\n"
         }
-        
-        output += "UV Resistance: \(uvResistance ? "Yes" : "No")\n"
         return output
     }
 
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> UPCCoat {
-        let upcCoat = UPCCoat()
-        upcCoat.squareFt = squareFt
-        upcCoat.coatType = coatType
-        upcCoat.subType = subType
-        upcCoat.coatColor = coatColor
+    func createColorChipCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> Coat {
         
-        if (subType != .rc) {
-            upcCoat.thickness = .thin
-        }
+        let tsCoat = TSCoat()
         
-        if (coatType == .top && uvResistance == true) {
-            upcCoat.uvResistance = true
-        }
+        /*
+        tsCoat.squareFt = squareFt
+        tsCoat.coatType = coatType
+        tsCoat.subType = subType
+        tsCoat.coatColor = coatColor
+        */
         
-        return upcCoat
+        // finish later
+        
+        return tsCoat
       }
+    
     
     override func getAllKits() {
         kitsNeeded.removeAll()
@@ -240,22 +157,12 @@ class ColorChipSystem: System {
             updateKits(with: topCoat.kitsNeeded)
             totalWasteFactor += topCoat.wasteFactor
         }
-    }
-
-    func updateKits(with newKits: [Kit]) {
-      for kit in newKits {
-        // Check if a kit with the same product ID already exists
-        let existingKitIndex = kitsNeeded.firstIndex(where: { $0.product.id == kit.product.id })
-        if let existingIndex = existingKitIndex {
-          // Update the quantity of the existing kit
-          kitsNeeded[existingIndex].quantity += kit.quantity
-        } else {
-          // Add the new kit to kitsNeeded
-          kitsNeeded.append(kit)
+        
+        if let mvrCoat = mvrCoat {
+            mvrCoat.setValues()
+            updateKits(with: mvrCoat.kitsNeeded)
+            totalWasteFactor += mvrCoat.wasteFactor
         }
-      }
     }
-
-
     
 }

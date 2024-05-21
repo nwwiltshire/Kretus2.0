@@ -13,6 +13,12 @@ func loadUpcList() -> [Product] {
     return load("upc.json")
 }
 
+var tsList: [Product] = load("ts.json")
+
+func loadTsList() -> [Product] {
+    return load("ts.json")
+}
+
 func load<T: Decodable>(_ filename: String) -> T {
     
     let data: Data
@@ -37,11 +43,4 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
-
-
-// Add: Aggregate or liquid bool (technically bool representing if it can be sqft/gal or sqft/kit.
-
-// Add: Thickness Ranges (in old app it's displayed in system/coat specs)
-
-// Add: Unit of measure for thickness
 

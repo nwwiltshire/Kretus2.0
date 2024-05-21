@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SystemGridView: View {
     
-    let systems = System.getAllSystems()
+    let systems: [System] = System.getAllSystems()
     
     let layout = [
         
@@ -19,6 +19,7 @@ struct SystemGridView: View {
         ]
     
     @State public var showEditors = false
+    @State private var selectedSystem: System?
     
     
     var body: some View {
@@ -45,6 +46,7 @@ struct SystemGridView: View {
                         ForEach(systems, id: \.id) { system in
                             Button(action: {
                                 showEditors = true
+                                selectedSystem = system
                             }) {
                                 
                                 // Grid Elements
@@ -72,9 +74,12 @@ struct SystemGridView: View {
                                 
                             }
                             .sheet(isPresented: $showEditors) {
-                                SystemBuilderView(currentBuild: system, showEditors: $showEditors)
+                                if let selectedSystem = selectedSystem {
+                                    SystemBuilderView(currentBuild: selectedSystem, showEditors: $showEditors)
                                 }
                             }
+                            .animation(.default, value: showEditors)
+                        }
                     .padding(.all)
                     
                 }

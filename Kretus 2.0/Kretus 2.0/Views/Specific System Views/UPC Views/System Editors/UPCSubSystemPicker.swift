@@ -14,7 +14,7 @@ struct UPCSubSystemPicker: View {
     
     var body: some View {
         HStack {
-            Text("Sub System")
+            Text("Hardener")
                 .font(.headline)
                 .padding()
             
