@@ -50,11 +50,13 @@ struct UPCSaveSystemView: View {
     }
     
     private func save(upcSystem: UPCSystem) {
-        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, subType: upcSystem.subType.description, speeds: [], systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
+        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, coats: [], subType: upcSystem.subType.description, speeds: [], systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
         
         newSystem.kits = convertUPCKits(systemData: newSystem, upcKits: upcSystem.kitsNeeded)
         
         newSystem.speeds = findSpeeds(system: upcSystem)
+        
+        newSystem.coats = convertCoats(upcSystem: upcSystem)
         
         context.insert(newSystem)
         
@@ -80,43 +82,54 @@ struct UPCSaveSystemView: View {
       return convertedKits
     }
     
+    private func convertCoats(upcSystem: UPCSystem) -> [CoatData] {
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "Base Coat", subType: upcSystem.baseCoat.subType.description, speed: upcSystem.baseCoat.speed.description))
+        
+        if (upcSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: (upcSystem.primeCoat?.subType.description)!, speed: (upcSystem.primeCoat?.speed.description)!))
+        }
+        
+        if (upcSystem.topCoat != nil) {
+            coats.append(CoatData(coatType: "Top Coat", subType: (upcSystem.topCoat?.subType.description)!, speed: (upcSystem.topCoat?.speed.description)!))
+        }
+        
+        print(coats)
+        return coats
+    }
+    
     private func findSpeeds(system: UPCSystem) -> [String] {
         var speeds: [String] = []
         
-        func appendIfNotPresent(_ speed: String) {
-            if !speeds.contains(speed) {
-                speeds.append(speed)
-            }
-        }
-        
         switch system.baseCoat.speed {
         case .ez:
-            appendIfNotPresent("EZ")
+            speeds.append("EZ")
         case .ap:
-            appendIfNotPresent("AP")
+            speeds.append("AP")
         case .fc:
-            appendIfNotPresent("FC")
+            speeds.append("FC")
         }
         
         if let primeCoat = system.primeCoat {
             switch primeCoat.speed {
             case .ez:
-                appendIfNotPresent("EZ")
+                speeds.append("EZ")
             case .ap:
-                appendIfNotPresent("AP")
+                speeds.append("AP")
             case .fc:
-                appendIfNotPresent("FC")
+                speeds.append("FC")
             }
         }
         
         if let topCoat = system.topCoat {
             switch topCoat.speed {
             case .ez:
-                appendIfNotPresent("EZ")
+                speeds.append("EZ")
             case .ap:
-                appendIfNotPresent("AP")
+                speeds.append("AP")
             case .fc:
-                appendIfNotPresent("FC")
+                speeds.append("FC")
             }
         }
         

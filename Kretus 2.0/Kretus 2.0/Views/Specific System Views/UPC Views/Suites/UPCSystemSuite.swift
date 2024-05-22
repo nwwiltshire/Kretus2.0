@@ -17,7 +17,7 @@ struct UPCSystemSuite: View {
         VStack {
             UPCSubSystemPicker(upcSystem: upcSystem)
             UPCCoatOptions(upcSystem: upcSystem)
-            UPCColorPicker(upcSystem: upcSystem)
+            UPCSystemColorPicker(upcSystem: upcSystem)
             UPCSystemCommitButton(upcSystem: upcSystem)
         }
     }

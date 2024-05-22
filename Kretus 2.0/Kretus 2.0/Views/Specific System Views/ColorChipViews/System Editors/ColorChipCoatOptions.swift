@@ -57,6 +57,17 @@ struct ColorChipCoatOptions: View {
                     Text("Prime Coat")
                 }
             }
+            Toggle(isOn: .constant(true)) {
+                Text("Top Coat")
+            }
+            .disabled(true)
+            .foregroundColor(.gray)
+            Toggle(isOn: Binding(
+                get: { self.colorChipSystem.topCoat2 != nil },
+                set: { if !$0 { self.colorChipSystem.topCoat2 = nil } else { self.colorChipSystem.topCoat2 = PACoat() } }
+            )) {
+                Text("Top Coat 2")
+            }
         }
         .padding()
         .background(

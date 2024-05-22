@@ -1,14 +1,14 @@
 //
-//  UPCPrimeCoatSuite.swift
+//  UPCUniversalCoatSuite.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 2/19/24.
+//  Created by Nick Wiltshire on 5/22/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct UPCPrimeCoatSuite: View {
+struct UPCUniversalCoatSuite: View {
     
     @ObservedObject var upcCoat: UPCCoat
     
@@ -19,6 +19,7 @@ struct UPCPrimeCoatSuite: View {
             
             UPCSpeedPicker(coat: upcCoat)
             UPCWasteFactorOptions(coat: upcCoat)
+            UPCCoatColorPicker(upcCoat: upcCoat)
         }
         .padding()
         .background(
@@ -32,12 +33,12 @@ struct UPCPrimeCoatSuite: View {
 
 
 
-struct UPCPrimeCoatSuite_Previews: PreviewProvider {
+struct UPCUniversalCoatSuite_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockCoat = UPCCoat()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCPrimeCoatSuite(upcCoat: mockCoat)
+        UPCUniversalCoatSuite(upcCoat: mockCoat)
     }
 }

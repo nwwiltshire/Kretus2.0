@@ -17,7 +17,7 @@ struct DetailView: View {
     static var pdfURLS: [PDFUrl] = [PDFUrl(url: Bundle.main.url(forResource: "Kretus-Product-Catalog", withExtension: "pdf")!, title: "Product Catalog", group: .general, type: .general),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-IG", withExtension: "pdf")!, title: "UPC 1-Coat Installation Guide", group: .upc, type: .ig),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-SDS-Colorant", withExtension: "pdf")!, title: "UPC Colorant Safety Data Sheet", group: .upc, type: .sds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-FC", withExtension: "pdf")!, title: "WC-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-FC", withExtension: "pdf")!, title: "UPC: WC-FC", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-EZ", withExtension: "pdf")!, title: "UPC: WC-EZ", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-AP", withExtension: "pdf")!, title: "UPC: WC-AP", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-FC", withExtension: "pdf")!, title: "UPC: VC-FC", group: .upc, type: .tds),
@@ -101,8 +101,6 @@ struct DetailView: View {
         
         var pdfs: [PDFUrl] = []
         
-        var tdsSubType: String = ""
-        
         if (system.name == "UPC 1-Coat") {
             if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC 1-Coat Installation Guide" }) {
                 pdfs.append(pdfUrl)
@@ -113,38 +111,48 @@ struct DetailView: View {
                 }
             }
             
+            let baseSpeed = system.speeds[0]
+            
             if (system.subType == "RC (Roll Coat)") {
                 
-                tdsSubType = "RC"
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-\(baseSpeed)" }) {
+                    pdfs.append(pdfUrl)
+                }
                 
             } else if (system.subType == "TT (Trowel Applied)") {
                 
-                tdsSubType = "TT"
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: TT-\(baseSpeed)" }) {
+                    pdfs.append(pdfUrl)
+                }
                 
             } else if (system.subType == "SL (Self Leveling)") {
                 
-                tdsSubType = "SL"
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: SL-\(baseSpeed)" }) {
+                    pdfs.append(pdfUrl)
+                }
                 
             } else if (system.subType == "MF (Medium Fill SL)") {
                 
-                tdsSubType = "MF"
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: MF-\(baseSpeed)" }) {
+                    pdfs.append(pdfUrl)
+                }
                 
             }
             
-            if (system.speeds.contains("EZ")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(tdsSubType)-EZ" }) {
+            if (system.speeds[1..<system.speeds.count].contains("EZ")) {
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-EZ" }) {
                     pdfs.append(pdfUrl)
                 }
             }
             
-            if (system.speeds.contains("AP")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(tdsSubType)-AP" }) {
+            if (system.speeds[1..<system.speeds.count].contains("AP")) {
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-AP" }) {
                     pdfs.append(pdfUrl)
                 }
             }
             
-            if (system.speeds.contains("FC")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(tdsSubType)-FC" }) {
+            if (system.speeds[1..<system.speeds.count].contains("FC")) {
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-FC" }) {
                     pdfs.append(pdfUrl)
                 }
             }

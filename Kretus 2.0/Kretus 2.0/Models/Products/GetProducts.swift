@@ -19,6 +19,12 @@ func loadTsList() -> [Product] {
     return load("ts.json")
 }
 
+var paList: [Product] = load("pa.json")
+
+func loadPaList() -> [Product] {
+    return load("pa.json")
+}
+
 func load<T: Decodable>(_ filename: String) -> T {
     
     let data: Data

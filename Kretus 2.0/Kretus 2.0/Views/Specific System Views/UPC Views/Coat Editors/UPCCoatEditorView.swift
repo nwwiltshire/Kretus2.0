@@ -13,7 +13,6 @@ struct UPCCoatEditorView: View {
     @State private var testOutput = ""
     
     var body: some View {
-        VStack {
             ScrollView {
                 Text("Modify the coats to your needs, and proceed to view your calculated System.")
                     .font(.subheadline)
@@ -31,8 +30,7 @@ struct UPCCoatEditorView: View {
                 UPCBuildSubmitButton(upcSystem: upcSystem)
             }
             .padding(.all)
-        }
-        .navigationTitle("Coat Options")
+            .navigationTitle("Coat Options")
     }
 }
 

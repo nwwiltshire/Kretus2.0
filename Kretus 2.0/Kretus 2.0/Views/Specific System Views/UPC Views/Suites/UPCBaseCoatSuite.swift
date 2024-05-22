@@ -13,7 +13,7 @@ struct UPCBaseCoatSuite: View {
     
     var body: some View {
         VStack {
-            Text("Base Coat")
+            Text("\(upcCoat.coatType)")
                 .font(.title2)
             
             UPCThicknessPicker(coat: upcCoat)

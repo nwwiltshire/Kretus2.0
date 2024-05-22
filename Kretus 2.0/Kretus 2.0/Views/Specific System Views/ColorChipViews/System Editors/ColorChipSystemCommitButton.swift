@@ -32,6 +32,34 @@ struct ColorChipSystemCommitButton: View {
                     colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .rc, uvResistance: true)
                 }
                 
+            } else if (colorChipSystem.subType == .ts) {
+                
+                colorChipSystem.baseCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .base)
+                
+                if ((colorChipSystem.primeCoat) != nil) {
+                    colorChipSystem.primeCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .prime)
+                }
+                if ((colorChipSystem.mvrCoat) != nil) {
+                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr)
+                }
+                
+            } else if (colorChipSystem.subType == .sl) {
+                
+                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .sl, uvResistance: false)
+                
+                if ((colorChipSystem.primeCoat) != nil) {
+                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .sl, uvResistance: false)
+                }
+                
+            } else {
+                colorChipSystem.baseCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .base)
+                
+                if ((colorChipSystem.primeCoat) != nil) {
+                    colorChipSystem.primeCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .prime)
+                }
+                if ((colorChipSystem.mvrCoat) != nil) {
+                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr)
+                }
             }
         }) {
       HStack {

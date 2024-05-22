@@ -58,7 +58,7 @@ class TSCoat: Coat {
         
         self.coatType = .base
         self.speed = .ap
-        self.covRate = 0 // set to default value for default thickness
+        self.covRate = 235 // Default .base coverage rate
         self.selectedPartA = .arBeige
         self.partA = Product()
         self.partB = Product()
@@ -152,22 +152,22 @@ class TSCoat: Coat {
             switch self {
                 
             case .noColor: return "No Color (Pre-pigmented Part A)"
-            case .beige: return "Beige"
-            case .black: return "Black"
-            case .darkGray: return "Dark Gray"
-            case .enchantedGreen: return "Enchanted Green"
-            case .handicapBlue: return "Handicap Blue"
-            case .Latte: return "Latte"
-            case .lightGray: return "Light Gray"
-            case .mediumGray: return "Medium Gray"
-            case .mocha: return "Mocha"
-            case .safetyBlue: return "Safety Blue"
-            case .safetyRed: return "Safety Red"
-            case .safetyYellow: return "Safety Yellow"
-            case .shadowGray: return "Shadow Gray"
-            case .tan: return "Tan"
-            case .tileRed: return "Tile Red"
-            case .white: return "White"
+            case .beige: return "Beige (TS)"
+            case .black: return "Black (TS)"
+            case .darkGray: return "Dark Gray (TS)"
+            case .enchantedGreen: return "Enchanted Green (TS)"
+            case .handicapBlue: return "Handicap Blue (TS)"
+            case .Latte: return "Latte (TS)"
+            case .lightGray: return "Light Gray (TS)"
+            case .mediumGray: return "Medium Gray (TS)"
+            case .mocha: return "Mocha (TS)"
+            case .safetyBlue: return "Safety Blue (TS)"
+            case .safetyRed: return "Safety Red (TS)"
+            case .safetyYellow: return "Safety Yellow (TS)"
+            case .shadowGray: return "Shadow Gray (TS)"
+            case .tan: return "Tan (TS)"
+            case .tileRed: return "Tile Red (TS)"
+            case .white: return "White (TS)"
                 
             }
         }
@@ -189,224 +189,25 @@ class TSCoat: Coat {
         }
     }
     
-    
-    /*
     private func updateCovRate() {
         switch coatType {
         case .base:
-            switch subType {
-            case .rc:
-                switch thickness {
-                case .thinRC:
-                    covRate = 190
-                case .mediumRC:
-                    covRate = 120
-                case .thickRC:
-                    covRate = 80
-                case .thin:
-                    break
-                case .medium:
-                    break
-                case .thick:
-                    break
-                }
-            case .tt:
-                switch thickness {
-                case .thinRC:
-                    break
-                case .mediumRC:
-                    break
-                case .thickRC:
-                    break
-                case .thin:
-                    covRate = 24
-                case .medium:
-                    covRate = 14
-                case .thick:
-                    covRate = 10
-                }
-            case .sl:
-                switch thickness {
-                case .thinRC:
-                    break
-                case .mediumRC:
-                    break
-                case .thickRC:
-                    break
-                case .thin:
-                    covRate = 50
-                case .medium:
-                    covRate = 35
-                case .thick:
-                    covRate = 25
-                }
-            case .mf:
-                switch thickness {
-                case .thinRC:
-                    break
-                case .mediumRC:
-                    break
-                case .thickRC:
-                    break
-                case .thin:
-                    covRate = 60
-                case .medium:
-                    covRate = 35
-                case .thick:
-                    covRate = 25
-                }
-            }
+            covRate = 235
         case .prime:
-            switch subType {
-            case .rc:
-                switch thickness {
-                case .thinRC:
-                    covRate = 190
-                case .mediumRC:
-                    covRate = 120
-                case .thickRC:
-                    covRate = 80
-                case .thin:
-                    break
-                case .medium:
-                    break
-                case .thick:
-                    break
-                }
-            case .tt:
-                switch thickness {
-                case .thinRC:
-                    covRate = 31 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 32
-                case .thickRC:
-                    covRate = 33
-                case .thin:
-                    covRate = 34
-                case .medium:
-                    covRate = 35
-                case .thick:
-                    covRate = 36
-                }
-            case .sl:
-                switch thickness {
-                case .thinRC:
-                    covRate = 37 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 38
-                case .thickRC:
-                    covRate = 39
-                case .thin:
-                    covRate = 40
-                case .medium:
-                    covRate = 41
-                case .thick:
-                    covRate = 42
-                }
-            case .mf:
-                switch thickness {
-                case .thinRC:
-                    covRate = 43 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 44
-                case .thickRC:
-                    covRate = 45
-                case .thin:
-                    covRate = 46
-                case .medium:
-                    covRate = 47
-                case .thick:
-                    covRate = 48
-                }
-            }
+            covRate = 275
         case .top:
-            switch subType {
-            case .rc:
-                switch thickness {
-                case .thinRC:
-                    covRate = 190
-                case .mediumRC:
-                    covRate = 120
-                case .thickRC:
-                    covRate = 80
-                case .thin:
-                    covRate = 0
-                case .medium:
-                    covRate = 0
-                case .thick:
-                    covRate = 0
-                }
-            case .tt:
-                switch thickness {
-                case .thinRC:
-                    covRate = 55 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 56
-                case .thickRC:
-                    covRate = 57
-                case .thin:
-                    covRate = 58
-                case .medium:
-                    covRate = 59
-                case .thick:
-                    covRate = 60
-                }
-            case .sl:
-                switch thickness {
-                case .thinRC:
-                    covRate = 61 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 62
-                case .thickRC:
-                    covRate = 63
-                case .thin:
-                    covRate = 64
-                case .medium:
-                    covRate = 65
-                case .thick:
-                    covRate = 66
-                }
-            case .mf:
-                switch thickness {
-                case .thinRC:
-                    covRate = 67 // set these variables to correct values later vv
-                case .mediumRC:
-                    covRate = 68
-                case .thickRC:
-                    covRate = 69
-                case .thin:
-                    covRate = 70
-                case .medium:
-                    covRate = 71
-                case .thick:
-                    covRate = 72
-                }
-            }
+            break
         case .mvr:
-            switch thickness {
-            case .thinRC:
-                covRate = 0
-            case .mediumRC:
-                covRate = 0
-            case .thickRC:
-                covRate = 0
-            case .thin:
-                covRate = 0
-            case .medium:
-                covRate = 0
-            case .thick:
-                covRate = 0
-            }
+            covRate = 100
         }
     }
-     */
     
     override func setValues() {
         
-        //updateCovRate()
+        updateCovRate()
         var availableProductsTS = loadTsList()
         
-        //findProducts(products: availableProductsTS)
+        findProducts(products: availableProductsTS)
         
         availableProductsTS.removeAll()
         
@@ -414,146 +215,114 @@ class TSCoat: Coat {
         
     }
 
-    /*
+    
     override func findProducts(products: [Product]) {
         
-        switch self.subType {
-            
-            case .rc:
-                
-            self.partA = products.first(where: {$0.id == "EX-KUPCARC-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCRFC-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCZ6-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCA6-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCF6-EA"})!
-                
-            }
-            
-            case .tt:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCARC-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCTTC4-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCZ6-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCA6-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCF6-EA"})!
-                
-            }
-                
-            case .sl:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCASL8-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCSLC2-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLZ8-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLB8-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLF8-EA"})!
-                
-            }
-                
-            case .mf:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCASL8-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCMFC-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLZ8-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLB8-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLF8-EA"})!
-                
-            }
+        switch self.selectedPartA {
+        case .arBeige:
+            self.partA = products.first(where: {$0.id == "EX-KTSARBG-01"})!
+        case .arBlack:
+            self.partA = products.first(where: {$0.id == "EX-KTSARBL-01"})!
+        case .arClear:
+            self.partA = products.first(where: {$0.id == "EX-KTSARCL-01"})!
+        case .arDarkGrey:
+            self.partA = products.first(where: {$0.id == "EX-KTSARDG-01"})!
+        case .arEnchantedGreen:
+            self.partA = products.first(where: {$0.id == "EX-KTSAREG-01"})!
+        case .arHandicapBlue:
+            self.partA = products.first(where: {$0.id == "EX-KTSARHB-01"})!
+        case .arLatte:
+            self.partA = products.first(where: {$0.id == "EX-KTSARLT-01"})!
+        case .arLightGray:
+            self.partA = products.first(where: {$0.id == "EX-KTSARLG-01"})!
+        case .arMediumGray:
+            self.partA = products.first(where: {$0.id == "EX-KTSARMG-01"})!
+        case .arMocha:
+            self.partA = products.first(where: {$0.id == "EX-KTSARMH-01"})!
+        case .arSafetyBlue:
+            self.partA = products.first(where: {$0.id == "EX-KTSARSB-01"})!
+        case .arSafetyRed:
+            self.partA = products.first(where: {$0.id == "EX-KTSARSR-01"})!
+        case .arSafetyYellow:
+            self.partA = products.first(where: {$0.id == "EX-KTSARSY-01"})!
+        case .arShadowGray:
+            self.partA = products.first(where: {$0.id == "EX-KTSARSG-01"})!
+        case .arTan:
+            self.partA = products.first(where: {$0.id == "EX-KTSARTN-01"})!
+        case .arTileRed:
+            self.partA = products.first(where: {$0.id == "EX-KTSARTR-01"})!
+        case .arWhite:
+            self.partA = products.first(where: {$0.id == "EX-KTSARWH-01"})!
+        case .crrClear:
+            self.partA = products.first(where: {$0.id == "EX-KTSEMVZB-EA"})!
+        case .lgrClear:
+            self.partA = products.first(where: {$0.id == "Contact Distributor lg"})!
+        case .commercial:
+            self.partA = products.first(where: {$0.id == "FG-TSECMRCLR-01G"})!
         }
         
-        switch self.coatColor {
-        case .unpigmented:
+        switch self.speed {
+        case .ap:
+            self.partB = products.first(where: {$0.id == "EX-KTSEAPB-EA"})!
+        case .ez:
+            self.partB = products.first(where: {$0.id == "EX-KTSEZB-EA"})!
+        case .fast:
+            self.partB = products.first(where: {$0.id == "EX-KTSEFB-EA"})!
+        case .th:
+            self.partB = products.first(where: {$0.id == "EX-KTSETHB-EA"})!
+        case .mvrEz:
+            self.partB = products.first(where: {$0.id == "EX-KTSEMVZB-EA"})!
+        case .mvrFc:
+            self.partB = products.first(where: {$0.id == "EX-KTSEMVFB-EA"})!
+        }
+        
+        switch self.coatColorant {
+        case .noColor:
             self.colorant = Product()
+        case .beige:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLBG-EA"})!
         case .black:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBK-EA"})!
-        case .blue:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBL-EA"})!
-        case .bone:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLWG-EA"})!
-        case .brown:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBR-EA"})!
-        case .clay:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCL-EA"})!
-        case .gray:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGY-EA"})!
-        case .green:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGR-EA"})!
-        case .mustard:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCY-EA"})!
-        case .red:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLRD-EA"})!
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLBL-EA"})!
+        case .darkGray:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLDG-EA"})!
+        case .enchantedGreen:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLEG-EA"})!
+        case .handicapBlue:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLHB-EA"})!
+        case .Latte:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLLT-EA"})!
+        case .lightGray:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLLG-EA"})!
+        case .mediumGray:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLMG-EA"})!
+        case .mocha:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLMC-EA"})!
+        case .safetyBlue:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLSB-EA"})!
+        case .safetyRed:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLSR-EA"})!
+        case .safetyYellow:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLSY-EA"})!
+        case .shadowGray:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLSG-EA"})!
+        case .tan:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLTN-EA"})!
+        case .tileRed:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLTR-EA"})!
+        case .white:
+            self.colorant = products.first(where: {$0.id == "EX-KTSECLWH-EA"})!
         }
         
         productsNeeded.removeAll()
         
         productsNeeded.append(partA)
         productsNeeded.append(partB)
-        productsNeeded.append(partC)
         
         if (self.colorant.id != "Default") {
             productsNeeded.append(colorant)
         }
-        
-        if (self.coatType == .top) {
-            
-            if (self.texture1 != .none) {
-                productsNeeded.append(findTexture(texture: self.texture1, products: upcList))
-            }
-            
-            if (self.texture2 != .none) {
-                productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
-            }
-            
-            if (self.uvResistance == true) {
-                productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
-            }
-        }
 
     }
-     */
 
     override func printCoatTest() -> String {
         

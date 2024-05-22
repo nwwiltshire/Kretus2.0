@@ -15,7 +15,8 @@ class ColorChipSystem: System {
     @Published var subType: SubType
     @Published var baseCoat: Coat
     @Published var primeCoat: Coat?
-    @Published var topCoat: Coat?
+    @Published var topCoat1: PACoat
+    @Published var topCoat2: PACoat?
     @Published var mvrCoat: Coat?
     
     @Published var broadCast: ColorChipSystem.Broadcast
@@ -30,7 +31,8 @@ class ColorChipSystem: System {
          subType: SubType,
          baseCoat: Coat,
          primeCoat: Coat,
-         topCoat: Coat,
+         topCoat1: PACoat,
+         topCoat2: PACoat,
          mvrCoat: Coat,
          broadCast: ColorChipSystem.Broadcast,
          totalWasteFactor: Int) {
@@ -39,7 +41,8 @@ class ColorChipSystem: System {
         self.subType = subType
         self.baseCoat = baseCoat
         self.primeCoat = primeCoat
-        self.topCoat = topCoat
+        self.topCoat1 = topCoat1
+        self.topCoat2 = topCoat2
         self.mvrCoat = mvrCoat
         self.broadCast = broadCast
         
@@ -52,6 +55,7 @@ class ColorChipSystem: System {
         self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
         self.subType = .ts
         self.baseCoat = TSCoat() // update later
+        self.topCoat1 = PACoat()
         self.broadCast = .quarter
         
         super.init(
@@ -119,6 +123,7 @@ class ColorChipSystem: System {
         output += "Total Kits Needed: \(kitsNeeded)\n"
         output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Sub Type: \(subType)\n"
+        baseCoat.setValues()
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
@@ -128,38 +133,40 @@ class ColorChipSystem: System {
             output += "\nPrime Coat: None\n"
         }
         
-        if let topCoat = topCoat {
-            topCoat.setValues()
-            output += "\nTop Coat:\n\n\(topCoat.printCoatTest())\n"
+        if let mvrCoat = mvrCoat {
+            mvrCoat.setValues()
+            output += "\nMVR Coat:\n\n\(mvrCoat.printCoatTest())\n"
         } else {
-            output += "\nTop Coat: None\n"
+            output += "\nMVR Coat: None\n"
         }
+        
+        topCoat1.setValues()
+        output += "\nTop Coat 1: \n\n\(topCoat1.printCoatTest())"
+        
+        if let topCoat2 = topCoat2 {
+            topCoat2.setValues()
+            output += "\nTop Coat 2:\n\n\(topCoat2.printCoatTest())\n"
+        } else {
+            output += "\nTop Coat 2: None\n"
+        }
+        
+        // Test top coats later
+        
+        
         return output
     }
-
-    func createColorChipCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> Coat {
-        
-        let tsCoat = TSCoat()
-        
-        /*
-        tsCoat.squareFt = squareFt
-        tsCoat.coatType = coatType
-        tsCoat.subType = subType
-        tsCoat.coatColor = coatColor
-        */
-        
-        // finish later
-        
-        return tsCoat
-      }
-    
     
     override func getAllKits() {
         kitsNeeded.removeAll()
         totalWasteFactor = 0
+        
         baseCoat.setValues()
         updateKits(with: baseCoat.kitsNeeded)
         totalWasteFactor += baseCoat.wasteFactor
+        
+        topCoat1.setValues()
+        updateKits(with: topCoat1.kitsNeeded)
+        totalWasteFactor += topCoat1.wasteFactor
 
         if let primeCoat = primeCoat {
             primeCoat.setValues()
@@ -167,10 +174,10 @@ class ColorChipSystem: System {
             totalWasteFactor += primeCoat.wasteFactor
         }
 
-        if let topCoat = topCoat {
-            topCoat.setValues()
-            updateKits(with: topCoat.kitsNeeded)
-            totalWasteFactor += topCoat.wasteFactor
+        if let topCoat2 = topCoat2 {
+            topCoat2.setValues()
+            updateKits(with: topCoat2.kitsNeeded)
+            totalWasteFactor += topCoat2.wasteFactor
         }
         
         if let mvrCoat = mvrCoat {
@@ -189,5 +196,21 @@ class ColorChipSystem: System {
         
         return upcCoat
       }
+    
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType) -> TSCoat {
+        let tsCoat = TSCoat()
+        tsCoat.squareFt = squareFt
+        tsCoat.coatType = coatType
+        
+        return tsCoat
+    }
+    
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType) -> PACoat {
+        let paCoat = PACoat()
+        paCoat.squareFt = squareFt
+        paCoat.coatType = coatType
+        
+        return paCoat
+    }
     
 }

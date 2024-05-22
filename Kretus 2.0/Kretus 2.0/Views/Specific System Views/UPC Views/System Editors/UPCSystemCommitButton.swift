@@ -18,10 +18,10 @@ struct UPCSystemCommitButton: View {
         .onAppear {
             upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType, coatColor: upcSystem.systemColor)
             if ((upcSystem.primeCoat) != nil) {
-                upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: upcSystem.subType, coatColor: upcSystem.systemColor)
+                upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: .rc, coatColor: upcSystem.systemColor)
             }
             if ((upcSystem.topCoat) != nil) {
-                upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: upcSystem.subType, coatColor: upcSystem.systemColor)
+                upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: .rc, coatColor: upcSystem.systemColor)
             }
         }) {
       HStack {

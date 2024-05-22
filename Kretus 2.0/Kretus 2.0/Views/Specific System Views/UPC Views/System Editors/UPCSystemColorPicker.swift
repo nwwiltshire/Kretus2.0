@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct UPCColorPicker: View {
+struct UPCSystemColorPicker: View {
     
     @ObservedObject var upcSystem: UPCSystem
     
     @State private var selectedColor: UPCSystem.SystemColor = .unpigmented
+    
+    @State private var isExpanded = false
     
     let layout = [
         
@@ -23,12 +25,15 @@ struct UPCColorPicker: View {
     
     var body: some View {
         VStack {
-            DisclosureGroup("Choose System Color") {
+            DisclosureGroup("Choose System Color", isExpanded: $isExpanded) {
                 LazyVGrid(columns: layout, spacing: 20) {
                     ForEach(UPCSystem.SystemColor.allCases, id: \.self) { color in
                         Button(action: {
                             self.selectedColor = color
                             upcSystem.systemColor = selectedColor
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                        isExpanded.toggle()
+                                      }
                         }) {
                             VStack {
                                 
@@ -83,12 +88,12 @@ struct UPCColorPicker: View {
 
 
 
-struct UPCColorPicker_Previews: PreviewProvider {
+struct UPCSystemColorPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCColorPicker(upcSystem: mockSystem)
+        UPCSystemColorPicker(upcSystem: mockSystem)
     }
 }

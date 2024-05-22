@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectLineView: View {
     var body: some View {
         VStack {
-            Text("Select Line")
+            Text("Coming Soon!")
         }
         .padding()
     }
