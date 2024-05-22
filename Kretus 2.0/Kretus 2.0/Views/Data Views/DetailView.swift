@@ -100,60 +100,45 @@ struct DetailView: View {
     private func checkForPDFs(system: SystemData) -> [PDFUrl] {
         
         var pdfs: [PDFUrl] = []
+        var baseSpeed = ""
+        var tempSubType = ""
+        var tempSpeed = ""
+        let subType = String(system.subType.prefix(2))
         
-        if (system.name == "UPC 1-Coat") {
-            if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC 1-Coat Installation Guide" }) {
+        if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC 1-Coat Installation Guide" }) {
+            pdfs.append(pdfUrl)
+        }
+        if (system.systemColor != "Unpigmented (UPC)") {
+            if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC Colorant Safety Data Sheet" }) {
                 pdfs.append(pdfUrl)
             }
-            if (system.systemColor != "Unpigmented (UPC)") {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC Colorant Safety Data Sheet" }) {
-                    pdfs.append(pdfUrl)
-                }
-            }
-            
-            let baseSpeed = system.speeds[0]
-            
-            if (system.subType == "RC (Roll Coat)") {
+        }
+        
+        if (system.name == "UPC 1-Coat") {
+            for coat in system.coats {
+                print("\(coat.coatType)\n")
+                print("\(coat.speed)")
                 
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-\(baseSpeed)" }) {
-                    pdfs.append(pdfUrl)
-                }
-                
-            } else if (system.subType == "TT (Trowel Applied)") {
-                
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: TT-\(baseSpeed)" }) {
-                    pdfs.append(pdfUrl)
-                }
-                
-            } else if (system.subType == "SL (Self Leveling)") {
-                
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: SL-\(baseSpeed)" }) {
-                    pdfs.append(pdfUrl)
-                }
-                
-            } else if (system.subType == "MF (Medium Fill SL)") {
-                
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: MF-\(baseSpeed)" }) {
-                    pdfs.append(pdfUrl)
-                }
-                
-            }
-            
-            if (system.speeds[1..<system.speeds.count].contains("EZ")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-EZ" }) {
-                    pdfs.append(pdfUrl)
-                }
-            }
-            
-            if (system.speeds[1..<system.speeds.count].contains("AP")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-AP" }) {
-                    pdfs.append(pdfUrl)
-                }
-            }
-            
-            if (system.speeds[1..<system.speeds.count].contains("FC")) {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: RC-FC" }) {
-                    pdfs.append(pdfUrl)
+                if (coat.coatType == "Base Coat") {
+                    if (coat.speed == "EZ (Easy)") {
+                        baseSpeed = "EZ"
+                    } else if (coat.speed == "AP (Average Pace)") {
+                        baseSpeed = "AP"
+                    } else {
+                        baseSpeed = "FC"
+                    }
+                    
+                    if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(subType)-\(baseSpeed)" }) {
+                        pdfs.append(pdfUrl)
+                    }
+                } else {
+                    tempSubType = String(coat.subType.prefix(2))
+                    
+                    tempSpeed = String(coat.speed.prefix(2))
+                    
+                    if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(tempSubType)-\(tempSpeed)" }) {
+                        pdfs.append(pdfUrl)
+                    }
                 }
             }
         }
