@@ -100,49 +100,40 @@ struct DetailView: View {
     private func checkForPDFs(system: SystemData) -> [PDFUrl] {
         
         var pdfs: [PDFUrl] = []
+        var addresses: [String] = []
         var baseSpeed = ""
         var tempSubType = ""
         var tempSpeed = ""
         let subType = String(system.subType.prefix(2))
         
-        if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC 1-Coat Installation Guide" }) {
-            pdfs.append(pdfUrl)
-        }
-        if (system.systemColor != "Unpigmented (UPC)") {
-            if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC Colorant Safety Data Sheet" }) {
-                pdfs.append(pdfUrl)
-            }
-        }
+        appendIfNotExists(string: "UPC 1-Coat Installation Guide", to: &addresses)
+        appendIfNotExists(string: "UPC Colorant Safety Data Sheet", to: &addresses)
         
         if (system.name == "UPC 1-Coat") {
             for coat in system.coats {
-                print("\(coat.coatType)\n")
-                print("\(coat.speed)")
                 
-                if (coat.coatType == "Base Coat") {
-                    if (coat.speed == "EZ (Easy)") {
-                        baseSpeed = "EZ"
-                    } else if (coat.speed == "AP (Average Pace)") {
-                        baseSpeed = "AP"
-                    } else {
-                        baseSpeed = "FC"
-                    }
+                tempSubType = String(coat.subType.prefix(2))
                     
-                    if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(subType)-\(baseSpeed)" }) {
-                        pdfs.append(pdfUrl)
-                    }
-                } else {
-                    tempSubType = String(coat.subType.prefix(2))
-                    
-                    tempSpeed = String(coat.speed.prefix(2))
-                    
-                    if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == "UPC: \(tempSubType)-\(tempSpeed)" }) {
-                        pdfs.append(pdfUrl)
-                    }
+                tempSpeed = String(coat.speed.prefix(2))
+                
+                appendIfNotExists(string: "UPC: \(tempSubType)-\(tempSpeed)", to: &addresses)
+                
+            }
+            
+            for address in addresses {
+                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == address }) {
+                    pdfs.append(pdfUrl)
                 }
             }
         }
         
         return pdfs
     }
+    
+    func appendIfNotExists(string: String, to array: inout [String]) {
+      if !array.contains(string) {
+        array.append(string)
+      }
+    }
+    
 }
