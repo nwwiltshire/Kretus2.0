@@ -101,10 +101,8 @@ struct DetailView: View {
         
         var pdfs: [PDFUrl] = []
         var addresses: [String] = []
-        var baseSpeed = ""
         var tempSubType = ""
         var tempSpeed = ""
-        let subType = String(system.subType.prefix(2))
         
         appendIfNotExists(string: "UPC 1-Coat Installation Guide", to: &addresses)
         appendIfNotExists(string: "UPC Colorant Safety Data Sheet", to: &addresses)
