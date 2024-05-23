@@ -189,6 +189,7 @@ class TSCoat: Coat {
         }
     }
     
+    // Update later (SQFT/GAL)
     private func updateCovRate() {
         switch coatType {
         case .base:
@@ -211,7 +212,8 @@ class TSCoat: Coat {
         
         availableProductsTS.removeAll()
         
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        // Update Later to sqft/gal
+        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
 

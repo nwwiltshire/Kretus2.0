@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct UPCSaveSystemView: View {
+struct SaveSystemView: View {
     
-    @ObservedObject var upcSystem: UPCSystem
+    @ObservedObject var system: System
     @State private var nameFromUser = ""
     @State private var descriptionFromUser = ""
     @Environment(\.modelContext) private var context
@@ -24,7 +24,7 @@ struct UPCSaveSystemView: View {
                         .bold()
                     TextField("Name", text: $nameFromUser)
                     TextField("Description", text: $descriptionFromUser)
-                    UPCTotalSystem(upcSystem: upcSystem)
+                    TotalSystemView(system: system)
                         .padding()
                 }
             .toolbar {
@@ -35,8 +35,12 @@ struct UPCSaveSystemView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         withAnimation {
-                            save(upcSystem: upcSystem)
-                            dismiss()
+                            if let upcSystem = system as? UPCSystem {
+                                upcSave(upcSystem: upcSystem)
+                                dismiss()
+                            } else {
+                                dismiss()
+                            }
                         }
                     }
                 }
@@ -49,14 +53,18 @@ struct UPCSaveSystemView: View {
         }
     }
     
-    private func save(upcSystem: UPCSystem) {
+    private func systemSaveIdentifier(system: System) {
+        
+    }
+    
+    private func upcSave(upcSystem: UPCSystem) {
         let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, coats: [], subType: upcSystem.subType.description, speeds: [], systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
         
-        newSystem.kits = convertUPCKits(systemData: newSystem, upcKits: upcSystem.kitsNeeded)
+        newSystem.kits = upcConvertKits(systemData: newSystem, upcKits: upcSystem.kitsNeeded)
         
-        newSystem.speeds = findSpeeds(system: upcSystem)
+        newSystem.speeds = upcFindSpeeds(system: upcSystem)
         
-        newSystem.coats = convertCoats(upcSystem: upcSystem)
+        newSystem.coats = upcConvertCoats(upcSystem: upcSystem)
         
         context.insert(newSystem)
         
@@ -70,7 +78,7 @@ struct UPCSaveSystemView: View {
         }
     }
     
-    private func convertUPCKits(systemData: SystemData, upcKits: [Kit]) -> [KitRelationship] {
+    private func upcConvertKits(systemData: SystemData, upcKits: [Kit]) -> [KitRelationship] {
       var convertedKits: [KitRelationship] = []
 
       for upcKit in upcKits {
@@ -82,7 +90,7 @@ struct UPCSaveSystemView: View {
       return convertedKits
     }
     
-    private func convertCoats(upcSystem: UPCSystem) -> [CoatData] {
+    private func upcConvertCoats(upcSystem: UPCSystem) -> [CoatData] {
         var coats: [CoatData] = []
         
         coats.append(CoatData(coatType: "Base Coat", subType: upcSystem.baseCoat.subType.description, speed: upcSystem.baseCoat.speed.description))
@@ -99,7 +107,7 @@ struct UPCSaveSystemView: View {
         return coats
     }
     
-    private func findSpeeds(system: UPCSystem) -> [String] {
+    private func upcFindSpeeds(system: UPCSystem) -> [String] {
         var speeds: [String] = []
         
         switch system.baseCoat.speed {
@@ -140,12 +148,12 @@ struct UPCSaveSystemView: View {
 
 
 
-struct UPCSaveSystemView_Previews: PreviewProvider {
+struct SaveSystemView_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCSystem()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCSaveSystemView(upcSystem: mockSystem)
+        SaveSystemView(system: mockSystem)
     }
 }

@@ -16,7 +16,7 @@ struct PUCoatSuite: View {
         VStack {
             Text("\(puCoat.coatType)")
                 .font(.title)
-            Text("Polyaspurtic")
+            Text("Polyaspartic")
                 .font(.title2)
             HStack {
                 Text("Part A")

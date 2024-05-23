@@ -190,7 +190,7 @@ class PACoat: Coat {
         }
     }
     
-    
+    // Update later (SQFT/GAL)
     private func updateCovRate() {
         switch self.thickness {
         case .base:
@@ -213,7 +213,8 @@ class PACoat: Coat {
         
         availableProductsTS.removeAll()
         
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        // Update Later to sqft/gal
+        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
 

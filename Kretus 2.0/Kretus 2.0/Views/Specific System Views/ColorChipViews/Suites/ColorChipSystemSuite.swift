@@ -20,8 +20,6 @@ struct ColorChipSystemSuite: View {
             ColorChipCoatOptions(colorChipSystem: colorChipSystem)
             ColorChipSystemCommitButton(colorChipSystem: colorChipSystem)
             
-            
-            
         }
     }
 }

@@ -306,11 +306,11 @@ class UPCCoat: Coat {
         
         availableProductsUPC.removeAll()
         
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
 
-    
+    // Update later, prime and top coats are ALWAYS RC
     override func findProducts(products: [Product]) {
         
         switch self.subType {
