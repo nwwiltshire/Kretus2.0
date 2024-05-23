@@ -20,6 +20,7 @@ class PACoat: Coat {
     
     @Published var coatColorant: PACoat.CoatColorant
     @Published var colorant: Product
+    @Published var texture: Texture
     
     @Published var thickness: PACoat.Thickness
     
@@ -36,6 +37,7 @@ class PACoat: Coat {
          partB: Product,
          coatColorant: PACoat.CoatColorant,
          colorant: Product,
+         texture: Texture,
          thickness: PACoat.Thickness,
          wasteFactor: Int) {
         
@@ -47,6 +49,7 @@ class PACoat: Coat {
         self.partB = partB
         self.coatColorant = coatColorant
         self.colorant = colorant
+        self.texture = texture
         self.thickness = thickness
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
@@ -63,6 +66,7 @@ class PACoat: Coat {
         self.partB = Product()
         self.coatColorant = .noColor
         self.colorant = Product()
+        self.texture = .noTexture
         self.thickness = .base
         
         super.init(id: 0,
@@ -166,6 +170,26 @@ class PACoat: Coat {
         }
     }
     
+    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
+        case noTexture, asAo120, asAo220, asAo60, asAo80, asB100, asB50
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+                
+            case .noTexture: return "No Texture"
+            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
+            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
+            case .asAo60: return "Anti-Slip Aluminum Oxide 60 Grit"
+            case .asAo80: return "Anti-Slip Aluminum Oxide 80 Grit"
+            case .asB100: return "Anti-Slip Bead 100"
+            case .asB50: return "Anti-Slip Bead 50"
+            }
+            
+        }
+    }
+    
     
     private func updateCovRate() {
         switch self.thickness {
@@ -194,6 +218,8 @@ class PACoat: Coat {
     }
 
     override func findProducts(products: [Product]) {
+        
+        var textureProduct: Product = Product()
         
         switch self.subType {
         case .poly72:
@@ -265,6 +291,23 @@ class PACoat: Coat {
             self.colorant = products.first(where: {$0.id == "EX-KPLYCLWH-EA"})!
         }
         
+        switch self.texture {
+        case .noTexture:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+        case .asAo120:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+        case .asAo220:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+        case .asAo60:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+        case .asAo80:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+        case .asB100:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
+        case .asB50:
+            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
+        }
+        
         productsNeeded.removeAll()
         
         productsNeeded.append(partA)
@@ -272,6 +315,10 @@ class PACoat: Coat {
         
         if (self.colorant.id != "Default") {
             productsNeeded.append(colorant)
+        }
+        
+        if (self.texture != .noTexture) {
+            productsNeeded.append(textureProduct)
         }
 
     }

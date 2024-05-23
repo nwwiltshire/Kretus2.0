@@ -39,6 +39,15 @@ struct ColorChipCoatEditorView: View {
           
           PACoatSuite(paCoat: colorChipSystem.topCoat1)
           
+          if (colorChipSystem.topCoat2 is PACoat) {
+              PACoatSuite(paCoat: colorChipSystem.topCoat2 as! PACoat)
+          }
+          
+          if (colorChipSystem.topCoat2 is PUCoat) {
+              PUCoatSuite(puCoat: colorChipSystem.topCoat2 as! PUCoat)
+          }
+
+          
           
       }
       .padding(.all)

@@ -1,5 +1,5 @@
 //
-//  PACoatSuite.swift
+//  PUCoatSuite.swift
 //  Kretus 2.0
 //
 //  Created by Nick Wiltshire on 5/23/24.
@@ -8,15 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct PACoatSuite: View {
+struct PUCoatSuite: View {
     
-    @ObservedObject var paCoat: PACoat
+    @ObservedObject var puCoat: PUCoat
     
     var body: some View {
         VStack {
-            Text("\(paCoat.coatType)")
+            Text("\(puCoat.coatType)")
                 .font(.title)
-            Text("Polyaspartic")
+            Text("Polyaspurtic")
                 .font(.title2)
             HStack {
                 Text("Part A")
@@ -24,8 +24,8 @@ struct PACoatSuite: View {
                 
                 Spacer()
                 
-                Picker(selection: $paCoat.subType, label: Text("")) {
-                    ForEach(PACoat.SubType.allCases, id: \.self) { subType in
+                Picker(selection: $puCoat.subType, label: Text("")) {
+                    ForEach(PUCoat.SubType.allCases, id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }
@@ -35,15 +35,16 @@ struct PACoatSuite: View {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
-                )
+            )
+            
             HStack {
                 Text("Part B (Speed)")
                     .font(.headline)
                 
                 Spacer()
                 
-                Picker(selection: $paCoat.speed, label: Text("")) {
-                    ForEach(PACoat.Speed.allCases, id: \.self) { speed in
+                Picker(selection: $puCoat.speed, label: Text("")) {
+                    ForEach(PUCoat.Speed.allCases, id: \.self) { speed in
                         Text(speed.description).tag(speed)
                     }
                 }
@@ -53,20 +54,18 @@ struct PACoatSuite: View {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
-                )
-            if (paCoat.coatType != .top1 || paCoat.coatType != .top2) {
-                PAColorPicker(paCoat: paCoat)
-            }
+            )
             
-            if (paCoat.coatType == .top2) {
+            if (puCoat.coatType == .top2)
+            {
                 HStack {
                     Text("Texture")
                         .font(.headline)
                     
                     Spacer()
                     
-                    Picker(selection: $paCoat.texture, label: Text("")) {
-                        ForEach(PACoat.Texture.allCases, id: \.self) { speed in
+                    Picker(selection: $puCoat.texture, label: Text("")) {
+                        ForEach(PUCoat.Texture.allCases, id: \.self) { speed in
                             Text(speed.description).tag(speed)
                         }
                     }
@@ -78,7 +77,6 @@ struct PACoatSuite: View {
                         .fill(Color(.gray).opacity(0.25))
                 )
             }
-            
         }
         .padding()
         .background(
@@ -92,12 +90,12 @@ struct PACoatSuite: View {
 
 
 
-struct PACoatSuite_Previews: PreviewProvider {
+struct PUCoatSuite_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockCoat = PACoat()
+        let mockCoat = PUCoat()
 
         // Pass the mock System instance into SystemBuilderView
-        PACoatSuite(paCoat: mockCoat)
+        PUCoatSuite(puCoat: mockCoat)
     }
 }

@@ -38,6 +38,7 @@
 		306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */; };
 		306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */; };
 		306822772BFFD12B00AF6CF8 /* PUCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822762BFFD12B00AF6CF8 /* PUCoat.swift */; };
+		3068227A2BFFDF4800AF6CF8 /* PUCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -123,6 +124,7 @@
 		306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatSuite.swift; sourceTree = "<group>"; };
 		306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAColorPicker.swift; sourceTree = "<group>"; };
 		306822762BFFD12B00AF6CF8 /* PUCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoat.swift; sourceTree = "<group>"; };
+		306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoatSuite.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 				30ED659E2B733825001E636D /* SqftForm.swift */,
 			);
 			path = "Universal System Views";
+			sourceTree = "<group>";
+		};
+		306822782BFFDF4000AF6CF8 /* PU Views */ = {
+			isa = PBXGroup;
+			children = (
+				306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */,
+			);
+			path = "PU Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -393,6 +403,7 @@
 		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
 			isa = PBXGroup;
 			children = (
+				306822782BFFDF4000AF6CF8 /* PU Views */,
 				30CAD93C2BFE7B7E00060449 /* PA Views */,
 				30CAD93B2BFE7B6E00060449 /* TS Views */,
 				30CAD9282BFC2F1900060449 /* ColorChipViews */,
@@ -615,6 +626,7 @@
 				30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */,
 				3086DDE92B86953200B94B38 /* Splash View.swift in Sources */,
 				302F51F52BF824A9005CC281 /* ColorChipSystem.swift in Sources */,
+				3068227A2BFFDF4800AF6CF8 /* PUCoatSuite.swift in Sources */,
 				309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */,
 				30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,

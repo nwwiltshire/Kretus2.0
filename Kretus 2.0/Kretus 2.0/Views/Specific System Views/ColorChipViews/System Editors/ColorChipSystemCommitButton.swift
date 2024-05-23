@@ -68,8 +68,7 @@ struct ColorChipSystemCommitButton: View {
                 case .polyaspartic:
                     colorChipSystem.topCoat2 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top2)
                 case .polyurethane:
-                    break
-                    // create polyurethane coat here
+                    colorChipSystem.topCoat2 = colorChipSystem.createPUCoat(squareFt: colorChipSystem.squareFt, coatType: .top2)
                 }
             }
             

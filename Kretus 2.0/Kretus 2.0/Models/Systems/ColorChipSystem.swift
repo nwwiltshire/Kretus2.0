@@ -167,8 +167,6 @@ class ColorChipSystem: System {
             output += "\nTop Coat 2: None\n"
         }
         
-        // Test top coats later
-        
         
         return output
     }
@@ -228,6 +226,14 @@ class ColorChipSystem: System {
         paCoat.coatType = coatType
         
         return paCoat
+    }
+    
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType) -> PUCoat {
+        let puCoat = PUCoat()
+        puCoat.squareFt = squareFt
+        puCoat.coatType = coatType
+        
+        return puCoat
     }
     
 }
