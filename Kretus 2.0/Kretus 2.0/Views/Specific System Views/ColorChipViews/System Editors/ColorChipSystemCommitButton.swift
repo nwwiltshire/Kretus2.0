@@ -14,7 +14,6 @@ struct ColorChipSystemCommitButton: View {
   
   var body: some View {
     NavigationLink(destination: ColorChipCoatEditorView(colorChipSystem: colorChipSystem)
-        // Creates base coat
         .onAppear {
             if (colorChipSystem.subType == .rc) {
                 
@@ -47,11 +46,11 @@ struct ColorChipSystemCommitButton: View {
                 
                 colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .sl, uvResistance: false)
                 
-                if ((colorChipSystem.primeCoat) != nil) {
+                if (colorChipSystem.primeCoat != nil) {
                     colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .sl, uvResistance: false)
                 }
                 
-            } else {
+            } else if (colorChipSystem.subType == .pa){
                 colorChipSystem.baseCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .base)
                 
                 if ((colorChipSystem.primeCoat) != nil) {
@@ -61,6 +60,19 @@ struct ColorChipSystemCommitButton: View {
                     colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr)
                 }
             }
+            
+            colorChipSystem.topCoat1 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top1)
+            
+            if (colorChipSystem.topCoat2 != nil) {
+                switch colorChipSystem.topCoat2SubType {
+                case .polyaspartic:
+                    colorChipSystem.topCoat2 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top2)
+                case .polyurethane:
+                    break
+                    // create polyurethane coat here
+                }
+            }
+            
         }) {
       HStack {
         Text("Coat Options")

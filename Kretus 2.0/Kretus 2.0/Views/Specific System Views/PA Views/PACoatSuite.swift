@@ -1,22 +1,22 @@
 //
-//  TSCoatSuite.swift
+//  PACoatSuite.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 5/22/24.
+//  Created by Nick Wiltshire on 5/23/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct TSCoatSuite: View {
+struct PACoatSuite: View {
     
-    @ObservedObject var tsCoat: TSCoat
+    @ObservedObject var paCoat: PACoat
     
     var body: some View {
         VStack {
-            Text("\(tsCoat.coatType)")
+            Text("\(paCoat.coatType)")
                 .font(.title)
-            Text("Top Shelf Epoxy")
+            Text("Polyaspartic")
                 .font(.title2)
             HStack {
                 Text("Part A")
@@ -24,9 +24,9 @@ struct TSCoatSuite: View {
                 
                 Spacer()
                 
-                Picker(selection: $tsCoat.selectedPartA, label: Text("")) {
-                    ForEach(TSCoat.PartAs.allCases, id: \.self) { partA in
-                        Text(partA.description).tag(partA)
+                Picker(selection: $paCoat.subType, label: Text("")) {
+                    ForEach(PACoat.SubType.allCases, id: \.self) { subType in
+                        Text(subType.description).tag(subType)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
@@ -42,8 +42,8 @@ struct TSCoatSuite: View {
                 
                 Spacer()
                 
-                Picker(selection: $tsCoat.speed, label: Text("")) {
-                    ForEach(TSCoat.Speed.allCases, id: \.self) { speed in
+                Picker(selection: $paCoat.speed, label: Text("")) {
+                    ForEach(PACoat.Speed.allCases, id: \.self) { speed in
                         Text(speed.description).tag(speed)
                     }
                 }
@@ -54,7 +54,7 @@ struct TSCoatSuite: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
                 )
-            TSColorPicker(tsCoat: tsCoat)
+            PAColorPicker(paCoat: paCoat)
         }
         .padding()
         .background(
@@ -68,12 +68,12 @@ struct TSCoatSuite: View {
 
 
 
-struct TSCoatSuite_Previews: PreviewProvider {
+struct PACoatSuite_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockCoat = TSCoat()
+        let mockCoat = PACoat()
 
         // Pass the mock System instance into SystemBuilderView
-        TSCoatSuite(tsCoat: mockCoat)
+        PACoatSuite(paCoat: mockCoat)
     }
 }

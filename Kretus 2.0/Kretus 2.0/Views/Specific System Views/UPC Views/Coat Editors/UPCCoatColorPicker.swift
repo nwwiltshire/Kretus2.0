@@ -64,7 +64,6 @@ struct UPCCoatColorPicker: View {
                 
                 Text(selectedColor.description)
             }
-            .padding()
         }
         .padding()
         .background(

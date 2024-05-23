@@ -1,13 +1,13 @@
 //
-//  PACoat.swift
+//  PUCoat.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 5/20/24.
+//  Created by Nick Wiltshire on 5/23/24.
 //
 
 import Foundation
 
-class PACoat: Coat {
+class PUCoat: Coat {
     
     @Published var coatType: PACoat.CoatType
     @Published var subType: PACoat.SubType

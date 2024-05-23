@@ -13,6 +13,8 @@ struct ColorChipCoatOptions: View {
     
     @ObservedObject var colorChipSystem: ColorChipSystem
     
+    @State private var topCoat2TypePoly: Bool = true
+    
     var body: some View {
         VStack {
             Toggle(isOn: .constant(true)) {
@@ -67,6 +69,26 @@ struct ColorChipCoatOptions: View {
                 set: { if !$0 { self.colorChipSystem.topCoat2 = nil } else { self.colorChipSystem.topCoat2 = PACoat() } }
             )) {
                 Text("Top Coat 2")
+            }
+            if (colorChipSystem.topCoat2 != nil) {
+                HStack {
+                    Text("Top Coat 2 Type")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $colorChipSystem.topCoat2SubType, label: Text("")) {
+                        ForEach(ColorChipSystem.TopCoat2SubType.allCases, id: \.self) { topCoat2Type in
+                            Text(topCoat2Type.description).tag(topCoat2Type)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(colorChipSystem.viewColor).opacity(0.25))
+                    )
             }
         }
         .padding()

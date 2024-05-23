@@ -64,7 +64,6 @@ struct TSColorPicker: View {
                 
                 Text(tsSelectedColor.description)
             }
-            .padding()
         }
         .padding()
         .background(

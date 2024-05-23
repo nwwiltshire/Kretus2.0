@@ -21,19 +21,24 @@ struct ColorChipCoatEditorView: View {
               TSCoatSuite(tsCoat: colorChipSystem.baseCoat as! TSCoat)
           } else if (colorChipSystem.baseCoat is UPCCoat) {
               UPCUniversalCoatSuite(upcCoat: colorChipSystem.baseCoat as! UPCCoat)
+          } else if (colorChipSystem.baseCoat is PACoat) {
+              PACoatSuite(paCoat: colorChipSystem.baseCoat as! PACoat)
           }
           
           if (colorChipSystem.primeCoat is TSCoat) {
               TSCoatSuite(tsCoat: colorChipSystem.primeCoat as! TSCoat)
           } else if (colorChipSystem.primeCoat is UPCCoat) {
               UPCUniversalCoatSuite(upcCoat: colorChipSystem.primeCoat as! UPCCoat)
+          } else if (colorChipSystem.primeCoat is PACoat){
+              PACoatSuite(paCoat: colorChipSystem.primeCoat as! PACoat)
           }
           
           if (colorChipSystem.mvrCoat is TSCoat) {
               TSCoatSuite(tsCoat: colorChipSystem.mvrCoat as! TSCoat)
           }
           
-          Text("\(colorChipSystem.printSystemTest())")
+          PACoatSuite(paCoat: colorChipSystem.topCoat1)
+          
           
       }
       .padding(.all)

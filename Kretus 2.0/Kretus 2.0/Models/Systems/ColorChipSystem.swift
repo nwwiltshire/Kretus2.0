@@ -16,7 +16,8 @@ class ColorChipSystem: System {
     @Published var baseCoat: Coat
     @Published var primeCoat: Coat?
     @Published var topCoat1: PACoat
-    @Published var topCoat2: PACoat?
+    @Published var topCoat2: Coat?
+    @Published var topCoat2SubType: TopCoat2SubType
     @Published var mvrCoat: Coat?
     
     @Published var broadCast: ColorChipSystem.Broadcast
@@ -32,7 +33,8 @@ class ColorChipSystem: System {
          baseCoat: Coat,
          primeCoat: Coat,
          topCoat1: PACoat,
-         topCoat2: PACoat,
+         topCoat2: Coat,
+         topCoat2SubType: TopCoat2SubType,
          mvrCoat: Coat,
          broadCast: ColorChipSystem.Broadcast,
          totalWasteFactor: Int) {
@@ -43,6 +45,7 @@ class ColorChipSystem: System {
         self.primeCoat = primeCoat
         self.topCoat1 = topCoat1
         self.topCoat2 = topCoat2
+        self.topCoat2SubType = topCoat2SubType
         self.mvrCoat = mvrCoat
         self.broadCast = broadCast
         
@@ -54,8 +57,9 @@ class ColorChipSystem: System {
         
         self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
         self.subType = .ts
-        self.baseCoat = TSCoat() // update later
+        self.baseCoat = TSCoat() // updates later
         self.topCoat1 = PACoat()
+        self.topCoat2SubType = .polyaspartic // Set by default even if there is no top coat 2
         self.broadCast = .quarter
         
         super.init(
@@ -112,6 +116,19 @@ class ColorChipSystem: System {
             }
         }
     }
+    
+    enum TopCoat2SubType: CaseIterable, Identifiable, CustomStringConvertible {
+        case polyaspartic, polyurethane
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .polyaspartic: return "Polyaspartic"
+            case .polyurethane: return "Polyurethane"
+            }
+        }
+    }
 
     override func printSystemTest() -> String {
         var output = ""
@@ -127,14 +144,14 @@ class ColorChipSystem: System {
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
         
         if let primeCoat = primeCoat {
-            primeCoat.setValues()
+            //primeCoat.setValues()
             output += "\nPrime Coat:\n\n\(primeCoat.printCoatTest())\n"
         } else {
             output += "\nPrime Coat: None\n"
         }
         
         if let mvrCoat = mvrCoat {
-            mvrCoat.setValues()
+            //mvrCoat.setValues()
             output += "\nMVR Coat:\n\n\(mvrCoat.printCoatTest())\n"
         } else {
             output += "\nMVR Coat: None\n"
@@ -144,7 +161,7 @@ class ColorChipSystem: System {
         output += "\nTop Coat 1: \n\n\(topCoat1.printCoatTest())"
         
         if let topCoat2 = topCoat2 {
-            topCoat2.setValues()
+            //topCoat2.setValues()
             output += "\nTop Coat 2:\n\n\(topCoat2.printCoatTest())\n"
         } else {
             output += "\nTop Coat 2: None\n"

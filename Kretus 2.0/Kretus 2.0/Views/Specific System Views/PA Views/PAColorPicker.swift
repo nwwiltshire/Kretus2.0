@@ -1,18 +1,18 @@
 //
-//  ColorPicker.swift
+//  PAColorPicker.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 2/6/24.
+//  Created by Nick Wiltshire on 5/23/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct UPCSystemColorPicker: View {
+struct PAColorPicker: View {
     
-    @ObservedObject var upcSystem: UPCSystem
+    @ObservedObject var paCoat: PACoat
     
-    @State private var selectedColor: UPCSystem.SystemColor = .unpigmented
+    @State private var paSelectedColor: PACoat.CoatColorant = .noColor
     
     @State private var isExpanded = false
     
@@ -25,12 +25,12 @@ struct UPCSystemColorPicker: View {
     
     var body: some View {
         VStack {
-            DisclosureGroup("Choose System Color", isExpanded: $isExpanded) {
+            DisclosureGroup("Choose Coat Colorant", isExpanded: $isExpanded) {
                 LazyVGrid(columns: layout, spacing: 20) {
-                    ForEach(UPCSystem.SystemColor.allCases, id: \.self) { color in
+                    ForEach(PACoat.CoatColorant.allCases, id: \.self) { paColor in
                         Button(action: {
-                            self.selectedColor = color
-                            upcSystem.systemColor = selectedColor
+                            self.paSelectedColor = paColor
+                            paCoat.coatColorant = paSelectedColor
                             withAnimation(.easeInOut(duration: 0.5)) {
                                         isExpanded.toggle()
                                       }
@@ -38,18 +38,18 @@ struct UPCSystemColorPicker: View {
                             VStack {
                                 
                                 Circle()
-                                    .fill(Color(color.description))
+                                    .fill(Color(paColor.description))
                                     .frame(width: 50, height: 50)
                                     .shadow(color: .default.opacity(1), radius: 2, x: 0, y: 0)
-                                    .overlay(Circle().stroke(self.checkmarkColor(for: color), lineWidth: selectedColor == color ? 2 : 0))
+                                    .overlay(Circle().stroke(self.paCheckmarkColor(for: paColor), lineWidth: paSelectedColor == paColor ? 2 : 0))
                                     .overlay(
                                         Image(systemName: "checkmark")
                                             .resizable()
                                             .frame(width: 20, height: 20)
-                                            .foregroundColor(self.checkmarkColor(for: color))
-                                            .opacity(selectedColor == color ? 1 : 0)
+                                            .foregroundColor(self.paCheckmarkColor(for: paColor))
+                                            .opacity(paSelectedColor == paColor ? 1 : 0)
                                     )
-                                Text(color.description)
+                                Text(paColor.description)
                             }
                         }
                     }
@@ -58,41 +58,41 @@ struct UPCSystemColorPicker: View {
             
             VStack {
                 Circle()
-                    .fill(Color(selectedColor.description))
+                    .fill(Color(paSelectedColor.description))
                     .frame(width: 25, height: 25)
                     .shadow(color: .default.opacity(1), radius: 2, x: 0, y: 0)
                 
-                Text(selectedColor.description)
+                Text(paSelectedColor.description)
             }
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(upcSystem.viewColor).opacity(0.25))
+                .fill(Color(.gray).opacity(0.25))
         )
     }
     
     
-    func checkmarkColor(for color: UPCSystem.SystemColor) -> Color {
+    func paCheckmarkColor(for color: PACoat.CoatColorant) -> Color {
         // Convert the SwiftUI color to a UIColor
         let uiColor = UIColor(Color(color.description))
         
         var white: CGFloat = 0
         uiColor.getWhite(&white, alpha: nil)
         
-        // If the color is dark (i.e., its brightness is less than 0.5), return white. Otherwise, return black.
+        // If the color is dark (i.e., ipa brightness is less than 0.5), return white. Otherwise, return black.
         return white < 0.5 ? .white : .black
     }
 }
 
 
 
-struct UPCSystemColorPicker_Previews: PreviewProvider {
+struct PAColorPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = UPCSystem()
+        let mockCoat = PACoat()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCSystemColorPicker(upcSystem: mockSystem)
+        PAColorPicker(paCoat: mockCoat)
     }
 }
