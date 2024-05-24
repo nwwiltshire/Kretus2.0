@@ -12,6 +12,8 @@ struct BroadcastWasteFactorOptions: View {
     
     @ObservedObject var broadCast: Broadcast
     
+    var viewColor: String
+    
     var body: some View {
         HStack {
             
@@ -20,7 +22,7 @@ struct BroadcastWasteFactorOptions: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(.gray).opacity(0.25))
+                        .fill(Color(viewColor).opacity(0.25))
                 )
         }
     }
@@ -32,6 +34,6 @@ struct BroadcastWasteFactorOptions_Previews: PreviewProvider {
         let mockBroadCast = ColorChipBroadcast()
 
         // Pass the mock System instance into SystemBuilderView
-        BroadcastWasteFactorOptions(broadCast: mockBroadCast)
+        BroadcastWasteFactorOptions(broadCast: mockBroadCast, viewColor: ".black")
     }
 }

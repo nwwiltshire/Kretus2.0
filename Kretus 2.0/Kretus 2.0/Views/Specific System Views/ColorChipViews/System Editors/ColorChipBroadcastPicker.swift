@@ -34,9 +34,14 @@ struct ColorChipBroadcastPicker: View {
                     .fill(Color(colorChipSystem.viewColor).opacity(0.25))
             )
             
-            BroadcastWasteFactorOptions(broadCast: colorChipSystem.broadcast)
+            BroadcastWasteFactorOptions(broadCast: colorChipSystem.broadcast, viewColor: colorChipSystem.viewColor)
             
         }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color(colorChipSystem.viewColor).opacity(0.25))
+        )
     }
 }
 
