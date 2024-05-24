@@ -41,7 +41,6 @@
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
-		309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */; };
 		30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B32B589654009C0268 /* Kretus_2_0App.swift */; };
 		30A712B62B589654009C0268 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B52B589654009C0268 /* ContentView.swift */; };
 		30A712B82B589656009C0268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A712B72B589656009C0268 /* Assets.xcassets */; };
@@ -62,26 +61,28 @@
 		30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */; };
 		30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */; };
 		30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2872A2BAA3D40006D3003 /* KitData.swift */; };
-		30B9664D2C01504F00398E19 /* UPC-TDS-TT-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966392C01504F00398E19 /* UPC-TDS-TT-FC.pdf */; };
-		30B9664E2C01504F00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663A2C01504F00398E19 /* UPC-TDS-VC-EZ.pdf */; };
-		30B9664F2C01504F00398E19 /* UPC-TDS-WC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663B2C01504F00398E19 /* UPC-TDS-WC-AP.pdf */; };
-		30B966502C01504F00398E19 /* UPC-SDS-Colorant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663C2C01504F00398E19 /* UPC-SDS-Colorant.pdf */; };
-		30B966512C01504F00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663D2C01504F00398E19 /* UPC-TDS-WC-EZ.pdf */; };
-		30B966522C01504F00398E19 /* UPC-TDS-SL-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663E2C01504F00398E19 /* UPC-TDS-SL-AP.pdf */; };
-		30B966532C01504F00398E19 /* UPC-TDS-TT-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9663F2C01504F00398E19 /* UPC-TDS-TT-AP.pdf */; };
-		30B966542C01504F00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966402C01504F00398E19 /* UPC-TDS-RC-EZ.pdf */; };
-		30B966552C01504F00398E19 /* UPC-TDS-MF-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966412C01504F00398E19 /* UPC-TDS-MF-AP.pdf */; };
-		30B966562C01504F00398E19 /* UPC-TDS-VC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966422C01504F00398E19 /* UPC-TDS-VC-AP.pdf */; };
-		30B966572C01504F00398E19 /* UPC-TDS-SL-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966432C01504F00398E19 /* UPC-TDS-SL-FC.pdf */; };
-		30B966582C01504F00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966442C01504F00398E19 /* UPC-TDS-TT-EZ.pdf */; };
-		30B966592C01504F00398E19 /* UPC-TDS-VC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966452C01504F00398E19 /* UPC-TDS-VC-FC.pdf */; };
-		30B9665A2C01504F00398E19 /* UPC-TDS-RC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966462C01504F00398E19 /* UPC-TDS-RC-AP.pdf */; };
-		30B9665B2C01504F00398E19 /* UPC-TDS-MF-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966472C01504F00398E19 /* UPC-TDS-MF-FC.pdf */; };
-		30B9665C2C01504F00398E19 /* UPC-TDS-WC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966482C01504F00398E19 /* UPC-TDS-WC-FC.pdf */; };
-		30B9665D2C01504F00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966492C01504F00398E19 /* UPC-TDS-SL-EZ.pdf */; };
-		30B9665E2C01504F00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9664A2C01504F00398E19 /* UPC-TDS-MF-EZ.pdf */; };
-		30B9665F2C01504F00398E19 /* UPC-TDS-RC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9664B2C01504F00398E19 /* UPC-TDS-RC-FC.pdf */; };
-		30B966602C01504F00398E19 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9664C2C01504F00398E19 /* UPC-IG.pdf */; };
+		30B966782C01523E00398E19 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966612C01523D00398E19 /* UPC-IG.pdf */; };
+		30B966792C01523E00398E19 /* UPC-SDS-Colorant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */; };
+		30B9667A2C01523E00398E19 /* UPC-TDS-MF-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */; };
+		30B9667B2C01523E00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */; };
+		30B9667C2C01523E00398E19 /* UPC-TDS-MF-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */; };
+		30B9667D2C01523E00398E19 /* UPC-TDS-RC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */; };
+		30B9667E2C01523E00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */; };
+		30B9667F2C01523E00398E19 /* UPC-TDS-RC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */; };
+		30B966802C01523E00398E19 /* UPC-TDS-SL-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */; };
+		30B966812C01523E00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */; };
+		30B966822C01523E00398E19 /* UPC-TDS-SL-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */; };
+		30B966832C01523E00398E19 /* UPC-TDS-TT-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */; };
+		30B966842C01523E00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */; };
+		30B966852C01523E00398E19 /* UPC-TDS-TT-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */; };
+		30B966862C01523E00398E19 /* UPC-TDS-VC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */; };
+		30B966872C01523E00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */; };
+		30B966882C01523E00398E19 /* UPC-TDS-VC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */; };
+		30B966892C01523E00398E19 /* UPC-TDS-WC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */; };
+		30B9668A2C01523E00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */; };
+		30B9668B2C01523E00398E19 /* UPC-TDS-WC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */; };
+		30B9668C2C01523E00398E19 /* Kretus-Systems-Brochure.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */; };
+		30B9668D2C01523E00398E19 /* Kretus-Product-Catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */; };
 		30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9202BFBCF3900060449 /* TSCoat.swift */; };
 		30CAD9232BFBDFB200060449 /* ts.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9222BFBDFB200060449 /* ts.json */; };
 		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
@@ -141,7 +142,6 @@
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
-		309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Kretus-Product-Catalog.pdf"; path = "../../../Kretus/Kretus-Product-Catalog.pdf"; sourceTree = SOURCE_ROOT; };
 		30A712B02B589654009C0268 /* Kretus 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kretus 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A712B32B589654009C0268 /* Kretus_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kretus_2_0App.swift; sourceTree = "<group>"; };
 		30A712B52B589654009C0268 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,26 +163,28 @@
 		30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCPrimeCoatSuite.swift; sourceTree = "<group>"; };
 		30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTopCoatSuite.swift; sourceTree = "<group>"; };
 		30B2872A2BAA3D40006D3003 /* KitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitData.swift; sourceTree = "<group>"; };
-		30B966392C01504F00398E19 /* UPC-TDS-TT-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-FC.pdf"; path = "../../../../../../.Trash/UPC-TDS-TT-FC.pdf"; sourceTree = "<group>"; };
-		30B9663A2C01504F00398E19 /* UPC-TDS-VC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-EZ.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-VC-EZ.pdf"; sourceTree = "<group>"; };
-		30B9663B2C01504F00398E19 /* UPC-TDS-WC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-AP.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-WC-AP.pdf"; sourceTree = "<group>"; };
-		30B9663C2C01504F00398E19 /* UPC-SDS-Colorant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-SDS-Colorant.pdf"; path = "../../../../../../.Trash/UPC-SDS-Colorant.pdf"; sourceTree = "<group>"; };
-		30B9663D2C01504F00398E19 /* UPC-TDS-WC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-EZ.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-WC-EZ.pdf"; sourceTree = "<group>"; };
-		30B9663E2C01504F00398E19 /* UPC-TDS-SL-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-AP.pdf"; path = "../../../../../../.Trash/UPC-TDS-SL-AP.pdf"; sourceTree = "<group>"; };
-		30B9663F2C01504F00398E19 /* UPC-TDS-TT-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-AP.pdf"; path = "../../../../../../.Trash/UPC-TDS-TT-AP.pdf"; sourceTree = "<group>"; };
-		30B966402C01504F00398E19 /* UPC-TDS-RC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-EZ.pdf"; path = "../../../../../../.Trash/UPC-TDS-RC-EZ.pdf"; sourceTree = "<group>"; };
-		30B966412C01504F00398E19 /* UPC-TDS-MF-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-AP.pdf"; path = "../../../../../../.Trash/UPC-TDS-MF-AP.pdf"; sourceTree = "<group>"; };
-		30B966422C01504F00398E19 /* UPC-TDS-VC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-AP.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-VC-AP.pdf"; sourceTree = "<group>"; };
-		30B966432C01504F00398E19 /* UPC-TDS-SL-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-FC.pdf"; path = "../../../../../../.Trash/UPC-TDS-SL-FC.pdf"; sourceTree = "<group>"; };
-		30B966442C01504F00398E19 /* UPC-TDS-TT-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-EZ.pdf"; path = "../../../../../../.Trash/UPC-TDS-TT-EZ.pdf"; sourceTree = "<group>"; };
-		30B966452C01504F00398E19 /* UPC-TDS-VC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-FC.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-VC-FC.pdf"; sourceTree = "<group>"; };
-		30B966462C01504F00398E19 /* UPC-TDS-RC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-AP.pdf"; path = "../../../../../../.Trash/UPC-TDS-RC-AP.pdf"; sourceTree = "<group>"; };
-		30B966472C01504F00398E19 /* UPC-TDS-MF-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-FC.pdf"; path = "../../../../../../.Trash/UPC-TDS-MF-FC.pdf"; sourceTree = "<group>"; };
-		30B966482C01504F00398E19 /* UPC-TDS-WC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-FC.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-TDS-WC-FC.pdf"; sourceTree = "<group>"; };
-		30B966492C01504F00398E19 /* UPC-TDS-SL-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-EZ.pdf"; path = "../../../../../../.Trash/UPC-TDS-SL-EZ.pdf"; sourceTree = "<group>"; };
-		30B9664A2C01504F00398E19 /* UPC-TDS-MF-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-EZ.pdf"; path = "../../../../../../.Trash/UPC-TDS-MF-EZ.pdf"; sourceTree = "<group>"; };
-		30B9664B2C01504F00398E19 /* UPC-TDS-RC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-FC.pdf"; path = "../../../../../../.Trash/UPC-TDS-RC-FC.pdf"; sourceTree = "<group>"; };
-		30B9664C2C01504F00398E19 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-IG.pdf"; path = "../../../../../../Library/Mobile Documents/.Trash/UPC-IG.pdf"; sourceTree = "<group>"; };
+		30B966612C01523D00398E19 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-IG.pdf"; sourceTree = "<group>"; };
+		30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-SDS-Colorant.pdf"; sourceTree = "<group>"; };
+		30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-AP.pdf"; sourceTree = "<group>"; };
+		30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-EZ.pdf"; sourceTree = "<group>"; };
+		30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-FC.pdf"; sourceTree = "<group>"; };
+		30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-AP.pdf"; sourceTree = "<group>"; };
+		30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-FC.pdf"; sourceTree = "<group>"; };
+		30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-AP.pdf"; sourceTree = "<group>"; };
+		30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-EZ.pdf"; sourceTree = "<group>"; };
+		30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-FC.pdf"; sourceTree = "<group>"; };
+		30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-AP.pdf"; sourceTree = "<group>"; };
+		30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-EZ.pdf"; sourceTree = "<group>"; };
+		30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-FC.pdf"; sourceTree = "<group>"; };
+		30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-AP.pdf"; sourceTree = "<group>"; };
+		30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-FC.pdf"; sourceTree = "<group>"; };
+		30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-AP.pdf"; sourceTree = "<group>"; };
+		30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-FC.pdf"; sourceTree = "<group>"; };
+		30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kretus-Systems-Brochure.pdf"; sourceTree = "<group>"; };
+		30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kretus-Product-Catalog.pdf"; sourceTree = "<group>"; };
 		30CAD9202BFBCF3900060449 /* TSCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoat.swift; sourceTree = "<group>"; };
 		30CAD9222BFBDFB200060449 /* ts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ts.json; sourceTree = "<group>"; };
 		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
@@ -291,27 +293,9 @@
 		309F5DB52BB4FAE000F4FAF6 /* PDFs */ = {
 			isa = PBXGroup;
 			children = (
-				30B9664A2C01504F00398E19 /* UPC-TDS-MF-EZ.pdf */,
-				30B966472C01504F00398E19 /* UPC-TDS-MF-FC.pdf */,
-				30B966412C01504F00398E19 /* UPC-TDS-MF-AP.pdf */,
-				30B966462C01504F00398E19 /* UPC-TDS-RC-AP.pdf */,
-				30B966402C01504F00398E19 /* UPC-TDS-RC-EZ.pdf */,
-				30B9664B2C01504F00398E19 /* UPC-TDS-RC-FC.pdf */,
-				30B966492C01504F00398E19 /* UPC-TDS-SL-EZ.pdf */,
-				30B966432C01504F00398E19 /* UPC-TDS-SL-FC.pdf */,
-				30B9664C2C01504F00398E19 /* UPC-IG.pdf */,
-				30B9663C2C01504F00398E19 /* UPC-SDS-Colorant.pdf */,
-				30B9663E2C01504F00398E19 /* UPC-TDS-SL-AP.pdf */,
-				30B9663F2C01504F00398E19 /* UPC-TDS-TT-AP.pdf */,
-				30B966442C01504F00398E19 /* UPC-TDS-TT-EZ.pdf */,
-				30B966422C01504F00398E19 /* UPC-TDS-VC-AP.pdf */,
-				30B966452C01504F00398E19 /* UPC-TDS-VC-FC.pdf */,
-				30B966392C01504F00398E19 /* UPC-TDS-TT-FC.pdf */,
-				30B9663A2C01504F00398E19 /* UPC-TDS-VC-EZ.pdf */,
-				30B9663B2C01504F00398E19 /* UPC-TDS-WC-AP.pdf */,
-				30B9663D2C01504F00398E19 /* UPC-TDS-WC-EZ.pdf */,
-				30B966482C01504F00398E19 /* UPC-TDS-WC-FC.pdf */,
-				309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */,
+				30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */,
+				30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */,
+				30B966752C01523D00398E19 /* UPC Documentation */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -440,6 +424,33 @@
 				30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		30B966752C01523D00398E19 /* UPC Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				30B966612C01523D00398E19 /* UPC-IG.pdf */,
+				30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */,
+				30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */,
+				30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */,
+				30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */,
+				30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */,
+				30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */,
+				30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */,
+				30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */,
+				30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */,
+				30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */,
+				30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */,
+				30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */,
+				30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */,
+				30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */,
+				30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */,
+				30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */,
+				30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */,
+				30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */,
+				30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */,
+			);
+			path = "UPC Documentation";
 			sourceTree = "<group>";
 		};
 		30CAD9282BFC2F1900060449 /* ColorChipViews */ = {
@@ -628,32 +639,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30B9665D2C01504F00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */,
-				30B966522C01504F00398E19 /* UPC-TDS-SL-AP.pdf in Resources */,
-				30B9665E2C01504F00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */,
-				30B9664F2C01504F00398E19 /* UPC-TDS-WC-AP.pdf in Resources */,
-				30B9664D2C01504F00398E19 /* UPC-TDS-TT-FC.pdf in Resources */,
+				30B966892C01523E00398E19 /* UPC-TDS-WC-AP.pdf in Resources */,
+				30B9668B2C01523E00398E19 /* UPC-TDS-WC-FC.pdf in Resources */,
 				30CAD9232BFBDFB200060449 /* ts.json in Resources */,
-				30B966552C01504F00398E19 /* UPC-TDS-MF-AP.pdf in Resources */,
-				30B9665B2C01504F00398E19 /* UPC-TDS-MF-FC.pdf in Resources */,
+				30B966782C01523E00398E19 /* UPC-IG.pdf in Resources */,
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
-				30B966572C01504F00398E19 /* UPC-TDS-SL-FC.pdf in Resources */,
-				30B9664E2C01504F00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */,
-				30B9665A2C01504F00398E19 /* UPC-TDS-RC-AP.pdf in Resources */,
-				30B966602C01504F00398E19 /* UPC-IG.pdf in Resources */,
-				30B9665F2C01504F00398E19 /* UPC-TDS-RC-FC.pdf in Resources */,
-				30B966502C01504F00398E19 /* UPC-SDS-Colorant.pdf in Resources */,
+				30B9668A2C01523E00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */,
+				30B9668D2C01523E00398E19 /* Kretus-Product-Catalog.pdf in Resources */,
 				30A712B82B589656009C0268 /* Assets.xcassets in Resources */,
+				30B966792C01523E00398E19 /* UPC-SDS-Colorant.pdf in Resources */,
+				30B9667C2C01523E00398E19 /* UPC-TDS-MF-FC.pdf in Resources */,
+				30B9668C2C01523E00398E19 /* Kretus-Systems-Brochure.pdf in Resources */,
+				30B9667B2C01523E00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */,
 				30CAD9382BFE6EB600060449 /* pa.json in Resources */,
-				30B9665C2C01504F00398E19 /* UPC-TDS-WC-FC.pdf in Resources */,
-				30B966582C01504F00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */,
-				309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */,
-				30B966562C01504F00398E19 /* UPC-TDS-VC-AP.pdf in Resources */,
-				30B966592C01504F00398E19 /* UPC-TDS-VC-FC.pdf in Resources */,
 				30A712D62B590025009C0268 /* upc.json in Resources */,
-				30B966542C01504F00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */,
-				30B966512C01504F00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */,
-				30B966532C01504F00398E19 /* UPC-TDS-TT-AP.pdf in Resources */,
+				30B9667A2C01523E00398E19 /* UPC-TDS-MF-AP.pdf in Resources */,
+				30B9667F2C01523E00398E19 /* UPC-TDS-RC-FC.pdf in Resources */,
+				30B966872C01523E00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */,
+				30B966852C01523E00398E19 /* UPC-TDS-TT-FC.pdf in Resources */,
+				30B966832C01523E00398E19 /* UPC-TDS-TT-AP.pdf in Resources */,
+				30B966822C01523E00398E19 /* UPC-TDS-SL-FC.pdf in Resources */,
+				30B966812C01523E00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */,
+				30B9667D2C01523E00398E19 /* UPC-TDS-RC-AP.pdf in Resources */,
+				30B9667E2C01523E00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */,
+				30B966862C01523E00398E19 /* UPC-TDS-VC-AP.pdf in Resources */,
+				30B966882C01523E00398E19 /* UPC-TDS-VC-FC.pdf in Resources */,
+				30B966842C01523E00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */,
+				30B966802C01523E00398E19 /* UPC-TDS-SL-AP.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
