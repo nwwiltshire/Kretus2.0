@@ -52,6 +52,8 @@
 		306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */; };
 		306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */; };
 		3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */; };
+		3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229D2C01332E00AF6CF8 /* CoatData.swift */; };
+		306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229F2C01335900AF6CF8 /* BroadcastData.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -150,6 +152,8 @@
 		306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcast.swift; sourceTree = "<group>"; };
 		306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastWasteFactorOptions.swift; sourceTree = "<group>"; };
 		3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastBuild.swift; sourceTree = "<group>"; };
+		3068229D2C01332E00AF6CF8 /* CoatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatData.swift; sourceTree = "<group>"; };
+		3068229F2C01335900AF6CF8 /* BroadcastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastData.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				3019218B2B89362F009DB65C /* SystemData.swift */,
+				3068229D2C01332E00AF6CF8 /* CoatData.swift */,
+				3068229F2C01335900AF6CF8 /* BroadcastData.swift */,
 				30B2872A2BAA3D40006D3003 /* KitData.swift */,
 				302F51F02BF7F200005CC281 /* KitRelationship.swift */,
 			);
@@ -708,6 +714,7 @@
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
 				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
+				3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
@@ -721,6 +728,7 @@
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
 				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,
 				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,
+				306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
 				306822772BFFD12B00AF6CF8 /* PUCoat.swift in Sources */,
 				30CAD9302BFD401B00060449 /* ColorChipCoatOptions.swift in Sources */,

@@ -94,7 +94,7 @@ class UPCCoat: Coat {
         self.uvResistance = false
         
         super.init(id: 0,
-                   name: "UPC",
+                   name: "Default",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -310,7 +310,7 @@ class UPCCoat: Coat {
         
     }
 
-    // Update later, prime and top coats are ALWAYS RC
+    
     override func findProducts(products: [Product]) {
         
         switch self.subType {

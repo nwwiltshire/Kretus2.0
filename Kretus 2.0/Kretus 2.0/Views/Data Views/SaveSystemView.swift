@@ -36,7 +36,13 @@ struct SaveSystemView: View {
                     Button("Save") {
                         withAnimation {
                             if let upcSystem = system as? UPCSystem {
-                                upcSave(upcSystem: upcSystem)
+                                upcConvertToData(upcSystem: upcSystem)
+                                dismiss()
+                            } else {
+                                dismiss()
+                            }
+                            if let colorChipSystem = system as? ColorChipSystem {
+                                colorChipConvertToData(colorChipSystem: colorChipSystem)
                                 dismiss()
                             } else {
                                 dismiss()
@@ -53,20 +59,9 @@ struct SaveSystemView: View {
         }
     }
     
-    private func systemSaveIdentifier(system: System) {
+    private func saveSystem(systemData: SystemData) {
         
-    }
-    
-    private func upcSave(upcSystem: UPCSystem) {
-        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, coats: [], subType: upcSystem.subType.description, speeds: [], systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
-        
-        newSystem.kits = upcConvertKits(systemData: newSystem, upcKits: upcSystem.kitsNeeded)
-        
-        newSystem.speeds = upcFindSpeeds(system: upcSystem)
-        
-        newSystem.coats = upcConvertCoats(upcSystem: upcSystem)
-        
-        context.insert(newSystem)
+        context.insert(systemData)
         
         // Save the changes to persistent storage
         do {
@@ -78,16 +73,27 @@ struct SaveSystemView: View {
         }
     }
     
-    private func upcConvertKits(systemData: SystemData, upcKits: [Kit]) -> [KitRelationship] {
+    private func convertKits(systemData: SystemData, kits: [Kit]) -> [KitRelationship] {
       var convertedKits: [KitRelationship] = []
 
-      for upcKit in upcKits {
-        let kitData = KitData(id: upcKit.product.id, name: upcKit.product.name, quantity: upcKit.quantity)
+      for kit in kits {
+        let kitData = KitData(id: kit.product.id, name: kit.product.name, quantity: kit.quantity)
         let relationship = KitRelationship(systemData: systemData, kit: kitData)
         convertedKits.append(relationship)
       }
 
       return convertedKits
+    }
+    
+    private func upcConvertToData(upcSystem: UPCSystem) {
+        let newSystem = SystemData(name: upcSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcSystem.imageName, viewColor: upcSystem.viewColor.description, coats: [], subType: upcSystem.subType.description, systemColor: upcSystem.systemColor.description, squareFt: upcSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: upcSystem.kitsNeeded)
+        
+        newSystem.coats = upcConvertCoats(upcSystem: upcSystem)
+        
+        saveSystem(systemData: newSystem)
+
     }
     
     private func upcConvertCoats(upcSystem: UPCSystem) -> [CoatData] {
@@ -103,46 +109,37 @@ struct SaveSystemView: View {
             coats.append(CoatData(coatType: "Top Coat", subType: (upcSystem.topCoat?.subType.description)!, speed: (upcSystem.topCoat?.speed.description)!))
         }
         
-        print(coats)
         return coats
     }
     
-    private func upcFindSpeeds(system: UPCSystem) -> [String] {
-        var speeds: [String] = []
+    private func colorChipConvertToData(colorChipSystem: ColorChipSystem) {
+        let newSystem = SystemData(name: colorChipSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: colorChipSystem.imageName, viewColor: colorChipSystem.viewColor.description, coats: [], subType: colorChipSystem.subType.description, systemColor: "", squareFt: colorChipSystem.squareFt, kits: [])
         
-        switch system.baseCoat.speed {
-        case .ez:
-            speeds.append("EZ")
-        case .ap:
-            speeds.append("AP")
-        case .fc:
-            speeds.append("FC")
-        }
+        newSystem.kits = convertKits(systemData: newSystem, kits: colorChipSystem.kitsNeeded)
         
-        if let primeCoat = system.primeCoat {
-            switch primeCoat.speed {
-            case .ez:
-                speeds.append("EZ")
-            case .ap:
-                speeds.append("AP")
-            case .fc:
-                speeds.append("FC")
-            }
-        }
+        //newSystem.coats = upcConvertCoats(upcSystem: upcSystem)
         
-        if let topCoat = system.topCoat {
-            switch topCoat.speed {
-            case .ez:
-                speeds.append("EZ")
-            case .ap:
-                speeds.append("AP")
-            case .fc:
-                speeds.append("FC")
-            }
-        }
-        
-        return speeds
+        saveSystem(systemData: newSystem)
+
     }
+    
+    /*
+    private func colorChipConvertCoats(upcSystem: UPCSystem) -> [CoatData] {
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "Base Coat", subType: upcSystem.baseCoat.subType.description, speed: upcSystem.baseCoat.speed.description))
+        
+        if (upcSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: (upcSystem.primeCoat?.subType.description)!, speed: (upcSystem.primeCoat?.speed.description)!))
+        }
+        
+        if (upcSystem.topCoat != nil) {
+            coats.append(CoatData(coatType: "Top Coat", subType: (upcSystem.topCoat?.subType.description)!, speed: (upcSystem.topCoat?.speed.description)!))
+        }
+        
+        return coats
+    }
+    */
 
 }
 
