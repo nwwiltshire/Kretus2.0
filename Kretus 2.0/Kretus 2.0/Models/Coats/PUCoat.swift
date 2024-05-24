@@ -205,7 +205,7 @@ class PUCoat: Coat {
         
         switch self.texture {
         case .noTexture:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
+            textureProduct = Product()
         case .asAo120:
             textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
         case .asAo220:
