@@ -67,7 +67,7 @@ class TSCoat: Coat {
         self.thickness = .base
         
         super.init(id: 0,
-                   name: "Default",
+                   name: "Top Shelf Epoxy",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],

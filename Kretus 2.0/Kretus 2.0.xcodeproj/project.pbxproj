@@ -44,6 +44,9 @@
 		306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */; };
 		306822822BFFE98000AF6CF8 /* KitsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822812BFFE98000AF6CF8 /* KitsListView.swift */; };
 		306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */; };
+		306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822852C002E6700AF6CF8 /* TSCoatBuild.swift */; };
+		306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822872C002F7C00AF6CF8 /* PACoatBuild.swift */; };
+		3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822892C0030F400AF6CF8 /* PUCoatBuild.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -85,7 +88,6 @@
 		30CAD9462BFE8FB300060449 /* UPCCoatColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */; };
 		30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* SaveSystemView.swift */; };
 		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
-		30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */; };
 		30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */; };
 		30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */; };
 		30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55932BF6C57700B7D409 /* PDFUrl.swift */; };
@@ -135,6 +137,9 @@
 		3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSystemView.swift; sourceTree = "<group>"; };
 		306822812BFFE98000AF6CF8 /* KitsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsListView.swift; sourceTree = "<group>"; };
 		306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatBuild.swift; sourceTree = "<group>"; };
+		306822852C002E6700AF6CF8 /* TSCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoatBuild.swift; sourceTree = "<group>"; };
+		306822872C002F7C00AF6CF8 /* PACoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatBuild.swift; sourceTree = "<group>"; };
+		306822892C0030F400AF6CF8 /* PUCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoatBuild.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -177,7 +182,6 @@
 		30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatColorPicker.swift; sourceTree = "<group>"; };
 		30CC55852BF585ED00B7D409 /* SaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSystemView.swift; sourceTree = "<group>"; };
 		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
-		30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTotalSystem.swift; sourceTree = "<group>"; };
 		30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
 		30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-IG.pdf"; path = "../../../../../../Downloads/UPC-IG.pdf"; sourceTree = "<group>"; };
 		30CC55932BF6C57700B7D409 /* PDFUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFUrl.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */,
+				306822892C0030F400AF6CF8 /* PUCoatBuild.swift */,
 			);
 			path = "PU Views";
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 			children = (
 				30CAD93D2BFE7C2C00060449 /* TSCoatSuite.swift */,
 				30CAD93F2BFE7FB700060449 /* TSColorPicker.swift */,
+				306822852C002E6700AF6CF8 /* TSCoatBuild.swift */,
 			);
 			path = "TS Views";
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 			children = (
 				306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */,
 				306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */,
+				306822872C002F7C00AF6CF8 /* PACoatBuild.swift */,
 			);
 			path = "PA Views";
 			sourceTree = "<group>";
@@ -483,7 +490,6 @@
 		30CC55892BF6979200B7D409 /* Build Views */ = {
 			isa = PBXGroup;
 			children = (
-				30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */,
 				306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */,
 			);
 			path = "Build Views";
@@ -630,6 +636,7 @@
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
 				30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */,
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
+				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
 				302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */,
 				3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */,
@@ -637,6 +644,7 @@
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
 				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
 				30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */,
+				3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
 				30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */,
@@ -664,7 +672,6 @@
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
 				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
-				30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
@@ -672,6 +679,7 @@
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
 				306822822BFFE98000AF6CF8 /* KitsListView.swift in Sources */,
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,
+				306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */,
 				30A712D82B590225009C0268 /* GetProducts.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,

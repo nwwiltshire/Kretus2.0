@@ -16,7 +16,7 @@ struct TotalSystemView: View {
     var body: some View {
         VStack {
             Text("Total System\n")
-                .font(.title3)
+                .font(.title)
             Text("Square Feet: \(system.squareFt)")
             if let upcSystem = system as? UPCSystem {
               Text("System Color: \(upcSystem.systemColor)")

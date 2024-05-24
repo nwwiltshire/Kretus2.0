@@ -94,7 +94,7 @@ class UPCCoat: Coat {
         self.uvResistance = false
         
         super.init(id: 0,
-                   name: "Default",
+                   name: "UPC",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],

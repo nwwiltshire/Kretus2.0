@@ -61,7 +61,7 @@ class PUCoat: Coat {
         self.thickness = .top2
         
         super.init(id: 0,
-                   name: "Default",
+                   name: "Polyurethane",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],

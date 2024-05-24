@@ -70,7 +70,7 @@ class PACoat: Coat {
         self.thickness = .base
         
         super.init(id: 0,
-                   name: "Default",
+                   name: "Polyaspartic",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],

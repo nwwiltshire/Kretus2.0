@@ -47,7 +47,7 @@ struct ColorChipCoatEditorView: View {
               PUCoatSuite(puCoat: colorChipSystem.topCoat2 as! PUCoat)
           }
 
-          
+          ColorChipBuildSubmitButton(colorChipSystem: colorChipSystem)
           
       }
       .padding(.all)

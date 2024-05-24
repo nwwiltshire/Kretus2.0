@@ -1,5 +1,5 @@
 //
-//  UPCBaseCoatBuild.swift
+//  PACoatBuild.swift
 //  Kretus 2.0
 //
 //  Created by Nick Wiltshire on 5/23/24.
@@ -8,29 +8,28 @@
 import Foundation
 import SwiftUI
 
-struct UPCCoatBuild: View {
+struct PACoatBuild: View {
     
-    @ObservedObject var upcCoat: UPCCoat
+    @ObservedObject var paCoat: PACoat
     
     var viewColor: String
     
     var body: some View {
         VStack {
-            Text("\(upcCoat.coatType)")
+            Text("\(paCoat.coatType)")
                 .font(.title)
-            Text("\(upcCoat.name)")
+            Text("\(paCoat.name)")
                 .font(.title3)
-            Text("Coverage Rate: \(upcCoat.covRate)")
-            Text("Thickness: \(upcCoat.thickness)")
-            if (upcCoat.texture1 != .none) {
-                Text("Texture: \(upcCoat.texture1)")
+            Text("Coverage Rate: \(paCoat.covRate)")
+            Text("Thickness: \(paCoat.thickness)")
+            Text("Colorant: \(paCoat.coatColorant)")
+            if (paCoat.texture != .noTexture) {
+                Text("Texture: \(paCoat.texture)")
             }
-            if (upcCoat.texture2 != .none) {
-                Text("Texture: \(upcCoat.texture2)")
-            }
+            
             Text("\nKits Needed:")
-            KitsListView(kits: upcCoat.kitsNeeded)
-            Text("Kits from waste factor: \(upcCoat.wasteFactor)")
+            KitsListView(kits: paCoat.kitsNeeded)
+            Text("Kits from waste factor: \(paCoat.wasteFactor)")
         }
         .padding()
         .background(
@@ -44,10 +43,10 @@ struct UPCCoatBuild: View {
 
 
 
-struct UPCCoatBuild_Previews: PreviewProvider {
+struct PACoatBuild_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockCoat = UPCCoat()
+        let mockCoat = PACoat()
         
         let testKits = [Kit(product: Product(id: "1234", name: "Test 1"), quantity: 1), Kit(product: Product(id: "12345", name: "Test 2"), quantity: 2), Kit(product: Product(id: "123456", name: "Test 3"), quantity: 3)]
         
@@ -55,6 +54,6 @@ struct UPCCoatBuild_Previews: PreviewProvider {
         mockCoat.kitsNeeded = testKits
 
         // Pass the mock System instance into SystemBuilderView
-        return UPCCoatBuild(upcCoat: mockCoat, viewColor: "Black")
+        return PACoatBuild(paCoat: mockCoat, viewColor: "Black")
     }
 }
