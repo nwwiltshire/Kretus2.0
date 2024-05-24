@@ -19,7 +19,7 @@ struct UPCTopCoatSuite: View {
             
             UPCSpeedPicker(coat: upcCoat)
             UPCTexturePicker(coat: upcCoat)
-            UPCWasteFactorOptions(coat: upcCoat)
+            CoatWasteFactorOptions(coat: upcCoat)
         }
         .padding()
         .background(

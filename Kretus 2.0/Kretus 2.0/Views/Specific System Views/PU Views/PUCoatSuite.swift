@@ -16,7 +16,7 @@ struct PUCoatSuite: View {
         VStack {
             Text("\(puCoat.coatType)")
                 .font(.title)
-            Text("Polyaspartic")
+            Text("Polyurethane")
                 .font(.title2)
             HStack {
                 Text("Part A")
@@ -77,6 +77,9 @@ struct PUCoatSuite: View {
                         .fill(Color(.gray).opacity(0.25))
                 )
             }
+            
+            CoatWasteFactorOptions(coat: puCoat)
+            
         }
         .padding()
         .background(

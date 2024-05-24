@@ -47,6 +47,11 @@
 		306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822852C002E6700AF6CF8 /* TSCoatBuild.swift */; };
 		306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822872C002F7C00AF6CF8 /* PACoatBuild.swift */; };
 		3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822892C0030F400AF6CF8 /* PUCoatBuild.swift */; };
+		3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */; };
+		306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822942C011F1400AF6CF8 /* Broadcast.swift */; };
+		306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */; };
+		306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */; };
+		3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -67,7 +72,7 @@
 		30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */; };
 		30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */; };
 		30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */; };
-		30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */; };
+		30AC30312B843B820073BB93 /* CoatWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */; };
 		30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */; };
 		30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */; };
 		30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */; };
@@ -140,6 +145,11 @@
 		306822852C002E6700AF6CF8 /* TSCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoatBuild.swift; sourceTree = "<group>"; };
 		306822872C002F7C00AF6CF8 /* PACoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatBuild.swift; sourceTree = "<group>"; };
 		306822892C0030F400AF6CF8 /* PUCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoatBuild.swift; sourceTree = "<group>"; };
+		3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastPicker.swift; sourceTree = "<group>"; };
+		306822942C011F1400AF6CF8 /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcast.swift; sourceTree = "<group>"; };
+		306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastWasteFactorOptions.swift; sourceTree = "<group>"; };
+		3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastBuild.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -161,7 +171,7 @@
 		30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemSuite.swift; sourceTree = "<group>"; };
 		30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCThicknessPicker.swift; sourceTree = "<group>"; };
 		30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSpeedPicker.swift; sourceTree = "<group>"; };
-		30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCWasteFactorOptions.swift; sourceTree = "<group>"; };
+		30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatWasteFactorOptions.swift; sourceTree = "<group>"; };
 		30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTexturePicker.swift; sourceTree = "<group>"; };
 		30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBaseCoatSuite.swift; sourceTree = "<group>"; };
 		30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCPrimeCoatSuite.swift; sourceTree = "<group>"; };
@@ -227,6 +237,8 @@
 		303C69862B6B3A0800C58041 /* Universal System Views */ = {
 			isa = PBXGroup;
 			children = (
+				30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */,
+				306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */,
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
 				30ED659E2B733825001E636D /* SqftForm.swift */,
 				3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */,
@@ -242,6 +254,24 @@
 				306822892C0030F400AF6CF8 /* PUCoatBuild.swift */,
 			);
 			path = "PU Views";
+			sourceTree = "<group>";
+		};
+		306822912C011E3C00AF6CF8 /* Broadcasts */ = {
+			isa = PBXGroup;
+			children = (
+				306822942C011F1400AF6CF8 /* Broadcast.swift */,
+				306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */,
+			);
+			path = Broadcasts;
+			sourceTree = "<group>";
+		};
+		3068229A2C0125CF00AF6CF8 /* Build Views */ = {
+			isa = PBXGroup;
+			children = (
+				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
+				3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */,
+			);
+			path = "Build Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -322,6 +352,7 @@
 		30A712C12B58967A009C0268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				306822912C011E3C00AF6CF8 /* Broadcasts */,
 				30CC55922BF6C56700B7D409 /* PDFs */,
 				309B977C2B9FCF3600C4E51B /* Kits */,
 				3019218A2B893399009DB65C /* Data */,
@@ -373,7 +404,6 @@
 				30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */,
 				30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */,
 				30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */,
-				30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */,
 				30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */,
 				309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */,
 			);
@@ -388,7 +418,6 @@
 				30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */,
 				30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */,
 				30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */,
-				309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */,
 			);
 			path = Suites;
 			sourceTree = "<group>";
@@ -410,6 +439,7 @@
 		30CAD9282BFC2F1900060449 /* ColorChipViews */ = {
 			isa = PBXGroup;
 			children = (
+				3068229A2C0125CF00AF6CF8 /* Build Views */,
 				30CAD9362BFD7C9700060449 /* Coat Editors */,
 				30CAD9352BFD7C8400060449 /* System Editors */,
 				30CAD92A2BFC38F700060449 /* Suites */,
@@ -433,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
-				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
 			);
 			path = Suites;
 			sourceTree = "<group>";
@@ -443,6 +472,7 @@
 			children = (
 				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
 				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
+				3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */,
 				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
 			);
 			path = "System Editors";
@@ -491,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */,
+				309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */,
 			);
 			path = "Build Views";
 			sourceTree = "<group>";
@@ -634,17 +665,21 @@
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
 				30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
-				30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */,
+				30AC30312B843B820073BB93 /* CoatWasteFactorOptions.swift in Sources */,
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
 				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
 				302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */,
+				3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */,
 				3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */,
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
+				306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
 				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
 				30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */,
 				3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */,
+				3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */,
+				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
 				30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */,
@@ -666,6 +701,7 @@
 				30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */,
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
 				30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */,
+				306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */,
 				303C697D2B6B094900C58041 /* InformationView.swift in Sources */,
 				30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */,
 				30CAD9402BFE7FB700060449 /* TSColorPicker.swift in Sources */,

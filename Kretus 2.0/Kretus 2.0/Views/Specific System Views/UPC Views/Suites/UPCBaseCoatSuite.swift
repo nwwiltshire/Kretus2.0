@@ -18,7 +18,7 @@ struct UPCBaseCoatSuite: View {
             
             UPCThicknessPicker(coat: upcCoat)
             UPCSpeedPicker(coat: upcCoat)
-            UPCWasteFactorOptions(coat: upcCoat)
+            CoatWasteFactorOptions(coat: upcCoat)
         }
         .padding()
         .background(

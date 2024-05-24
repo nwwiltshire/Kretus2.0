@@ -20,7 +20,7 @@ class ColorChipSystem: System {
     @Published var topCoat2SubType: TopCoat2SubType
     @Published var mvrCoat: Coat?
     
-    @Published var broadCast: ColorChipSystem.Broadcast
+    @Published var broadcast: ColorChipBroadcast
     
     init(name: String,
          description: String,
@@ -36,7 +36,7 @@ class ColorChipSystem: System {
          topCoat2: Coat,
          topCoat2SubType: TopCoat2SubType,
          mvrCoat: Coat,
-         broadCast: ColorChipSystem.Broadcast,
+         broadcast: ColorChipBroadcast,
          totalWasteFactor: Int) {
         
         self.availableSubTypes = availableSubTypes
@@ -47,7 +47,7 @@ class ColorChipSystem: System {
         self.topCoat2 = topCoat2
         self.topCoat2SubType = topCoat2SubType
         self.mvrCoat = mvrCoat
-        self.broadCast = broadCast
+        self.broadcast = broadcast
         
         super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
@@ -60,7 +60,7 @@ class ColorChipSystem: System {
         self.baseCoat = TSCoat() // updates later
         self.topCoat1 = PACoat()
         self.topCoat2SubType = .polyaspartic // Set by default even if there is no top coat 2
-        self.broadCast = .quarter
+        self.broadcast = ColorChipBroadcast()
         
         super.init(
         name: "Color Chip",
@@ -85,19 +85,6 @@ class ColorChipSystem: System {
             case .rc: return "RC (Roll Coat)"
             case .rcuv: return "RC UV (Roll Coat w/ UV)"
             case .sl: return "SL (Self Leveling)"
-            }
-        }
-    }
-    
-    enum Broadcast: CaseIterable, Identifiable, CustomStringConvertible {
-        case quarter, eighth
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .quarter: return "1/4\""
-            case .eighth: return "1/8\""
             }
         }
     }
@@ -182,6 +169,10 @@ class ColorChipSystem: System {
         topCoat1.setValues()
         updateKits(with: topCoat1.kitsNeeded)
         totalWasteFactor += topCoat1.wasteFactor
+        
+        broadcast.setValues()
+        updateKits(with: broadcast.kitsNeeded)
+        totalWasteFactor += broadcast.wasteFactor
 
         if let primeCoat = primeCoat {
             primeCoat.setValues()

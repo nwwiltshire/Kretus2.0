@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct UPCWasteFactorOptions: View {
+struct CoatWasteFactorOptions: View {
     
-    @ObservedObject var coat: UPCCoat
+    @ObservedObject var coat: Coat
     
     var body: some View {
         HStack {
@@ -26,12 +26,12 @@ struct UPCWasteFactorOptions: View {
     }
 }
 
-struct UPCWasteFactorOptions_Previews: PreviewProvider {
+struct CoatWasteFactorOptions_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockSystem = UPCCoat()
 
         // Pass the mock System instance into SystemBuilderView
-        UPCWasteFactorOptions(coat: mockSystem)
+        CoatWasteFactorOptions(coat: mockSystem)
     }
 }

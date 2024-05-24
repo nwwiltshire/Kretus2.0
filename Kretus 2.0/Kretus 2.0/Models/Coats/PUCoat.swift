@@ -159,6 +159,8 @@ class PUCoat: Coat {
         
         updateCovRate()
         
+        findProducts()
+        
         // Update Later to sqft/gal
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         

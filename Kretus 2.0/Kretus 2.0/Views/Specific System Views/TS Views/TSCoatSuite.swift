@@ -54,7 +54,10 @@ struct TSCoatSuite: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
                 )
+            
             TSColorPicker(tsCoat: tsCoat)
+            
+            CoatWasteFactorOptions(coat: tsCoat)
         }
         .padding()
         .background(

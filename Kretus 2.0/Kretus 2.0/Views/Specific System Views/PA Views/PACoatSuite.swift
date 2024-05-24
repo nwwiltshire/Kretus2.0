@@ -54,7 +54,7 @@ struct PACoatSuite: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
                 )
-            if (paCoat.coatType != .top1 || paCoat.coatType != .top2) {
+            if (paCoat.coatType != .top1 && paCoat.coatType != .top2) {
                 PAColorPicker(paCoat: paCoat)
             }
             
@@ -78,6 +78,8 @@ struct PACoatSuite: View {
                         .fill(Color(.gray).opacity(0.25))
                 )
             }
+            
+            CoatWasteFactorOptions(coat: paCoat)
             
         }
         .padding()

@@ -72,6 +72,8 @@ struct ColorChipSystemCommitButton: View {
                 }
             }
             
+            colorChipSystem.broadcast.squareFt = colorChipSystem.squareFt
+            
         }) {
       HStack {
         Text("Coat Options")

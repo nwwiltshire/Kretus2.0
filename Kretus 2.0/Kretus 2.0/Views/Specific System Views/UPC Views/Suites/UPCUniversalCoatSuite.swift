@@ -18,7 +18,7 @@ struct UPCUniversalCoatSuite: View {
                 .font(.title2)
             
             UPCSpeedPicker(coat: upcCoat)
-            UPCWasteFactorOptions(coat: upcCoat)
+            CoatWasteFactorOptions(coat: upcCoat)
             UPCCoatColorPicker(upcCoat: upcCoat)
         }
         .padding()
