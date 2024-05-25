@@ -22,27 +22,7 @@ struct TotalSystemView: View {
               Text("System Color: \(upcSystem.systemColor)")
             }
             Text("\nTotal Kits Needed:")
-            HStack {
-                Text("ID")
-                Spacer()
-                Text("Name")
-                Spacer()
-                Text("Quantity")
-            }
-            ForEach(system.kitsNeeded, id: \.id) { kit in
-                VStack {
-                    HStack {
-                        Text(kit.product.id)
-                            .font(.caption)
-                        Spacer()
-                        Text(kit.product.name)
-                            .font(.caption)
-                        Spacer()
-                        Text(kit.quantity.description)
-                            .font(.caption)
-                    }
-                }
-            }
+            KitsListView(kits: system.kitsNeeded)
             Text("Total kits from waste factor: \(system.totalWasteFactor)")
         }
         .padding()

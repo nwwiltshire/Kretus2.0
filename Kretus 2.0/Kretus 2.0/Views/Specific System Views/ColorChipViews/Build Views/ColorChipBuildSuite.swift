@@ -59,7 +59,7 @@ struct ColorChipBuildSuite: View {
                     
                     if ((colorChipSystem.primeCoat) != nil) {
                         
-                        PACoatBuild(paCoat: colorChipSystem.baseCoat as! PACoat, viewColor: colorChipSystem.viewColor)
+                        PACoatBuild(paCoat: colorChipSystem.primeCoat as! PACoat, viewColor: colorChipSystem.viewColor)
                         
                     }
                     if ((colorChipSystem.mvrCoat) != nil) {

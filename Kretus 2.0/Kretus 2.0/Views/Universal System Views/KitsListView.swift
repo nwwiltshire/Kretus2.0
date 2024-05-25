@@ -16,11 +16,14 @@ struct KitsListView: View {
     var body: some View {
         VStack {
         HStack {
-            Text("ID")
+            Text("Product Code")
+                .underline()
             Spacer()
             Text("Name")
+                .underline()
             Spacer()
             Text("Quantity")
+                .underline()
         }
         ForEach(kits, id: \.id) { kit in
             VStack {
@@ -37,7 +40,6 @@ struct KitsListView: View {
             }
         }
     }
-    .padding()
     }
 }
 

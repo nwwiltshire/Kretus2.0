@@ -17,14 +17,21 @@ struct PDFUrl: Identifiable {
     
     
     enum PDFGroup: CaseIterable, Codable, Identifiable, CustomStringConvertible, Comparable {
-        case general, upc
+        case general, upc, colorChip, ts, pa, pu
 
         var id: Self { self }
 
         var description: String {
+            
             switch self {
+                
             case .general: return "General Documentation"
             case .upc: return "UPC 1-Coat"
+            case .colorChip: return "Color Chip"
+            case .ts: return "Top Shelf Epoxy"
+            case .pa: return "Polyaspartic"
+            case .pu: return "Polyurethane"
+                
             }
         }
 
@@ -35,16 +42,20 @@ struct PDFUrl: Identifiable {
 
     
     enum PDFType: CaseIterable, Codable, Identifiable, CustomStringConvertible, Comparable {
-        case general, sds, tds, ig
+        case general, sds, tds, ig, brochure
 
         var id: Self { self }
 
         var description: String {
+            
             switch self {
+                
             case .general: return "General Documentation"
             case .tds: return "Technical Data Sheets"
             case .sds: return "Safety Data Sheets"
             case .ig: return "Installation Guides"
+            case .brochure: return "Brochures"
+                
             }
         }
 

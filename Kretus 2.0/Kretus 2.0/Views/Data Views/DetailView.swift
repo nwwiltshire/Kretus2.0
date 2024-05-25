@@ -14,7 +14,8 @@ struct DetailView: View {
     
     @State var relevantPDFs: [PDFUrl] = []
     
-    static var pdfURLS: [PDFUrl] = [PDFUrl(url: Bundle.main.url(forResource: "Kretus-Product-Catalog", withExtension: "pdf")!, title: "Product Catalog", group: .general, type: .general),
+    static var pdfURLs: [PDFUrl] = [PDFUrl(url: Bundle.main.url(forResource: "Kretus-Product-Catalog", withExtension: "pdf")!, title: "Product Catalog", group: .general, type: .general),
+                                    PDFUrl(url: Bundle.main.url(forResource: "Kretus-Systems-Brochure", withExtension: "pdf")!, title: "Systems Brochure", group: .general, type: .brochure),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-IG", withExtension: "pdf")!, title: "UPC 1-Coat Installation Guide", group: .upc, type: .ig),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-SDS-Colorant", withExtension: "pdf")!, title: "UPC Colorant Safety Data Sheet", group: .upc, type: .sds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-FC", withExtension: "pdf")!, title: "UPC: WC-FC", group: .upc, type: .tds),
@@ -34,7 +35,22 @@ struct DetailView: View {
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-AP", withExtension: "pdf")!, title: "UPC: RC-AP", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-FC", withExtension: "pdf")!, title: "UPC: MF-FC", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-EZ", withExtension: "pdf")!, title: "UPC: MF-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-AP", withExtension: "pdf")!, title: "UPC: MF-AP", group: .upc, type: .tds)]
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-AP", withExtension: "pdf")!, title: "UPC: MF-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-A-RCTT-SLMF-WCVC", withExtension: "pdf")!, title: "UPC Part A", group: .upc, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC", withExtension: "pdf")!, title: "UPC Part B", group: .upc, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-B-RCUVAP", withExtension: "pdf")!, title: "UPC Part B (RCUV)", group: .upc, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-C-RC-TT-SL-MF-WC-VC", withExtension: "pdf")!, title: "UPC Part C", group: .upc, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "Color-Chip-Brochure", withExtension: "pdf")!, title: "Color Chip Brochure", group: .general, type: .brochure),
+                                    PDFUrl(url: Bundle.main.url(forResource: "Color-Chip-Installation-Guide", withExtension: "pdf")!, title: "Color Chip Installation Guide", group: .colorChip, type: .ig),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Poly-Accelerant", withExtension: "pdf")!, title: "Poly Accelerant", group: .pa, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Polyaspartic72-85-A", withExtension: "pdf")!, title: "Polyaspartic Part A (72, 85)", group: .pa, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Polyaspartic92LO-A", withExtension: "pdf")!, title: "Polyaspartic Part A (92 Low Odor)", group: .pa, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Polyaspartic72-85-B", withExtension: "pdf")!, title: "Polyaspartic Part B (72, 85)", group: .pa, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Polyaspartic92LO-B", withExtension: "pdf")!, title: "Polyaspartic Part B (92 Low Odor)", group: .pa, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Power-Cleaner", withExtension: "pdf")!, title: "Power Cleaner", group: .colorChip, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-Solvent-Cleaner", withExtension: "pdf")!, title: "Solvent Cleaner", group: .colorChip, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-TopShelf-A", withExtension: "pdf")!, title: "Top Shelf Epoxy Part A", group: .ts, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-TopShelf-B-Accelerant", withExtension: "pdf")!, title: "Top Shelf Epoxy Part B", group: .ts, type: .sds),]
 
     var body: some View {
         
@@ -44,7 +60,9 @@ struct DetailView: View {
                     .font(.headline)
                 Text("Description: \(system.descriptionFromUser)")
                 Text("Square Feet: \(system.squareFt)")
-                Text("System Color: \(system.systemColor)")
+                if (system.systemColor != "") {
+                    Text("System Color: \(system.systemColor)")
+                }
                 Text("SubType: \(system.subType)")
                 VStack {
                     Text("\nTotal Kits Needed:")
@@ -104,10 +122,12 @@ struct DetailView: View {
         var tempSubType = ""
         var tempSpeed = ""
         
-        appendIfNotExists(string: "UPC 1-Coat Installation Guide", to: &addresses)
-        appendIfNotExists(string: "UPC Colorant Safety Data Sheet", to: &addresses)
-        
         if (system.name == "UPC 1-Coat") {
+            
+            appendIfNotExists(string: "UPC 1-Coat Installation Guide", to: &addresses)
+            appendIfNotExists(string: "UPC Colorant Safety Data Sheet", to: &addresses)
+            
+            
             for coat in system.coats {
                 
                 tempSubType = String(coat.subType.prefix(2))
@@ -117,11 +137,49 @@ struct DetailView: View {
                 appendIfNotExists(string: "UPC: \(tempSubType)-\(tempSpeed)", to: &addresses)
                 
             }
+        }
+        
+        
+        if (system.name == "Color Chip") {
             
-            for address in addresses {
-                if let pdfUrl = DetailView.pdfURLS.first(where: { $0.title == address }) {
-                    pdfs.append(pdfUrl)
+            appendIfNotExists(string: "Color Chip Installation Guide", to: &addresses)
+            
+            if (system.subType == "RC (Roll Coat)" ||
+                system.subType == "RC UV (Roll Coat w/ UV)" ||
+                system.subType == "SL (Self Leveling)") {
+                
+                appendIfNotExists(string: "UPC Part A", to: &addresses)
+                appendIfNotExists(string: "UPC Part B", to: &addresses)
+                
+                if (system.subType == "RC UV (Roll Coat w/ UV)") {
+                    appendIfNotExists(string: "Poly Accelerant", to: &addresses)
                 }
+                
+            } else if (system.subType == "TS (Top Shelf Epoxy)") {
+                
+                appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
+                appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
+                
+            }
+            
+            if system.coats.contains(where: { coat in
+              return coat.coatType == "MVR Coat"
+            }) {
+              appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
+              appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
+            }
+            
+            appendIfNotExists(string: "Polyaspartic Part A (72, 85)", to: &addresses)
+            appendIfNotExists(string: "Polyaspartic Part B (72, 85)", to: &addresses)
+            appendIfNotExists(string: "Polyaspartic Part A (92 Low Odor)", to: &addresses)
+            appendIfNotExists(string: "Polyaspartic Part B (92 Low Odor)", to: &addresses)
+            
+            
+        }
+        
+        for address in addresses {
+            if let pdfUrl = DetailView.pdfURLs.first(where: { $0.title == address }) {
+                pdfs.append(pdfUrl)
             }
         }
         

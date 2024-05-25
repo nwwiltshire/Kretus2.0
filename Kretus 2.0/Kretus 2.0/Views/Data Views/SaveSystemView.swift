@@ -17,8 +17,11 @@ struct SaveSystemView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @State private var showSuccessIcon: Bool = false
+    
     var body: some View {
-        NavigationStack {
+        ZStack {
+            NavigationStack {
                 Form {
                     Text("Enter a name and description for your system.")
                         .bold()
@@ -27,34 +30,36 @@ struct SaveSystemView: View {
                     TotalSystemView(system: system)
                         .padding()
                 }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Save System")
-                }
-                
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        withAnimation {
-                            if let upcSystem = system as? UPCSystem {
-                                upcConvertToData(upcSystem: upcSystem)
-                                dismiss()
-                            } else {
-                                dismiss()
-                            }
-                            if let colorChipSystem = system as? ColorChipSystem {
-                                colorChipConvertToData(colorChipSystem: colorChipSystem)
-                                dismiss()
-                            } else {
-                                dismiss()
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Save System")
+                    }
+                    
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Save") {
+                            withAnimation {
+                                if let upcSystem = system as? UPCSystem {
+                                    upcConvertToData(upcSystem: upcSystem)
+                                }
+                                if let colorChipSystem = system as? ColorChipSystem {
+                                    colorChipConvertToData(colorChipSystem: colorChipSystem)
+                                }
+                                showSuccessIcon = true
+                                _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
+                                    dismiss()
+                                }
                             }
                         }
                     }
-                }
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", role: .cancel) {
-                        dismiss()
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel", role: .cancel) {
+                            dismiss()
+                        }
                     }
                 }
+            }
+            if showSuccessIcon {
+                SuccessIcon() // Show the animation if successful
             }
         }
     }
@@ -176,6 +181,30 @@ struct SaveSystemView: View {
     }
 
 }
+
+struct SuccessIcon: View {
+    
+  @State private var animate = false
+
+  var body: some View {
+      withAnimation(.easeInOut) {
+          ZStack {
+              RoundedRectangle(cornerRadius: 20)
+                          .fill(.ultraThinMaterial)
+                          .frame(width: 250, height: 250)
+              HStack {
+                  Image(systemName: "checkmark.circle")
+                      .foregroundColor(.green)
+                      .scaleEffect(animate ? 1.2 : 1.0)
+                  Text("System Saved!")
+                      .font(.title)
+              }
+          }
+          .transition(.opacity)
+      }
+  }
+}
+
 
 
 
