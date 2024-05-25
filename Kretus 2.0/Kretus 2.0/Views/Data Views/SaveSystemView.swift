@@ -137,11 +137,11 @@ struct SaveSystemView: View {
         }
         
         if let tsBase = colorChipSystem.baseCoat as? TSCoat {
-            coats.append(CoatData(coatType: "Base Coat", subType: tsBase.coatType.description, speed: tsBase.speed.description))
+            coats.append(CoatData(coatType: "Base Coat", subType: tsBase.selectedPartA.description, speed: tsBase.speed.description))
         }
         
         if let paBase = colorChipSystem.baseCoat as? PACoat {
-            coats.append(CoatData(coatType: "Base Coat", subType: paBase.coatType.description, speed: paBase.speed.description))
+            coats.append(CoatData(coatType: "Base Coat", subType: paBase.subType.description, speed: paBase.speed.description))
         }
         
         if (colorChipSystem.primeCoat != nil) {
@@ -150,30 +150,30 @@ struct SaveSystemView: View {
             }
             
             if let tsPrime = colorChipSystem.primeCoat as? TSCoat {
-                coats.append(CoatData(coatType: "Prime Coat", subType: tsPrime.coatType.description, speed: tsPrime.speed.description))
+                coats.append(CoatData(coatType: "Prime Coat", subType: tsPrime.selectedPartA.description, speed: tsPrime.speed.description))
             }
             
             if let paPrime = colorChipSystem.primeCoat as? PACoat {
-                coats.append(CoatData(coatType: "Prime Coat", subType: paPrime.coatType.description, speed: paPrime.speed.description))
+                coats.append(CoatData(coatType: "Prime Coat", subType: paPrime.subType.description, speed: paPrime.speed.description))
             }
         }
         
         if (colorChipSystem.mvrCoat != nil) {
             
             if let tsMvr = colorChipSystem.primeCoat as? TSCoat {
-                coats.append(CoatData(coatType: "MVR Coat", subType: tsMvr.coatType.description, speed: tsMvr.speed.description))
+                coats.append(CoatData(coatType: "MVR Coat", subType: tsMvr.selectedPartA.description, speed: tsMvr.speed.description))
             }
         }
         
-        coats.append(CoatData(coatType: "Top Coat", subType: colorChipSystem.topCoat1.coatType.description, speed: colorChipSystem.topCoat1.speed.description))
+        coats.append(CoatData(coatType: "Top Coat", subType: colorChipSystem.topCoat1.subType.description, speed: colorChipSystem.topCoat1.speed.description))
         
         if (colorChipSystem.topCoat2 != nil) {
             if let tc2Pa = colorChipSystem.topCoat2 as? PACoat {
-                coats.append(CoatData(coatType: "Prime Coat", subType: tc2Pa.coatType.description, speed: tc2Pa.speed.description))
+                coats.append(CoatData(coatType: "Top Coat 2", subType: tc2Pa.subType.description, speed: tc2Pa.speed.description))
             }
             
             if let tc2Pu = colorChipSystem.topCoat2 as? PUCoat {
-                coats.append(CoatData(coatType: "Prime Coat", subType: tc2Pu.coatType.description, speed: tc2Pu.speed.description))
+                coats.append(CoatData(coatType: "Top Coat 2", subType: tc2Pu.subType.description, speed: tc2Pu.speed.description))
             }
         }
         

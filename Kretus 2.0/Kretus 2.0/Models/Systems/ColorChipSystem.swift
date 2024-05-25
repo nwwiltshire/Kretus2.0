@@ -198,7 +198,14 @@ class ColorChipSystem: System {
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.subType = subType
-        upcCoat.uvResistance = uvResistance
+        
+        if (subType != .rc) {
+            upcCoat.thickness = .thin
+        }
+        
+        if (coatType == .base && uvResistance == true) {
+            upcCoat.uvResistance = uvResistance
+        }
         
         return upcCoat
       }

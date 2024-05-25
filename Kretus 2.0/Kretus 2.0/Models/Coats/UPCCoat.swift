@@ -442,10 +442,10 @@ class UPCCoat: Coat {
             if (self.texture2 != .none) {
                 productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
             }
-            
-            if (self.uvResistance == true) {
-                productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
-            }
+        }
+        
+        if (self.uvResistance == true) {
+            productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
         }
 
     }

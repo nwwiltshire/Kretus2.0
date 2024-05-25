@@ -18,24 +18,24 @@ struct DetailView: View {
                                     PDFUrl(url: Bundle.main.url(forResource: "Kretus-Systems-Brochure", withExtension: "pdf")!, title: "Systems Brochure", group: .general, type: .brochure),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-IG", withExtension: "pdf")!, title: "UPC 1-Coat Installation Guide", group: .upc, type: .ig),
                                     PDFUrl(url: Bundle.main.url(forResource: "UPC-SDS-Colorant", withExtension: "pdf")!, title: "UPC Colorant Safety Data Sheet", group: .upc, type: .sds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-FC", withExtension: "pdf")!, title: "UPC: WC-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-EZ", withExtension: "pdf")!, title: "UPC: WC-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-AP", withExtension: "pdf")!, title: "UPC: WC-AP", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-FC", withExtension: "pdf")!, title: "UPC: VC-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-EZ", withExtension: "pdf")!, title: "UPC: VC-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-AP", withExtension: "pdf")!, title: "UPC: VC-AP", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-FC", withExtension: "pdf")!, title: "UPC: TT-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-EZ", withExtension: "pdf")!, title: "UPC: TT-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-AP", withExtension: "pdf")!, title: "UPC: TT-AP", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-FC", withExtension: "pdf")!, title: "UPC: SL-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-EZ", withExtension: "pdf")!, title: "UPC: SL-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-AP", withExtension: "pdf")!, title: "UPC: SL-AP", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-FC", withExtension: "pdf")!, title: "UPC: RC-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-EZ", withExtension: "pdf")!, title: "UPC: RC-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-AP", withExtension: "pdf")!, title: "UPC: RC-AP", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-FC", withExtension: "pdf")!, title: "UPC: MF-FC", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-EZ", withExtension: "pdf")!, title: "UPC: MF-EZ", group: .upc, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-AP", withExtension: "pdf")!, title: "UPC: MF-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-FC", withExtension: "pdf")!, title: "UPC WC-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-EZ", withExtension: "pdf")!, title: "UPC WC-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-WC-AP", withExtension: "pdf")!, title: "UPC WC-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-FC", withExtension: "pdf")!, title: "UPC VC-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-EZ", withExtension: "pdf")!, title: "UPC VC-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-VC-AP", withExtension: "pdf")!, title: "UPC VC-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-FC", withExtension: "pdf")!, title: "UPC TT-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-EZ", withExtension: "pdf")!, title: "UPC TT-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-TT-AP", withExtension: "pdf")!, title: "UPC TT-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-FC", withExtension: "pdf")!, title: "UPC SL-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-EZ", withExtension: "pdf")!, title: "UPC SL-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-SL-AP", withExtension: "pdf")!, title: "UPC SL-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-FC", withExtension: "pdf")!, title: "UPC RC-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-EZ", withExtension: "pdf")!, title: "UPC RC-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-RC-AP", withExtension: "pdf")!, title: "UPC RC-AP", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-FC", withExtension: "pdf")!, title: "UPC MF-FC", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-EZ", withExtension: "pdf")!, title: "UPC MF-EZ", group: .upc, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "UPC-TDS-MF-AP", withExtension: "pdf")!, title: "UPC MF-AP", group: .upc, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-A-RCTT-SLMF-WCVC", withExtension: "pdf")!, title: "UPC Part A", group: .upc, type: .sds),
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC", withExtension: "pdf")!, title: "UPC Part B", group: .upc, type: .sds),
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-UPC-B-RCUVAP", withExtension: "pdf")!, title: "UPC Part B (RCUV)", group: .upc, type: .sds),
@@ -50,7 +50,20 @@ struct DetailView: View {
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-Power-Cleaner", withExtension: "pdf")!, title: "Power Cleaner", group: .colorChip, type: .sds),
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-Solvent-Cleaner", withExtension: "pdf")!, title: "Solvent Cleaner", group: .colorChip, type: .sds),
                                     PDFUrl(url: Bundle.main.url(forResource: "SDS-TopShelf-A", withExtension: "pdf")!, title: "Top Shelf Epoxy Part A", group: .ts, type: .sds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-TopShelf-B-Accelerant", withExtension: "pdf")!, title: "Top Shelf Epoxy Part B", group: .ts, type: .sds),]
+                                    PDFUrl(url: Bundle.main.url(forResource: "SDS-TopShelf-B-Accelerant", withExtension: "pdf")!, title: "Top Shelf Epoxy Part B", group: .ts, type: .sds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PUHP-GLOSS", withExtension: "pdf")!, title: "Polyurethane HP Gloss", group: .pu, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PUHP-SATIN", withExtension: "pdf")!, title: "Polyurethane HP Satin", group: .pu, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PUHS-EZ", withExtension: "pdf")!, title: "Polyurethane HS EZ", group: .pu, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PUHS-FC", withExtension: "pdf")!, title: "Polyurethane HS FC", group: .pu, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-AP", withExtension: "pdf")!, title: "Top Shelf Epoxy A AP", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-EZ", withExtension: "pdf")!, title: "Top Shelf Epoxy A EZ", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-FAST", withExtension: "pdf")!, title: "Top Shelf Epoxy A FAST", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-MVR-EZ", withExtension: "pdf")!, title: "Top Shelf Epoxy A MVR EZ", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-MVR-FC", withExtension: "pdf")!, title: "Top Shelf Epoxy A MVR FC", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-TH", withExtension: "pdf")!, title: "Top Shelf Epoxy A TH", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-FAST", withExtension: "pdf")!, title: "Top Shelf Epoxy CR FAST", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-MVR-EZ", withExtension: "pdf")!, title: "Top Shelf Epoxy CR MVR EZ", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-MVR-FC", withExtension: "pdf")!, title: "Top Shelf Epoxy CR MVR FC", group: .ts, type: .tds),]
 
     var body: some View {
         
@@ -95,17 +108,41 @@ struct DetailView: View {
                 )
             }
             VStack {
-                List {
-                    Text("Relevant Documentation")
+                Text("Relevant Documentation:")
                     .font(.title)
-                    ForEach(relevantPDFs) { pdf in
+                List {
+                    Section(header: Text("Installation Guides")) {
+                      ForEach(relevantPDFs.filter { $0.type == .ig }) { pdf in
                         NavigationLink(
-                            destination: PDFViewer(url: pdf.url),
-                            label: {
-                                Text(pdf.title)
-                            }
-                        )}
+                          destination: PDFViewer(url: pdf.url),
+                          label: {
+                            Text(pdf.title)
+                          }
+                        )
+                      }
+                    }
+                  Section(header: Text("Technical Data Sheets")) {
+                    ForEach(relevantPDFs.filter { $0.type == .tds }) { pdf in
+                      NavigationLink(
+                        destination: PDFViewer(url: pdf.url),
+                        label: {
+                          Text(pdf.title)
+                        }
+                      )
+                    }
+                  }
+                  Section(header: Text("Safety Data Sheets")) {
+                    ForEach(relevantPDFs.filter { $0.type == .sds }) { pdf in
+                      NavigationLink(
+                        destination: PDFViewer(url: pdf.url),
+                        label: {
+                          Text(pdf.title)
+                        }
+                      )
+                    }
+                  }
                 }
+
             }
             .navigationTitle(system.nameFromUser)
         }
@@ -126,20 +163,22 @@ struct DetailView: View {
             
             appendIfNotExists(string: "UPC 1-Coat Installation Guide", to: &addresses)
             appendIfNotExists(string: "UPC Colorant Safety Data Sheet", to: &addresses)
+            appendIfNotExists(string: "UPC Part A", to: &addresses)
+            appendIfNotExists(string: "UPC Part B", to: &addresses)
             
             
             for coat in system.coats {
                 
                 tempSubType = String(coat.subType.prefix(2))
-                    
+                
                 tempSpeed = String(coat.speed.prefix(2))
                 
-                appendIfNotExists(string: "UPC: \(tempSubType)-\(tempSpeed)", to: &addresses)
+                appendIfNotExists(string: "UPC \(tempSubType)-\(tempSpeed)", to: &addresses)
                 
             }
         }
         
-        
+        // Need to break these down, probably making functions for UPC, TS, PA, PU, etc.
         if (system.name == "Color Chip") {
             
             appendIfNotExists(string: "Color Chip Installation Guide", to: &addresses)
@@ -151,6 +190,16 @@ struct DetailView: View {
                 appendIfNotExists(string: "UPC Part A", to: &addresses)
                 appendIfNotExists(string: "UPC Part B", to: &addresses)
                 
+                for coat in system.coats {
+                    
+                    tempSubType = String(coat.subType.prefix(2))
+                        
+                    tempSpeed = String(coat.speed.prefix(2))
+                    
+                    appendIfNotExists(string: "UPC \(tempSubType)-\(tempSpeed)", to: &addresses)
+                    
+                }
+                
                 if (system.subType == "RC UV (Roll Coat w/ UV)") {
                     appendIfNotExists(string: "Poly Accelerant", to: &addresses)
                 }
@@ -160,20 +209,87 @@ struct DetailView: View {
                 appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
                 appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
                 
+                // Add Logic for different Epoxy Systems
+                
+                if system.coats.contains(where: { coat in
+                    return coat.speed == "AP (Average Pace)"
+                }) {
+                    appendIfNotExists(string: "Top Shelf Epoxy A AP", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return coat.speed == "EZ (Easy)"
+                }) {
+                    appendIfNotExists(string: "Top Shelf Epoxy A EZ", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return coat.speed == "Fast (Low Temps)"
+                }) {
+                    appendIfNotExists(string: "Top Shelf Epoxy A FAST", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return coat.speed == "TH (Traditional)"
+                }) {
+                    appendIfNotExists(string: "Top Shelf Epoxy A TH", to: &addresses)
+                }
+                
             }
             
             if system.coats.contains(where: { coat in
               return coat.coatType == "MVR Coat"
             }) {
-              appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
-              appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
+                appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
+                appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
+                appendIfNotExists(string: "Top Shelf Epoxy A MVR EZ", to: &addresses)
+                appendIfNotExists(string: "Top Shelf Epoxy A MVR FC", to: &addresses)
             }
             
-            appendIfNotExists(string: "Polyaspartic Part A (72, 85)", to: &addresses)
-            appendIfNotExists(string: "Polyaspartic Part B (72, 85)", to: &addresses)
-            appendIfNotExists(string: "Polyaspartic Part A (92 Low Odor)", to: &addresses)
-            appendIfNotExists(string: "Polyaspartic Part B (92 Low Odor)", to: &addresses)
+            if system.coats.contains(where: {coat in
+                return (coat.subType == "Polyaspartic 72" || coat.subType == "Polyaspartic 85")
+            }) {
+                appendIfNotExists(string: "Polyaspartic Part A (72, 85)", to: &addresses)
+                appendIfNotExists(string: "Polyaspartic Part B (72, 85)", to: &addresses)
+            }
             
+            if system.coats.contains(where: {coat in
+                return coat.subType == "Polyaspartic 92 Low Odor"
+            }) {
+                appendIfNotExists(string: "Polyaspartic Part A (92 Low Odor)", to: &addresses)
+                appendIfNotExists(string: "Polyaspartic Part B (92 Low Odor)", to: &addresses)
+            }
+            
+            if system.coats.contains(where: { coat in
+                return (coat.coatType == "Top Coat 2")
+            }) {
+                if system.coats.contains(where: { coat in
+                    return (coat.subType == "Polyurethane HS" && coat.speed == "EZ - Clear")
+                }) {
+                    appendIfNotExists(string: "Polyurethane HS EZ", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return (coat.subType == "Polyurethane HS" && coat.speed == "EZ - Fast")
+                }) {
+                    appendIfNotExists(string: "Polyurethane HS FC", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return (coat.subType == "Polyurethane HP Clear Gloss")
+                }) {
+                    appendIfNotExists(string: "Polyurethane HP Gloss", to: &addresses)
+                }
+                
+                if system.coats.contains(where: { coat in
+                    return (coat.subType == "Polyurethane HP Clear Satin")
+                }) {
+                    appendIfNotExists(string: "Polyurethane HP Satin", to: &addresses)
+                }
+            }
+            
+            appendIfNotExists(string: "Power Cleaner", to: &addresses)
+            appendIfNotExists(string: "Solvent Cleaner", to: &addresses)
             
         }
         

@@ -37,24 +37,26 @@ struct PUCoatSuite: View {
                     .fill(Color(.gray).opacity(0.25))
             )
             
-            HStack {
-                Text("Part B (Speed)")
-                    .font(.headline)
-                
-                Spacer()
-                
-                Picker(selection: $puCoat.speed, label: Text("")) {
-                    ForEach(PUCoat.Speed.allCases, id: \.self) { speed in
-                        Text(speed.description).tag(speed)
+            if (puCoat.subType == .polyHS) {
+                HStack {
+                    Text("Part B (Speed)")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $puCoat.speed, label: Text("")) {
+                        ForEach(PUCoat.Speed.allCases, id: \.self) { speed in
+                            Text(speed.description).tag(speed)
+                        }
                     }
+                    .pickerStyle(MenuPickerStyle())
                 }
-                .pickerStyle(MenuPickerStyle())
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(.gray).opacity(0.25))
+                )
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.gray).opacity(0.25))
-            )
             
             if (puCoat.coatType == .top2)
             {

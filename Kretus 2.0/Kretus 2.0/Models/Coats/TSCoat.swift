@@ -99,7 +99,7 @@ class TSCoat: Coat {
             case .ap: return "AP (Average Pace)"
             case .ez: return "EZ (Easy)"
             case .fast: return "Fast (Low Temps)"
-            case .th: return "TH (idk yet)"
+            case .th: return "TH (Traditional)"
             case .mvrEz: return "MVR - EZ"
             case .mvrFc: return "MVR - FC"
                 
