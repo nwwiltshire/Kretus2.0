@@ -111,6 +111,12 @@
 		30B966C42C0287AE00398E19 /* TDS-TSE-A-TH.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BB2C0287AE00398E19 /* TDS-TSE-A-TH.pdf */; };
 		30B966C52C0287AE00398E19 /* TDS-TSE-A-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */; };
 		30B966C62C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BD2C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf */; };
+		30B966CD2C02B2A100398E19 /* TDS-PA-85-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */; };
+		30B966CE2C02B2A100398E19 /* TDS-PA-85-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */; };
+		30B966CF2C02B2A100398E19 /* TDS-PA-92-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */; };
+		30B966D02C02B2A100398E19 /* TDS-PA-92-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */; };
+		30B966D12C02B2A100398E19 /* TDS-PA-72-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */; };
+		30B966D22C02B2A100398E19 /* TDS-PA-72-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */; };
 		30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9202BFBCF3900060449 /* TSCoat.swift */; };
 		30CAD9232BFBDFB200060449 /* ts.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9222BFBDFB200060449 /* ts.json */; };
 		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
@@ -241,6 +247,12 @@
 		30B966BB2C0287AE00398E19 /* TDS-TSE-A-TH.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-TH.pdf"; sourceTree = "<group>"; };
 		30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-EZ.pdf"; sourceTree = "<group>"; };
 		30B966BD2C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-MVR-FC.pdf"; sourceTree = "<group>"; };
+		30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-85-EZ.pdf"; sourceTree = "<group>"; };
+		30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-85-FAST.pdf"; sourceTree = "<group>"; };
+		30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-92-EZ.pdf"; sourceTree = "<group>"; };
+		30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-92-FAST.pdf"; sourceTree = "<group>"; };
+		30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-FAST.pdf"; sourceTree = "<group>"; };
+		30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-EZ.pdf"; sourceTree = "<group>"; };
 		30CAD9202BFBCF3900060449 /* TSCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoat.swift; sourceTree = "<group>"; };
 		30CAD9222BFBDFB200060449 /* ts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ts.json; sourceTree = "<group>"; };
 		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
@@ -517,6 +529,12 @@
 		30B9668E2C0160B200398E19 /* ColorChip Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */,
+				30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */,
+				30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */,
+				30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */,
+				30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */,
+				30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */,
 				30B966B62C0287AE00398E19 /* TDS-TSE-A-AP.pdf */,
 				30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */,
 				30B966B72C0287AE00398E19 /* TDS-TSE-A-FAST.pdf */,
@@ -731,6 +749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B966D12C02B2A100398E19 /* TDS-PA-72-FAST.pdf in Resources */,
 				30B966C32C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf in Resources */,
 				30B966AA2C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf in Resources */,
 				30B966892C01523E00398E19 /* UPC-TDS-WC-AP.pdf in Resources */,
@@ -740,6 +759,7 @@
 				30B966B22C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf in Resources */,
 				30B966782C01523E00398E19 /* UPC-IG.pdf in Resources */,
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
+				30B966D02C02B2A100398E19 /* TDS-PA-92-FAST.pdf in Resources */,
 				30B9668A2C01523E00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */,
 				30B966BF2C0287AE00398E19 /* TDS-TSE-A-AP.pdf in Resources */,
 				30B9668D2C01523E00398E19 /* Kretus-Product-Catalog.pdf in Resources */,
@@ -754,6 +774,7 @@
 				30B966AC2C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf in Resources */,
 				30CAD9382BFE6EB600060449 /* pa.json in Resources */,
 				30A712D62B590025009C0268 /* upc.json in Resources */,
+				30B966CD2C02B2A100398E19 /* TDS-PA-85-EZ.pdf in Resources */,
 				30B9667A2C01523E00398E19 /* UPC-TDS-MF-AP.pdf in Resources */,
 				30B966A42C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf in Resources */,
 				30B9669B2C01639300398E19 /* Color-Chip-Brochure.pdf in Resources */,
@@ -761,6 +782,7 @@
 				30B966C02C0287AE00398E19 /* TDS-TSE-A-FAST.pdf in Resources */,
 				30B966BE2C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf in Resources */,
 				30B966C42C0287AE00398E19 /* TDS-TSE-A-TH.pdf in Resources */,
+				30B966CF2C02B2A100398E19 /* TDS-PA-92-EZ.pdf in Resources */,
 				30B966C12C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf in Resources */,
 				30B966B12C027B2E00398E19 /* TDS-PUHP-SATIN.pdf in Resources */,
 				30B9667F2C01523E00398E19 /* UPC-TDS-RC-FC.pdf in Resources */,
@@ -774,6 +796,7 @@
 				30B966812C01523E00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */,
 				30B9669D2C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf in Resources */,
 				30B9667D2C01523E00398E19 /* UPC-TDS-RC-AP.pdf in Resources */,
+				30B966D22C02B2A100398E19 /* TDS-PA-72-EZ.pdf in Resources */,
 				30B9669F2C01639300398E19 /* SDS-Solvent-Cleaner.pdf in Resources */,
 				30B9669E2C01639300398E19 /* Color-Chip-Installation-Guide.pdf in Resources */,
 				30B9667E2C01523E00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */,
@@ -785,6 +808,7 @@
 				30B966842C01523E00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */,
 				30B966A32C01639300398E19 /* SDS-TopShelf-A.pdf in Resources */,
 				30B9669A2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf in Resources */,
+				30B966CE2C02B2A100398E19 /* TDS-PA-85-FAST.pdf in Resources */,
 				30B966802C01523E00398E19 /* UPC-TDS-SL-AP.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

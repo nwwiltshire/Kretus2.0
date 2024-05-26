@@ -63,7 +63,13 @@ struct DetailView: View {
                                     PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-A-TH", withExtension: "pdf")!, title: "Top Shelf Epoxy A TH", group: .ts, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-FAST", withExtension: "pdf")!, title: "Top Shelf Epoxy CR FAST", group: .ts, type: .tds),
                                     PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-MVR-EZ", withExtension: "pdf")!, title: "Top Shelf Epoxy CR MVR EZ", group: .ts, type: .tds),
-                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-MVR-FC", withExtension: "pdf")!, title: "Top Shelf Epoxy CR MVR FC", group: .ts, type: .tds),]
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-TSE-CR-MVR-FC", withExtension: "pdf")!, title: "Top Shelf Epoxy CR MVR FC", group: .ts, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-72-EZ", withExtension: "pdf")!, title: "Polyaspartic 72 EZ", group: .pa, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-72-FAST", withExtension: "pdf")!, title: "Polyaspartic 72 FAST", group: .pa, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-85-EZ", withExtension: "pdf")!, title: "Polyaspartic 85 EZ", group: .pa, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-85-FAST", withExtension: "pdf")!, title: "Polyaspartic 85 FAST", group: .pa, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-92-EZ", withExtension: "pdf")!, title: "Polyaspartic 92 EZ", group: .pa, type: .tds),
+                                    PDFUrl(url: Bundle.main.url(forResource: "TDS-PA-92-FAST", withExtension: "pdf")!, title: "Polyaspartic 92 FAST", group: .pa, type: .tds)]
 
     var body: some View {
         
@@ -151,6 +157,7 @@ struct DetailView: View {
         }
     }
         
+    // Split into different functions, for each respective coating. Maybe add something to coatData to represent what kind of actual coat or system it belongs to.
     
     private func checkForPDFs(system: SystemData) -> [PDFUrl] {
         
@@ -208,8 +215,6 @@ struct DetailView: View {
                 
                 appendIfNotExists(string: "Top Shelf Epoxy Part A", to: &addresses)
                 appendIfNotExists(string: "Top Shelf Epoxy Part B", to: &addresses)
-                
-                // Add Logic for different Epoxy Systems
                 
                 if system.coats.contains(where: { coat in
                     return coat.speed == "AP (Average Pace)"
