@@ -8,38 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		3019218C2B89362F009DB65C /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019218B2B89362F009DB65C /* SystemData.swift */; };
-		302A6C522BF6F39A00706714 /* UPC-TDS-TT-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C402BF6F39A00706714 /* UPC-TDS-TT-EZ.pdf */; };
-		302A6C532BF6F39A00706714 /* UPC-TDS-MF-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C412BF6F39A00706714 /* UPC-TDS-MF-FC.pdf */; };
-		302A6C542BF6F39A00706714 /* UPC-TDS-MF-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C422BF6F39A00706714 /* UPC-TDS-MF-EZ.pdf */; };
-		302A6C552BF6F39A00706714 /* UPC-TDS-WC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C432BF6F39A00706714 /* UPC-TDS-WC-FC.pdf */; };
-		302A6C562BF6F39A00706714 /* UPC-TDS-RC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C442BF6F39A00706714 /* UPC-TDS-RC-FC.pdf */; };
-		302A6C572BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C452BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf */; };
-		302A6C582BF6F39A00706714 /* UPC-TDS-MF-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C462BF6F39A00706714 /* UPC-TDS-MF-AP.pdf */; };
-		302A6C592BF6F39A00706714 /* UPC-TDS-RC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C472BF6F39A00706714 /* UPC-TDS-RC-AP.pdf */; };
-		302A6C5A2BF6F39A00706714 /* UPC-TDS-SL-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C482BF6F39A00706714 /* UPC-TDS-SL-AP.pdf */; };
-		302A6C5B2BF6F39A00706714 /* UPC-TDS-TT-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C492BF6F39A00706714 /* UPC-TDS-TT-AP.pdf */; };
-		302A6C5C2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4A2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf */; };
-		302A6C5D2BF6F39A00706714 /* UPC-TDS-RC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4B2BF6F39A00706714 /* UPC-TDS-RC-EZ.pdf */; };
-		302A6C5E2BF6F39A00706714 /* UPC-TDS-TT-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4C2BF6F39A00706714 /* UPC-TDS-TT-FC.pdf */; };
-		302A6C5F2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4D2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf */; };
-		302A6C602BF6F39A00706714 /* UPC-TDS-VC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4E2BF6F39A00706714 /* UPC-TDS-VC-FC.pdf */; };
-		302A6C612BF6F39A00706714 /* UPC-TDS-VC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C4F2BF6F39A00706714 /* UPC-TDS-VC-EZ.pdf */; };
-		302A6C622BF6F39A00706714 /* UPC-TDS-WC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C502BF6F39A00706714 /* UPC-TDS-WC-AP.pdf */; };
-		302A6C632BF6F39A00706714 /* UPC-TDS-SL-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 302A6C512BF6F39A00706714 /* UPC-TDS-SL-FC.pdf */; };
 		302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */; };
-		302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCColorPicker.swift */; };
+		302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */; };
 		302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F02BF7F200005CC281 /* KitRelationship.swift */; };
+		302F51F52BF824A9005CC281 /* ColorChipSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F42BF824A9005CC281 /* ColorChipSystem.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
 		303C697D2B6B094900C58041 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* InformationView.swift */; };
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
 		303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69872B6B3A2600C58041 /* SystemBuilderView.swift */; };
 		303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */; };
+		306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */; };
+		306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */; };
+		306822772BFFD12B00AF6CF8 /* PUCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822762BFFD12B00AF6CF8 /* PUCoat.swift */; };
+		3068227A2BFFDF4800AF6CF8 /* PUCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */; };
+		3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */; };
+		3068227E2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */; };
+		306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */; };
+		306822822BFFE98000AF6CF8 /* KitsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822812BFFE98000AF6CF8 /* KitsListView.swift */; };
+		306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */; };
+		306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822852C002E6700AF6CF8 /* TSCoatBuild.swift */; };
+		306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822872C002F7C00AF6CF8 /* PACoatBuild.swift */; };
+		3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822892C0030F400AF6CF8 /* PUCoatBuild.swift */; };
+		3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */; };
+		306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822942C011F1400AF6CF8 /* Broadcast.swift */; };
+		306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */; };
+		306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */; };
+		3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */; };
+		3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229D2C01332E00AF6CF8 /* CoatData.swift */; };
+		306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229F2C01335900AF6CF8 /* BroadcastData.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
-		309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */; };
 		30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B32B589654009C0268 /* Kretus_2_0App.swift */; };
 		30A712B62B589654009C0268 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B52B589654009C0268 /* ContentView.swift */; };
 		30A712B82B589656009C0268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A712B72B589656009C0268 /* Assets.xcassets */; };
@@ -48,26 +49,92 @@
 		30A712C62B589904009C0268 /* Coat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712C52B589904009C0268 /* Coat.swift */; };
 		30A712D22B589E18009C0268 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D12B589E18009C0268 /* Product.swift */; };
 		30A712D62B590025009C0268 /* upc.json in Resources */ = {isa = PBXBuildFile; fileRef = 30A712D52B590025009C0268 /* upc.json */; };
-		30A712D82B590225009C0268 /* UPCProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* UPCProducts.swift */; };
+		30A712D82B590225009C0268 /* GetProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712D72B590225009C0268 /* GetProducts.swift */; };
 		30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30222B7EAE740073BB93 /* UPCSystemCommitButton.swift */; };
 		30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30252B7EC67F0073BB93 /* UPCSystem.swift */; };
 		30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */; };
 		30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */; };
 		30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */; };
-		30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */; };
+		30AC30312B843B820073BB93 /* CoatWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */; };
 		30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */; };
 		30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */; };
 		30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */; };
 		30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */; };
 		30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2872A2BAA3D40006D3003 /* KitData.swift */; };
-		30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */; };
+		30B966782C01523E00398E19 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966612C01523D00398E19 /* UPC-IG.pdf */; };
+		30B966792C01523E00398E19 /* UPC-SDS-Colorant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */; };
+		30B9667A2C01523E00398E19 /* UPC-TDS-MF-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */; };
+		30B9667B2C01523E00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */; };
+		30B9667C2C01523E00398E19 /* UPC-TDS-MF-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */; };
+		30B9667D2C01523E00398E19 /* UPC-TDS-RC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */; };
+		30B9667E2C01523E00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */; };
+		30B9667F2C01523E00398E19 /* UPC-TDS-RC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */; };
+		30B966802C01523E00398E19 /* UPC-TDS-SL-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */; };
+		30B966812C01523E00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */; };
+		30B966822C01523E00398E19 /* UPC-TDS-SL-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */; };
+		30B966832C01523E00398E19 /* UPC-TDS-TT-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */; };
+		30B966842C01523E00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */; };
+		30B966852C01523E00398E19 /* UPC-TDS-TT-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */; };
+		30B966862C01523E00398E19 /* UPC-TDS-VC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */; };
+		30B966872C01523E00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */; };
+		30B966882C01523E00398E19 /* UPC-TDS-VC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */; };
+		30B966892C01523E00398E19 /* UPC-TDS-WC-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */; };
+		30B9668A2C01523E00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */; };
+		30B9668B2C01523E00398E19 /* UPC-TDS-WC-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */; };
+		30B9668C2C01523E00398E19 /* Kretus-Systems-Brochure.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */; };
+		30B9668D2C01523E00398E19 /* Kretus-Product-Catalog.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */; };
+		30B9669A2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B9668F2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf */; };
+		30B9669B2C01639300398E19 /* Color-Chip-Brochure.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966902C01639300398E19 /* Color-Chip-Brochure.pdf */; };
+		30B9669C2C01639300398E19 /* SDS-Polyaspartic92LO-A.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966912C01639300398E19 /* SDS-Polyaspartic92LO-A.pdf */; };
+		30B9669D2C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966922C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf */; };
+		30B9669E2C01639300398E19 /* Color-Chip-Installation-Guide.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966932C01639300398E19 /* Color-Chip-Installation-Guide.pdf */; };
+		30B9669F2C01639300398E19 /* SDS-Solvent-Cleaner.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966942C01639300398E19 /* SDS-Solvent-Cleaner.pdf */; };
+		30B966A02C01639300398E19 /* SDS-Poly-Accelerant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966952C01639300398E19 /* SDS-Poly-Accelerant.pdf */; };
+		30B966A12C01639300398E19 /* SDS-Polyaspartic72-85-B.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966962C01639300398E19 /* SDS-Polyaspartic72-85-B.pdf */; };
+		30B966A22C01639300398E19 /* SDS-Power-Cleaner.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966972C01639300398E19 /* SDS-Power-Cleaner.pdf */; };
+		30B966A32C01639300398E19 /* SDS-TopShelf-A.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966982C01639300398E19 /* SDS-TopShelf-A.pdf */; };
+		30B966A42C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966992C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf */; };
+		30B966A92C01639F00398E19 /* SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966A52C01639F00398E19 /* SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf */; };
+		30B966AA2C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966A62C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf */; };
+		30B966AB2C01639F00398E19 /* SDS-UPC-A-RCTT-SLMF-WCVC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966A72C01639F00398E19 /* SDS-UPC-A-RCTT-SLMF-WCVC.pdf */; };
+		30B966AC2C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966A82C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf */; };
+		30B966B12C027B2E00398E19 /* TDS-PUHP-SATIN.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966AD2C027B2E00398E19 /* TDS-PUHP-SATIN.pdf */; };
+		30B966B22C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966AE2C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf */; };
+		30B966B32C027B2E00398E19 /* TDS-PUHS-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966AF2C027B2E00398E19 /* TDS-PUHS-EZ.pdf */; };
+		30B966B42C027B2E00398E19 /* TDS-PUHS-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B02C027B2E00398E19 /* TDS-PUHS-FC.pdf */; };
+		30B966BE2C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B52C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf */; };
+		30B966BF2C0287AE00398E19 /* TDS-TSE-A-AP.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B62C0287AE00398E19 /* TDS-TSE-A-AP.pdf */; };
+		30B966C02C0287AE00398E19 /* TDS-TSE-A-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B72C0287AE00398E19 /* TDS-TSE-A-FAST.pdf */; };
+		30B966C12C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B82C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf */; };
+		30B966C22C0287AE00398E19 /* TDS-TSE-CR-MVR-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966B92C0287AE00398E19 /* TDS-TSE-CR-MVR-FC.pdf */; };
+		30B966C32C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BA2C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf */; };
+		30B966C42C0287AE00398E19 /* TDS-TSE-A-TH.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BB2C0287AE00398E19 /* TDS-TSE-A-TH.pdf */; };
+		30B966C52C0287AE00398E19 /* TDS-TSE-A-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */; };
+		30B966C62C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966BD2C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf */; };
+		30B966CD2C02B2A100398E19 /* TDS-PA-85-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */; };
+		30B966CE2C02B2A100398E19 /* TDS-PA-85-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */; };
+		30B966CF2C02B2A100398E19 /* TDS-PA-92-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */; };
+		30B966D02C02B2A100398E19 /* TDS-PA-92-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */; };
+		30B966D12C02B2A100398E19 /* TDS-PA-72-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */; };
+		30B966D22C02B2A100398E19 /* TDS-PA-72-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */; };
+		30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9202BFBCF3900060449 /* TSCoat.swift */; };
+		30CAD9232BFBDFB200060449 /* ts.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9222BFBDFB200060449 /* ts.json */; };
+		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
+		30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */; };
+		30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */; };
+		30CAD9302BFD401B00060449 /* ColorChipCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */; };
+		30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */; };
+		30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */; };
+		30CAD9382BFE6EB600060449 /* pa.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9372BFE6EB600060449 /* pa.json */; };
+		30CAD93E2BFE7C2C00060449 /* TSCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD93D2BFE7C2C00060449 /* TSCoatSuite.swift */; };
+		30CAD9402BFE7FB700060449 /* TSColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD93F2BFE7FB700060449 /* TSColorPicker.swift */; };
+		30CAD9442BFE8F1800060449 /* UPCUniversalCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9432BFE8F1800060449 /* UPCUniversalCoatSuite.swift */; };
+		30CAD9462BFE8FB300060449 /* UPCCoatColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */; };
+		30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55852BF585ED00B7D409 /* SaveSystemView.swift */; };
 		30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55872BF6854900B7D409 /* SystemListView.swift */; };
-		30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */; };
 		30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */; };
-		30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */; };
 		30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55932BF6C57700B7D409 /* PDFUrl.swift */; };
 		30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC55952BF6C73100B7D409 /* DetailView.swift */; };
-		30CC55982BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */; };
 		30ED659F2B733825001E636D /* SqftForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED659E2B733825001E636D /* SqftForm.swift */; };
 		30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */; };
 		30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */; };
@@ -76,38 +143,39 @@
 
 /* Begin PBXFileReference section */
 		3019218B2B89362F009DB65C /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
-		302A6C402BF6F39A00706714 /* UPC-TDS-TT-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-TT-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C412BF6F39A00706714 /* UPC-TDS-MF-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-MF-FC.pdf"; sourceTree = "<group>"; };
-		302A6C422BF6F39A00706714 /* UPC-TDS-MF-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-MF-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C432BF6F39A00706714 /* UPC-TDS-WC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-WC-FC.pdf"; sourceTree = "<group>"; };
-		302A6C442BF6F39A00706714 /* UPC-TDS-RC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-RC-FC.pdf"; sourceTree = "<group>"; };
-		302A6C452BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-WC-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C462BF6F39A00706714 /* UPC-TDS-MF-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-MF-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-MF-AP.pdf"; sourceTree = "<group>"; };
-		302A6C472BF6F39A00706714 /* UPC-TDS-RC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-RC-AP.pdf"; sourceTree = "<group>"; };
-		302A6C482BF6F39A00706714 /* UPC-TDS-SL-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-SL-AP.pdf"; sourceTree = "<group>"; };
-		302A6C492BF6F39A00706714 /* UPC-TDS-TT-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-TT-AP.pdf"; sourceTree = "<group>"; };
-		302A6C4A2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-VC-AP.pdf"; sourceTree = "<group>"; };
-		302A6C4B2BF6F39A00706714 /* UPC-TDS-RC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-RC-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-RC-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C4C2BF6F39A00706714 /* UPC-TDS-TT-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-TT-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-TT-FC.pdf"; sourceTree = "<group>"; };
-		302A6C4D2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-SL-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C4E2BF6F39A00706714 /* UPC-TDS-VC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-VC-FC.pdf"; sourceTree = "<group>"; };
-		302A6C4F2BF6F39A00706714 /* UPC-TDS-VC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-VC-EZ.pdf"; path = "../../../../../../Downloads/UPC-TDS-VC-EZ.pdf"; sourceTree = "<group>"; };
-		302A6C502BF6F39A00706714 /* UPC-TDS-WC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-WC-AP.pdf"; path = "../../../../../../Downloads/UPC-TDS-WC-AP.pdf"; sourceTree = "<group>"; };
-		302A6C512BF6F39A00706714 /* UPC-TDS-SL-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-TDS-SL-FC.pdf"; path = "../../../../../../Downloads/UPC-TDS-SL-FC.pdf"; sourceTree = "<group>"; };
 		302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSubSystemPicker.swift; sourceTree = "<group>"; };
-		302E56802B7211BC0063EB5C /* UPCColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorPicker.swift; sourceTree = "<group>"; };
+		302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemColorPicker.swift; sourceTree = "<group>"; };
 		302F51F02BF7F200005CC281 /* KitRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitRelationship.swift; sourceTree = "<group>"; };
+		302F51F42BF824A9005CC281 /* ColorChipSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystem.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
 		303C697C2B6B094900C58041 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
 		303C69872B6B3A2600C58041 /* SystemBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBuilderView.swift; sourceTree = "<group>"; };
 		303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatEditorView.swift; sourceTree = "<group>"; };
+		306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatSuite.swift; sourceTree = "<group>"; };
+		306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAColorPicker.swift; sourceTree = "<group>"; };
+		306822762BFFD12B00AF6CF8 /* PUCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoat.swift; sourceTree = "<group>"; };
+		306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoatSuite.swift; sourceTree = "<group>"; };
+		3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBuildSubmitButton.swift; sourceTree = "<group>"; };
+		3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBuildSuite.swift; sourceTree = "<group>"; };
+		3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSystemView.swift; sourceTree = "<group>"; };
+		306822812BFFE98000AF6CF8 /* KitsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitsListView.swift; sourceTree = "<group>"; };
+		306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatBuild.swift; sourceTree = "<group>"; };
+		306822852C002E6700AF6CF8 /* TSCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoatBuild.swift; sourceTree = "<group>"; };
+		306822872C002F7C00AF6CF8 /* PACoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatBuild.swift; sourceTree = "<group>"; };
+		306822892C0030F400AF6CF8 /* PUCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoatBuild.swift; sourceTree = "<group>"; };
+		3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastPicker.swift; sourceTree = "<group>"; };
+		306822942C011F1400AF6CF8 /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcast.swift; sourceTree = "<group>"; };
+		306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastWasteFactorOptions.swift; sourceTree = "<group>"; };
+		3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastBuild.swift; sourceTree = "<group>"; };
+		3068229D2C01332E00AF6CF8 /* CoatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatData.swift; sourceTree = "<group>"; };
+		3068229F2C01335900AF6CF8 /* BroadcastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastData.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
-		309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Kretus-Product-Catalog.pdf"; path = "../../../Kretus/Kretus-Product-Catalog.pdf"; sourceTree = SOURCE_ROOT; };
 		30A712B02B589654009C0268 /* Kretus 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kretus 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A712B32B589654009C0268 /* Kretus_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kretus_2_0App.swift; sourceTree = "<group>"; };
 		30A712B52B589654009C0268 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,26 +185,92 @@
 		30A712C52B589904009C0268 /* Coat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coat.swift; sourceTree = "<group>"; };
 		30A712D12B589E18009C0268 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		30A712D52B590025009C0268 /* upc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = upc.json; sourceTree = "<group>"; };
-		30A712D72B590225009C0268 /* UPCProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCProducts.swift; sourceTree = "<group>"; };
+		30A712D72B590225009C0268 /* GetProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
 		30AC30222B7EAE740073BB93 /* UPCSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemCommitButton.swift; sourceTree = "<group>"; };
 		30AC30252B7EC67F0073BB93 /* UPCSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystem.swift; sourceTree = "<group>"; };
 		30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemSuite.swift; sourceTree = "<group>"; };
 		30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCThicknessPicker.swift; sourceTree = "<group>"; };
 		30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSpeedPicker.swift; sourceTree = "<group>"; };
-		30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCWasteFactorOptions.swift; sourceTree = "<group>"; };
+		30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatWasteFactorOptions.swift; sourceTree = "<group>"; };
 		30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTexturePicker.swift; sourceTree = "<group>"; };
 		30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBaseCoatSuite.swift; sourceTree = "<group>"; };
 		30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCPrimeCoatSuite.swift; sourceTree = "<group>"; };
 		30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTopCoatSuite.swift; sourceTree = "<group>"; };
 		30B2872A2BAA3D40006D3003 /* KitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitData.swift; sourceTree = "<group>"; };
-		30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSaveSystemView.swift; sourceTree = "<group>"; };
+		30B966612C01523D00398E19 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-IG.pdf"; sourceTree = "<group>"; };
+		30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-SDS-Colorant.pdf"; sourceTree = "<group>"; };
+		30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-AP.pdf"; sourceTree = "<group>"; };
+		30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-EZ.pdf"; sourceTree = "<group>"; };
+		30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-MF-FC.pdf"; sourceTree = "<group>"; };
+		30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-AP.pdf"; sourceTree = "<group>"; };
+		30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-RC-FC.pdf"; sourceTree = "<group>"; };
+		30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-AP.pdf"; sourceTree = "<group>"; };
+		30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-EZ.pdf"; sourceTree = "<group>"; };
+		30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-SL-FC.pdf"; sourceTree = "<group>"; };
+		30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-AP.pdf"; sourceTree = "<group>"; };
+		30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-EZ.pdf"; sourceTree = "<group>"; };
+		30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-TT-FC.pdf"; sourceTree = "<group>"; };
+		30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-AP.pdf"; sourceTree = "<group>"; };
+		30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-VC-FC.pdf"; sourceTree = "<group>"; };
+		30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-AP.pdf"; sourceTree = "<group>"; };
+		30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-EZ.pdf"; sourceTree = "<group>"; };
+		30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "UPC-TDS-WC-FC.pdf"; sourceTree = "<group>"; };
+		30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kretus-Systems-Brochure.pdf"; sourceTree = "<group>"; };
+		30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Kretus-Product-Catalog.pdf"; sourceTree = "<group>"; };
+		30B9668F2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Polyaspartic72-85-A.pdf"; sourceTree = "<group>"; };
+		30B966902C01639300398E19 /* Color-Chip-Brochure.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Color-Chip-Brochure.pdf"; sourceTree = "<group>"; };
+		30B966912C01639300398E19 /* SDS-Polyaspartic92LO-A.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Polyaspartic92LO-A.pdf"; sourceTree = "<group>"; };
+		30B966922C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Polyaspartic92LO-B.pdf"; sourceTree = "<group>"; };
+		30B966932C01639300398E19 /* Color-Chip-Installation-Guide.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Color-Chip-Installation-Guide.pdf"; sourceTree = "<group>"; };
+		30B966942C01639300398E19 /* SDS-Solvent-Cleaner.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Solvent-Cleaner.pdf"; sourceTree = "<group>"; };
+		30B966952C01639300398E19 /* SDS-Poly-Accelerant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Poly-Accelerant.pdf"; sourceTree = "<group>"; };
+		30B966962C01639300398E19 /* SDS-Polyaspartic72-85-B.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Polyaspartic72-85-B.pdf"; sourceTree = "<group>"; };
+		30B966972C01639300398E19 /* SDS-Power-Cleaner.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-Power-Cleaner.pdf"; sourceTree = "<group>"; };
+		30B966982C01639300398E19 /* SDS-TopShelf-A.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-TopShelf-A.pdf"; sourceTree = "<group>"; };
+		30B966992C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-TopShelf-B-Accelerant.pdf"; sourceTree = "<group>"; };
+		30B966A52C01639F00398E19 /* SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf"; sourceTree = "<group>"; };
+		30B966A62C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-UPC-B-RCUVAP.pdf"; sourceTree = "<group>"; };
+		30B966A72C01639F00398E19 /* SDS-UPC-A-RCTT-SLMF-WCVC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-UPC-A-RCTT-SLMF-WCVC.pdf"; sourceTree = "<group>"; };
+		30B966A82C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf"; sourceTree = "<group>"; };
+		30B966AD2C027B2E00398E19 /* TDS-PUHP-SATIN.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PUHP-SATIN.pdf"; sourceTree = "<group>"; };
+		30B966AE2C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PUHP-GLOSS.pdf"; sourceTree = "<group>"; };
+		30B966AF2C027B2E00398E19 /* TDS-PUHS-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PUHS-EZ.pdf"; sourceTree = "<group>"; };
+		30B966B02C027B2E00398E19 /* TDS-PUHS-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PUHS-FC.pdf"; sourceTree = "<group>"; };
+		30B966B52C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-CR-MVR-EZ.pdf"; sourceTree = "<group>"; };
+		30B966B62C0287AE00398E19 /* TDS-TSE-A-AP.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-AP.pdf"; sourceTree = "<group>"; };
+		30B966B72C0287AE00398E19 /* TDS-TSE-A-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-FAST.pdf"; sourceTree = "<group>"; };
+		30B966B82C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-CR-FAST.pdf"; sourceTree = "<group>"; };
+		30B966B92C0287AE00398E19 /* TDS-TSE-CR-MVR-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-CR-MVR-FC.pdf"; sourceTree = "<group>"; };
+		30B966BA2C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-MVR-EZ.pdf"; sourceTree = "<group>"; };
+		30B966BB2C0287AE00398E19 /* TDS-TSE-A-TH.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-TH.pdf"; sourceTree = "<group>"; };
+		30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-EZ.pdf"; sourceTree = "<group>"; };
+		30B966BD2C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-TSE-A-MVR-FC.pdf"; sourceTree = "<group>"; };
+		30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-85-EZ.pdf"; sourceTree = "<group>"; };
+		30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-85-FAST.pdf"; sourceTree = "<group>"; };
+		30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-92-EZ.pdf"; sourceTree = "<group>"; };
+		30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-92-FAST.pdf"; sourceTree = "<group>"; };
+		30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-FAST.pdf"; sourceTree = "<group>"; };
+		30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-EZ.pdf"; sourceTree = "<group>"; };
+		30CAD9202BFBCF3900060449 /* TSCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoat.swift; sourceTree = "<group>"; };
+		30CAD9222BFBDFB200060449 /* ts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ts.json; sourceTree = "<group>"; };
+		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
+		30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystemSuite.swift; sourceTree = "<group>"; };
+		30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSubSystemPicker.swift; sourceTree = "<group>"; };
+		30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipCoatOptions.swift; sourceTree = "<group>"; };
+		30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystemCommitButton.swift; sourceTree = "<group>"; };
+		30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipCoatEditorView.swift; sourceTree = "<group>"; };
+		30CAD9372BFE6EB600060449 /* pa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pa.json; sourceTree = "<group>"; };
+		30CAD93D2BFE7C2C00060449 /* TSCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoatSuite.swift; sourceTree = "<group>"; };
+		30CAD93F2BFE7FB700060449 /* TSColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSColorPicker.swift; sourceTree = "<group>"; };
+		30CAD9432BFE8F1800060449 /* UPCUniversalCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCUniversalCoatSuite.swift; sourceTree = "<group>"; };
+		30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatColorPicker.swift; sourceTree = "<group>"; };
+		30CC55852BF585ED00B7D409 /* SaveSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSystemView.swift; sourceTree = "<group>"; };
 		30CC55872BF6854900B7D409 /* SystemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListView.swift; sourceTree = "<group>"; };
-		30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCTotalSystem.swift; sourceTree = "<group>"; };
 		30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
-		30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-IG.pdf"; path = "../../../../../../Downloads/UPC-IG.pdf"; sourceTree = "<group>"; };
 		30CC55932BF6C57700B7D409 /* PDFUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFUrl.swift; sourceTree = "<group>"; };
 		30CC55952BF6C73100B7D409 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "UPC-SDS-Colorant.pdf"; path = "../../../../../../Downloads/UPC-SDS-Colorant.pdf"; sourceTree = "<group>"; };
 		30ED659E2B733825001E636D /* SqftForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqftForm.swift; sourceTree = "<group>"; };
 		30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatOptions.swift; sourceTree = "<group>"; };
 		30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoat.swift; sourceTree = "<group>"; };
@@ -158,6 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				3019218B2B89362F009DB65C /* SystemData.swift */,
+				3068229D2C01332E00AF6CF8 /* CoatData.swift */,
+				3068229F2C01335900AF6CF8 /* BroadcastData.swift */,
 				30B2872A2BAA3D40006D3003 /* KitData.swift */,
 				302F51F02BF7F200005CC281 /* KitRelationship.swift */,
 			);
@@ -167,18 +303,51 @@
 		302A6C642BF7052500706714 /* Product Data */ = {
 			isa = PBXGroup;
 			children = (
+				30CAD9222BFBDFB200060449 /* ts.json */,
+				30CAD9372BFE6EB600060449 /* pa.json */,
 				30A712D52B590025009C0268 /* upc.json */,
 			);
 			path = "Product Data";
 			sourceTree = "<group>";
 		};
-		303C69862B6B3A0800C58041 /* System Builder */ = {
+		303C69862B6B3A0800C58041 /* Universal System Views */ = {
 			isa = PBXGroup;
 			children = (
+				30AC30302B843B820073BB93 /* CoatWasteFactorOptions.swift */,
+				306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */,
 				303C69872B6B3A2600C58041 /* SystemBuilderView.swift */,
 				30ED659E2B733825001E636D /* SqftForm.swift */,
+				3068227F2BFFE7A800AF6CF8 /* TotalSystemView.swift */,
+				306822812BFFE98000AF6CF8 /* KitsListView.swift */,
 			);
-			path = "System Builder";
+			path = "Universal System Views";
+			sourceTree = "<group>";
+		};
+		306822782BFFDF4000AF6CF8 /* PU Views */ = {
+			isa = PBXGroup;
+			children = (
+				306822792BFFDF4800AF6CF8 /* PUCoatSuite.swift */,
+				306822892C0030F400AF6CF8 /* PUCoatBuild.swift */,
+			);
+			path = "PU Views";
+			sourceTree = "<group>";
+		};
+		306822912C011E3C00AF6CF8 /* Broadcasts */ = {
+			isa = PBXGroup;
+			children = (
+				306822942C011F1400AF6CF8 /* Broadcast.swift */,
+				306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */,
+			);
+			path = Broadcasts;
+			sourceTree = "<group>";
+		};
+		3068229A2C0125CF00AF6CF8 /* Build Views */ = {
+			isa = PBXGroup;
+			children = (
+				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
+				3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */,
+			);
+			path = "Build Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -192,27 +361,10 @@
 		309F5DB52BB4FAE000F4FAF6 /* PDFs */ = {
 			isa = PBXGroup;
 			children = (
-				302A6C462BF6F39A00706714 /* UPC-TDS-MF-AP.pdf */,
-				302A6C422BF6F39A00706714 /* UPC-TDS-MF-EZ.pdf */,
-				302A6C412BF6F39A00706714 /* UPC-TDS-MF-FC.pdf */,
-				302A6C472BF6F39A00706714 /* UPC-TDS-RC-AP.pdf */,
-				302A6C4B2BF6F39A00706714 /* UPC-TDS-RC-EZ.pdf */,
-				302A6C442BF6F39A00706714 /* UPC-TDS-RC-FC.pdf */,
-				302A6C482BF6F39A00706714 /* UPC-TDS-SL-AP.pdf */,
-				302A6C4D2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf */,
-				302A6C512BF6F39A00706714 /* UPC-TDS-SL-FC.pdf */,
-				302A6C492BF6F39A00706714 /* UPC-TDS-TT-AP.pdf */,
-				302A6C402BF6F39A00706714 /* UPC-TDS-TT-EZ.pdf */,
-				302A6C4C2BF6F39A00706714 /* UPC-TDS-TT-FC.pdf */,
-				302A6C4A2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf */,
-				302A6C4F2BF6F39A00706714 /* UPC-TDS-VC-EZ.pdf */,
-				302A6C4E2BF6F39A00706714 /* UPC-TDS-VC-FC.pdf */,
-				302A6C502BF6F39A00706714 /* UPC-TDS-WC-AP.pdf */,
-				302A6C452BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf */,
-				302A6C432BF6F39A00706714 /* UPC-TDS-WC-FC.pdf */,
-				309F5DB62BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf */,
-				30CC55902BF6C45E00B7D409 /* UPC-IG.pdf */,
-				30CC55972BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf */,
+				30B9668E2C0160B200398E19 /* ColorChip Documentation */,
+				30B966772C01523D00398E19 /* Kretus-Product-Catalog.pdf */,
+				30B966762C01523D00398E19 /* Kretus-Systems-Brochure.pdf */,
+				30B966752C01523D00398E19 /* UPC Documentation */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -259,6 +411,7 @@
 		30A712C12B58967A009C0268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				306822912C011E3C00AF6CF8 /* Broadcasts */,
 				30CC55922BF6C56700B7D409 /* PDFs */,
 				309B977C2B9FCF3600C4E51B /* Kits */,
 				3019218A2B893399009DB65C /* Data */,
@@ -274,6 +427,9 @@
 			children = (
 				30A712C52B589904009C0268 /* Coat.swift */,
 				30F3BA372B5C6DEA002EF4B5 /* UPCCoat.swift */,
+				30CAD9202BFBCF3900060449 /* TSCoat.swift */,
+				30CAD9262BFC1FC500060449 /* PACoat.swift */,
+				306822762BFFD12B00AF6CF8 /* PUCoat.swift */,
 			);
 			path = Coats;
 			sourceTree = "<group>";
@@ -294,7 +450,7 @@
 			children = (
 				30ED65A02B75E5FA001E636D /* UPCCoatOptions.swift */,
 				302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */,
-				302E56802B7211BC0063EB5C /* UPCColorPicker.swift */,
+				302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */,
 				30AC30222B7EAE740073BB93 /* UPCSystemCommitButton.swift */,
 			);
 			path = "System Editors";
@@ -304,9 +460,9 @@
 			isa = PBXGroup;
 			children = (
 				303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */,
+				30CAD9452BFE8FB300060449 /* UPCCoatColorPicker.swift */,
 				30AC302C2B8194280073BB93 /* UPCThicknessPicker.swift */,
 				30AC302E2B8439050073BB93 /* UPCSpeedPicker.swift */,
-				30AC30302B843B820073BB93 /* UPCWasteFactorOptions.swift */,
 				30AC30322B843F6D0073BB93 /* UPCTexturePicker.swift */,
 				309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */,
 			);
@@ -317,10 +473,10 @@
 			isa = PBXGroup;
 			children = (
 				30AC30372B8443820073BB93 /* UPCPrimeCoatSuite.swift */,
+				30CAD9432BFE8F1800060449 /* UPCUniversalCoatSuite.swift */,
 				30AC302A2B817ED10073BB93 /* UPCSystemSuite.swift */,
 				30AC30352B8442060073BB93 /* UPCBaseCoatSuite.swift */,
 				30AC30392B8444180073BB93 /* UPCTopCoatSuite.swift */,
-				309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */,
 			);
 			path = Suites;
 			sourceTree = "<group>";
@@ -339,10 +495,149 @@
 			path = "Main Views";
 			sourceTree = "<group>";
 		};
+		30B966752C01523D00398E19 /* UPC Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				30B966A72C01639F00398E19 /* SDS-UPC-A-RCTT-SLMF-WCVC.pdf */,
+				30B966A82C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf */,
+				30B966A62C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf */,
+				30B966A52C01639F00398E19 /* SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf */,
+				30B966612C01523D00398E19 /* UPC-IG.pdf */,
+				30B966622C01523D00398E19 /* UPC-SDS-Colorant.pdf */,
+				30B966632C01523D00398E19 /* UPC-TDS-MF-AP.pdf */,
+				30B966642C01523D00398E19 /* UPC-TDS-MF-EZ.pdf */,
+				30B966652C01523D00398E19 /* UPC-TDS-MF-FC.pdf */,
+				30B966662C01523D00398E19 /* UPC-TDS-RC-AP.pdf */,
+				30B966672C01523D00398E19 /* UPC-TDS-RC-EZ.pdf */,
+				30B966682C01523D00398E19 /* UPC-TDS-RC-FC.pdf */,
+				30B966692C01523D00398E19 /* UPC-TDS-SL-AP.pdf */,
+				30B9666A2C01523D00398E19 /* UPC-TDS-SL-EZ.pdf */,
+				30B9666B2C01523D00398E19 /* UPC-TDS-SL-FC.pdf */,
+				30B9666C2C01523D00398E19 /* UPC-TDS-TT-AP.pdf */,
+				30B9666D2C01523D00398E19 /* UPC-TDS-TT-EZ.pdf */,
+				30B9666E2C01523D00398E19 /* UPC-TDS-TT-FC.pdf */,
+				30B9666F2C01523D00398E19 /* UPC-TDS-VC-AP.pdf */,
+				30B966702C01523D00398E19 /* UPC-TDS-VC-EZ.pdf */,
+				30B966712C01523D00398E19 /* UPC-TDS-VC-FC.pdf */,
+				30B966722C01523D00398E19 /* UPC-TDS-WC-AP.pdf */,
+				30B966732C01523D00398E19 /* UPC-TDS-WC-EZ.pdf */,
+				30B966742C01523D00398E19 /* UPC-TDS-WC-FC.pdf */,
+			);
+			path = "UPC Documentation";
+			sourceTree = "<group>";
+		};
+		30B9668E2C0160B200398E19 /* ColorChip Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */,
+				30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */,
+				30B966C72C02B2A100398E19 /* TDS-PA-85-EZ.pdf */,
+				30B966C82C02B2A100398E19 /* TDS-PA-85-FAST.pdf */,
+				30B966C92C02B2A100398E19 /* TDS-PA-92-EZ.pdf */,
+				30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */,
+				30B966B62C0287AE00398E19 /* TDS-TSE-A-AP.pdf */,
+				30B966BC2C0287AE00398E19 /* TDS-TSE-A-EZ.pdf */,
+				30B966B72C0287AE00398E19 /* TDS-TSE-A-FAST.pdf */,
+				30B966BA2C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf */,
+				30B966BD2C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf */,
+				30B966BB2C0287AE00398E19 /* TDS-TSE-A-TH.pdf */,
+				30B966B82C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf */,
+				30B966B52C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf */,
+				30B966B92C0287AE00398E19 /* TDS-TSE-CR-MVR-FC.pdf */,
+				30B966AE2C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf */,
+				30B966AD2C027B2E00398E19 /* TDS-PUHP-SATIN.pdf */,
+				30B966AF2C027B2E00398E19 /* TDS-PUHS-EZ.pdf */,
+				30B966B02C027B2E00398E19 /* TDS-PUHS-FC.pdf */,
+				30B966902C01639300398E19 /* Color-Chip-Brochure.pdf */,
+				30B966932C01639300398E19 /* Color-Chip-Installation-Guide.pdf */,
+				30B966952C01639300398E19 /* SDS-Poly-Accelerant.pdf */,
+				30B9668F2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf */,
+				30B966962C01639300398E19 /* SDS-Polyaspartic72-85-B.pdf */,
+				30B966912C01639300398E19 /* SDS-Polyaspartic92LO-A.pdf */,
+				30B966922C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf */,
+				30B966972C01639300398E19 /* SDS-Power-Cleaner.pdf */,
+				30B966942C01639300398E19 /* SDS-Solvent-Cleaner.pdf */,
+				30B966982C01639300398E19 /* SDS-TopShelf-A.pdf */,
+				30B966992C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf */,
+			);
+			path = "ColorChip Documentation";
+			sourceTree = "<group>";
+		};
+		30CAD9282BFC2F1900060449 /* ColorChipViews */ = {
+			isa = PBXGroup;
+			children = (
+				3068229A2C0125CF00AF6CF8 /* Build Views */,
+				30CAD9362BFD7C9700060449 /* Coat Editors */,
+				30CAD9352BFD7C8400060449 /* System Editors */,
+				30CAD92A2BFC38F700060449 /* Suites */,
+			);
+			path = ColorChipViews;
+			sourceTree = "<group>";
+		};
+		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
+			isa = PBXGroup;
+			children = (
+				306822782BFFDF4000AF6CF8 /* PU Views */,
+				30CAD93C2BFE7B7E00060449 /* PA Views */,
+				30CAD93B2BFE7B6E00060449 /* TS Views */,
+				30CAD9282BFC2F1900060449 /* ColorChipViews */,
+				30AC30272B8177590073BB93 /* UPC Views */,
+			);
+			path = "Specific System Views";
+			sourceTree = "<group>";
+		};
+		30CAD92A2BFC38F700060449 /* Suites */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
+			);
+			path = Suites;
+			sourceTree = "<group>";
+		};
+		30CAD9352BFD7C8400060449 /* System Editors */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
+				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
+				3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */,
+				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
+			);
+			path = "System Editors";
+			sourceTree = "<group>";
+		};
+		30CAD9362BFD7C9700060449 /* Coat Editors */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
+				3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */,
+			);
+			path = "Coat Editors";
+			sourceTree = "<group>";
+		};
+		30CAD93B2BFE7B6E00060449 /* TS Views */ = {
+			isa = PBXGroup;
+			children = (
+				30CAD93D2BFE7C2C00060449 /* TSCoatSuite.swift */,
+				30CAD93F2BFE7FB700060449 /* TSColorPicker.swift */,
+				306822852C002E6700AF6CF8 /* TSCoatBuild.swift */,
+			);
+			path = "TS Views";
+			sourceTree = "<group>";
+		};
+		30CAD93C2BFE7B7E00060449 /* PA Views */ = {
+			isa = PBXGroup;
+			children = (
+				306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */,
+				306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */,
+				306822872C002F7C00AF6CF8 /* PACoatBuild.swift */,
+			);
+			path = "PA Views";
+			sourceTree = "<group>";
+		};
 		30CC55842BF585CA00B7D409 /* Data Views */ = {
 			isa = PBXGroup;
 			children = (
-				30CC55852BF585ED00B7D409 /* UPCSaveSystemView.swift */,
+				30CC55852BF585ED00B7D409 /* SaveSystemView.swift */,
 				30CC55872BF6854900B7D409 /* SystemListView.swift */,
 				30CC55952BF6C73100B7D409 /* DetailView.swift */,
 			);
@@ -352,7 +647,8 @@
 		30CC55892BF6979200B7D409 /* Build Views */ = {
 			isa = PBXGroup;
 			children = (
-				30CC558A2BF697D400B7D409 /* UPCTotalSystem.swift */,
+				306822832BFFEC7100AF6CF8 /* UPCCoatBuild.swift */,
+				309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */,
 			);
 			path = "Build Views";
 			sourceTree = "<group>";
@@ -369,7 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				30A712D12B589E18009C0268 /* Product.swift */,
-				30A712D72B590225009C0268 /* UPCProducts.swift */,
+				30A712D72B590225009C0268 /* GetProducts.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -379,6 +675,7 @@
 			children = (
 				30A712C22B58968F009C0268 /* System.swift */,
 				30AC30252B7EC67F0073BB93 /* UPCSystem.swift */,
+				302F51F42BF824A9005CC281 /* ColorChipSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -388,8 +685,8 @@
 			children = (
 				30CC55842BF585CA00B7D409 /* Data Views */,
 				30AC303B2B8690500073BB93 /* Main Views */,
-				30AC30272B8177590073BB93 /* UPC Views */,
-				303C69862B6B3A0800C58041 /* System Builder */,
+				303C69862B6B3A0800C58041 /* Universal System Views */,
+				30CAD9292BFC38BF00060449 /* Specific System Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,30 +749,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				302A6C622BF6F39A00706714 /* UPC-TDS-WC-AP.pdf in Resources */,
-				302A6C582BF6F39A00706714 /* UPC-TDS-MF-AP.pdf in Resources */,
-				302A6C5F2BF6F39A00706714 /* UPC-TDS-SL-EZ.pdf in Resources */,
-				302A6C562BF6F39A00706714 /* UPC-TDS-RC-FC.pdf in Resources */,
-				30CC55982BF6CE8C00B7D409 /* UPC-SDS-Colorant.pdf in Resources */,
-				30CC55912BF6C45E00B7D409 /* UPC-IG.pdf in Resources */,
+				30B966D12C02B2A100398E19 /* TDS-PA-72-FAST.pdf in Resources */,
+				30B966C32C0287AE00398E19 /* TDS-TSE-A-MVR-EZ.pdf in Resources */,
+				30B966AA2C01639F00398E19 /* SDS-UPC-B-RCUVAP.pdf in Resources */,
+				30B966892C01523E00398E19 /* UPC-TDS-WC-AP.pdf in Resources */,
+				30B9668B2C01523E00398E19 /* UPC-TDS-WC-FC.pdf in Resources */,
+				30CAD9232BFBDFB200060449 /* ts.json in Resources */,
+				30B966C22C0287AE00398E19 /* TDS-TSE-CR-MVR-FC.pdf in Resources */,
+				30B966B22C027B2E00398E19 /* TDS-PUHP-GLOSS.pdf in Resources */,
+				30B966782C01523E00398E19 /* UPC-IG.pdf in Resources */,
 				30A712BB2B589656009C0268 /* Preview Assets.xcassets in Resources */,
-				302A6C592BF6F39A00706714 /* UPC-TDS-RC-AP.pdf in Resources */,
-				302A6C5C2BF6F39A00706714 /* UPC-TDS-VC-AP.pdf in Resources */,
-				302A6C572BF6F39A00706714 /* UPC-TDS-WC-EZ.pdf in Resources */,
-				302A6C612BF6F39A00706714 /* UPC-TDS-VC-EZ.pdf in Resources */,
-				302A6C632BF6F39A00706714 /* UPC-TDS-SL-FC.pdf in Resources */,
+				30B966D02C02B2A100398E19 /* TDS-PA-92-FAST.pdf in Resources */,
+				30B9668A2C01523E00398E19 /* UPC-TDS-WC-EZ.pdf in Resources */,
+				30B966BF2C0287AE00398E19 /* TDS-TSE-A-AP.pdf in Resources */,
+				30B9668D2C01523E00398E19 /* Kretus-Product-Catalog.pdf in Resources */,
+				30B966C62C0287AE00398E19 /* TDS-TSE-A-MVR-FC.pdf in Resources */,
 				30A712B82B589656009C0268 /* Assets.xcassets in Resources */,
-				302A6C522BF6F39A00706714 /* UPC-TDS-TT-EZ.pdf in Resources */,
-				302A6C602BF6F39A00706714 /* UPC-TDS-VC-FC.pdf in Resources */,
-				302A6C542BF6F39A00706714 /* UPC-TDS-MF-EZ.pdf in Resources */,
-				302A6C5E2BF6F39A00706714 /* UPC-TDS-TT-FC.pdf in Resources */,
-				302A6C552BF6F39A00706714 /* UPC-TDS-WC-FC.pdf in Resources */,
-				302A6C5A2BF6F39A00706714 /* UPC-TDS-SL-AP.pdf in Resources */,
-				302A6C5B2BF6F39A00706714 /* UPC-TDS-TT-AP.pdf in Resources */,
-				309F5DB72BB4FAF400F4FAF6 /* Kretus-Product-Catalog.pdf in Resources */,
+				30B966792C01523E00398E19 /* UPC-SDS-Colorant.pdf in Resources */,
+				30B9667C2C01523E00398E19 /* UPC-TDS-MF-FC.pdf in Resources */,
+				30B966AB2C01639F00398E19 /* SDS-UPC-A-RCTT-SLMF-WCVC.pdf in Resources */,
+				30B9668C2C01523E00398E19 /* Kretus-Systems-Brochure.pdf in Resources */,
+				30B9667B2C01523E00398E19 /* UPC-TDS-MF-EZ.pdf in Resources */,
+				30B966B42C027B2E00398E19 /* TDS-PUHS-FC.pdf in Resources */,
+				30B966AC2C01639F00398E19 /* SDS-UPC-B-RCTT-SLMF-WCVC-AP-EZ-FC.pdf in Resources */,
+				30CAD9382BFE6EB600060449 /* pa.json in Resources */,
 				30A712D62B590025009C0268 /* upc.json in Resources */,
-				302A6C532BF6F39A00706714 /* UPC-TDS-MF-FC.pdf in Resources */,
-				302A6C5D2BF6F39A00706714 /* UPC-TDS-RC-EZ.pdf in Resources */,
+				30B966CD2C02B2A100398E19 /* TDS-PA-85-EZ.pdf in Resources */,
+				30B9667A2C01523E00398E19 /* UPC-TDS-MF-AP.pdf in Resources */,
+				30B966A42C01639300398E19 /* SDS-TopShelf-B-Accelerant.pdf in Resources */,
+				30B9669B2C01639300398E19 /* Color-Chip-Brochure.pdf in Resources */,
+				30B9669C2C01639300398E19 /* SDS-Polyaspartic92LO-A.pdf in Resources */,
+				30B966C02C0287AE00398E19 /* TDS-TSE-A-FAST.pdf in Resources */,
+				30B966BE2C0287AE00398E19 /* TDS-TSE-CR-MVR-EZ.pdf in Resources */,
+				30B966C42C0287AE00398E19 /* TDS-TSE-A-TH.pdf in Resources */,
+				30B966CF2C02B2A100398E19 /* TDS-PA-92-EZ.pdf in Resources */,
+				30B966C12C0287AE00398E19 /* TDS-TSE-CR-FAST.pdf in Resources */,
+				30B966B12C027B2E00398E19 /* TDS-PUHP-SATIN.pdf in Resources */,
+				30B9667F2C01523E00398E19 /* UPC-TDS-RC-FC.pdf in Resources */,
+				30B966872C01523E00398E19 /* UPC-TDS-VC-EZ.pdf in Resources */,
+				30B966852C01523E00398E19 /* UPC-TDS-TT-FC.pdf in Resources */,
+				30B966A22C01639300398E19 /* SDS-Power-Cleaner.pdf in Resources */,
+				30B966832C01523E00398E19 /* UPC-TDS-TT-AP.pdf in Resources */,
+				30B966A02C01639300398E19 /* SDS-Poly-Accelerant.pdf in Resources */,
+				30B966822C01523E00398E19 /* UPC-TDS-SL-FC.pdf in Resources */,
+				30B966C52C0287AE00398E19 /* TDS-TSE-A-EZ.pdf in Resources */,
+				30B966812C01523E00398E19 /* UPC-TDS-SL-EZ.pdf in Resources */,
+				30B9669D2C01639300398E19 /* SDS-Polyaspartic92LO-B.pdf in Resources */,
+				30B9667D2C01523E00398E19 /* UPC-TDS-RC-AP.pdf in Resources */,
+				30B966D22C02B2A100398E19 /* TDS-PA-72-EZ.pdf in Resources */,
+				30B9669F2C01639300398E19 /* SDS-Solvent-Cleaner.pdf in Resources */,
+				30B9669E2C01639300398E19 /* Color-Chip-Installation-Guide.pdf in Resources */,
+				30B9667E2C01523E00398E19 /* UPC-TDS-RC-EZ.pdf in Resources */,
+				30B966A92C01639F00398E19 /* SDS-UPC-C-RC-TT-SL-MF-WC-VC.pdf in Resources */,
+				30B966862C01523E00398E19 /* UPC-TDS-VC-AP.pdf in Resources */,
+				30B966B32C027B2E00398E19 /* TDS-PUHS-EZ.pdf in Resources */,
+				30B966A12C01639300398E19 /* SDS-Polyaspartic72-85-B.pdf in Resources */,
+				30B966882C01523E00398E19 /* UPC-TDS-VC-FC.pdf in Resources */,
+				30B966842C01523E00398E19 /* UPC-TDS-TT-EZ.pdf in Resources */,
+				30B966A32C01639300398E19 /* SDS-TopShelf-A.pdf in Resources */,
+				30B9669A2C01639300398E19 /* SDS-Polyaspartic72-85-A.pdf in Resources */,
+				30B966CE2C02B2A100398E19 /* TDS-PA-85-FAST.pdf in Resources */,
+				30B966802C01523E00398E19 /* UPC-TDS-SL-AP.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,43 +821,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				3019218C2B89362F009DB65C /* SystemData.swift in Sources */,
+				306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */,
+				30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
+				30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */,
 				303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */,
-				30AC30312B843B820073BB93 /* UPCWasteFactorOptions.swift in Sources */,
+				30AC30312B843B820073BB93 /* CoatWasteFactorOptions.swift in Sources */,
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
+				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
-				302E56812B7211BC0063EB5C /* UPCColorPicker.swift in Sources */,
+				302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */,
+				3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */,
+				3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */,
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
+				306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
-				30CC55862BF585ED00B7D409 /* UPCSaveSystemView.swift in Sources */,
+				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
+				30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */,
+				3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */,
+				3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */,
+				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
 				30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */,
 				30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */,
 				3086DDE92B86953200B94B38 /* Splash View.swift in Sources */,
+				302F51F52BF824A9005CC281 /* ColorChipSystem.swift in Sources */,
+				3068227A2BFFDF4800AF6CF8 /* PUCoatSuite.swift in Sources */,
 				309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */,
+				30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */,
+				3068227E2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */,
+				30CAD9442BFE8F1800060449 /* UPCUniversalCoatSuite.swift in Sources */,
 				30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */,
+				306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */,
 				30A712C32B58968F009C0268 /* System.swift in Sources */,
+				30CAD93E2BFE7C2C00060449 /* TSCoatSuite.swift in Sources */,
+				30CAD9462BFE8FB300060449 /* UPCCoatColorPicker.swift in Sources */,
 				30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */,
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
 				30CC558D2BF6BC7D00B7D409 /* PDFViewer.swift in Sources */,
+				306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */,
 				303C697D2B6B094900C58041 /* InformationView.swift in Sources */,
+				30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */,
+				30CAD9402BFE7FB700060449 /* TSColorPicker.swift in Sources */,
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
-				30CC558B2BF697D400B7D409 /* UPCTotalSystem.swift in Sources */,
+				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
+				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
+				3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
+				30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */,
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
+				306822822BFFE98000AF6CF8 /* KitsListView.swift in Sources */,
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,
-				30A712D82B590225009C0268 /* UPCProducts.swift in Sources */,
+				306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */,
+				30A712D82B590225009C0268 /* GetProducts.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
 				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,
 				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,
+				306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */,
 				30A712C62B589904009C0268 /* Coat.swift in Sources */,
+				306822772BFFD12B00AF6CF8 /* PUCoat.swift in Sources */,
+				30CAD9302BFD401B00060449 /* ColorChipCoatOptions.swift in Sources */,
 				309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,
 				30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */,
@@ -668,7 +1032,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,7 +1062,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

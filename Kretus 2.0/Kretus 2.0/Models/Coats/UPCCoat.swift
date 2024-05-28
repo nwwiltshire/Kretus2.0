@@ -82,7 +82,7 @@ class UPCCoat: Coat {
         self.coatType = .base
         self.subType = .rc
         self.speed = .ap
-        self.covRate = 0 // set to default value for default thickness
+        self.covRate = 190 // set to default value for default thickness
         self.partA = Product()
         self.partB = Product()
         self.partC = Product()
@@ -306,7 +306,7 @@ class UPCCoat: Coat {
         
         availableProductsUPC.removeAll()
         
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
 
@@ -442,10 +442,10 @@ class UPCCoat: Coat {
             if (self.texture2 != .none) {
                 productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
             }
-            
-            if (self.uvResistance == true) {
-                productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
-            }
+        }
+        
+        if (self.uvResistance == true) {
+            productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
         }
 
     }

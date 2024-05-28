@@ -9,16 +9,10 @@ import SwiftUI
 
 struct SystemGridView: View {
     
-    let systems = System.getAllSystems()
-    
-    let layout = [
-        
-            GridItem(.flexible()),
-            GridItem(.flexible())
-            
-        ]
+    let systems: [System] = System.getAllSystems()
     
     @State public var showEditors = false
+    @State private var selectedSystem: System?
     
     
     var body: some View {
@@ -39,12 +33,13 @@ struct SystemGridView: View {
                     }
                     
                     // Grid of Systems
-                    LazyVGrid(columns: layout, spacing: 20) {
+                    VStack {
                         
                         // Populates Grid
                         ForEach(systems, id: \.id) { system in
                             Button(action: {
                                 showEditors = true
+                                selectedSystem = system
                             }) {
                                 
                                 // Grid Elements
@@ -60,7 +55,7 @@ struct SystemGridView: View {
                                     // Display System Description
                                     Text(system.description)
                                         .font(.subheadline)
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(.primary)
                                         .colorInvert()
                                     
                                     
@@ -72,9 +67,12 @@ struct SystemGridView: View {
                                 
                             }
                             .sheet(isPresented: $showEditors) {
-                                SystemBuilderView(currentBuild: system, showEditors: $showEditors)
+                                if let selectedSystem = selectedSystem {
+                                    SystemBuilderView(currentBuild: selectedSystem, showEditors: $showEditors)
                                 }
                             }
+                            .animation(.default, value: showEditors)
+                        }
                     .padding(.all)
                     
                 }

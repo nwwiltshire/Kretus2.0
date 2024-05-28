@@ -12,11 +12,6 @@ struct YourSystemsView: View {
     
     var body: some View {
         NavigationStack {
-            HStack {
-                Text("View your saved systems here.")
-                    .font(.subheadline)
-                    .padding()
-            }
             VStack {
                 SystemListView()
             }

@@ -47,7 +47,8 @@ class Coat: ObservableObject {
         
     }
     
-    func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
+    // Update Later for coats that use sqft/gal
+    func calcKitsPerKit(squareFt: Int, covRate: Int, products: [Product]) {
       kitsNeeded.removeAll()
       
       for product in products {

@@ -14,7 +14,7 @@ struct InformationView: View {
     
     @State var hierarchy: [PDFUrl.PDFGroup: [PDFUrl.PDFType: [PDFUrl]]] = [:]
     
-    let groupedByGroup = Dictionary(grouping: DetailView.pdfURLS, by: { $0.group })
+    let groupedByGroup = Dictionary(grouping: DetailView.pdfURLs, by: { $0.group })
     
     var body: some View {
         NavigationStack {
@@ -61,7 +61,8 @@ struct PDFTypeView: View {
                     .padding()
             }
             ForEach(pdfUrls, id: \.id) { pdfUrl in
-                NavigationLink(destination: PDFViewer(url: pdfUrl.url)) {
+                NavigationLink(destination: PDFViewer(url: pdfUrl.url)
+                    .navigationTitle("\(pdfUrl.title)")) {
                     Text(pdfUrl.title)
                 }
             }

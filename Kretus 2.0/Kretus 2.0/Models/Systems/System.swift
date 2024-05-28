@@ -35,9 +35,11 @@ class System: ObservableObject, Identifiable {
         self.totalWasteFactor = totalWasteFactor
     }
     
+    
+    
     static func getAllSystems() -> [System] {
             
-        return [UPCSystem()]
+        return [UPCSystem(), ColorChipSystem()]
         
     }
     
@@ -58,6 +60,20 @@ class System: ObservableObject, Identifiable {
         output += "Kits Needed: \(kitsNeeded)\n"
         return output
         
+    }
+    
+    func updateKits(with newKits: [Kit]) {
+      for kit in newKits {
+        // Check if a kit with the same product ID already exists
+        let existingKitIndex = kitsNeeded.firstIndex(where: { $0.id == kit.id })
+        if let existingIndex = existingKitIndex {
+          // Update the quantity of the existing kit
+          kitsNeeded[existingIndex].quantity += kit.quantity
+        } else {
+          // Add the new kit to kitsNeeded
+          kitsNeeded.append(kit)
+        }
+      }
     }
     
     func getAllKits() {
