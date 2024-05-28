@@ -1,26 +1,25 @@
 //
-//  ColorChipSystem.swift
+//  ColorSplashSystem.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 5/17/24.
+//  Created by Nick Wiltshire on 5/28/24.
 //
 
 import Foundation
 import SwiftUI
 
-class ColorChipSystem: System {
+class ColorSplashSystem: System {
     
-    let availableSubTypes: [SubType]
-    
-    @Published var subType: SubType
-    @Published var baseCoat: Coat
-    @Published var primeCoat: Coat?
-    @Published var topCoat1: PACoat
-    @Published var topCoat2: Coat?
-    @Published var topCoat2SubType: TopCoat2SubType
-    @Published var mvrCoat: Coat?
-    
-    @Published var broadcast: ColorChipBroadcast
+    @Published var subTypes: [SubType]
+    @Published var selectedSubType1: SubTypeBase
+    @Published var selectedSubType2: SubType
+    @Published var selectedSubType3: SubType
+    @Published var coat1: Coat?
+    @Published var coat2: Coat?
+    @Published var coat3: Coat?
+    @Published var solventCleaner: Bool
+    @Published var mattingAdditive2: Bool
+    @Published var mattingAdditive3: Bool
     
     init(name: String,
          description: String,
@@ -28,26 +27,28 @@ class ColorChipSystem: System {
          viewColor: String,
          squareFt: Int,
          kitsNeeded: [Kit],
-         availableSubTypes: [SubType],
-         subType: SubType,
-         baseCoat: Coat,
-         primeCoat: Coat,
-         topCoat1: PACoat,
-         topCoat2: Coat,
-         topCoat2SubType: TopCoat2SubType,
-         mvrCoat: Coat,
-         broadcast: ColorChipBroadcast,
-         totalWasteFactor: Int) {
+         totalWasteFactor: Int,
+         subTypes: [SubType],
+         selectedSubType1: SubTypeBase,
+         selectedSubType2: SubType,
+         selectedSubType3: SubType,
+         coat1: Coat,
+         coat2: Coat,
+         coat3: Coat,
+         solventCleaner: Bool,
+         mattingAdditive2: Bool,
+         mattingAdditive3: Bool) {
         
-        self.availableSubTypes = availableSubTypes
-        self.subType = subType
-        self.baseCoat = baseCoat
-        self.primeCoat = primeCoat
-        self.topCoat1 = topCoat1
-        self.topCoat2 = topCoat2
-        self.topCoat2SubType = topCoat2SubType
-        self.mvrCoat = mvrCoat
-        self.broadcast = broadcast
+        self.subTypes = subTypes
+        self.selectedSubType1 = selectedSubType1
+        self.selectedSubType2 = selectedSubType2
+        self.selectedSubType3 = selectedSubType3
+        self.coat1 = coat1
+        self.coat2 = coat2
+        self.coat3 = coat3
+        self.solventCleaner = solventCleaner
+        self.mattingAdditive2 = mattingAdditive2
+        self.mattingAdditive3 = mattingAdditive3
         
         super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
         
@@ -55,18 +56,23 @@ class ColorChipSystem: System {
     
     init() {
         
-        self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
-        self.subType = .ts
-        self.baseCoat = TSCoat() // updates later
-        self.topCoat1 = PACoat()
-        self.topCoat2SubType = .polyaspartic // Set by default even if there is no top coat 2
-        self.broadcast = ColorChipBroadcast()
+        self.subTypes = [.ts]
+        self.selectedSubType1 = .ts
+        self.selectedSubType2 = .ts
+        self.selectedSubType3 = .ts
+        self.coat1 = TSCoat()
+        self.coat2 = TSCoat()
+        self.coat3 = TSCoat()
+        self.solventCleaner = false
+        self.mattingAdditive2 = false
+        self.mattingAdditive3 = false
+
         
         super.init(
-        name: "Color Chip",
-        description: "Stand up to continuous heavy traffic in high-use spaces, camouflage dust and debris, improve resistance, and add vibrant or soft color to any room.",
-        imageName: "colorChip-background",
-        viewColor: "ColorChip",
+        name: "Color Splash Floor Sealer",
+        description: "Enhance a structure’s natural color and features in clear gloss or cover walls and floors in warm or cool tones.",
+        imageName: "colorSplash-background",
+        viewColor: "ColorSplash",
         squareFt: 50,
         kitsNeeded: [Kit()],
         totalWasteFactor: 0
@@ -74,49 +80,35 @@ class ColorChipSystem: System {
     }
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case ts, pa, rc, rcuv, sl
+        case ts, pa, pu
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .ts: return "TS (Top Shelf Epoxy)"
-            case .pa: return "PA (Polyaspartic)"
-            case .rc: return "RC (Roll Coat)"
-            case .rcuv: return "RC UV (Roll Coat w/ UV)"
-            case .sl: return "SL (Self Leveling)"
+            case .ts: return "Top Shelf Epoxy"
+            case .pa: return "Polyaspartic"
+            case .pu: return "Polyurethane"
             }
         }
     }
     
-    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, mvr
+    enum SubTypeBase: CaseIterable, Identifiable, CustomStringConvertible {
+        case ts, pa, pu, upc
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .base: return "Base Coat"
-            case .prime: return "Prime Coat"
-            case .top: return "Top Coat"
-            case .mvr: return "MVR Coat"
+            case .ts: return "Top Shelf Epoxy"
+            case .pa: return "Polyaspartic"
+            case .pu: return "Polyurethane"
+            case .upc: return "Urethane Polymer Concrete"
             }
         }
     }
     
-    enum TopCoat2SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case polyaspartic, polyurethane
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .polyaspartic: return "Polyaspartic"
-            case .polyurethane: return "Polyurethane"
-            }
-        }
-    }
-
+    /*
     override func printSystemTest() -> String {
         var output = ""
         output += "System Name: \(name)\n"
@@ -192,47 +184,47 @@ class ColorChipSystem: System {
             totalWasteFactor += mvrCoat.wasteFactor
         }
     }
+    */
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, uvResistance: Bool) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, solventCleaner: Bool) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
-        upcCoat.coatType = coatType
-        upcCoat.subType = subType
         
-        if (subType != .rc) {
-            upcCoat.thickness = .thin
-        }
-        
-        if (coatType == .base && uvResistance == true) {
-            upcCoat.uvResistance = uvResistance
-        }
+        // handle solvent cleaner
         
         return upcCoat
       }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType) -> TSCoat {
+    func createTSCoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
-        tsCoat.coatType = coatType
+        
+        // handle solvent cleaner
+        
+        // handle matting additive
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType) -> PACoat {
+    func createPACoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
-        paCoat.coatType = coatType
+        
+        // handle solvent cleaner
+        
+        // handle matting additive
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType) -> PUCoat {
+    func createPUCoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
-        puCoat.coatType = coatType
+        
+        // handle solvent cleaner
+        
+        // handle matting additive
         
         return puCoat
     }
-    
 }
-

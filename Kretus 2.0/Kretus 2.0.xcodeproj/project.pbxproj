@@ -117,6 +117,11 @@
 		30B966D02C02B2A100398E19 /* TDS-PA-92-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */; };
 		30B966D12C02B2A100398E19 /* TDS-PA-72-FAST.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */; };
 		30B966D22C02B2A100398E19 /* TDS-PA-72-EZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */; };
+		30B966D42C0673EE00398E19 /* ColorSplashSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B966D32C0673EE00398E19 /* ColorSplashSystem.swift */; };
+		30B966D72C06803600398E19 /* ColorSplashCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B966D62C06803600398E19 /* ColorSplashCoatOptions.swift */; };
+		30B966D92C0691FC00398E19 /* ColorSplashSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B966D82C0691FC00398E19 /* ColorSplashSystemSuite.swift */; };
+		30B966DB2C0695A700398E19 /* ColorSplashSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B966DA2C0695A700398E19 /* ColorSplashSystemCommitButton.swift */; };
+		30B966DD2C06961700398E19 /* ColorSplashCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B966DC2C06961700398E19 /* ColorSplashCoatEditorView.swift */; };
 		30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9202BFBCF3900060449 /* TSCoat.swift */; };
 		30CAD9232BFBDFB200060449 /* ts.json in Resources */ = {isa = PBXBuildFile; fileRef = 30CAD9222BFBDFB200060449 /* ts.json */; };
 		30CAD9272BFC1FC500060449 /* PACoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CAD9262BFC1FC500060449 /* PACoat.swift */; };
@@ -253,6 +258,11 @@
 		30B966CA2C02B2A100398E19 /* TDS-PA-92-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-92-FAST.pdf"; sourceTree = "<group>"; };
 		30B966CB2C02B2A100398E19 /* TDS-PA-72-FAST.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-FAST.pdf"; sourceTree = "<group>"; };
 		30B966CC2C02B2A100398E19 /* TDS-PA-72-EZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "TDS-PA-72-EZ.pdf"; sourceTree = "<group>"; };
+		30B966D32C0673EE00398E19 /* ColorSplashSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashSystem.swift; sourceTree = "<group>"; };
+		30B966D62C06803600398E19 /* ColorSplashCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashCoatOptions.swift; sourceTree = "<group>"; };
+		30B966D82C0691FC00398E19 /* ColorSplashSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashSystemSuite.swift; sourceTree = "<group>"; };
+		30B966DA2C0695A700398E19 /* ColorSplashSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashSystemCommitButton.swift; sourceTree = "<group>"; };
+		30B966DC2C06961700398E19 /* ColorSplashCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashCoatEditorView.swift; sourceTree = "<group>"; };
 		30CAD9202BFBCF3900060449 /* TSCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSCoat.swift; sourceTree = "<group>"; };
 		30CAD9222BFBDFB200060449 /* ts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ts.json; sourceTree = "<group>"; };
 		30CAD9262BFC1FC500060449 /* PACoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoat.swift; sourceTree = "<group>"; };
@@ -563,6 +573,17 @@
 			path = "ColorChip Documentation";
 			sourceTree = "<group>";
 		};
+		30B966D52C06802100398E19 /* ColorSplashViews */ = {
+			isa = PBXGroup;
+			children = (
+				30B966D62C06803600398E19 /* ColorSplashCoatOptions.swift */,
+				30B966D82C0691FC00398E19 /* ColorSplashSystemSuite.swift */,
+				30B966DA2C0695A700398E19 /* ColorSplashSystemCommitButton.swift */,
+				30B966DC2C06961700398E19 /* ColorSplashCoatEditorView.swift */,
+			);
+			path = ColorSplashViews;
+			sourceTree = "<group>";
+		};
 		30CAD9282BFC2F1900060449 /* ColorChipViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +598,7 @@
 		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
 			isa = PBXGroup;
 			children = (
+				30B966D52C06802100398E19 /* ColorSplashViews */,
 				306822782BFFDF4000AF6CF8 /* PU Views */,
 				30CAD93C2BFE7B7E00060449 /* PA Views */,
 				30CAD93B2BFE7B6E00060449 /* TS Views */,
@@ -676,6 +698,7 @@
 				30A712C22B58968F009C0268 /* System.swift */,
 				30AC30252B7EC67F0073BB93 /* UPCSystem.swift */,
 				302F51F42BF824A9005CC281 /* ColorChipSystem.swift */,
+				30B966D32C0673EE00398E19 /* ColorSplashSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -831,16 +854,19 @@
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
 				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
+				30B966DB2C0695A700398E19 /* ColorSplashSystemCommitButton.swift in Sources */,
 				302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */,
 				3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */,
 				3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */,
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
 				306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */,
+				30B966DD2C06961700398E19 /* ColorSplashCoatEditorView.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
 				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
 				30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */,
 				3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */,
 				3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */,
+				30B966D42C0673EE00398E19 /* ColorSplashSystem.swift in Sources */,
 				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
@@ -849,11 +875,13 @@
 				3086DDE92B86953200B94B38 /* Splash View.swift in Sources */,
 				302F51F52BF824A9005CC281 /* ColorChipSystem.swift in Sources */,
 				3068227A2BFFDF4800AF6CF8 /* PUCoatSuite.swift in Sources */,
+				30B966D92C0691FC00398E19 /* ColorSplashSystemSuite.swift in Sources */,
 				309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */,
 				30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */,
 				3068227E2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */,
+				30B966D72C06803600398E19 /* ColorSplashCoatOptions.swift in Sources */,
 				30CAD9442BFE8F1800060449 /* UPCUniversalCoatSuite.swift in Sources */,
 				30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */,
 				306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */,
