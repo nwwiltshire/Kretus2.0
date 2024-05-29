@@ -15,7 +15,9 @@ struct UPCUniversalCoatSuite: View {
     var body: some View {
         VStack {
             Text("\(upcCoat.coatType)")
-                .font(.title2)
+                .font(.title)
+            Text("Urethane Polymer Concrete")
+                .font(.title3)
             
             UPCSpeedPicker(coat: upcCoat)
             CoatWasteFactorOptions(coat: upcCoat)

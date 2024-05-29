@@ -149,81 +149,63 @@ class ColorSplashSystem: System {
         
         return output
     }
+     
+     */
     
     override func getAllKits() {
+        
         kitsNeeded.removeAll()
         totalWasteFactor = 0
         
-        baseCoat.setValues()
-        updateKits(with: baseCoat.kitsNeeded)
-        totalWasteFactor += baseCoat.wasteFactor
+        coat1!.setValues()
+        updateKits(with: coat1!.kitsNeeded)
+        totalWasteFactor += coat1!.wasteFactor
         
-        topCoat1.setValues()
-        updateKits(with: topCoat1.kitsNeeded)
-        totalWasteFactor += topCoat1.wasteFactor
+        coat2!.setValues()
+        updateKits(with: coat2!.kitsNeeded)
+        totalWasteFactor += coat2!.wasteFactor
         
-        broadcast.setValues()
-        updateKits(with: broadcast.kitsNeeded)
-        totalWasteFactor += broadcast.wasteFactor
+        coat3!.setValues()
+        updateKits(with: coat3!.kitsNeeded)
+        totalWasteFactor += coat3!.wasteFactor
 
-        if let primeCoat = primeCoat {
-            primeCoat.setValues()
-            updateKits(with: primeCoat.kitsNeeded)
-            totalWasteFactor += primeCoat.wasteFactor
-        }
-
-        if let topCoat2 = topCoat2 {
-            topCoat2.setValues()
-            updateKits(with: topCoat2.kitsNeeded)
-            totalWasteFactor += topCoat2.wasteFactor
-        }
-        
-        if let mvrCoat = mvrCoat {
-            mvrCoat.setValues()
-            updateKits(with: mvrCoat.kitsNeeded)
-            totalWasteFactor += mvrCoat.wasteFactor
-        }
     }
-    */
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, solventCleaner: Bool) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, solventCleaner: Bool) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
-        
-        // handle solvent cleaner
+        upcCoat.coatType = coatType
+        upcCoat.solventCleaner = solventCleaner
         
         return upcCoat
       }
     
-    func createTSCoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
-        
-        // handle solvent cleaner
-        
-        // handle matting additive
+        tsCoat.coatType = coatType
+        tsCoat.solventCleaner = solventCleaner
+        tsCoat.mattingAdditive = mattingAdditive
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
-        
-        // handle solvent cleaner
-        
-        // handle matting additive
+        paCoat.coatType = coatType
+        paCoat.solventCleaner = solventCleaner
+        paCoat.mattingAdditive = mattingAdditive
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, solventCleaner: Bool, mattingAdditive: Bool) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
-        
-        // handle solvent cleaner
-        
-        // handle matting additive
+        puCoat.coatType = coatType
+        puCoat.solventCleaner = solventCleaner
+        puCoat.mattingAdditive = mattingAdditive
         
         return puCoat
     }

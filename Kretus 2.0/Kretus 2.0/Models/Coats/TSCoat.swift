@@ -24,6 +24,9 @@ class TSCoat: Coat {
     
     @Published var thickness: TSCoat.Thickness
     
+    @Published var solventCleaner: Bool
+    @Published var mattingAdditive: Bool
+    
     init(id: Int,
          name: String,
          squareFt: Int,
@@ -38,7 +41,9 @@ class TSCoat: Coat {
          coatColorant: TSCoat.CoatColorant,
          colorant: Product,
          thickness: TSCoat.Thickness,
-         wasteFactor: Int) {
+         wasteFactor: Int,
+         solventCleaner: Bool,
+         mattingAdditive: Bool) {
         
         self.coatType = coatType
         self.speed = speed
@@ -49,6 +54,8 @@ class TSCoat: Coat {
         self.coatColorant = coatColorant
         self.colorant = colorant
         self.thickness = thickness
+        self.solventCleaner = solventCleaner
+        self.mattingAdditive = mattingAdditive
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -65,6 +72,8 @@ class TSCoat: Coat {
         self.coatColorant = .noColor
         self.colorant = Product()
         self.thickness = .base
+        self.solventCleaner = false
+        self.mattingAdditive = false
         
         super.init(id: 0,
                    name: "Top Shelf Epoxy",
@@ -75,7 +84,7 @@ class TSCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, mvr
+        case base, prime, top, mvr, coat1, coat2, coat3
         
         var id: Self { self }
         
@@ -85,6 +94,9 @@ class TSCoat: Coat {
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
             case .mvr: return "MVR Coat"
+            case .coat1: return "Coat 1"
+            case .coat2: return "Coat 2"
+            case .coat3: return "Coat 3"
             }
         }
     }
@@ -200,6 +212,12 @@ class TSCoat: Coat {
             break
         case .mvr:
             covRate = 100
+        case .coat1:
+            break
+        case .coat2:
+            break
+        case .coat3:
+            break
         }
     }
     
@@ -322,6 +340,14 @@ class TSCoat: Coat {
         
         if (self.colorant.id != "Default") {
             productsNeeded.append(colorant)
+        }
+        
+        if (self.solventCleaner) {
+            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
+        }
+        
+        if (self.mattingAdditive) {
+            productsNeeded.append(Product(id: "Matting Additive", name: "Matting Additive"))
         }
 
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300595292C07D8620098F779 /* ColorSplashBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300595282C07D8620098F779 /* ColorSplashBuildSuite.swift */; };
+		3005952B2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3005952A2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift */; };
 		3019218C2B89362F009DB65C /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019218B2B89362F009DB65C /* SystemData.swift */; };
 		302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */; };
 		302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */; };
@@ -147,6 +149,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300595282C07D8620098F779 /* ColorSplashBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashBuildSuite.swift; sourceTree = "<group>"; };
+		3005952A2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSplashBuildSubmitButton.swift; sourceTree = "<group>"; };
 		3019218B2B89362F009DB65C /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
 		302E567E2B71A7E30063EB5C /* UPCSubSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSubSystemPicker.swift; sourceTree = "<group>"; };
 		302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemColorPicker.swift; sourceTree = "<group>"; };
@@ -580,6 +584,8 @@
 				30B966D82C0691FC00398E19 /* ColorSplashSystemSuite.swift */,
 				30B966DA2C0695A700398E19 /* ColorSplashSystemCommitButton.swift */,
 				30B966DC2C06961700398E19 /* ColorSplashCoatEditorView.swift */,
+				300595282C07D8620098F779 /* ColorSplashBuildSuite.swift */,
+				3005952A2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift */,
 			);
 			path = ColorSplashViews;
 			sourceTree = "<group>";
@@ -868,8 +874,10 @@
 				3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */,
 				30B966D42C0673EE00398E19 /* ColorSplashSystem.swift in Sources */,
 				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
+				3005952B2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				30CC55942BF6C57700B7D409 /* PDFUrl.swift in Sources */,
+				300595292C07D8620098F779 /* ColorSplashBuildSuite.swift in Sources */,
 				30AC30332B843F6D0073BB93 /* UPCTexturePicker.swift in Sources */,
 				30AC302D2B8194280073BB93 /* UPCThicknessPicker.swift in Sources */,
 				3086DDE92B86953200B94B38 /* Splash View.swift in Sources */,

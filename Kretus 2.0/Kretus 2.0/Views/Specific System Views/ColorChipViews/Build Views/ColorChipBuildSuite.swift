@@ -12,8 +12,6 @@ struct ColorChipBuildSuite: View {
     
     @ObservedObject var colorChipSystem: ColorChipSystem
     
-    @State private var showSheet = false
-    
     @State private var isEditing = false
     
     var body: some View {

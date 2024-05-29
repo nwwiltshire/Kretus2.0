@@ -44,6 +44,9 @@ struct SaveSystemView: View {
                                 if let colorChipSystem = system as? ColorChipSystem {
                                     colorChipConvertToData(colorChipSystem: colorChipSystem)
                                 }
+                                if let colorSplashSystem = system as? ColorSplashSystem {
+                                    colorSplashConvertToData(colorSplashSystem: colorSplashSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -179,6 +182,61 @@ struct SaveSystemView: View {
         
         return coats
     }
+    
+    private func colorSplashConvertToData(colorSplashSystem: ColorSplashSystem) {
+        let newSystem = SystemData(name: colorSplashSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: colorSplashSystem.imageName, viewColor: colorSplashSystem.viewColor.description, coats: [], subType: "Color Splash", systemColor: "", squareFt: colorSplashSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: colorSplashSystem.kitsNeeded)
+        
+        newSystem.coats = colorSplashConvertCoats(colorSplashSystem: colorSplashSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func colorSplashConvertCoats(colorSplashSystem: ColorSplashSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        if let upcCoat1 = colorSplashSystem.coat1 as? UPCCoat {
+            coats.append(CoatData(coatType: "Coat 1", subType: upcCoat1.subType.description, speed: upcCoat1.speed.description))
+        }
+        
+        if let tsCoat1 = colorSplashSystem.coat1 as? TSCoat {
+            coats.append(CoatData(coatType: "Coat 1", subType: tsCoat1.selectedPartA.description, speed: tsCoat1.speed.description))
+        }
+        if let tsCoat2 = colorSplashSystem.coat2 as? TSCoat {
+            coats.append(CoatData(coatType: "Coat 2", subType: tsCoat2.selectedPartA.description, speed: tsCoat2.speed.description))
+        }
+        if let tsCoat3 = colorSplashSystem.coat3 as? TSCoat {
+            coats.append(CoatData(coatType: "Coat 3", subType: tsCoat3.selectedPartA.description, speed: tsCoat3.speed.description))
+        }
+        
+        if let paCoat1 = colorSplashSystem.coat1 as? PACoat {
+            coats.append(CoatData(coatType: "Coat 1", subType: paCoat1.subType.description, speed: paCoat1.speed.description))
+        }
+        
+        if let paCoat2 = colorSplashSystem.coat2 as? PACoat {
+            coats.append(CoatData(coatType: "Coat 2", subType: paCoat2.subType.description, speed: paCoat2.speed.description))
+        }
+        
+        if let paCoat3 = colorSplashSystem.coat3 as? PACoat {
+            coats.append(CoatData(coatType: "Coat 3", subType: paCoat3.subType.description, speed: paCoat3.speed.description))
+        }
+        
+        if let puCoat1 = colorSplashSystem.coat1 as? PUCoat {
+            coats.append(CoatData(coatType: "Coat 1", subType: puCoat1.subType.description, speed: puCoat1.speed.description))
+        }
+        if let puCoat2 = colorSplashSystem.coat2 as? PUCoat {
+            coats.append(CoatData(coatType: "Coat 2", subType: puCoat2.subType.description, speed: puCoat2.speed.description))
+        }
+        if let puCoat3 = colorSplashSystem.coat3 as? PUCoat {
+            coats.append(CoatData(coatType: "Coat 3", subType: puCoat3.subType.description, speed: puCoat3.speed.description))
+        }
+        
+        return coats
+    }
+
 
 }
 
