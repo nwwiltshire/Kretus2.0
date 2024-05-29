@@ -42,6 +42,10 @@ struct SystemBuilderView: View {
                             ColorChipSystemSuite(colorChipSystem: colorChipSystem)
                         }
                         
+                        if let colorSplashSystem = currentBuild as? ColorSplashSystem {
+                            ColorSplashSystemSuite(colorSplashSystem: colorSplashSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

@@ -24,6 +24,9 @@ class PACoat: Coat {
     
     @Published var thickness: PACoat.Thickness
     
+    @Published var solventCleaner: Bool
+    @Published var mattingAdditive: Bool
+    
     init(id: Int,
          name: String,
          squareFt: Int,
@@ -39,7 +42,9 @@ class PACoat: Coat {
          colorant: Product,
          texture: Texture,
          thickness: PACoat.Thickness,
-         wasteFactor: Int) {
+         wasteFactor: Int,
+         solventCleaner: Bool,
+         mattingAdditive: Bool) {
         
         self.coatType = coatType
         self.subType = subType
@@ -51,6 +56,8 @@ class PACoat: Coat {
         self.colorant = colorant
         self.texture = texture
         self.thickness = thickness
+        self.solventCleaner = solventCleaner
+        self.mattingAdditive = mattingAdditive
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -68,6 +75,8 @@ class PACoat: Coat {
         self.colorant = Product()
         self.texture = .noTexture
         self.thickness = .base
+        self.solventCleaner = false
+        self.mattingAdditive = false
         
         super.init(id: 0,
                    name: "Polyaspartic",
@@ -78,7 +87,7 @@ class PACoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top1, top2
+        case base, prime, top1, top2, coat1, coat2, coat3
         
         var id: Self { self }
         
@@ -88,6 +97,9 @@ class PACoat: Coat {
             case .prime: return "Prime Coat"
             case .top1: return "Top Coat"
             case .top2: return "Top Coat 2"
+            case .coat1: return "Coat 1"
+            case .coat2: return "Coat 2"
+            case .coat3: return "Coat 3"
             }
         }
     }
@@ -320,6 +332,14 @@ class PACoat: Coat {
         
         if (self.texture != .noTexture) {
             productsNeeded.append(textureProduct)
+        }
+        
+        if (self.solventCleaner) {
+            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
+        }
+        
+        if (self.mattingAdditive) {
+            productsNeeded.append(Product(id: "Matting Additive", name: "Matting Additive"))
         }
 
     }

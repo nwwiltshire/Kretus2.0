@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import SwiftData
 
 
 class UPCSystem: System {
@@ -149,7 +148,7 @@ class UPCSystem: System {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top
+        case base, prime, top, coat1
         
         var id: Self { self }
         
@@ -158,6 +157,7 @@ class UPCSystem: System {
             case .base: return "Base Coat"
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
+            case .coat1: return "Coat 1"
             }
         }
     }

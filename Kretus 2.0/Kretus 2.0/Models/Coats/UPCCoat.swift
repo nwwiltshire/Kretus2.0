@@ -36,6 +36,8 @@ class UPCCoat: Coat {
     @Published var texture2: UPCSystem.Texture
     @Published var uvResistance: Bool
     
+    @Published var solventCleaner: Bool
+    
     // Coverage Rate (focus is more on just how much product you need)
     // Coverage Rate is only dependent on thickness
     
@@ -57,7 +59,8 @@ class UPCCoat: Coat {
          texture1: UPCSystem.Texture,
          texture2: UPCSystem.Texture,
          uvResistance: Bool,
-         wasteFactor: Int) {
+         wasteFactor: Int,
+         solventCleaner: Bool) {
         
         self.coatType = coatType
         self.subType = subType
@@ -72,6 +75,7 @@ class UPCCoat: Coat {
         self.texture1 = texture1
         self.texture2 = texture2
         self.uvResistance = uvResistance
+        self.solventCleaner = solventCleaner
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -92,6 +96,7 @@ class UPCCoat: Coat {
         self.texture1 = .none
         self.texture2 = .none
         self.uvResistance = false
+        self.solventCleaner = false
         
         super.init(id: 0,
                    name: "Default",
@@ -294,6 +299,8 @@ class UPCCoat: Coat {
                     covRate = 72
                 }
             }
+        case .coat1:
+            break
         }
     }
     
@@ -446,6 +453,10 @@ class UPCCoat: Coat {
         
         if (self.uvResistance == true) {
             productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
+        }
+        
+        if (self.solventCleaner) {
+            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
         }
 
     }

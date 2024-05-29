@@ -39,7 +39,7 @@ class System: ObservableObject, Identifiable {
     
     static func getAllSystems() -> [System] {
             
-        return [UPCSystem(), ColorChipSystem()]
+        return [UPCSystem(), ColorChipSystem(), ColorSplashSystem()]
         
     }
     
