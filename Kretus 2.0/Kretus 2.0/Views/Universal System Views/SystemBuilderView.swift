@@ -46,6 +46,10 @@ struct SystemBuilderView: View {
                             ColorSplashSystemSuite(colorSplashSystem: colorSplashSystem)
                         }
                         
+                        if let epoxyMVRSystem = currentBuild as? EpoxyMVRSystem {
+                            EpoxyMVRSystemSuite(epoxyMVRSystem: epoxyMVRSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

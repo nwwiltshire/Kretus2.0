@@ -108,7 +108,6 @@ class ColorSplashSystem: System {
         }
     }
     
-    /*
     override func printSystemTest() -> String {
         var output = ""
         output += "System Name: \(name)\n"
@@ -117,40 +116,12 @@ class ColorSplashSystem: System {
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Total Kits Needed: \(kitsNeeded)\n"
-        output += "Available Sub Types: \(availableSubTypes)\n"
-        output += "Sub Type: \(subType)\n"
-        baseCoat.setValues()
-        output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
-        
-        if let primeCoat = primeCoat {
-            //primeCoat.setValues()
-            output += "\nPrime Coat:\n\n\(primeCoat.printCoatTest())\n"
-        } else {
-            output += "\nPrime Coat: None\n"
-        }
-        
-        if let mvrCoat = mvrCoat {
-            //mvrCoat.setValues()
-            output += "\nMVR Coat:\n\n\(mvrCoat.printCoatTest())\n"
-        } else {
-            output += "\nMVR Coat: None\n"
-        }
-        
-        topCoat1.setValues()
-        output += "\nTop Coat 1: \n\n\(topCoat1.printCoatTest())"
-        
-        if let topCoat2 = topCoat2 {
-            //topCoat2.setValues()
-            output += "\nTop Coat 2:\n\n\(topCoat2.printCoatTest())\n"
-        } else {
-            output += "\nTop Coat 2: None\n"
-        }
-        
+        output += "\nCoat 1:\n\n\(coat1!.printCoatTest())\n"
+        output += "\nCoat 2:\n\n\(coat2!.printCoatTest())\n"
+        output += "\nCoat 3:\n\n\(coat3!.printCoatTest())\n"
         
         return output
     }
-     
-     */
     
     override func getAllKits() {
         

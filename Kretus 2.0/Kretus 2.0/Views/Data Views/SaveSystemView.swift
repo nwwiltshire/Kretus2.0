@@ -47,6 +47,9 @@ struct SaveSystemView: View {
                                 if let colorSplashSystem = system as? ColorSplashSystem {
                                     colorSplashConvertToData(colorSplashSystem: colorSplashSystem)
                                 }
+                                if let epoxyMVRSystem = system as? EpoxyMVRSystem {
+                                    epoxyMVRConvertToData(epoxyMVRSystem: epoxyMVRSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -232,6 +235,30 @@ struct SaveSystemView: View {
         }
         if let puCoat3 = colorSplashSystem.coat3 as? PUCoat {
             coats.append(CoatData(coatType: "Coat 3", subType: puCoat3.subType.description, speed: puCoat3.speed.description))
+        }
+        
+        return coats
+    }
+    
+    private func epoxyMVRConvertToData(epoxyMVRSystem: EpoxyMVRSystem) {
+        let newSystem = SystemData(name: epoxyMVRSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: epoxyMVRSystem.imageName, viewColor: epoxyMVRSystem.viewColor.description, coats: [], subType: "Epoxy MVR", systemColor: "", squareFt: epoxyMVRSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: epoxyMVRSystem.kitsNeeded)
+        
+        newSystem.coats = epoxyMVRConvertCoats(epoxyMVRSystem: epoxyMVRSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func epoxyMVRConvertCoats(epoxyMVRSystem: EpoxyMVRSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "MVR Coat", subType: epoxyMVRSystem.mvrCoat.selectedPartA.description, speed: epoxyMVRSystem.mvrCoat.speed.description))
+        
+        if (epoxyMVRSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: epoxyMVRSystem.primeCoat!.selectedPartA.description, speed: epoxyMVRSystem.primeCoat!.speed.description))
         }
         
         return coats

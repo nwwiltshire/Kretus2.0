@@ -46,6 +46,7 @@ struct UPCBuildSuite: View {
             }
 
         }
+        .padding()
         .navigationTitle(upcSystem.name)
         .sheet(isPresented: $isEditing) {
             SaveSystemView(system: upcSystem)

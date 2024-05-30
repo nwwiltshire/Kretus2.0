@@ -60,7 +60,8 @@ struct SystemGridView: View {
                                     
                                     
                                 }
-                                .padding(.all)
+                                .frame(width: 300)
+                                .padding()
                                 .background(Color(system.viewColor))
                                 .cornerRadius(10)
                                 .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
@@ -73,12 +74,11 @@ struct SystemGridView: View {
                             }
                             .animation(.default, value: showEditors)
                         }
-                    .padding(.all)
-                    
                 }
-                .navigationTitle("System Calculator")
+                    .navigationTitle("System Calculator")
                 }
             }
+            .padding()
         }
     }
 }
