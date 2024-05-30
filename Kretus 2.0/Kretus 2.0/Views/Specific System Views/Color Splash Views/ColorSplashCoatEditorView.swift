@@ -50,6 +50,8 @@ struct ColorSplashCoatEditorView: View {
             ColorSplashBuildSubmitButton(colorSplashSystem: colorSplashSystem)
             
         }
+        .padding()
+        .navigationTitle("Coat Options")
         
     }
 }

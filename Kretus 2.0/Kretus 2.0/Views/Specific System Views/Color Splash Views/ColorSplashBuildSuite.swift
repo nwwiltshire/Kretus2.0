@@ -68,6 +68,7 @@ struct ColorSplashBuildSuite: View {
             }
 
         }
+        .padding()
         .navigationTitle(colorSplashSystem.name)
         .sheet(isPresented: $isEditing) {
             SaveSystemView(system: colorSplashSystem)

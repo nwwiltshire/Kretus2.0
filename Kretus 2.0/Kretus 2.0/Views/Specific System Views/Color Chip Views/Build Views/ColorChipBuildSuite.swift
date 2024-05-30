@@ -97,6 +97,7 @@ struct ColorChipBuildSuite: View {
             }
 
         }
+        .padding()
         .navigationTitle(colorChipSystem.name)
         .sheet(isPresented: $isEditing) {
             SaveSystemView(system: colorChipSystem)
