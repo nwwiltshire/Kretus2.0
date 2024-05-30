@@ -18,7 +18,7 @@ struct ColorChipSystemSuite: View {
             
             ColorChipSubSystemPicker(colorChipSystem: colorChipSystem)
             ColorChipCoatOptions(colorChipSystem: colorChipSystem)
-            ColorChipBroadcastPicker(colorChipSystem: colorChipSystem)
+            ColorChipBroadcastPicker(colorChipBroadcast: colorChipSystem.broadcast)
             ColorChipSystemCommitButton(colorChipSystem: colorChipSystem)
             
         }

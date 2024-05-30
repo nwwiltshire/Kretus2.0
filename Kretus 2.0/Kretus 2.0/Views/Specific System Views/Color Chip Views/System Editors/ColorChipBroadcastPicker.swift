@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ColorChipBroadcastPicker: View {
     
-    @ObservedObject var colorChipSystem: ColorChipSystem
+    @ObservedObject var colorChipBroadcast: ColorChipBroadcast
     
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct ColorChipBroadcastPicker: View {
                 
                 Spacer()
                 
-                Picker(selection: $colorChipSystem.broadcast.thickness, label: Text("")) {
+                Picker(selection: $colorChipBroadcast.thickness, label: Text("")) {
                     ForEach(ColorChipBroadcast.Thickness.allCases, id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
@@ -31,16 +31,16 @@ struct ColorChipBroadcastPicker: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(colorChipSystem.viewColor).opacity(0.25))
+                    .fill(Color(ColorChipSystem().viewColor).opacity(0.25))
             )
             
-            BroadcastWasteFactorOptions(broadCast: colorChipSystem.broadcast, viewColor: colorChipSystem.viewColor)
+            BroadcastWasteFactorOptions(broadCast: colorChipBroadcast, viewColor: ColorChipSystem().viewColor)
             
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(colorChipSystem.viewColor).opacity(0.25))
+                .fill(Color(ColorChipSystem().viewColor).opacity(0.25))
         )
     }
 }
@@ -52,9 +52,9 @@ struct ColorChipBroadcastPicker: View {
 struct ColorChipBroadcastPicker_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
-        let mockSystem = ColorChipSystem()
+        let mockBroadcast = ColorChipBroadcast()
 
         // Pass the mock System instance into SystemBuilderView
-        ColorChipBroadcastPicker(colorChipSystem: mockSystem)
+        ColorChipBroadcastPicker(colorChipBroadcast: mockBroadcast)
     }
 }

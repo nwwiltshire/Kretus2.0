@@ -50,6 +50,10 @@ struct SystemBuilderView: View {
                             EpoxyMVRSystemSuite(epoxyMVRSystem: epoxyMVRSystem)
                         }
                         
+                        if let epoxyCoveSystem = currentBuild as? EpoxyCoveSystem {
+                            EpoxyCoveSystemSuite(epoxyCoveSystem: epoxyCoveSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

@@ -50,6 +50,9 @@ struct SaveSystemView: View {
                                 if let epoxyMVRSystem = system as? EpoxyMVRSystem {
                                     epoxyMVRConvertToData(epoxyMVRSystem: epoxyMVRSystem)
                                 }
+                                if let epoxyCoveSystem = system as? EpoxyCoveSystem {
+                                    epoxyCoveConvertToData(epoxyCoveSystem: epoxyCoveSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -260,6 +263,30 @@ struct SaveSystemView: View {
         if (epoxyMVRSystem.primeCoat != nil) {
             coats.append(CoatData(coatType: "Prime Coat", subType: epoxyMVRSystem.primeCoat!.selectedPartA.description, speed: epoxyMVRSystem.primeCoat!.speed.description))
         }
+        
+        return coats
+    }
+    
+    private func epoxyCoveConvertToData(epoxyCoveSystem: EpoxyCoveSystem) {
+        let newSystem = SystemData(name: epoxyCoveSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: epoxyCoveSystem.imageName, viewColor: epoxyCoveSystem.viewColor.description, coats: [], subType: epoxyCoveSystem.subType.description, systemColor: "", squareFt: epoxyCoveSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: epoxyCoveSystem.kitsNeeded)
+        
+        newSystem.coats = epoxyCoveConvertCoats(epoxyCoveSystem: epoxyCoveSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func epoxyCoveConvertCoats(epoxyCoveSystem: EpoxyCoveSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "Prime Coat", subType: epoxyCoveSystem.primeCoat.selectedPartA.description, speed: epoxyCoveSystem.primeCoat.speed.description))
+        
+        coats.append(CoatData(coatType: "Body Coat", subType: epoxyCoveSystem.bodyCoat.selectedPartA.description, speed: epoxyCoveSystem.bodyCoat.speed.description))
+        
+        coats.append(CoatData(coatType: "Cap Coat", subType: epoxyCoveSystem.capCoat.selectedPartA.description, speed: epoxyCoveSystem.capCoat.speed.description))
         
         return coats
     }

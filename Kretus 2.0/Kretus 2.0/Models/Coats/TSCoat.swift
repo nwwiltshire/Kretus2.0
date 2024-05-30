@@ -23,6 +23,7 @@ class TSCoat: Coat {
     @Published var colorant: Product
     
     @Published var thickness: TSCoat.Thickness
+    @Published var coveHeight: EpoxyCoveSystem.Height
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
@@ -41,6 +42,7 @@ class TSCoat: Coat {
          coatColorant: TSCoat.CoatColorant,
          colorant: Product,
          thickness: TSCoat.Thickness,
+         coveHeight: EpoxyCoveSystem.Height,
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool) {
@@ -54,6 +56,7 @@ class TSCoat: Coat {
         self.coatColorant = coatColorant
         self.colorant = colorant
         self.thickness = thickness
+        self.coveHeight = coveHeight
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         
@@ -72,6 +75,7 @@ class TSCoat: Coat {
         self.coatColorant = .noColor
         self.colorant = Product()
         self.thickness = .base
+        self.coveHeight = .na
         self.solventCleaner = false
         self.mattingAdditive = false
         
@@ -84,7 +88,7 @@ class TSCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, mvr, coat1, coat2, coat3
+        case base, prime, top, mvr, coat1, coat2, coat3, body, cap
         
         var id: Self { self }
         
@@ -97,6 +101,8 @@ class TSCoat: Coat {
             case .coat1: return "Coat 1"
             case .coat2: return "Coat 2"
             case .coat3: return "Coat 3"
+            case .body: return "Body Coat"
+            case .cap: return "Cap Coat"
             }
         }
     }
@@ -122,7 +128,7 @@ class TSCoat: Coat {
     enum PartAs: CaseIterable, Identifiable, CustomStringConvertible {
         case arBeige, arBlack, arClear, arDarkGrey, arEnchantedGreen, arHandicapBlue, arLatte,
              arLightGray, arMediumGray, arMocha, arSafetyBlue, arSafetyRed, arSafetyYellow,
-             arShadowGray, arTan, arTileRed, arWhite, crrClear, lgrClear, commercial
+             arShadowGray, arTan, arTileRed, arWhite, crrClear, lgrClear, commercial, coveResin
         
         var id: Self {self}
         
@@ -149,6 +155,7 @@ class TSCoat: Coat {
             case .crrClear: return "CR Resin - Clear"
             case .lgrClear: return "LG Resin - Clear"
             case .commercial: return "Commercial Resin"
+            case .coveResin: return "Cove Resin - Clear"
                 
             }
         }
@@ -186,7 +193,7 @@ class TSCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, mvr
+        case base, prime, mvr, fourIn, sixIn
         
         var id: Self { self }
         
@@ -196,6 +203,8 @@ class TSCoat: Coat {
             case .base: return "8-12 mils"
             case .prime: return "3-5 mils"
             case .mvr: return "16 mils"
+            case .fourIn: return "4\""
+            case .sixIn: return "6\""
                 
             }
         }
@@ -217,6 +226,10 @@ class TSCoat: Coat {
         case .coat2:
             break
         case .coat3:
+            break
+        case .body:
+            break
+        case .cap:
             break
         }
     }
@@ -279,6 +292,9 @@ class TSCoat: Coat {
             self.partA = products.first(where: {$0.id == "Contact Distributor lg"})!
         case .commercial:
             self.partA = products.first(where: {$0.id == "FG-TSECMRCLR-01G"})!
+        case .coveResin:
+            // Put cove product id here
+            break
         }
         
         switch self.speed {

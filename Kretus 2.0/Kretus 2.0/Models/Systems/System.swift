@@ -39,7 +39,7 @@ class System: ObservableObject, Identifiable {
     
     static func getAllSystems() -> [System] {
             
-        return [UPCSystem(), ColorChipSystem(), ColorSplashSystem(), EpoxyMVRSystem()]
+        return [UPCSystem(), ColorChipSystem(), ColorSplashSystem(), EpoxyMVRSystem(), EpoxyCoveSystem()]
         
     }
     

@@ -148,7 +148,7 @@ class UPCSystem: System {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, coat1
+        case base, prime, top, coat1, body, cap
         
         var id: Self { self }
         
@@ -158,6 +158,8 @@ class UPCSystem: System {
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
             case .coat1: return "Coat 1"
+            case .body: return "Body Coat"
+            case .cap: return "Cap Coat"
             }
         }
     }

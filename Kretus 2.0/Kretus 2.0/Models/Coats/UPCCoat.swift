@@ -301,6 +301,10 @@ class UPCCoat: Coat {
             }
         case .coat1:
             break
+        case .body:
+            break
+        case .cap:
+            break
         }
     }
     
