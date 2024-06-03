@@ -26,6 +26,7 @@ struct EpoxyCoveCoatEditorView: View {
             EpoxyCoveBuildSubmitButton(epoxyCoveSystem: epoxyCoveSystem)
             
         }
+        .padding()
         .navigationTitle("Coat Options")
     }
 }

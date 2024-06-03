@@ -1,5 +1,5 @@
 //
-//  EpoxyCoveSystem.swift
+//  UPCCoveSystem.swift
 //  Kretus 2.0
 //
 //  Created by Nick Wiltshire on 5/30/24.
@@ -8,13 +8,11 @@
 import Foundation
 import SwiftUI
 
-class EpoxyCoveSystem: System {
+class UPCCoveSystem: System {
     
-    @Published var subType: SubType
-    @Published var primeCoat: TSCoat
-    @Published var bodyCoat: TSCoat
-    @Published var capCoat: TSCoat
-    @Published var broadcast: ColorChipBroadcast?
+    @Published var primeCoat: UPCCoat
+    @Published var bodyCoat: UPCCoat
+    @Published var capCoat: UPCCoat
     @Published var height: Height
     
     init(name: String,
@@ -24,18 +22,14 @@ class EpoxyCoveSystem: System {
          squareFt: Int,
          kitsNeeded: [Kit],
          totalWasteFactor: Int,
-         subType: SubType,
-         primeCoat: TSCoat,
-         bodyCoat: TSCoat,
-         capCoat: TSCoat,
-         broadcast: ColorChipBroadcast?,
+         primeCoat: UPCCoat,
+         bodyCoat: UPCCoat,
+         capCoat: UPCCoat,
          height: Height) {
         
-        self.subType = subType
         self.primeCoat = primeCoat
         self.bodyCoat = bodyCoat
         self.capCoat = capCoat
-        self.broadcast = broadcast
         self.height = height
         
         super.init(name: name, description: description, imageName: imageName, viewColor: viewColor, squareFt: squareFt, kitsNeeded: kitsNeeded, totalWasteFactor: totalWasteFactor)
@@ -44,34 +38,18 @@ class EpoxyCoveSystem: System {
     
     init() {
         
-        self.subType = .ecColor
-        self.primeCoat = TSCoat()
-        self.bodyCoat = TSCoat()
-        self.capCoat = TSCoat()
+        self.primeCoat = UPCCoat()
+        self.bodyCoat = UPCCoat()
+        self.capCoat = UPCCoat()
         self.height = .fourIn
         
-        super.init(name: "Epoxy Cove",
-                   description: "Wall-to-floor seamless coating for industrial, commercial, and residential spaces.",
-                   imageName: "epoxyCove-background",
-                   viewColor: "EpoxyCove",
+        super.init(name: "UPC Cove",
+                   description: "Wall-to-floor seamless coating for industrial, commercial, and residential spaces. Works best between UPC Floor and Wall Coatings.",
+                   imageName: "upcCove-background",
+                   viewColor: "UPCCove",
                    squareFt: 50,
                    kitsNeeded: [Kit()],
                    totalWasteFactor: 0)
-    }
-    
-    
-    enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case ecColor, ecColorChip, ecColorQuartz
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .ecColor: return "Epoxy Cove Color"
-            case .ecColorChip: return "Epoxy Cove Color Chip"
-            case .ecColorQuartz: return "Epoxy Cove Color Quartz"
-            }
-        }
     }
     
     enum Height: CaseIterable, Identifiable, CustomStringConvertible {
@@ -100,9 +78,6 @@ class EpoxyCoveSystem: System {
         output += "\nCoat 2:\n\n\(bodyCoat.printCoatTest())\n"
         output += "\nCoat 3:\n\n\(capCoat.printCoatTest())\n"
         
-        if (broadcast != nil) {
-            output += "\nBroadcast:\n\n\(broadcast!.printBroadcastTest())\n"
-        }
         
         return output
     }
@@ -123,27 +98,17 @@ class EpoxyCoveSystem: System {
         capCoat.setValues()
         updateKits(with: capCoat.kitsNeeded)
         totalWasteFactor += capCoat.wasteFactor
-        
-        if (broadcast != nil) {
-            broadcast!.setValues()
-            updateKits(with: broadcast!.kitsNeeded)
-            totalWasteFactor += broadcast!.wasteFactor
-        }
 
     }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, subType: EpoxyCoveSystem.SubType, selectedPartA: TSCoat.PartAs, coveHeight: Height) -> TSCoat {
-        let tsCoat = TSCoat()
-        tsCoat.squareFt = squareFt
-        tsCoat.coatType = coatType
-        tsCoat.selectedPartA = selectedPartA
-        tsCoat.coveHeight = coveHeight
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coveHeight: Height) -> UPCCoat {
+        let upcCoat = UPCCoat()
+        upcCoat.squareFt = squareFt
+        upcCoat.coatType = coatType
+        upcCoat.subType = subType
+        upcCoat.coveHeight = coveHeight
         
-        if (subType == .ecColorQuartz) {
-            tsCoat.hasColorQuartz = true
-        }
-        
-        return tsCoat
+        return upcCoat
     }
     
 }

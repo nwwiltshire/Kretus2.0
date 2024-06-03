@@ -54,6 +54,14 @@ struct SystemBuilderView: View {
                             EpoxyCoveSystemSuite(epoxyCoveSystem: epoxyCoveSystem)
                         }
                         
+                        if let upcCoveSystem = currentBuild as? UPCCoveSystem {
+                            UPCCoveSystemSuite(upcCoveSystem: upcCoveSystem)
+                        }
+                        
+                        if let upcColorQuartzSystem = currentBuild as? UPCColorQuartzSystem {
+                            UPCColorQuartzSystemSuite(upcColorQuartzSystem: upcColorQuartzSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

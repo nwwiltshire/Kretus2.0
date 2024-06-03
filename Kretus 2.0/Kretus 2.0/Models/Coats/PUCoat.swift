@@ -78,7 +78,7 @@ class PUCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top1, top2, coat1, coat2, coat3
+        case base, prime, top1, top2, coat1, coat2, coat3, cap, top
         
         var id: Self { self }
         
@@ -91,6 +91,8 @@ class PUCoat: Coat {
             case .coat1: return "Coat 1"
             case .coat2: return "Coat 2"
             case .coat3: return "Coat 3"
+            case .cap: return "Cap Coat"
+            case .top: return "Top"
             }
         }
     }
@@ -140,7 +142,7 @@ class PUCoat: Coat {
     }
     
     enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
-        case noTexture, asAo120, asAo220, asAo60, asAo80, asB100, asB50
+        case noTexture, asAo60, asAo80, asAo120, asAo220, asB100, asB50, asT50
         
         var id: Self { self }
         
@@ -148,12 +150,13 @@ class PUCoat: Coat {
             switch self {
                 
             case .noTexture: return "No Texture"
-            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
-            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
             case .asAo60: return "Anti-Slip Aluminum Oxide 60 Grit"
             case .asAo80: return "Anti-Slip Aluminum Oxide 80 Grit"
+            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
+            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
             case .asB100: return "Anti-Slip Bead 100"
             case .asB50: return "Anti-Slip Bead 50"
+            case .asT50: return "Anti-Slip Tex 50"
             }
             
         }
@@ -230,6 +233,8 @@ class PUCoat: Coat {
             textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
         case .asB50:
             textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
+        case .asT50:
+            break
         }
         
         productsNeeded.removeAll()

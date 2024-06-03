@@ -60,7 +60,7 @@ struct SystemGridView: View {
                                     
                                     
                                 }
-                                .frame(width: 300)
+                                .frame(width: 340)
                                 .padding()
                                 .background(Color(system.viewColor))
                                 .cornerRadius(10)
@@ -78,7 +78,6 @@ struct SystemGridView: View {
                     .navigationTitle("System Calculator")
                 }
             }
-            .padding()
         }
     }
 }

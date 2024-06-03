@@ -67,6 +67,28 @@ struct PUCoatSuite: View {
                     Spacer()
                     
                     Picker(selection: $puCoat.texture, label: Text("")) {
+                        ForEach(PUCoat.Texture.allCases.prefix(7), id: \.self) { speed in
+                            Text(speed.description).tag(speed)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(.gray).opacity(0.25))
+                )
+            }
+            
+            if (puCoat.coatType == .top)
+            {
+                HStack {
+                    Text("Texture")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $puCoat.texture, label: Text("")) {
                         ForEach(PUCoat.Texture.allCases, id: \.self) { speed in
                             Text(speed.description).tag(speed)
                         }

@@ -28,6 +28,8 @@ class TSCoat: Coat {
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
     
+    @Published var hasColorQuartz: Bool
+    
     init(id: Int,
          name: String,
          squareFt: Int,
@@ -45,7 +47,8 @@ class TSCoat: Coat {
          coveHeight: EpoxyCoveSystem.Height,
          wasteFactor: Int,
          solventCleaner: Bool,
-         mattingAdditive: Bool) {
+         mattingAdditive: Bool,
+         hasColorQuartz: Bool) {
         
         self.coatType = coatType
         self.speed = speed
@@ -59,6 +62,7 @@ class TSCoat: Coat {
         self.coveHeight = coveHeight
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
+        self.hasColorQuartz = hasColorQuartz
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -78,6 +82,7 @@ class TSCoat: Coat {
         self.coveHeight = .na
         self.solventCleaner = false
         self.mattingAdditive = false
+        self.hasColorQuartz = false
         
         super.init(id: 0,
                    name: "Top Shelf Epoxy",
@@ -207,6 +212,27 @@ class TSCoat: Coat {
             case .sixIn: return "6\""
                 
             }
+        }
+    }
+    
+    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
+        case noTexture, asAo60, asAo80, asAo120, asAo220, asB100, asB50, asT50
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+                
+            case .noTexture: return "No Texture"
+            case .asAo60: return "Anti-Slip Aluminum Oxide 60 Grit"
+            case .asAo80: return "Anti-Slip Aluminum Oxide 80 Grit"
+            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
+            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
+            case .asB100: return "Anti-Slip Bead 100"
+            case .asB50: return "Anti-Slip Bead 50"
+            case .asT50: return "Anti-Slip Tex 50"
+            }
+            
         }
     }
     
@@ -364,6 +390,10 @@ class TSCoat: Coat {
         
         if (self.mattingAdditive) {
             productsNeeded.append(Product(id: "Matting Additive", name: "Matting Additive"))
+        }
+        
+        if (self.hasColorQuartz) {
+            productsNeeded.append(Product(id: "Color Quartz", name: "Color Quartz"))
         }
 
     }

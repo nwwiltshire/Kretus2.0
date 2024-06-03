@@ -61,7 +61,7 @@ class UPCSystem: System {
     }
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case rc, tt, sl, mf
+        case rc, tt, sl, mf, wcvc
         
         var id: Self { self }
         
@@ -71,6 +71,7 @@ class UPCSystem: System {
             case .tt: return "TT (Trowel Applied)"
             case .sl: return "SL (Self Leveling)"
             case .mf: return "MF (Medium Fill SL)"
+            case .wcvc: return "WC/VC"
             }
         }
     }
@@ -99,7 +100,7 @@ class UPCSystem: System {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thinRC, mediumRC, thickRC, thin, medium, thick
+        case thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick
         
         var id: Self { self }
         
@@ -108,6 +109,7 @@ class UPCSystem: System {
             case .thinRC: return "8-12 mils"
             case .mediumRC: return "15-20 mils"
             case .thickRC: return "25-30 mils"
+            case .quartzTT: return "3/8\""
             case .thin: return "1/8\""
             case .medium: return "3/16\""
             case .thick: return "1/4\""

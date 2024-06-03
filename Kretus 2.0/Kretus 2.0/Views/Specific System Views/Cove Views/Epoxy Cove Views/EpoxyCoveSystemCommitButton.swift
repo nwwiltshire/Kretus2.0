@@ -16,11 +16,11 @@ struct EpoxyCoveSystemCommitButton: View {
         NavigationLink(destination: EpoxyCoveCoatEditorView(epoxyCoveSystem: epoxyCoveSystem)
             .onAppear {
                 
-                epoxyCoveSystem.primeCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .prime, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
+                epoxyCoveSystem.primeCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .prime, subType: epoxyCoveSystem.subType, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
                 
-                epoxyCoveSystem.bodyCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .body, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
+                epoxyCoveSystem.bodyCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .body, subType: epoxyCoveSystem.subType, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
                 
-                epoxyCoveSystem.capCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .cap, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
+                epoxyCoveSystem.capCoat = epoxyCoveSystem.createTSCoat(squareFt: epoxyCoveSystem.squareFt, coatType: .cap, subType: epoxyCoveSystem.subType, selectedPartA: .coveResin, coveHeight: epoxyCoveSystem.height)
                 
                 if (epoxyCoveSystem.subType == .ecColorChip) {
                     epoxyCoveSystem.broadcast = ColorChipBroadcast()

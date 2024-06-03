@@ -38,6 +38,8 @@ class UPCCoat: Coat {
     
     @Published var solventCleaner: Bool
     
+    @Published var coveHeight: UPCCoveSystem.Height
+    
     // Coverage Rate (focus is more on just how much product you need)
     // Coverage Rate is only dependent on thickness
     
@@ -60,7 +62,8 @@ class UPCCoat: Coat {
          texture2: UPCSystem.Texture,
          uvResistance: Bool,
          wasteFactor: Int,
-         solventCleaner: Bool) {
+         solventCleaner: Bool,
+         coveHeight: UPCCoveSystem.Height) {
         
         self.coatType = coatType
         self.subType = subType
@@ -76,6 +79,7 @@ class UPCCoat: Coat {
         self.texture2 = texture2
         self.uvResistance = uvResistance
         self.solventCleaner = solventCleaner
+        self.coveHeight = coveHeight
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -97,6 +101,7 @@ class UPCCoat: Coat {
         self.texture2 = .none
         self.uvResistance = false
         self.solventCleaner = false
+        self.coveHeight = .na
         
         super.init(id: 0,
                    name: "Default",
@@ -125,6 +130,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -141,6 +148,8 @@ class UPCCoat: Coat {
                     covRate = 14
                 case .thick:
                     covRate = 10
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -156,6 +165,8 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 25
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -171,7 +182,11 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 25
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .prime:
             switch subType {
@@ -189,6 +204,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -204,6 +221,8 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 36
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -219,6 +238,8 @@ class UPCCoat: Coat {
                     covRate = 41
                 case .thick:
                     covRate = 42
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -234,7 +255,11 @@ class UPCCoat: Coat {
                     covRate = 47
                 case .thick:
                     covRate = 48
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .top:
             switch subType {
@@ -252,6 +277,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -267,6 +294,8 @@ class UPCCoat: Coat {
                     covRate = 59
                 case .thick:
                     covRate = 60
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -282,6 +311,8 @@ class UPCCoat: Coat {
                     covRate = 65
                 case .thick:
                     covRate = 66
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -297,7 +328,11 @@ class UPCCoat: Coat {
                     covRate = 71
                 case .thick:
                     covRate = 72
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .coat1:
             break
@@ -409,6 +444,8 @@ class UPCCoat: Coat {
                 self.partB = products.first(where: {$0.id == "EX-KUPCSLF8-EA"})!
                 
             }
+        case .wcvc:
+            break
         }
         
         switch self.coatColor {
