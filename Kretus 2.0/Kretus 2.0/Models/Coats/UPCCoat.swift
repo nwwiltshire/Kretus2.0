@@ -340,6 +340,8 @@ class UPCCoat: Coat {
             break
         case .cap:
             break
+        case .mvr:
+            break
         }
     }
     

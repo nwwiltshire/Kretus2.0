@@ -14,25 +14,47 @@ struct ColorChipBroadcastPicker: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Broadcast")
-                    .font(.headline)
-                    .padding()
-                
-                Spacer()
-                
-                Picker(selection: $colorChipBroadcast.thickness, label: Text("")) {
-                    ForEach(ColorChipBroadcast.Thickness.allCases, id: \.self) { subType in
-                        Text(subType.description).tag(subType)
+            if (colorChipBroadcast.grade == .none) {
+                HStack {
+                    Text("Broadcast")
+                        .font(.headline)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Picker(selection: $colorChipBroadcast.thickness, label: Text("")) {
+                        ForEach(ColorChipBroadcast.Thickness.allCases, id: \.self) { subType in
+                            Text(subType.description).tag(subType)
+                        }
                     }
+                    .pickerStyle(MenuPickerStyle())
                 }
-                .pickerStyle(MenuPickerStyle())
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(ColorChipSystem().viewColor).opacity(0.25))
+                )
+            } else {
+                HStack {
+                    Text("Broadcast")
+                        .font(.headline)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Picker(selection: $colorChipBroadcast.grade, label: Text("")) {
+                        ForEach(ColorChipBroadcast.Grade.allCases.suffix(3), id: \.self) { subType in
+                            Text(subType.description).tag(subType)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(ColorChipSystem().viewColor).opacity(0.25))
+                )
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(ColorChipSystem().viewColor).opacity(0.25))
-            )
             
             BroadcastWasteFactorOptions(broadCast: colorChipBroadcast, viewColor: ColorChipSystem().viewColor)
             

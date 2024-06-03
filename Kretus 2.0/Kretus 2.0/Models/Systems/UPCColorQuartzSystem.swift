@@ -14,7 +14,7 @@ class UPCColorQuartzSystem: System {
     @Published var thickness: UPCSystem.Thickness
     
     @Published var baseCoat: UPCCoat
-    @Published var broadcast: Broadcast
+    @Published var broadcast: ColorChipBroadcast
     @Published var capCoat: Coat
     @Published var topCoat: Coat
     @Published var primeCoat: UPCCoat?
@@ -36,7 +36,7 @@ class UPCColorQuartzSystem: System {
          subType: SubType,
          thickness: UPCSystem.Thickness,
          baseCoat: UPCCoat,
-         broadcast: Broadcast,
+         broadcast: ColorChipBroadcast,
          capCoat: Coat,
          topCoat: Coat,
          primeCoat: UPCCoat,

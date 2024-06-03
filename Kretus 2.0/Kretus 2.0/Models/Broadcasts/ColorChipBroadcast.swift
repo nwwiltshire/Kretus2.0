@@ -10,6 +10,7 @@ import Foundation
 class ColorChipBroadcast: Broadcast {
     
     @Published var thickness: Thickness
+    @Published var grade: Grade
     
     init(name: String,
          squareFt: Int,
@@ -17,9 +18,11 @@ class ColorChipBroadcast: Broadcast {
          productsNeeded: [Product],
          kitsNeeded: [Kit],
          thickness: Thickness,
+         grade: Grade,
          wasteFactor: Int) {
         
         self.thickness = thickness
+        self.grade = grade
         
         super.init(name: name, squareFt: squareFt, covRate: covRate, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -28,6 +31,7 @@ class ColorChipBroadcast: Broadcast {
     init() {
         
         self.thickness = .quarterInch
+        self.grade = .none
         
         super.init(name: "Color Chip",
                    squareFt: 1,
@@ -47,6 +51,23 @@ class ColorChipBroadcast: Broadcast {
                 
             case .quarterInch: return "1/4\""
             case .eighthInch: return "1/8\""
+                
+            }
+        }
+    }
+    
+    enum Grade: CaseIterable, Identifiable, CustomStringConvertible {
+        case none, q, f, xf
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            
+            case .none: return "None"
+            case .q: return "Q-Grade"
+            case .f: return "F-Grade"
+            case .xf: return "XF-Grade"
                 
             }
         }

@@ -53,6 +53,9 @@ struct UPCColorQuartzSystemCommitButton: View {
                     upcColorQuartzSystem.mvrCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .prime, subType: upcColorQuartzSystem.subType, thickness: upcColorQuartzSystem.thickness)
                 }
                 
+                upcColorQuartzSystem.broadcast.squareFt = upcColorQuartzSystem.squareFt
+                upcColorQuartzSystem.broadcast.grade = .q
+                
             }) {
           HStack {
             Text("Coat Options")
