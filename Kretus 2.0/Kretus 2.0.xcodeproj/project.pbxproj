@@ -40,6 +40,8 @@
 		302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */; };
 		302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F02BF7F200005CC281 /* KitRelationship.swift */; };
 		302F51F52BF824A9005CC281 /* ColorChipSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F51F42BF824A9005CC281 /* ColorChipSystem.swift */; };
+		30363FCB2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30363FCA2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift */; };
+		30363FCD2C0E983600779632 /* UPCColorQuartzBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30363FCC2C0E983600779632 /* UPCColorQuartzBuildSuite.swift */; };
 		303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697A2B6B091F00C58041 /* SelectLineView.swift */; };
 		303C697D2B6B094900C58041 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697C2B6B094900C58041 /* InformationView.swift */; };
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
@@ -208,6 +210,8 @@
 		302E56802B7211BC0063EB5C /* UPCSystemColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCSystemColorPicker.swift; sourceTree = "<group>"; };
 		302F51F02BF7F200005CC281 /* KitRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitRelationship.swift; sourceTree = "<group>"; };
 		302F51F42BF824A9005CC281 /* ColorChipSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipSystem.swift; sourceTree = "<group>"; };
+		30363FCA2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorQuartzBuildSubmitButton.swift; sourceTree = "<group>"; };
+		30363FCC2C0E983600779632 /* UPCColorQuartzBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCColorQuartzBuildSuite.swift; sourceTree = "<group>"; };
 		303C697A2B6B091F00C58041 /* SelectLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineView.swift; sourceTree = "<group>"; };
 		303C697C2B6B094900C58041 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 				300595622C0E62CD0098F779 /* UPCColorQuartzCoatOptions.swift */,
 				300595642C0E6CD90098F779 /* UPCColorQuartzSystemCommitButton.swift */,
 				300595662C0E6D2A0098F779 /* UPCColorQuartzCoatEditorView.swift */,
+				30363FCA2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift */,
+				30363FCC2C0E983600779632 /* UPCColorQuartzBuildSuite.swift */,
 			);
 			path = "UPC Color Quartz Views";
 			sourceTree = "<group>";
@@ -1068,7 +1074,9 @@
 				30A712D82B590225009C0268 /* GetProducts.swift in Sources */,
 				300595342C081CCC0098F779 /* EpoxyMVRSystemCommitButton.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
+				30363FCB2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
+				30363FCD2C0E983600779632 /* UPCColorQuartzBuildSuite.swift in Sources */,
 				302F51F12BF7F200005CC281 /* KitRelationship.swift in Sources */,
 				3005954F2C092D730098F779 /* UPCCoveSystem.swift in Sources */,
 				30CC55882BF6854900B7D409 /* SystemListView.swift in Sources */,

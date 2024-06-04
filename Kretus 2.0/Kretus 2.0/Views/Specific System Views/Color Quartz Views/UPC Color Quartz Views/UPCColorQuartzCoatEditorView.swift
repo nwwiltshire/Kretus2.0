@@ -41,7 +41,10 @@ struct UPCColorQuartzCoatEditorView: View {
                 UPCUniversalCoatSuite(upcCoat: upcColorQuartzSystem.mvrCoat!)
             }
             
+            UPCColorQuartzBuildSubmitButton(upcColorQuartzSystem: upcColorQuartzSystem)
+            
         }
+        .navigationTitle("Coat Options")
     }
 }
 

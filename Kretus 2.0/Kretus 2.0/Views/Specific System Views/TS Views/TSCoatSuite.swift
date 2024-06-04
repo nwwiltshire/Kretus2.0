@@ -57,6 +57,27 @@ struct TSCoatSuite: View {
                     .fill(Color(.gray).opacity(0.25))
                 )
             
+            if (tsCoat.coatType == .top) {
+                HStack {
+                    Text("Texture")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $tsCoat.texture, label: Text("")) {
+                        ForEach(TSCoat.Texture.allCases, id: \.self) { speed in
+                            Text(speed.description).tag(speed)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(.gray).opacity(0.25))
+                )
+            }
+            
             TSColorPicker(tsCoat: tsCoat)
             
             CoatWasteFactorOptions(coat: tsCoat)

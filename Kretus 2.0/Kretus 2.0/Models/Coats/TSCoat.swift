@@ -29,6 +29,7 @@ class TSCoat: Coat {
     @Published var mattingAdditive: Bool
     
     @Published var hasColorQuartz: Bool
+    @Published var texture: Texture
     
     init(id: Int,
          name: String,
@@ -48,7 +49,8 @@ class TSCoat: Coat {
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool,
-         hasColorQuartz: Bool) {
+         hasColorQuartz: Bool,
+         texture: Texture) {
         
         self.coatType = coatType
         self.speed = speed
@@ -63,6 +65,7 @@ class TSCoat: Coat {
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         self.hasColorQuartz = hasColorQuartz
+        self.texture = texture
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -83,6 +86,7 @@ class TSCoat: Coat {
         self.solventCleaner = false
         self.mattingAdditive = false
         self.hasColorQuartz = false
+        self.texture = .noTexture
         
         super.init(id: 0,
                    name: "Top Shelf Epoxy",

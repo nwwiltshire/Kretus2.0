@@ -92,7 +92,7 @@ class PUCoat: Coat {
             case .coat2: return "Coat 2"
             case .coat3: return "Coat 3"
             case .cap: return "Cap Coat"
-            case .top: return "Top"
+            case .top: return "Top Coat"
             }
         }
     }

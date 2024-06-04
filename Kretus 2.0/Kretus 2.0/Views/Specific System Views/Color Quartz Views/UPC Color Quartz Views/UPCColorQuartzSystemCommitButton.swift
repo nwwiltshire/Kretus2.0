@@ -38,11 +38,11 @@ struct UPCColorQuartzSystemCommitButton: View {
                 
                 switch upcColorQuartzSystem.topCoatSubType {
                 case .ts:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
                 case .polyaspartic:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
                 case .polyurethane:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
                 }
                 
                 if (upcColorQuartzSystem.primeCoat != nil) {
@@ -55,7 +55,6 @@ struct UPCColorQuartzSystemCommitButton: View {
                 
                 upcColorQuartzSystem.broadcast.squareFt = upcColorQuartzSystem.squareFt
                 upcColorQuartzSystem.broadcast.grade = .q
-                
             }) {
           HStack {
             Text("Coat Options")
