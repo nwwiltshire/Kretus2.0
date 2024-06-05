@@ -233,7 +233,7 @@ class PACoat: Coat {
         
     }
 
-    override func findProducts(products: [Product]) {
+    func findProducts(products: [Product]) {
         
         var textureProduct: Product = Product()
         

@@ -59,14 +59,6 @@ class Coat: ObservableObject {
         kitsNeeded.append(Kit(product: product, quantity: quantity))
       }
     }
-
-
-    
-    func findProducts(products: [Product]) {
-        
-        // Switch to find products
-        
-    }
     
     func setValues() {
         

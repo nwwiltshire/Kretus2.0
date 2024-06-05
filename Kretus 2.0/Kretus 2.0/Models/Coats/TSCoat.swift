@@ -285,7 +285,7 @@ class TSCoat: Coat {
     }
 
     
-    override func findProducts(products: [Product]) {
+    func findProducts(products: [Product]) {
         
         switch self.selectedPartA {
         case .arBeige:
