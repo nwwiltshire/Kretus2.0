@@ -22,7 +22,6 @@ struct EpoxyColorQuartzSystemCommitButton: View {
                     epoxyColorQuartzSystem.broadcast!.squareFt = epoxyColorQuartzSystem.squareFt
                     epoxyColorQuartzSystem.broadcast!.grade = .q
                 } else {
-                    print("DBBBBB")
                     epoxyColorQuartzSystem.baseCoat1 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base1, mattingAdditive: false)
                     epoxyColorQuartzSystem.baseCoat2 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base2, mattingAdditive: false)
                     
