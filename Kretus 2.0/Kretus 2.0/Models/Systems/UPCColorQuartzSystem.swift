@@ -11,6 +11,12 @@ import SwiftUI
 class UPCColorQuartzSystem: System {
     
     @Published var subType: SubType
+    {
+       didSet {
+           updateThickness()
+       }
+   }
+    
     @Published var thickness: UPCSystem.Thickness
     
     @Published var baseCoat: UPCCoat
@@ -115,6 +121,38 @@ class UPCColorQuartzSystem: System {
         }
     }
     
+    override func getAllKits() {
+        
+        kitsNeeded.removeAll()
+        totalWasteFactor = 0
+        
+        baseCoat.setValues()
+        updateKits(with: baseCoat.kitsNeeded)
+        totalWasteFactor += baseCoat.wasteFactor
+        
+        capCoat.setValues()
+        updateKits(with: capCoat.kitsNeeded)
+        totalWasteFactor += capCoat.wasteFactor
+        
+        topCoat.setValues()
+        updateKits(with: topCoat.kitsNeeded)
+        totalWasteFactor += topCoat.wasteFactor
+
+        
+        if (primeCoat != nil) {
+            primeCoat!.setValues()
+            updateKits(with: primeCoat!.kitsNeeded)
+            totalWasteFactor += primeCoat!.wasteFactor
+        }
+        
+        if (mvrCoat != nil) {
+            mvrCoat!.setValues()
+            updateKits(with: mvrCoat!.kitsNeeded)
+            totalWasteFactor += mvrCoat!.wasteFactor
+        }
+
+    }
+    
     func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCSystem.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
@@ -161,6 +199,19 @@ class UPCColorQuartzSystem: System {
         puCoat.mattingAdditive = mattingAdditive
         
         return puCoat
+    }
+    
+    func updateThickness() {
+        switch subType {
+        case .rc:
+            break
+        case .tt:
+            thickness = .quartzTT
+        case .sl:
+            thickness = .medium
+        case .mf:
+            thickness = .medium
+        }
     }
     
 }

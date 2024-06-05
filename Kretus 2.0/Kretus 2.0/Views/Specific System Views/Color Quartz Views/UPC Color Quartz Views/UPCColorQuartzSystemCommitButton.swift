@@ -50,7 +50,7 @@ struct UPCColorQuartzSystemCommitButton: View {
                 }
                 
                 if (upcColorQuartzSystem.mvrCoat != nil) {
-                    upcColorQuartzSystem.mvrCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .prime, subType: upcColorQuartzSystem.subType, thickness: upcColorQuartzSystem.thickness)
+                    upcColorQuartzSystem.mvrCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .mvr, subType: upcColorQuartzSystem.subType, thickness: upcColorQuartzSystem.thickness)
                 }
                 
                 upcColorQuartzSystem.broadcast.squareFt = upcColorQuartzSystem.squareFt

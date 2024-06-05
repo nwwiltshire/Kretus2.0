@@ -44,11 +44,6 @@ struct TSCoatBuild_Previews: PreviewProvider {
     static var previews: some View {
         // Create a mock System instance
         let mockCoat = TSCoat()
-        
-        let testKits = [Kit(product: Product(id: "1234", name: "Test 1"), quantity: 1), Kit(product: Product(id: "12345", name: "Test 2"), quantity: 2), Kit(product: Product(id: "123456", name: "Test 3"), quantity: 3)]
-        
-        
-        mockCoat.kitsNeeded = testKits
 
         // Pass the mock System instance into SystemBuilderView
         return TSCoatBuild(tsCoat: mockCoat, viewColor: "Black")
