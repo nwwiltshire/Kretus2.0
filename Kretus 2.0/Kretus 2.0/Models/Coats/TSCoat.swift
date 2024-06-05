@@ -97,13 +97,15 @@ class TSCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, mvr, coat1, coat2, coat3, body, cap
+        case base, base1, base2, prime, top, mvr, coat1, coat2, coat3, body, cap
         
         var id: Self { self }
         
         var description: String {
             switch self {
             case .base: return "Base Coat"
+            case .base1: return "Base Coat 1"
+            case .base2: return "Base Coat 2"
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
             case .mvr: return "MVR Coat"
@@ -260,6 +262,10 @@ class TSCoat: Coat {
         case .body:
             break
         case .cap:
+            break
+        case .base1:
+            break
+        case .base2:
             break
         }
     }

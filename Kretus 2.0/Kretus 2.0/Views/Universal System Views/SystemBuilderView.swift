@@ -62,6 +62,10 @@ struct SystemBuilderView: View {
                             UPCColorQuartzSystemSuite(upcColorQuartzSystem: upcColorQuartzSystem)
                         }
                         
+                        if let epoxyColorQuartzSystem = currentBuild as? EpoxyColorQuartzSystem {
+                            EpoxyColorQuartzSystemSuite(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

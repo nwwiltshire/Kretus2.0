@@ -1,14 +1,14 @@
 //
-//  UPCColorQuartzSystem.swift
+//  EpoxyColorQuartzSystem.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 6/3/24.
+//  Created by Nick Wiltshire on 6/5/24.
 //
 
 import Foundation
 import SwiftUI
 
-class UPCColorQuartzSystem: System {
+class EpoxyColorQuartzSystem: System {
     
     @Published var subType: SubType
     {
@@ -17,14 +17,18 @@ class UPCColorQuartzSystem: System {
        }
    }
     
-    @Published var thickness: UPCSystem.Thickness
+    @Published var thickness: Thickness // How does this effect covRate or coats?
     
-    @Published var baseCoat: UPCCoat
-    @Published var broadcast: ColorChipBroadcast
+    @Published var baseCoat: TSCoat?
+    @Published var baseCoat1: TSCoat?
+    @Published var baseCoat2: TSCoat?
+    @Published var broadcast: ColorChipBroadcast?
+    @Published var broadcast1: ColorChipBroadcast?
+    @Published var broadcast2: ColorChipBroadcast?
     @Published var capCoat: Coat
     @Published var topCoat: Coat
-    @Published var primeCoat: UPCCoat?
-    @Published var mvrCoat: UPCCoat?
+    @Published var primeCoat: TSCoat?
+    @Published var mvrCoat: TSCoat?
     
     @Published var capCoatSubType: CapAndTopCoatSubType
     @Published var topCoatSubType: CapAndTopCoatSubType
@@ -40,13 +44,17 @@ class UPCColorQuartzSystem: System {
          kitsNeeded: [Kit],
          totalWasteFactor: Int,
          subType: SubType,
-         thickness: UPCSystem.Thickness,
-         baseCoat: UPCCoat,
+         thickness: Thickness,
+         baseCoat: TSCoat,
+         baseCoat1: TSCoat,
+         baseCoat2: TSCoat,
          broadcast: ColorChipBroadcast,
+         broadcast1: ColorChipBroadcast,
+         broadcast2: ColorChipBroadcast,
          capCoat: Coat,
          topCoat: Coat,
-         primeCoat: UPCCoat,
-         mvrCoat: UPCCoat,
+         primeCoat: TSCoat,
+         mvrCoat: TSCoat,
          capCoatSubType: CapAndTopCoatSubType,
          topCoatSubType: CapAndTopCoatSubType,
          capMattingAdditive: Bool,
@@ -55,7 +63,11 @@ class UPCColorQuartzSystem: System {
         self.subType = subType
         self.thickness = thickness
         self.baseCoat = baseCoat
+        self.baseCoat1 = baseCoat
+        self.baseCoat2 = baseCoat
         self.broadcast = broadcast
+        self.broadcast1 = broadcast
+        self.broadcast2 = broadcast
         self.capCoat = capCoat
         self.topCoat = topCoat
         self.primeCoat = primeCoat
@@ -71,9 +83,9 @@ class UPCColorQuartzSystem: System {
     
     init() {
         
-        self.subType = .rc
-        self.thickness = .thinRC
-        self.baseCoat = UPCCoat()
+        self.subType = .ts
+        self.thickness = .oneEighth
+        self.baseCoat = TSCoat()
         self.broadcast = ColorChipBroadcast()
         self.capCoat = TSCoat()
         self.topCoat = TSCoat()
@@ -82,10 +94,10 @@ class UPCColorQuartzSystem: System {
         self.capMattingAdditive = false
         self.topMattingAdditive = false
         
-        super.init(name: "Color Quartz UPC",
-                   description: "Beautiful, exceptionally durable, slip-resistant, hygienic, and easy-to-clean flooring solution. (Urethane Polymer Concrete System)",
+        super.init(name: "Color Quartz Epoxy",
+                   description: "Beautiful, exceptionally durable, slip-resistant, hygienic, and easy-to-clean flooring solution. (Epoxy System)",
                    imageName: "colorQuartz-background",
-                   viewColor: "ColorQuartzUPC",
+                   viewColor: "ColorQuartzEpoxy",
                    squareFt: 50,
                    kitsNeeded: [Kit()],
                    totalWasteFactor: 0)
@@ -93,16 +105,29 @@ class UPCColorQuartzSystem: System {
     
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case rc, tt, sl, mf
+        case ts, db, sg
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .rc: return "Color Quartz RC (Roll Coat)"
-            case .tt: return "Color Chip TT (Trowel Applied)"
-            case .sl: return "Color Chip SL (Self Leveling)"
-            case .mf: return "Color Chip MF (Medium Fill SL)"
+            case .ts: return "Top Shelf Epoxy"
+            case .db: return "Double Broadcast"
+            case .sg: return "Slurry Grade"
+            }
+        }
+    }
+    
+    enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
+        case oneEighth, threeSixteenth, oneFourth
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .oneEighth: return "1/8\""
+            case .threeSixteenth: return "3/16\""
+            case .oneFourth: return "1/4\""
             }
         }
     }
@@ -121,14 +146,47 @@ class UPCColorQuartzSystem: System {
         }
     }
     
+    
     override func getAllKits() {
         
         kitsNeeded.removeAll()
         totalWasteFactor = 0
         
-        baseCoat.setValues()
-        updateKits(with: baseCoat.kitsNeeded)
-        totalWasteFactor += baseCoat.wasteFactor
+        if (baseCoat != nil) {
+            baseCoat!.setValues()
+            updateKits(with: baseCoat!.kitsNeeded)
+            totalWasteFactor += baseCoat!.wasteFactor
+        }
+        
+        if (baseCoat1 != nil) {
+            baseCoat!.setValues()
+            updateKits(with: baseCoat!.kitsNeeded)
+            totalWasteFactor += baseCoat!.wasteFactor
+        }
+        
+        if (baseCoat2 != nil) {
+            baseCoat2!.setValues()
+            updateKits(with: baseCoat2!.kitsNeeded)
+            totalWasteFactor += baseCoat2!.wasteFactor
+        }
+        
+        if (broadcast != nil) {
+            broadcast!.setValues()
+            updateKits(with: broadcast!.kitsNeeded)
+            totalWasteFactor += broadcast!.wasteFactor
+        }
+        
+        if (broadcast1 != nil) {
+            broadcast1!.setValues()
+            updateKits(with: broadcast1!.kitsNeeded)
+            totalWasteFactor += broadcast1!.wasteFactor
+        }
+        
+        if (broadcast2 != nil) {
+            broadcast2!.setValues()
+            updateKits(with: broadcast2!.kitsNeeded)
+            totalWasteFactor += broadcast2!.wasteFactor
+        }
         
         capCoat.setValues()
         updateKits(with: capCoat.kitsNeeded)
@@ -137,10 +195,7 @@ class UPCColorQuartzSystem: System {
         topCoat.setValues()
         updateKits(with: topCoat.kitsNeeded)
         totalWasteFactor += topCoat.wasteFactor
-        
-        broadcast.setValues()
-        updateKits(with: broadcast.kitsNeeded)
-        totalWasteFactor += broadcast.wasteFactor
+
         
         if (primeCoat != nil) {
             primeCoat!.setValues()
@@ -155,27 +210,6 @@ class UPCColorQuartzSystem: System {
         }
 
     }
-    
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCSystem.Thickness) -> UPCCoat {
-        let upcCoat = UPCCoat()
-        upcCoat.squareFt = squareFt
-        upcCoat.coatType = coatType
-        upcCoat.thickness = thickness
-        
-        // Converts color quartz subtype to upc subtype
-        switch subType {
-        case .rc:
-            upcCoat.subType = .rc
-        case .tt:
-            upcCoat.subType = .tt
-        case .sl:
-            upcCoat.subType = .sl
-        case .mf:
-            upcCoat.subType = .mf
-        }
-        
-        return upcCoat
-      }
     
     func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool) -> TSCoat {
         let tsCoat = TSCoat()
@@ -206,14 +240,12 @@ class UPCColorQuartzSystem: System {
     
     func updateThickness() {
         switch subType {
-        case .rc:
-            break
-        case .tt:
-            thickness = .quartzTT
-        case .sl:
-            thickness = .medium
-        case .mf:
-            thickness = .medium
+        case .ts:
+            thickness = .oneEighth
+        case .db:
+            thickness = .threeSixteenth
+        case .sg:
+            thickness = .oneFourth
         }
     }
     

@@ -66,6 +66,13 @@
 		3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */; };
 		3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229D2C01332E00AF6CF8 /* CoatData.swift */; };
 		306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229F2C01335900AF6CF8 /* BroadcastData.swift */; };
+		30708B5B2C11097100AB838B /* EpoxyColorQuartzSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */; };
+		30708B632C1110EA00AB838B /* EpoxyColorQuartzBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5C2C1110EA00AB838B /* EpoxyColorQuartzBuildSubmitButton.swift */; };
+		30708B642C1110EA00AB838B /* EpoxyColorQuartzBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5D2C1110EA00AB838B /* EpoxyColorQuartzBuildSuite.swift */; };
+		30708B652C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5E2C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift */; };
+		30708B662C1110EA00AB838B /* EpoxyColorQuartzCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5F2C1110EA00AB838B /* EpoxyColorQuartzCoatOptions.swift */; };
+		30708B672C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B602C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift */; };
+		30708B682C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B612C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -236,6 +243,13 @@
 		3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastBuild.swift; sourceTree = "<group>"; };
 		3068229D2C01332E00AF6CF8 /* CoatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatData.swift; sourceTree = "<group>"; };
 		3068229F2C01335900AF6CF8 /* BroadcastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastData.swift; sourceTree = "<group>"; };
+		30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzSystem.swift; sourceTree = "<group>"; };
+		30708B5C2C1110EA00AB838B /* EpoxyColorQuartzBuildSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzBuildSubmitButton.swift; sourceTree = "<group>"; };
+		30708B5D2C1110EA00AB838B /* EpoxyColorQuartzBuildSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzBuildSuite.swift; sourceTree = "<group>"; };
+		30708B5E2C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzCoatEditorView.swift; sourceTree = "<group>"; };
+		30708B5F2C1110EA00AB838B /* EpoxyColorQuartzCoatOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzCoatOptions.swift; sourceTree = "<group>"; };
+		30708B602C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzSystemCommitButton.swift; sourceTree = "<group>"; };
+		30708B612C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzSystemSuite.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -409,6 +423,7 @@
 		3005955E2C0E5E9D0098F779 /* Color Quartz Views */ = {
 			isa = PBXGroup;
 			children = (
+				30708B622C1110EA00AB838B /* Epoxy Color Quartz Views */,
 				3005955F2C0E60860098F779 /* UPC Color Quartz Views */,
 			);
 			path = "Color Quartz Views";
@@ -487,6 +502,19 @@
 				3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */,
 			);
 			path = "Build Views";
+			sourceTree = "<group>";
+		};
+		30708B622C1110EA00AB838B /* Epoxy Color Quartz Views */ = {
+			isa = PBXGroup;
+			children = (
+				30708B5C2C1110EA00AB838B /* EpoxyColorQuartzBuildSubmitButton.swift */,
+				30708B5D2C1110EA00AB838B /* EpoxyColorQuartzBuildSuite.swift */,
+				30708B5E2C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift */,
+				30708B5F2C1110EA00AB838B /* EpoxyColorQuartzCoatOptions.swift */,
+				30708B602C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift */,
+				30708B612C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift */,
+			);
+			path = "Epoxy Color Quartz Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -837,6 +865,7 @@
 				3005953D2C08E6120098F779 /* EpoxyCoveSystem.swift */,
 				3005954E2C092D730098F779 /* UPCCoveSystem.swift */,
 				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
+				30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -1003,6 +1032,7 @@
 				3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */,
 				300595672C0E6D2A0098F779 /* UPCColorQuartzCoatEditorView.swift in Sources */,
 				3068227C2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift in Sources */,
+				30708B682C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift in Sources */,
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
 				306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */,
 				30B966DD2C06961700398E19 /* ColorSplashCoatEditorView.swift in Sources */,
@@ -1015,6 +1045,7 @@
 				300595362C081D7C0098F779 /* EpoxyMVRCoatEditorView.swift in Sources */,
 				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				300595422C0902740098F779 /* EpoxyCoveCoatOptions.swift in Sources */,
+				30708B5B2C11097100AB838B /* EpoxyColorQuartzSystem.swift in Sources */,
 				3005952B2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				300595612C0E60B80098F779 /* UPCColorQuartzSystemSuite.swift in Sources */,
@@ -1041,7 +1072,9 @@
 				3005955D2C0E391F0098F779 /* UPCColorQuartzSystem.swift in Sources */,
 				30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */,
 				303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */,
+				30708B662C1110EA00AB838B /* EpoxyColorQuartzCoatOptions.swift in Sources */,
 				30B966D72C06803600398E19 /* ColorSplashCoatOptions.swift in Sources */,
+				30708B642C1110EA00AB838B /* EpoxyColorQuartzBuildSuite.swift in Sources */,
 				30CAD9442BFE8F1800060449 /* UPCUniversalCoatSuite.swift in Sources */,
 				30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */,
 				306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */,
@@ -1060,11 +1093,13 @@
 				30CAD9402BFE7FB700060449 /* TSColorPicker.swift in Sources */,
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				3005953E2C08E6120098F779 /* EpoxyCoveSystem.swift in Sources */,
+				30708B652C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift in Sources */,
 				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
 				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
 				3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
+				30708B672C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
 				30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */,
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
@@ -1073,6 +1108,7 @@
 				306822882C002F7C00AF6CF8 /* PACoatBuild.swift in Sources */,
 				30A712D82B590225009C0268 /* GetProducts.swift in Sources */,
 				300595342C081CCC0098F779 /* EpoxyMVRSystemCommitButton.swift in Sources */,
+				30708B632C1110EA00AB838B /* EpoxyColorQuartzBuildSubmitButton.swift in Sources */,
 				30CC55962BF6C73100B7D409 /* DetailView.swift in Sources */,
 				30363FCB2C0E978400779632 /* UPCColorQuartzBuildSubmitButton.swift in Sources */,
 				309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */,
