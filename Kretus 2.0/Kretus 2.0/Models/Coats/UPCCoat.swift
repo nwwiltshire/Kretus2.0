@@ -348,11 +348,8 @@ class UPCCoat: Coat {
     override func setValues() {
         
         updateCovRate()
-        var availableProductsUPC = loadUpcList()
         
-        findProducts(products: availableProductsUPC)
-        
-        availableProductsUPC.removeAll()
+        findProducts()
         
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
