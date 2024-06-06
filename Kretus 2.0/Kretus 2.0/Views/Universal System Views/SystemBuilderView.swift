@@ -50,6 +50,22 @@ struct SystemBuilderView: View {
                             EpoxyMVRSystemSuite(epoxyMVRSystem: epoxyMVRSystem)
                         }
                         
+                        if let epoxyCoveSystem = currentBuild as? EpoxyCoveSystem {
+                            EpoxyCoveSystemSuite(epoxyCoveSystem: epoxyCoveSystem)
+                        }
+                        
+                        if let upcCoveSystem = currentBuild as? UPCCoveSystem {
+                            UPCCoveSystemSuite(upcCoveSystem: upcCoveSystem)
+                        }
+                        
+                        if let upcColorQuartzSystem = currentBuild as? UPCColorQuartzSystem {
+                            UPCColorQuartzSystemSuite(upcColorQuartzSystem: upcColorQuartzSystem)
+                        }
+                        
+                        if let epoxyColorQuartzSystem = currentBuild as? EpoxyColorQuartzSystem {
+                            EpoxyColorQuartzSystemSuite(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

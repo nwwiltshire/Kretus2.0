@@ -10,7 +10,7 @@ import SwiftUI
 
 class ColorSplashSystem: System {
     
-    @Published var subTypes: [SubType]
+    @Published var subTypes: [SubType] // In case it could be useful for documentation
     @Published var selectedSubType1: SubTypeBase
     @Published var selectedSubType2: SubType
     @Published var selectedSubType3: SubType

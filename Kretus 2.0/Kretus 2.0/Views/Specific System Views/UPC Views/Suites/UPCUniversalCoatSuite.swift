@@ -19,7 +19,9 @@ struct UPCUniversalCoatSuite: View {
             Text("Urethane Polymer Concrete")
                 .font(.title3)
             
-            UPCSpeedPicker(coat: upcCoat)
+            if (upcCoat.coatType != .mvr) {
+                UPCSpeedPicker(coat: upcCoat)
+            }
             CoatWasteFactorOptions(coat: upcCoat)
             UPCCoatColorPicker(upcCoat: upcCoat)
         }

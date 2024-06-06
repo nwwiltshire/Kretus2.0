@@ -87,7 +87,7 @@ class PACoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top1, top2, coat1, coat2, coat3
+        case base, prime, top1, top2, coat1, coat2, coat3, cap, top
         
         var id: Self { self }
         
@@ -100,6 +100,8 @@ class PACoat: Coat {
             case .coat1: return "Coat 1"
             case .coat2: return "Coat 2"
             case .coat3: return "Coat 3"
+            case .cap: return "Cap Coat"
+            case .top: return "Top Coat"
             }
         }
     }
@@ -183,7 +185,7 @@ class PACoat: Coat {
     }
     
     enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
-        case noTexture, asAo120, asAo220, asAo60, asAo80, asB100, asB50
+        case noTexture, asAo60, asAo80, asAo120, asAo220, asB100, asB50, asT50
         
         var id: Self { self }
         
@@ -191,12 +193,13 @@ class PACoat: Coat {
             switch self {
                 
             case .noTexture: return "No Texture"
-            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
-            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
             case .asAo60: return "Anti-Slip Aluminum Oxide 60 Grit"
             case .asAo80: return "Anti-Slip Aluminum Oxide 80 Grit"
+            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
+            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
             case .asB100: return "Anti-Slip Bead 100"
             case .asB50: return "Anti-Slip Bead 50"
+            case .asT50: return "Anti-Slip Tex 50"
             }
             
         }
@@ -219,129 +222,12 @@ class PACoat: Coat {
     override func setValues() {
         
         updateCovRate()
-        var availableProductsTS = loadPaList()
         
-        findProducts(products: availableProductsTS)
-        
-        availableProductsTS.removeAll()
+        findProducts()
         
         // Update Later to sqft/gal
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
-    }
-
-    override func findProducts(products: [Product]) {
-        
-        var textureProduct: Product = Product()
-        
-        switch self.subType {
-        case .poly72:
-            
-            self.partB = products.first(where: {$0.id == "EX-KPLY72AF-01"})!
-            
-            switch self.speed {
-            case .ez:
-                self.partA = products.first(where: {$0.id == "EX-KPLY72AZ-01"})!
-            case .fast:
-                self.partA = products.first(where: {$0.id == "EX-KPLY72AF-01"})!
-            }
-        case .poly85:
-            
-            self.partB = products.first(where: {$0.id == "EX-KPLY85B-01"})!
-            
-            switch self.speed {
-            case .ez:
-                self.partA = products.first(where: {$0.id == "EX-KPLY85AZ-01"})!
-            case .fast:
-                self.partA = products.first(where: {$0.id == "EX-KPLY85AF-01"})!
-            }
-        case .poly92LO:
-            
-            self.partB = products.first(where: {$0.id == "EX-KPLY92B-01"})!
-            
-            switch self.speed {
-            case .ez:
-                self.partA = products.first(where: {$0.id == "EX-KPLY92AZ-01"})!
-            case .fast:
-                self.partA = products.first(where: {$0.id == "EX-KPLY92AF-01"})!
-            }
-        }
-        
-        switch self.coatColorant {
-        case .noColor:
-            self.colorant = Product()
-        case .beige:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLBG-EA"})!
-        case .black:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLBL-EA"})!
-        case .darkGray:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLDG-EA"})!
-        case .enchantedGreen:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLEG-EA"})!
-        case .handicapBlue:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLHB-EA"})!
-        case .Latte:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLLT-EA"})!
-        case .lightGray:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLLG-EA"})!
-        case .mediumGray:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLMG-EA"})!
-        case .mocha:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLMC-EA"})!
-        case .safetyBlue:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLSB-EA"})!
-        case .safetyRed:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLSR-EA"})!
-        case .safetyYellow:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLSY-EA"})!
-        case .shadowGray:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLSG-EA"})!
-        case .tan:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLTN-EA"})!
-        case .tileRed:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLTR-EA"})!
-        case .white:
-            self.colorant = products.first(where: {$0.id == "EX-KPLYCLWH-EA"})!
-        }
-        
-        switch self.texture {
-        case .noTexture:
-            textureProduct = Product()
-        case .asAo120:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
-        case .asAo220:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
-        case .asAo60:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
-        case .asAo80:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 10#")
-        case .asB100:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
-        case .asB50:
-            textureProduct = Product(id: "Contact Distributor", name: "\(texture.description), 32 oz")
-        }
-        
-        productsNeeded.removeAll()
-        
-        productsNeeded.append(partA)
-        productsNeeded.append(partB)
-        
-        if (self.colorant.id != "Default") {
-            productsNeeded.append(colorant)
-        }
-        
-        if (self.texture != .noTexture) {
-            productsNeeded.append(textureProduct)
-        }
-        
-        if (self.solventCleaner) {
-            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
-        }
-        
-        if (self.mattingAdditive) {
-            productsNeeded.append(Product(id: "Matting Additive", name: "Matting Additive"))
-        }
-
     }
 
     override func printCoatTest() -> String {

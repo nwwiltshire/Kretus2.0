@@ -21,7 +21,7 @@ struct UPCSubSystemPicker: View {
             Spacer()
             
             Picker(selection: $upcSystem.subType, label: Text("")) {
-                ForEach(UPCSystem.SubType.allCases, id: \.self) { subType in
+                ForEach(UPCSystem.SubType.allCases.prefix(4), id: \.self) { subType in
                     Text(subType.description).tag(subType)
                 }
             }

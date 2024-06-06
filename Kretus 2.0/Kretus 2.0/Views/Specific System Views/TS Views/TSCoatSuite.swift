@@ -18,6 +18,7 @@ struct TSCoatSuite: View {
                 .font(.title)
             Text("Top Shelf Epoxy")
                 .font(.title2)
+            if (tsCoat.selectedPartA != .coveResin) {
             HStack {
                 Text("Part A")
                     .font(.headline)
@@ -25,7 +26,7 @@ struct TSCoatSuite: View {
                 Spacer()
                 
                 Picker(selection: $tsCoat.selectedPartA, label: Text("")) {
-                    ForEach(TSCoat.PartAs.allCases, id: \.self) { partA in
+                    ForEach(TSCoat.PartAs.allCases.prefix(20), id: \.self) { partA in
                         Text(partA.description).tag(partA)
                     }
                 }
@@ -35,7 +36,8 @@ struct TSCoatSuite: View {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
-                )
+            )
+        }
             HStack {
                 Text("Part B (Speed)")
                     .font(.headline)
@@ -54,6 +56,27 @@ struct TSCoatSuite: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.gray).opacity(0.25))
                 )
+            
+            if (tsCoat.coatType == .top) {
+                HStack {
+                    Text("Texture")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $tsCoat.texture, label: Text("")) {
+                        ForEach(TSCoat.Texture.allCases, id: \.self) { speed in
+                            Text(speed.description).tag(speed)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(.gray).opacity(0.25))
+                )
+            }
             
             TSColorPicker(tsCoat: tsCoat)
             

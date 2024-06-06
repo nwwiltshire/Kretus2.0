@@ -38,6 +38,8 @@ class UPCCoat: Coat {
     
     @Published var solventCleaner: Bool
     
+    @Published var coveHeight: UPCCoveSystem.Height
+    
     // Coverage Rate (focus is more on just how much product you need)
     // Coverage Rate is only dependent on thickness
     
@@ -60,7 +62,8 @@ class UPCCoat: Coat {
          texture2: UPCSystem.Texture,
          uvResistance: Bool,
          wasteFactor: Int,
-         solventCleaner: Bool) {
+         solventCleaner: Bool,
+         coveHeight: UPCCoveSystem.Height) {
         
         self.coatType = coatType
         self.subType = subType
@@ -76,6 +79,7 @@ class UPCCoat: Coat {
         self.texture2 = texture2
         self.uvResistance = uvResistance
         self.solventCleaner = solventCleaner
+        self.coveHeight = coveHeight
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -97,6 +101,7 @@ class UPCCoat: Coat {
         self.texture2 = .none
         self.uvResistance = false
         self.solventCleaner = false
+        self.coveHeight = .na
         
         super.init(id: 0,
                    name: "Default",
@@ -125,6 +130,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -141,6 +148,8 @@ class UPCCoat: Coat {
                     covRate = 14
                 case .thick:
                     covRate = 10
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -156,6 +165,8 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 25
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -171,7 +182,11 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 25
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .prime:
             switch subType {
@@ -189,6 +204,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -204,6 +221,8 @@ class UPCCoat: Coat {
                     covRate = 35
                 case .thick:
                     covRate = 36
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -219,6 +238,8 @@ class UPCCoat: Coat {
                     covRate = 41
                 case .thick:
                     covRate = 42
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -234,7 +255,11 @@ class UPCCoat: Coat {
                     covRate = 47
                 case .thick:
                     covRate = 48
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .top:
             switch subType {
@@ -252,6 +277,8 @@ class UPCCoat: Coat {
                     covRate = 0
                 case .thick:
                     covRate = 0
+                case .quartzTT:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -267,6 +294,8 @@ class UPCCoat: Coat {
                     covRate = 59
                 case .thick:
                     covRate = 60
+                case .quartzTT:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -282,6 +311,8 @@ class UPCCoat: Coat {
                     covRate = 65
                 case .thick:
                     covRate = 66
+                case .quartzTT:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -297,9 +328,19 @@ class UPCCoat: Coat {
                     covRate = 71
                 case .thick:
                     covRate = 72
+                case .quartzTT:
+                    break
                 }
+            case .wcvc:
+                break
             }
         case .coat1:
+            break
+        case .body:
+            break
+        case .cap:
+            break
+        case .mvr:
             break
         }
     }
@@ -307,158 +348,11 @@ class UPCCoat: Coat {
     override func setValues() {
         
         updateCovRate()
-        var availableProductsUPC = loadUpcList()
         
-        findProducts(products: availableProductsUPC)
-        
-        availableProductsUPC.removeAll()
+        findProducts()
         
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
-    }
-
-    
-    override func findProducts(products: [Product]) {
-        
-        switch self.subType {
-            
-            case .rc:
-                
-            self.partA = products.first(where: {$0.id == "EX-KUPCARC-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCRFC-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCZ6-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCA6-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCF6-EA"})!
-                
-            }
-            
-            case .tt:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCARC-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCTTC4-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCZ6-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCA6-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCRCF6-EA"})!
-                
-            }
-                
-            case .sl:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCASL8-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCSLC2-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLZ8-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLB8-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLF8-EA"})!
-                
-            }
-                
-            case .mf:
-            
-            self.partA = products.first(where: {$0.id == "EX-KUPCASL8-EA"})!
-            self.partC = products.first(where: {$0.id == "EX-KUPCMFC-EA"})!
-            
-            switch self.speed {
-                
-                case .ez:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLZ8-EA"})!
-                
-                case .ap:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLB8-EA"})!
-                
-                case .fc:
-                
-                self.partB = products.first(where: {$0.id == "EX-KUPCSLF8-EA"})!
-                
-            }
-        }
-        
-        switch self.coatColor {
-        case .unpigmented:
-            self.colorant = Product()
-        case .black:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBK-EA"})!
-        case .blue:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBL-EA"})!
-        case .bone:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLWG-EA"})!
-        case .brown:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLBR-EA"})!
-        case .clay:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCL-EA"})!
-        case .gray:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGY-EA"})!
-        case .green:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLGR-EA"})!
-        case .mustard:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLCY-EA"})!
-        case .red:
-            self.colorant = products.first(where: {$0.id == "EX-KUPCCLRD-EA"})!
-        }
-        
-        productsNeeded.removeAll()
-        
-        productsNeeded.append(partA)
-        productsNeeded.append(partB)
-        productsNeeded.append(partC)
-        
-        if (self.colorant.id != "Default") {
-            productsNeeded.append(colorant)
-        }
-        
-        if (self.coatType == .top) {
-            
-            if (self.texture1 != .none) {
-                productsNeeded.append(findTexture(texture: self.texture1, products: upcList))
-            }
-            
-            if (self.texture2 != .none) {
-                productsNeeded.append(findTexture(texture: self.texture2, products: upcList))
-            }
-        }
-        
-        if (self.uvResistance == true) {
-            productsNeeded.append(products.first(where: {$0.id == "EX-KPACEL-08"})!)
-        }
-        
-        if (self.solventCleaner) {
-            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
-        }
-
     }
 
     override func printCoatTest() -> String {

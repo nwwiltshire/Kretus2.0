@@ -50,6 +50,15 @@ struct SaveSystemView: View {
                                 if let epoxyMVRSystem = system as? EpoxyMVRSystem {
                                     epoxyMVRConvertToData(epoxyMVRSystem: epoxyMVRSystem)
                                 }
+                                if let epoxyCoveSystem = system as? EpoxyCoveSystem {
+                                    epoxyCoveConvertToData(epoxyCoveSystem: epoxyCoveSystem)
+                                }
+                                if let upcColorQuartzSystem = system as? UPCColorQuartzSystem {
+                                    upcColorQuartzConvertToData(upcColorQuartzSystem: upcColorQuartzSystem)
+                                }
+                                if let epoxyColorQuartzSystem = system as? EpoxyColorQuartzSystem {
+                                    epoxyColorQuartzConvertToData(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -262,6 +271,141 @@ struct SaveSystemView: View {
         }
         
         return coats
+    }
+    
+    private func epoxyCoveConvertToData(epoxyCoveSystem: EpoxyCoveSystem) {
+        let newSystem = SystemData(name: epoxyCoveSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: epoxyCoveSystem.imageName, viewColor: epoxyCoveSystem.viewColor.description, coats: [], subType: epoxyCoveSystem.subType.description, systemColor: "", squareFt: epoxyCoveSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: epoxyCoveSystem.kitsNeeded)
+        
+        newSystem.coats = epoxyCoveConvertCoats(epoxyCoveSystem: epoxyCoveSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func epoxyCoveConvertCoats(epoxyCoveSystem: EpoxyCoveSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "Prime Coat", subType: epoxyCoveSystem.primeCoat.selectedPartA.description, speed: epoxyCoveSystem.primeCoat.speed.description))
+        
+        coats.append(CoatData(coatType: "Body Coat", subType: epoxyCoveSystem.bodyCoat.selectedPartA.description, speed: epoxyCoveSystem.bodyCoat.speed.description))
+        
+        coats.append(CoatData(coatType: "Cap Coat", subType: epoxyCoveSystem.capCoat.selectedPartA.description, speed: epoxyCoveSystem.capCoat.speed.description))
+        
+        return coats
+    }
+    
+    private func upcColorQuartzConvertToData(upcColorQuartzSystem: UPCColorQuartzSystem) {
+        let newSystem = SystemData(name: upcColorQuartzSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcColorQuartzSystem.imageName, viewColor: upcColorQuartzSystem.viewColor.description, coats: [], subType: upcColorQuartzSystem.subType.description, systemColor: "", squareFt: upcColorQuartzSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: upcColorQuartzSystem.kitsNeeded)
+        
+        newSystem.coats = upcColorQuartzConvertCoats(upcColorQuartzSystem: upcColorQuartzSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func upcColorQuartzConvertCoats(upcColorQuartzSystem: UPCColorQuartzSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        coats.append(CoatData(coatType: "Base Coat", subType: upcColorQuartzSystem.baseCoat.subType.description, speed: upcColorQuartzSystem.baseCoat.speed.description))
+        
+        if let tsCap = upcColorQuartzSystem.capCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: tsCap.selectedPartA.description, speed: tsCap.speed.description))
+        }
+        
+        if let paCap = upcColorQuartzSystem.capCoat as? PACoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: paCap.subType.description, speed: paCap.speed.description))
+        }
+        
+        if let puCap = upcColorQuartzSystem.capCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: puCap.subType.description, speed: puCap.speed.description))
+        }
+        
+        if let tsTop = upcColorQuartzSystem.topCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: tsTop.selectedPartA.description, speed: tsTop.speed.description))
+        }
+        
+        if let paTop = upcColorQuartzSystem.topCoat as? PACoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: paTop.subType.description, speed: paTop.speed.description))
+        }
+        
+        if let puTop = upcColorQuartzSystem.topCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: puTop.subType.description, speed: puTop.speed.description))
+        }
+        
+        if (upcColorQuartzSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: upcColorQuartzSystem.primeCoat!.subType.description, speed: upcColorQuartzSystem.primeCoat!.speed.description))
+        }
+        
+        if (upcColorQuartzSystem.mvrCoat != nil) {
+            coats.append(CoatData(coatType: "MVR Coat", subType: upcColorQuartzSystem.mvrCoat!.subType.description, speed: upcColorQuartzSystem.mvrCoat!.speed.description))
+        }
+        
+        return coats
+        
+    }
+    
+    private func epoxyColorQuartzConvertToData(epoxyColorQuartzSystem: EpoxyColorQuartzSystem) {
+        let newSystem = SystemData(name: epoxyColorQuartzSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: epoxyColorQuartzSystem.imageName, viewColor: epoxyColorQuartzSystem.viewColor.description, coats: [], subType: epoxyColorQuartzSystem.subType.description, systemColor: "", squareFt: epoxyColorQuartzSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: epoxyColorQuartzSystem.kitsNeeded)
+        
+        newSystem.coats = epoxyColorQuartzConvertCoats(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func epoxyColorQuartzConvertCoats(epoxyColorQuartzSystem: EpoxyColorQuartzSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        if (epoxyColorQuartzSystem.subType != .db) {
+            coats.append(CoatData(coatType: "Base Coat", subType: epoxyColorQuartzSystem.baseCoat!.selectedPartA.description, speed: epoxyColorQuartzSystem.baseCoat!.speed.description))
+        } else {
+            coats.append(CoatData(coatType: "Base Coat 1", subType: epoxyColorQuartzSystem.baseCoat1!.selectedPartA.description, speed: epoxyColorQuartzSystem.baseCoat1!.speed.description))
+            coats.append(CoatData(coatType: "Base Coat 2", subType: epoxyColorQuartzSystem.baseCoat2!.selectedPartA.description, speed: epoxyColorQuartzSystem.baseCoat2!.speed.description))
+        }
+        
+        if let tsCap = epoxyColorQuartzSystem.capCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: tsCap.selectedPartA.description, speed: tsCap.speed.description))
+        }
+        
+        if let paCap = epoxyColorQuartzSystem.capCoat as? PACoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: paCap.subType.description, speed: paCap.speed.description))
+        }
+        
+        if let puCap = epoxyColorQuartzSystem.capCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: puCap.subType.description, speed: puCap.speed.description))
+        }
+        
+        if let tsTop = epoxyColorQuartzSystem.topCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: tsTop.selectedPartA.description, speed: tsTop.speed.description))
+        }
+        
+        if let paTop = epoxyColorQuartzSystem.topCoat as? PACoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: paTop.subType.description, speed: paTop.speed.description))
+        }
+        
+        if let puTop = epoxyColorQuartzSystem.topCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: puTop.subType.description, speed: puTop.speed.description))
+        }
+        
+        if (epoxyColorQuartzSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: epoxyColorQuartzSystem.primeCoat!.selectedPartA.description, speed: epoxyColorQuartzSystem.primeCoat!.speed.description))
+        }
+        
+        if (epoxyColorQuartzSystem.mvrCoat != nil) {
+            coats.append(CoatData(coatType: "MVR Coat", subType: epoxyColorQuartzSystem.mvrCoat!.selectedPartA.description, speed: epoxyColorQuartzSystem.mvrCoat!.speed.description))
+        }
+
+        return coats
+        
     }
 
 

@@ -13,7 +13,7 @@ struct ColorSplashSystemSuite: View {
     @ObservedObject var colorSplashSystem: ColorSplashSystem
     
     var body: some View {
-        VStack {
+        ScrollView {
             ColorSplashCoatOptions(colorSplashSystem: colorSplashSystem)
             ColorSplashSystemCommitButton(colorSplashSystem: colorSplashSystem)
         }

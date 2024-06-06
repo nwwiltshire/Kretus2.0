@@ -66,6 +66,27 @@ struct PACoatSuite: View {
                     Spacer()
                     
                     Picker(selection: $paCoat.texture, label: Text("")) {
+                        ForEach(PACoat.Texture.allCases.prefix(7), id: \.self) { speed in
+                            Text(speed.description).tag(speed)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(.gray).opacity(0.25))
+                )
+            }
+            
+            if (paCoat.coatType == .top) {
+                HStack {
+                    Text("Texture")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    Picker(selection: $paCoat.texture, label: Text("")) {
                         ForEach(PACoat.Texture.allCases, id: \.self) { speed in
                             Text(speed.description).tag(speed)
                         }

@@ -23,9 +23,13 @@ class TSCoat: Coat {
     @Published var colorant: Product
     
     @Published var thickness: TSCoat.Thickness
+    @Published var coveHeight: EpoxyCoveSystem.Height
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
+    
+    @Published var hasColorQuartz: Bool
+    @Published var texture: Texture
     
     init(id: Int,
          name: String,
@@ -41,9 +45,12 @@ class TSCoat: Coat {
          coatColorant: TSCoat.CoatColorant,
          colorant: Product,
          thickness: TSCoat.Thickness,
+         coveHeight: EpoxyCoveSystem.Height,
          wasteFactor: Int,
          solventCleaner: Bool,
-         mattingAdditive: Bool) {
+         mattingAdditive: Bool,
+         hasColorQuartz: Bool,
+         texture: Texture) {
         
         self.coatType = coatType
         self.speed = speed
@@ -54,8 +61,11 @@ class TSCoat: Coat {
         self.coatColorant = coatColorant
         self.colorant = colorant
         self.thickness = thickness
+        self.coveHeight = coveHeight
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
+        self.hasColorQuartz = hasColorQuartz
+        self.texture = texture
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
@@ -72,8 +82,11 @@ class TSCoat: Coat {
         self.coatColorant = .noColor
         self.colorant = Product()
         self.thickness = .base
+        self.coveHeight = .na
         self.solventCleaner = false
         self.mattingAdditive = false
+        self.hasColorQuartz = false
+        self.texture = .noTexture
         
         super.init(id: 0,
                    name: "Top Shelf Epoxy",
@@ -84,19 +97,23 @@ class TSCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, mvr, coat1, coat2, coat3
+        case base, base1, base2, prime, top, mvr, coat1, coat2, coat3, body, cap
         
         var id: Self { self }
         
         var description: String {
             switch self {
             case .base: return "Base Coat"
+            case .base1: return "Base Coat 1"
+            case .base2: return "Base Coat 2"
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
             case .mvr: return "MVR Coat"
             case .coat1: return "Coat 1"
             case .coat2: return "Coat 2"
             case .coat3: return "Coat 3"
+            case .body: return "Body Coat"
+            case .cap: return "Cap Coat"
             }
         }
     }
@@ -122,7 +139,7 @@ class TSCoat: Coat {
     enum PartAs: CaseIterable, Identifiable, CustomStringConvertible {
         case arBeige, arBlack, arClear, arDarkGrey, arEnchantedGreen, arHandicapBlue, arLatte,
              arLightGray, arMediumGray, arMocha, arSafetyBlue, arSafetyRed, arSafetyYellow,
-             arShadowGray, arTan, arTileRed, arWhite, crrClear, lgrClear, commercial
+             arShadowGray, arTan, arTileRed, arWhite, crrClear, lgrClear, commercial, coveResin
         
         var id: Self {self}
         
@@ -149,6 +166,7 @@ class TSCoat: Coat {
             case .crrClear: return "CR Resin - Clear"
             case .lgrClear: return "LG Resin - Clear"
             case .commercial: return "Commercial Resin"
+            case .coveResin: return "Cove Resin - Clear"
                 
             }
         }
@@ -186,7 +204,7 @@ class TSCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, mvr
+        case base, prime, mvr, fourIn, sixIn
         
         var id: Self { self }
         
@@ -196,8 +214,31 @@ class TSCoat: Coat {
             case .base: return "8-12 mils"
             case .prime: return "3-5 mils"
             case .mvr: return "16 mils"
+            case .fourIn: return "4\""
+            case .sixIn: return "6\""
                 
             }
+        }
+    }
+    
+    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
+        case noTexture, asAo60, asAo80, asAo120, asAo220, asB100, asB50, asT50
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+                
+            case .noTexture: return "No Texture"
+            case .asAo60: return "Anti-Slip Aluminum Oxide 60 Grit"
+            case .asAo80: return "Anti-Slip Aluminum Oxide 80 Grit"
+            case .asAo120: return "Anti-Slip Aluminum Oxide 120 Grit"
+            case .asAo220: return "Anti-Slip Aluminum Oxide 220 Grit"
+            case .asB100: return "Anti-Slip Bead 100"
+            case .asB50: return "Anti-Slip Bead 50"
+            case .asT50: return "Anti-Slip Tex 50"
+            }
+            
         }
     }
     
@@ -218,138 +259,26 @@ class TSCoat: Coat {
             break
         case .coat3:
             break
+        case .body:
+            break
+        case .cap:
+            break
+        case .base1:
+            break
+        case .base2:
+            break
         }
     }
     
     override func setValues() {
         
         updateCovRate()
-        var availableProductsTS = loadTsList()
         
-        findProducts(products: availableProductsTS)
-        
-        availableProductsTS.removeAll()
+        findProducts()
         
         // Update Later to sqft/gal
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
-    }
-
-    
-    override func findProducts(products: [Product]) {
-        
-        switch self.selectedPartA {
-        case .arBeige:
-            self.partA = products.first(where: {$0.id == "EX-KTSARBG-01"})!
-        case .arBlack:
-            self.partA = products.first(where: {$0.id == "EX-KTSARBL-01"})!
-        case .arClear:
-            self.partA = products.first(where: {$0.id == "EX-KTSARCL-01"})!
-        case .arDarkGrey:
-            self.partA = products.first(where: {$0.id == "EX-KTSARDG-01"})!
-        case .arEnchantedGreen:
-            self.partA = products.first(where: {$0.id == "EX-KTSAREG-01"})!
-        case .arHandicapBlue:
-            self.partA = products.first(where: {$0.id == "EX-KTSARHB-01"})!
-        case .arLatte:
-            self.partA = products.first(where: {$0.id == "EX-KTSARLT-01"})!
-        case .arLightGray:
-            self.partA = products.first(where: {$0.id == "EX-KTSARLG-01"})!
-        case .arMediumGray:
-            self.partA = products.first(where: {$0.id == "EX-KTSARMG-01"})!
-        case .arMocha:
-            self.partA = products.first(where: {$0.id == "EX-KTSARMH-01"})!
-        case .arSafetyBlue:
-            self.partA = products.first(where: {$0.id == "EX-KTSARSB-01"})!
-        case .arSafetyRed:
-            self.partA = products.first(where: {$0.id == "EX-KTSARSR-01"})!
-        case .arSafetyYellow:
-            self.partA = products.first(where: {$0.id == "EX-KTSARSY-01"})!
-        case .arShadowGray:
-            self.partA = products.first(where: {$0.id == "EX-KTSARSG-01"})!
-        case .arTan:
-            self.partA = products.first(where: {$0.id == "EX-KTSARTN-01"})!
-        case .arTileRed:
-            self.partA = products.first(where: {$0.id == "EX-KTSARTR-01"})!
-        case .arWhite:
-            self.partA = products.first(where: {$0.id == "EX-KTSARWH-01"})!
-        case .crrClear:
-            self.partA = products.first(where: {$0.id == "EX-KTSEMVZB-EA"})!
-        case .lgrClear:
-            self.partA = products.first(where: {$0.id == "Contact Distributor lg"})!
-        case .commercial:
-            self.partA = products.first(where: {$0.id == "FG-TSECMRCLR-01G"})!
-        }
-        
-        switch self.speed {
-        case .ap:
-            self.partB = products.first(where: {$0.id == "EX-KTSEAPB-EA"})!
-        case .ez:
-            self.partB = products.first(where: {$0.id == "EX-KTSEZB-EA"})!
-        case .fast:
-            self.partB = products.first(where: {$0.id == "EX-KTSEFB-EA"})!
-        case .th:
-            self.partB = products.first(where: {$0.id == "EX-KTSETHB-EA"})!
-        case .mvrEz:
-            self.partB = products.first(where: {$0.id == "EX-KTSEMVZB-EA"})!
-        case .mvrFc:
-            self.partB = products.first(where: {$0.id == "EX-KTSEMVFB-EA"})!
-        }
-        
-        switch self.coatColorant {
-        case .noColor:
-            self.colorant = Product()
-        case .beige:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLBG-EA"})!
-        case .black:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLBL-EA"})!
-        case .darkGray:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLDG-EA"})!
-        case .enchantedGreen:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLEG-EA"})!
-        case .handicapBlue:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLHB-EA"})!
-        case .Latte:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLLT-EA"})!
-        case .lightGray:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLLG-EA"})!
-        case .mediumGray:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLMG-EA"})!
-        case .mocha:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLMC-EA"})!
-        case .safetyBlue:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLSB-EA"})!
-        case .safetyRed:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLSR-EA"})!
-        case .safetyYellow:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLSY-EA"})!
-        case .shadowGray:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLSG-EA"})!
-        case .tan:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLTN-EA"})!
-        case .tileRed:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLTR-EA"})!
-        case .white:
-            self.colorant = products.first(where: {$0.id == "EX-KTSECLWH-EA"})!
-        }
-        
-        productsNeeded.removeAll()
-        
-        productsNeeded.append(partA)
-        productsNeeded.append(partB)
-        
-        if (self.colorant.id != "Default") {
-            productsNeeded.append(colorant)
-        }
-        
-        if (self.solventCleaner) {
-            productsNeeded.append(Product(id: "Solvent Cleaner", name: "Solvent Cleaner"))
-        }
-        
-        if (self.mattingAdditive) {
-            productsNeeded.append(Product(id: "Matting Additive", name: "Matting Additive"))
-        }
-
     }
 
     override func printCoatTest() -> String {
