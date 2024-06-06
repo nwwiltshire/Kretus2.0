@@ -94,7 +94,7 @@ class ColorChipBroadcast: Broadcast {
         
     }
 
-    func findProducts() {
+    override func findProducts() {
         
         var broadcastProduct: Product = Product()
         

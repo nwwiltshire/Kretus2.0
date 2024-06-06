@@ -77,6 +77,8 @@
 		30708B6C2C121D8C00AB838B /* TSProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B6B2C121D8C00AB838B /* TSProducts.swift */; };
 		30708B6E2C121D9A00AB838B /* PAProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B6D2C121D9A00AB838B /* PAProducts.swift */; };
 		30708B702C121D9F00AB838B /* PUProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B6F2C121D9F00AB838B /* PUProducts.swift */; };
+		30708B722C12372E00AB838B /* IndustrialSandBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */; };
+		30708B742C12399200AB838B /* EpoxyIndustrialSand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -254,6 +256,8 @@
 		30708B6B2C121D8C00AB838B /* TSProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSProducts.swift; sourceTree = "<group>"; };
 		30708B6D2C121D9A00AB838B /* PAProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAProducts.swift; sourceTree = "<group>"; };
 		30708B6F2C121D9F00AB838B /* PUProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUProducts.swift; sourceTree = "<group>"; };
+		30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialSandBroadcast.swift; sourceTree = "<group>"; };
+		30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSand.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 			children = (
 				306822942C011F1400AF6CF8 /* Broadcast.swift */,
 				306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */,
+				30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */,
 			);
 			path = Broadcasts;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				3005954E2C092D730098F779 /* UPCCoveSystem.swift */,
 				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
 				30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */,
+				30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -1037,6 +1043,7 @@
 				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				300595422C0902740098F779 /* EpoxyCoveCoatOptions.swift in Sources */,
 				30708B5B2C11097100AB838B /* EpoxyColorQuartzSystem.swift in Sources */,
+				30708B742C12399200AB838B /* EpoxyIndustrialSand.swift in Sources */,
 				3005952B2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				300595612C0E60B80098F779 /* UPCColorQuartzSystemSuite.swift in Sources */,
@@ -1115,6 +1122,7 @@
 				309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */,
 				303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */,
 				30AC30362B8442060073BB93 /* UPCBaseCoatSuite.swift in Sources */,
+				30708B722C12372E00AB838B /* IndustrialSandBroadcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
