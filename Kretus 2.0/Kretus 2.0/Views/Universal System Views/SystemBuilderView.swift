@@ -66,6 +66,10 @@ struct SystemBuilderView: View {
                             EpoxyColorQuartzSystemSuite(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
                         }
                         
+                        if let epoxyIndustrialSandSystem = currentBuild as? EpoxyIndustrialSandSystem {
+                            EpoxyIndustrialSandSystemSuite(epoxyIndustrialSandSystem: epoxyIndustrialSandSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

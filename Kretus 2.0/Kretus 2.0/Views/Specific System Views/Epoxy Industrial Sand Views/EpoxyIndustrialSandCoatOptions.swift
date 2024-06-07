@@ -1,17 +1,17 @@
 //
-//  EpoxyColorQuartzCoatOptions.swift
+//  EpoxyIndustrialSandCoatOptions.swift
 //  Kretus 2.0
 //
-//  Created by Nick Wiltshire on 6/3/24.
+//  Created by Nick Wiltshire on 6/7/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct EpoxyColorQuartzCoatOptions: View {
-    
-    @ObservedObject var epoxyColorQuartzSystem: EpoxyColorQuartzSystem
-    
+struct EpoxyIndustrialSandCoatOptions: View {
+ 
+    @ObservedObject var epoxyIndustrialSandSystem: EpoxyIndustrialSandSystem
+
     var body: some View {
         VStack {
             HStack {
@@ -21,8 +21,8 @@ struct EpoxyColorQuartzCoatOptions: View {
                 
                 Spacer()
                 
-                Picker(selection: $epoxyColorQuartzSystem.subType, label: Text("")) {
-                    ForEach(EpoxyColorQuartzSystem.SubType.allCases, id: \.self) { subType in
+                Picker(selection: $epoxyIndustrialSandSystem.subType, label: Text("")) {
+                    ForEach(EpoxyIndustrialSandSystem.SubType.allCases, id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }
@@ -31,13 +31,13 @@ struct EpoxyColorQuartzCoatOptions: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                    .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
             )
-            if (epoxyColorQuartzSystem.subType == .sg) {
+            if (epoxyIndustrialSandSystem.subType == .sg) {
                 VStack {
                     Text("Thickness")
-                    Picker(selection: $epoxyColorQuartzSystem.thickness, label: Text("")) {
-                        ForEach(EpoxyColorQuartzSystem.Thickness.allCases, id: \.self) { subType in Text(subType.description).tag(subType)
+                    Picker(selection: $epoxyIndustrialSandSystem.thickness, label: Text("")) {
+                        ForEach(EpoxyIndustrialSandSystem.Thickness.allCases, id: \.self) { subType in Text(subType.description).tag(subType)
                         }
                     }
                     .pickerStyle(PalettePickerStyle())
@@ -45,11 +45,11 @@ struct EpoxyColorQuartzCoatOptions: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                        .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                 )
             }
             VStack {
-                if (epoxyColorQuartzSystem.subType != .db) {
+                if (epoxyIndustrialSandSystem.subType != .db) {
                     Toggle(isOn: .constant(true)) {
                         Text("Base Coat")
                     }
@@ -64,14 +64,14 @@ struct EpoxyColorQuartzCoatOptions: View {
                 }
                 
                 Toggle(isOn: Binding(
-                    get: { self.epoxyColorQuartzSystem.primeCoat != nil },
-                    set: { if !$0 { self.epoxyColorQuartzSystem.primeCoat = nil } else { self.epoxyColorQuartzSystem.primeCoat = TSCoat() } }
+                    get: { self.epoxyIndustrialSandSystem.primeCoat != nil },
+                    set: { if !$0 { self.epoxyIndustrialSandSystem.primeCoat = nil } else { self.epoxyIndustrialSandSystem.primeCoat = TSCoat() } }
                 )) {
                     Text("Prime Coat")
                 }
                 Toggle(isOn: Binding(
-                    get: { self.epoxyColorQuartzSystem.mvrCoat != nil },
-                    set: { if !$0 { self.epoxyColorQuartzSystem.mvrCoat = nil } else { self.epoxyColorQuartzSystem.mvrCoat = TSCoat() } }
+                    get: { self.epoxyIndustrialSandSystem.mvrCoat != nil },
+                    set: { if !$0 { self.epoxyIndustrialSandSystem.mvrCoat = nil } else { self.epoxyIndustrialSandSystem.mvrCoat = TSCoat() } }
                 )) {
                     Text("MVR Coat")
                 }
@@ -79,7 +79,7 @@ struct EpoxyColorQuartzCoatOptions: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                    .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                 )
                 
                 HStack {
@@ -87,8 +87,8 @@ struct EpoxyColorQuartzCoatOptions: View {
                     
                     Spacer()
                     
-                    Picker(selection: $epoxyColorQuartzSystem.capCoatSubType, label: Text("")) {
-                        ForEach(EpoxyColorQuartzSystem.CapAndTopCoatSubType.allCases, id: \.self) { subType in
+                    Picker(selection: $epoxyIndustrialSandSystem.capCoatSubType, label: Text("")) {
+                        ForEach(EpoxyIndustrialSandSystem.CapAndTopCoatSubType.allCases, id: \.self) { subType in
                             Text(subType.description).tag(subType)
                         }
                     }
@@ -97,25 +97,25 @@ struct EpoxyColorQuartzCoatOptions: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                        .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                     )
                 HStack {
-                    Toggle(isOn: $epoxyColorQuartzSystem.capMattingAdditive) {
+                    Toggle(isOn: $epoxyIndustrialSandSystem.capMattingAdditive) {
                         Text("Cap Coat Matting Additive")
                     }
                 }
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                    .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                 )
                 HStack {
                     Text("Top Coat Type")
                     
                     Spacer()
                     
-                    Picker(selection: $epoxyColorQuartzSystem.topCoatSubType, label: Text("")) {
-                        ForEach(EpoxyColorQuartzSystem.CapAndTopCoatSubType.allCases, id: \.self) { subType in
+                    Picker(selection: $epoxyIndustrialSandSystem.topCoatSubType, label: Text("")) {
+                        ForEach(EpoxyIndustrialSandSystem.CapAndTopCoatSubType.allCases, id: \.self) { subType in
                             Text(subType.description).tag(subType)
                         }
                     }
@@ -124,33 +124,52 @@ struct EpoxyColorQuartzCoatOptions: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                        .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                     )
                 HStack {
-                    Toggle(isOn: $epoxyColorQuartzSystem.topMattingAdditive) {
+                    Toggle(isOn: $epoxyIndustrialSandSystem.topMattingAdditive) {
                         Text("Top Coat Matting Additive")
                     }
                 }
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                    .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
                 )
             
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(epoxyColorQuartzSystem.viewColor).opacity(0.25))
+                .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
         )
     }
 }
 
-struct EpoxyColorQuartzCoatOptions_Previews: PreviewProvider {
+struct EpoxyIndustrialSandCoatOptions_Previews: PreviewProvider {
     static var previews: some View {
-        let mockSystem = EpoxyColorQuartzSystem()
-        
-        EpoxyColorQuartzCoatOptions(epoxyColorQuartzSystem: mockSystem)
+        let mockSystem = EpoxyIndustrialSandSystem()
+
+        EpoxyIndustrialSandCoatOptions(epoxyIndustrialSandSystem: mockSystem)
     }
 }
 
+/*
+ struct EpoxyIndustrialSandCoatOptions: View {
+  
+     @ObservedObject var epoxyIndustrialSandSystem: EpoxyIndustrialSandSystem
+
+     var body: some View {
+         Text("Hello")
+         
+     }
+ }
+
+ struct EpoxyIndustrialSandCoatOptions_Previews: PreviewProvider {
+     static var previews: some View {
+         let mockSystem = EpoxyIndustrialSandSystem()
+
+         EpoxyIndustrialSandCoatOptions(epoxyIndustrialSandSystem: mockSystem)
+     }
+ }
+ */

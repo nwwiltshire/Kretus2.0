@@ -37,6 +37,7 @@ class UPCCoat: Coat {
     @Published var uvResistance: Bool
     
     @Published var solventCleaner: Bool
+    @Published var mattingAdditive: Bool
     
     @Published var coveHeight: UPCCoveSystem.Height
     
@@ -63,6 +64,7 @@ class UPCCoat: Coat {
          uvResistance: Bool,
          wasteFactor: Int,
          solventCleaner: Bool,
+         mattingAdditive: Bool,
          coveHeight: UPCCoveSystem.Height) {
         
         self.coatType = coatType
@@ -79,6 +81,7 @@ class UPCCoat: Coat {
         self.texture2 = texture2
         self.uvResistance = uvResistance
         self.solventCleaner = solventCleaner
+        self.mattingAdditive = mattingAdditive
         self.coveHeight = coveHeight
         
         super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
@@ -101,6 +104,7 @@ class UPCCoat: Coat {
         self.texture2 = .none
         self.uvResistance = false
         self.solventCleaner = false
+        self.mattingAdditive = false
         self.coveHeight = .na
         
         super.init(id: 0,
@@ -187,6 +191,8 @@ class UPCCoat: Coat {
                 }
             case .wcvc:
                 break
+            case .rcuv:
+                break
             }
         case .prime:
             switch subType {
@@ -260,6 +266,8 @@ class UPCCoat: Coat {
                 }
             case .wcvc:
                 break
+            case .rcuv:
+                break
             }
         case .top:
             switch subType {
@@ -332,6 +340,8 @@ class UPCCoat: Coat {
                     break
                 }
             case .wcvc:
+                break
+            case .rcuv:
                 break
             }
         case .coat1:

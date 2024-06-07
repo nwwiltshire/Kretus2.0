@@ -61,7 +61,7 @@ class UPCSystem: System {
     }
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case rc, tt, sl, mf, wcvc
+        case rc, tt, sl, mf, wcvc, rcuv
         
         var id: Self { self }
         
@@ -72,6 +72,7 @@ class UPCSystem: System {
             case .sl: return "SL (Self Leveling)"
             case .mf: return "MF (Medium Fill SL)"
             case .wcvc: return "WC/VC"
+            case .rcuv: return "RC UV"
             }
         }
     }

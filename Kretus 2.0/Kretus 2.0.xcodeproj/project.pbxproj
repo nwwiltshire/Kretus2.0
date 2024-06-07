@@ -63,7 +63,7 @@
 		306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822942C011F1400AF6CF8 /* Broadcast.swift */; };
 		306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */; };
 		306822992C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */; };
-		3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */; };
+		3068229C2C0125FD00AF6CF8 /* BroadcastBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229B2C0125FD00AF6CF8 /* BroadcastBuild.swift */; };
 		3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229D2C01332E00AF6CF8 /* CoatData.swift */; };
 		306822A02C01335900AF6CF8 /* BroadcastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068229F2C01335900AF6CF8 /* BroadcastData.swift */; };
 		30708B5B2C11097100AB838B /* EpoxyColorQuartzSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */; };
@@ -78,7 +78,15 @@
 		30708B6E2C121D9A00AB838B /* PAProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B6D2C121D9A00AB838B /* PAProducts.swift */; };
 		30708B702C121D9F00AB838B /* PUProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B6F2C121D9F00AB838B /* PUProducts.swift */; };
 		30708B722C12372E00AB838B /* IndustrialSandBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */; };
-		30708B742C12399200AB838B /* EpoxyIndustrialSand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */; };
+		30708B742C12399200AB838B /* EpoxyIndustrialSandSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B732C12399200AB838B /* EpoxyIndustrialSandSystem.swift */; };
+		30708B792C13A04400AB838B /* EpoxyIndustrialSandCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B782C13A04400AB838B /* EpoxyIndustrialSandCoatOptions.swift */; };
+		30708B7B2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B7A2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift */; };
+		30708B7D2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B7C2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift */; };
+		30708B802C13A4B300AB838B /* IndustrialSandBroadcastPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B7F2C13A4B200AB838B /* IndustrialSandBroadcastPicker.swift */; };
+		30708B822C13A5B100AB838B /* EpoxyIndustrialSandBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B812C13A5B100AB838B /* EpoxyIndustrialSandBuildSubmitButton.swift */; };
+		30708B842C13A60000AB838B /* EpoxyIndustrialSandBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B832C13A60000AB838B /* EpoxyIndustrialSandBuildSuite.swift */; };
+		30708B882C13A8F800AB838B /* EpoxyIndustrialSandSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B872C13A8F800AB838B /* EpoxyIndustrialSandSystemSuite.swift */; };
+		30708B8A2C13BAB100AB838B /* UPCIndustrialSandSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B892C13BAB100AB838B /* UPCIndustrialSandSystem.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
@@ -242,7 +250,7 @@
 		306822942C011F1400AF6CF8 /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
 		306822962C011F7100AF6CF8 /* ColorChipBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcast.swift; sourceTree = "<group>"; };
 		306822982C01238500AF6CF8 /* BroadcastWasteFactorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastWasteFactorOptions.swift; sourceTree = "<group>"; };
-		3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipBroadcastBuild.swift; sourceTree = "<group>"; };
+		3068229B2C0125FD00AF6CF8 /* BroadcastBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastBuild.swift; sourceTree = "<group>"; };
 		3068229D2C01332E00AF6CF8 /* CoatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatData.swift; sourceTree = "<group>"; };
 		3068229F2C01335900AF6CF8 /* BroadcastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastData.swift; sourceTree = "<group>"; };
 		30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyColorQuartzSystem.swift; sourceTree = "<group>"; };
@@ -257,7 +265,15 @@
 		30708B6D2C121D9A00AB838B /* PAProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAProducts.swift; sourceTree = "<group>"; };
 		30708B6F2C121D9F00AB838B /* PUProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUProducts.swift; sourceTree = "<group>"; };
 		30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialSandBroadcast.swift; sourceTree = "<group>"; };
-		30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSand.swift; sourceTree = "<group>"; };
+		30708B732C12399200AB838B /* EpoxyIndustrialSandSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandSystem.swift; sourceTree = "<group>"; };
+		30708B782C13A04400AB838B /* EpoxyIndustrialSandCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandCoatOptions.swift; sourceTree = "<group>"; };
+		30708B7A2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandSystemCommitButton.swift; sourceTree = "<group>"; };
+		30708B7C2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandCoatEditorView.swift; sourceTree = "<group>"; };
+		30708B7F2C13A4B200AB838B /* IndustrialSandBroadcastPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialSandBroadcastPicker.swift; sourceTree = "<group>"; };
+		30708B812C13A5B100AB838B /* EpoxyIndustrialSandBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandBuildSubmitButton.swift; sourceTree = "<group>"; };
+		30708B832C13A60000AB838B /* EpoxyIndustrialSandBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandBuildSuite.swift; sourceTree = "<group>"; };
+		30708B872C13A8F800AB838B /* EpoxyIndustrialSandSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpoxyIndustrialSandSystemSuite.swift; sourceTree = "<group>"; };
+		30708B892C13BAB100AB838B /* UPCIndustrialSandSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCIndustrialSandSystem.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
@@ -494,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
-				3068229B2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift */,
 			);
 			path = "Build Views";
 			sourceTree = "<group>";
@@ -510,6 +525,29 @@
 				30708B612C1110EA00AB838B /* EpoxyColorQuartzSystemSuite.swift */,
 			);
 			path = "Epoxy Color Quartz Views";
+			sourceTree = "<group>";
+		};
+		30708B772C13A01E00AB838B /* Epoxy Industrial Sand Views */ = {
+			isa = PBXGroup;
+			children = (
+				30708B782C13A04400AB838B /* EpoxyIndustrialSandCoatOptions.swift */,
+				30708B7A2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift */,
+				30708B7C2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift */,
+				30708B812C13A5B100AB838B /* EpoxyIndustrialSandBuildSubmitButton.swift */,
+				30708B832C13A60000AB838B /* EpoxyIndustrialSandBuildSuite.swift */,
+				30708B872C13A8F800AB838B /* EpoxyIndustrialSandSystemSuite.swift */,
+			);
+			path = "Epoxy Industrial Sand Views";
+			sourceTree = "<group>";
+		};
+		30708B7E2C13A4A000AB838B /* Broadcast Views */ = {
+			isa = PBXGroup;
+			children = (
+				3068229B2C0125FD00AF6CF8 /* BroadcastBuild.swift */,
+				3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */,
+				30708B7F2C13A4B200AB838B /* IndustrialSandBroadcastPicker.swift */,
+			);
+			path = "Broadcast Views";
 			sourceTree = "<group>";
 		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
@@ -751,6 +789,8 @@
 		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
 			isa = PBXGroup;
 			children = (
+				30708B7E2C13A4A000AB838B /* Broadcast Views */,
+				30708B772C13A01E00AB838B /* Epoxy Industrial Sand Views */,
 				3005955E2C0E5E9D0098F779 /* Color Quartz Views */,
 				3005953F2C0902520098F779 /* Cove Views */,
 				3005952E2C081B5F0098F779 /* Epoxy MVR Views */,
@@ -777,7 +817,6 @@
 			children = (
 				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
 				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
-				3068228B2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift */,
 				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
 			);
 			path = "System Editors";
@@ -863,7 +902,8 @@
 				3005954E2C092D730098F779 /* UPCCoveSystem.swift */,
 				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
 				30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */,
-				30708B732C12399200AB838B /* EpoxyIndustrialSand.swift */,
+				30708B732C12399200AB838B /* EpoxyIndustrialSandSystem.swift */,
+				30708B892C13BAB100AB838B /* UPCIndustrialSandSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -1010,6 +1050,7 @@
 				306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */,
 				30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
+				30708B7D2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift in Sources */,
 				300595632C0E62CD0098F779 /* UPCColorQuartzCoatOptions.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
 				30CAD9212BFBCF3900060449 /* TSCoat.swift in Sources */,
@@ -1019,6 +1060,7 @@
 				300595562C092F810098F779 /* UPCCoveSystemSuite.swift in Sources */,
 				3005954A2C09260C0098F779 /* EpoxyCoveBuildSuite.swift in Sources */,
 				30AC303A2B8444180073BB93 /* UPCTopCoatSuite.swift in Sources */,
+				30708B792C13A04400AB838B /* EpoxyIndustrialSandCoatOptions.swift in Sources */,
 				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
 				3005953C2C081F160098F779 /* EpoxyMVRSystemSuite.swift in Sources */,
@@ -1032,18 +1074,21 @@
 				30AC30262B7EC67F0073BB93 /* UPCSystem.swift in Sources */,
 				306822952C011F1400AF6CF8 /* Broadcast.swift in Sources */,
 				30708B6C2C121D8C00AB838B /* TSProducts.swift in Sources */,
+				30708B822C13A5B100AB838B /* EpoxyIndustrialSandBuildSubmitButton.swift in Sources */,
 				30B966DD2C06961700398E19 /* ColorSplashCoatEditorView.swift in Sources */,
+				30708B802C13A4B300AB838B /* IndustrialSandBroadcastPicker.swift in Sources */,
 				302E567F2B71A7E30063EB5C /* UPCSubSystemPicker.swift in Sources */,
 				30CAD9322BFD447B00060449 /* ColorChipSystemCommitButton.swift in Sources */,
 				30CC55862BF585ED00B7D409 /* SaveSystemView.swift in Sources */,
 				3068228A2C0030F400AF6CF8 /* PUCoatBuild.swift in Sources */,
-				3068229C2C0125FD00AF6CF8 /* ColorChipBroadcastBuild.swift in Sources */,
+				3068229C2C0125FD00AF6CF8 /* BroadcastBuild.swift in Sources */,
+				30708B882C13A8F800AB838B /* EpoxyIndustrialSandSystemSuite.swift in Sources */,
 				30B966D42C0673EE00398E19 /* ColorSplashSystem.swift in Sources */,
 				300595362C081D7C0098F779 /* EpoxyMVRCoatEditorView.swift in Sources */,
 				306822972C011F7100AF6CF8 /* ColorChipBroadcast.swift in Sources */,
 				300595422C0902740098F779 /* EpoxyCoveCoatOptions.swift in Sources */,
 				30708B5B2C11097100AB838B /* EpoxyColorQuartzSystem.swift in Sources */,
-				30708B742C12399200AB838B /* EpoxyIndustrialSand.swift in Sources */,
+				30708B742C12399200AB838B /* EpoxyIndustrialSandSystem.swift in Sources */,
 				3005952B2C07D9C10098F779 /* ColorSplashBuildSubmitButton.swift in Sources */,
 				30A712B62B589654009C0268 /* ContentView.swift in Sources */,
 				300595612C0E60B80098F779 /* UPCColorQuartzSystemSuite.swift in Sources */,
@@ -1062,6 +1107,7 @@
 				30B966D92C0691FC00398E19 /* ColorSplashSystemSuite.swift in Sources */,
 				300595592C092F810098F779 /* UPCCoveSystemCommitButton.swift in Sources */,
 				309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */,
+				30708B8A2C13BAB100AB838B /* UPCIndustrialSandSystem.swift in Sources */,
 				30CAD92E2BFD3BC600060449 /* ColorChipSubSystemPicker.swift in Sources */,
 				300595572C092F810098F779 /* UPCCoveBuildSubmitButton.swift in Sources */,
 				3068227E2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift in Sources */,
@@ -1094,6 +1140,7 @@
 				30A712D22B589E18009C0268 /* Product.swift in Sources */,
 				3005953E2C08E6120098F779 /* EpoxyCoveSystem.swift in Sources */,
 				30708B652C1110EA00AB838B /* EpoxyColorQuartzCoatEditorView.swift in Sources */,
+				30708B7B2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift in Sources */,
 				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
 				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
 				3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */,
@@ -1102,6 +1149,7 @@
 				30708B672C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,
 				30CAD92C2BFC390600060449 /* ColorChipSystemSuite.swift in Sources */,
+				30708B842C13A60000AB838B /* EpoxyIndustrialSandBuildSuite.swift in Sources */,
 				30AC30382B8443820073BB93 /* UPCPrimeCoatSuite.swift in Sources */,
 				306822822BFFE98000AF6CF8 /* KitsListView.swift in Sources */,
 				30ED65A12B75E5FA001E636D /* UPCCoatOptions.swift in Sources */,

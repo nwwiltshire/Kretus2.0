@@ -117,6 +117,8 @@ extension UPCCoat {
             }
         case .wcvc:
             break
+        case .rcuv:
+            break
         }
         
         switch self.coatColor {
@@ -188,7 +190,7 @@ extension UPCCoat {
             
         }
         
-        if (self.uvResistance == true) {
+        if (self.uvResistance) {
             productsNeeded.append(Product(id: "EX-KPACEL-08",
                                           name: "Poly Accelerant, 8 oz"))
         }
@@ -196,6 +198,10 @@ extension UPCCoat {
         if (self.solventCleaner) {
             productsNeeded.append(Product(id: "Solvent Cleaner ID",
                                           name: "Solvent Cleaner"))
+        }
+        
+        if (self.mattingAdditive) {
+            productsNeeded.append(Product(id: "Matting Additive ID", name: "Matting Additive"))
         }
 
     }

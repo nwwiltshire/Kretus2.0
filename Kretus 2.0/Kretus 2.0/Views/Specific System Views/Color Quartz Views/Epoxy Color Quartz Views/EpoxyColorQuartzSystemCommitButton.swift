@@ -46,11 +46,11 @@ struct EpoxyColorQuartzSystemCommitButton: View {
                 
                 switch epoxyColorQuartzSystem.topCoatSubType {
                 case .ts:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
                 case .polyaspartic:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
                 case .polyurethane:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
                 }
                 
                 if (epoxyColorQuartzSystem.primeCoat != nil) {

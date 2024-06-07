@@ -12,10 +12,6 @@ struct EpoxyColorQuartzBuildSubmitButton: View {
     
     @ObservedObject var epoxyColorQuartzSystem: EpoxyColorQuartzSystem
     
-    @State private var showSheet = false
-    
-    @State private var printedText: String? = nil
-    
     var body: some View {
         NavigationLink(destination: EpoxyColorQuartzBuildSuite(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
             .onAppear {

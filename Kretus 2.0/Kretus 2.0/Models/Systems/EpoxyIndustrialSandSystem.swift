@@ -1,5 +1,5 @@
 //
-//  EpoxyIndustrialSand.swift
+//  EpoxyIndustrialSandSystem.swift
 //  Kretus 2.0
 //
 //  Created by Nick Wiltshire on 6/6/24.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class EpoxyIndustrialSand: System {
+class EpoxyIndustrialSandSystem: System {
     
     @Published var subType: SubType
     {
@@ -96,8 +96,8 @@ class EpoxyIndustrialSand: System {
         
         super.init(name: "Industrial Sand Epoxy",
                    description: "Description",
-                   imageName: "colorQuartz-background",
-                   viewColor: "ColorQuartzEpoxy",
+                   imageName: "industrialSand-background",
+                   viewColor: "IndustrialSandEpoxy",
                    squareFt: 50,
                    kitsNeeded: [Kit()],
                    totalWasteFactor: 0)
@@ -227,8 +227,8 @@ class EpoxyIndustrialSand: System {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
-        
-        // need to add matting additive logic
+        upcCoat.mattingAdditive = mattingAdditive
+        upcCoat.subType = .rcuv
         
         return upcCoat
     }
