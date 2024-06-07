@@ -352,6 +352,10 @@ class UPCCoat: Coat {
             break
         case .mvr:
             break
+        case .base1:
+            break
+        case .base2:
+            break
         }
     }
     

@@ -111,10 +111,10 @@ class EpoxyIndustrialSandSystem: System {
         
         var description: String {
             switch self {
-            case .ts: return "Top Shelf Epoxy"
-            case .db: return "Double Broadcast"
-            case .sg: return "Slurry Grade"
-            case .tg: return "Something Grade"
+            case .ts: return "TS (Top Shelf Epoxy)"
+            case .db: return "DB (Double Broadcast)"
+            case .sg: return "SG (Slurry Grade)"
+            case .tg: return "TG ()"
             }
         }
     }

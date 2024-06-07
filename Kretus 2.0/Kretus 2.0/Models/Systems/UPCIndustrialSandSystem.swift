@@ -83,7 +83,7 @@ class UPCIndustrialSandSystem: System {
     
     init() {
         
-        self.subType = .ts
+        self.subType = .rc
         self.thickness = .oneEighth
         self.baseCoat = UPCCoat()
         self.broadcast = IndustrialSandBroadcast()
@@ -105,27 +105,29 @@ class UPCIndustrialSandSystem: System {
     
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case ts, db, sg, tg
+        case rc, tt, sl, mf, dbrc
         
         var id: Self { self }
         
         var description: String {
             switch self {
-            case .ts: return "TS (Top Shelf Epoxy)"
-            case .db: return "DB (Double Broadcast)"
-            case .sg: return "SG (Slurry Grade)"
-            case .tg: return "TG ()"
+            case .rc: return "RC (Roll Coat)"
+            case .tt: return "TT (Trowel Applied)"
+            case .sl: return "SL (Self Leveling)"
+            case .mf: return "MF (Medium Fill)"
+            case .dbrc: return "DB RC (Double Broadcast)"
             }
         }
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case oneEighth, threeSixteenth, oneFourth, threeEighth
+        case oneSixteenth, oneEighth, threeSixteenth, oneFourth, threeEighth
         
         var id: Self { self }
         
         var description: String {
             switch self {
+            case .oneSixteenth: return "1/16\""
             case .oneEighth: return "1/8\""
             case .threeSixteenth: return "3/16\""
             case .oneFourth: return "1/4\""
@@ -135,7 +137,7 @@ class UPCIndustrialSandSystem: System {
     }
     
     enum CapAndTopCoatSubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case ts, polyaspartic, polyurethane, upcRCUV
+        case ts, polyaspartic, polyurethane, upc, upcRCUV
         
         var id: Self { self }
         
@@ -144,6 +146,7 @@ class UPCIndustrialSandSystem: System {
             case .ts: return "Top Shelf Epoxy"
             case .polyaspartic: return "Polyaspartic"
             case .polyurethane: return "Polyurethane"
+            case .upc: return "UPC"
             case .upcRCUV: return "UPC RC UV"
             }
         }
@@ -223,12 +226,28 @@ class UPCIndustrialSandSystem: System {
         return tsCoat
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, mattingAdditive: Bool) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, subType: SubType, coatType: UPCSystem.CoatType, mattingAdditive: Bool, isUV: Bool) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.mattingAdditive = mattingAdditive
-        upcCoat.subType = .rcuv
+        
+        switch subType {
+        case .rc:
+            upcCoat.subType = .rc
+        case .tt:
+            upcCoat.subType = .tt
+        case .sl:
+            upcCoat.subType = .sl
+        case .mf:
+            upcCoat.subType = .mf
+        case .dbrc:
+            upcCoat.subType = .rc
+        }
+        
+        if (isUV) {
+            upcCoat.subType = .rcuv
+        }
         
         return upcCoat
     }
@@ -253,14 +272,16 @@ class UPCIndustrialSandSystem: System {
     
     func updateThickness() {
         switch subType {
-        case .ts:
-            thickness = .oneEighth
-        case .db:
-            thickness = .threeSixteenth
-        case .sg:
-            thickness = .threeSixteenth
-        case .tg:
+        case .rc:
+            thickness = .oneSixteenth
+        case .tt:
             thickness = .oneFourth
+        case .sl:
+            thickness = .threeSixteenth
+        case .mf:
+            thickness = .threeSixteenth
+        case .dbrc:
+            thickness = .threeSixteenth
         }
     }
     

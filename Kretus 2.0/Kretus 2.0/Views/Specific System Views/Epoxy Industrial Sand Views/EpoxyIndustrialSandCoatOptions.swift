@@ -37,7 +37,30 @@ struct EpoxyIndustrialSandCoatOptions: View {
                 VStack {
                     Text("Thickness")
                     Picker(selection: $epoxyIndustrialSandSystem.thickness, label: Text("")) {
-                        ForEach(EpoxyIndustrialSandSystem.Thickness.allCases, id: \.self) { subType in Text(subType.description).tag(subType)
+                        ForEach(EpoxyIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
+                            let subType = EpoxyIndustrialSandSystem.Thickness.allCases[index]
+                            if index == EpoxyIndustrialSandSystem.Thickness.allCases.count - 2 || index == EpoxyIndustrialSandSystem.Thickness.allCases.count - 3 {
+                                Text(subType.description).tag(subType)
+                            }
+                        }
+                    }
+                    .pickerStyle(PalettePickerStyle())
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(epoxyIndustrialSandSystem.viewColor).opacity(0.25))
+                )
+            }
+            if (epoxyIndustrialSandSystem.subType == .tg) {
+                VStack {
+                    Text("Thickness")
+                    Picker(selection: $epoxyIndustrialSandSystem.thickness, label: Text("")) {
+                        ForEach(EpoxyIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
+                            let subType = EpoxyIndustrialSandSystem.Thickness.allCases[index]
+                            if index == EpoxyIndustrialSandSystem.Thickness.allCases.count - 2 || index == EpoxyIndustrialSandSystem.Thickness.allCases.count - 1 {
+                                Text(subType.description).tag(subType)
+                            }
                         }
                     }
                     .pickerStyle(PalettePickerStyle())
