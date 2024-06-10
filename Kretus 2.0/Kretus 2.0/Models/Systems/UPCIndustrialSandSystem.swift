@@ -95,9 +95,9 @@ class UPCIndustrialSandSystem: System {
         self.topMattingAdditive = false
         
         super.init(name: "Industrial Sand UPC",
-                   description: "Description",
-                   imageName: "colorQuartz-background",
-                   viewColor: "ColorQuartzEpoxy",
+                   description: "Provides seamless wall-to-floor protection against moisture intrusion, UV degradation, and bacterial and fungal growth. (UPC System)",
+                   imageName: "industrialSand-background",
+                   viewColor: "IndustrialSandUPC",
                    squareFt: 50,
                    kitsNeeded: [Kit()],
                    totalWasteFactor: 0)

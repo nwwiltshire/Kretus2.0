@@ -926,8 +926,8 @@
 				3005952C2C0817810098F779 /* EpoxyMVRSystem.swift */,
 				3005953D2C08E6120098F779 /* EpoxyCoveSystem.swift */,
 				3005954E2C092D730098F779 /* UPCCoveSystem.swift */,
-				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
 				30708B5A2C11097100AB838B /* EpoxyColorQuartzSystem.swift */,
+				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
 				30708B732C12399200AB838B /* EpoxyIndustrialSandSystem.swift */,
 				30708B892C13BAB100AB838B /* UPCIndustrialSandSystem.swift */,
 			);

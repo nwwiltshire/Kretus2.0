@@ -95,7 +95,7 @@ class EpoxyIndustrialSandSystem: System {
         self.topMattingAdditive = false
         
         super.init(name: "Industrial Sand Epoxy",
-                   description: "Description",
+                   description: "Provides seamless wall-to-floor protection against moisture intrusion, UV degradation, and bacterial and fungal growth. (Epoxy System)",
                    imageName: "industrialSand-background",
                    viewColor: "IndustrialSandEpoxy",
                    squareFt: 50,
