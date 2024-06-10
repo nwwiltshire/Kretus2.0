@@ -15,7 +15,7 @@ struct EpoxyIndustrialSandCoatEditorView: View {
     var body: some View {
         ScrollView {
             
-            if (epoxyIndustrialSandSystem.subType != .db) {
+            if (epoxyIndustrialSandSystem.baseCoat != nil) {
                 TSCoatSuite(tsCoat: epoxyIndustrialSandSystem.baseCoat!)
                 IndustrialSandBroadcastPicker(industrialSandBroadcast: epoxyIndustrialSandSystem.broadcast!)
             }

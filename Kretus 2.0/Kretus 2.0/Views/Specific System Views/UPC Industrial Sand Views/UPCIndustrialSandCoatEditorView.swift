@@ -15,7 +15,7 @@ struct UPCIndustrialSandCoatEditorView: View {
     var body: some View {
         ScrollView {
             
-            if (upcIndustrialSandSystem.subType != .dbrc) {
+            if (upcIndustrialSandSystem.baseCoat != nil) {
                 UPCUniversalCoatSuite(upcCoat: upcIndustrialSandSystem.baseCoat!)
                 IndustrialSandBroadcastPicker(industrialSandBroadcast: upcIndustrialSandSystem.broadcast!)
             }

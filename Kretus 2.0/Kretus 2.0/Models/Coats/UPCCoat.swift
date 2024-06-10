@@ -129,11 +129,11 @@ class UPCCoat: Coat {
                     covRate = 80
                 // 0's because switch statements must be exhaustive
                 case .thin:
-                    covRate = 0
+                    covRate = 1
                 case .medium:
-                    covRate = 0
+                    covRate = 1
                 case .thick:
-                    covRate = 0
+                    covRate = 1
                 case .quartzTT:
                     break
                 }
@@ -141,11 +141,11 @@ class UPCCoat: Coat {
                 switch thickness {
                 // 0's because switch statements must be exhaustive
                 case .thinRC:
-                    covRate = 0
+                    covRate = 1
                 case .mediumRC:
-                    covRate = 0
+                    covRate = 1
                 case .thickRC:
-                    covRate = 0
+                    covRate = 1
                 case .thin:
                     covRate = 24
                 case .medium:
@@ -158,11 +158,11 @@ class UPCCoat: Coat {
             case .sl:
                 switch thickness {
                 case .thinRC:
-                    covRate = 0
+                    covRate = 1
                 case .mediumRC:
-                    covRate = 0
+                    covRate = 1
                 case .thickRC:
-                    covRate = 0
+                    covRate = 1
                 case .thin:
                     covRate = 50
                 case .medium:
@@ -175,11 +175,11 @@ class UPCCoat: Coat {
             case .mf:
                 switch thickness {
                 case .thinRC:
-                    covRate = 0
+                    covRate = 1
                 case .mediumRC:
-                    covRate = 0
+                    covRate = 1
                 case .thickRC:
-                    covRate = 0
+                    covRate = 1
                 case .thin:
                     covRate = 60
                 case .medium:
@@ -205,11 +205,11 @@ class UPCCoat: Coat {
                 case .thickRC:
                     covRate = 80
                 case .thin:
-                    covRate = 0
+                    covRate = 1
                 case .medium:
-                    covRate = 0
+                    covRate = 1
                 case .thick:
-                    covRate = 0
+                    covRate = 1
                 case .quartzTT:
                     break
                 }
@@ -280,11 +280,11 @@ class UPCCoat: Coat {
                 case .thickRC:
                     covRate = 80
                 case .thin:
-                    covRate = 0
+                    covRate = 1
                 case .medium:
-                    covRate = 0
+                    covRate = 1
                 case .thick:
-                    covRate = 0
+                    covRate = 1
                 case .quartzTT:
                     break
                 }

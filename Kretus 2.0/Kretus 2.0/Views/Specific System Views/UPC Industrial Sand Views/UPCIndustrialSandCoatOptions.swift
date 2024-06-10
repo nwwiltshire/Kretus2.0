@@ -37,11 +37,7 @@ struct UPCIndustrialSandCoatOptions: View {
                 VStack {
                     Text("Thickness")
                     Picker(selection: $upcIndustrialSandSystem.thickness, label: Text("")) {
-                        ForEach(UPCIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
-                            let subType = UPCIndustrialSandSystem.Thickness.allCases[index]
-                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 3 {
-                                Text(subType.description).tag(subType)
-                            }
+                        ForEach(UPCIndustrialSandSystem.Thickness.allCases.prefix(2), id: \.self) { subType in Text(subType.description).tag(subType)
                         }
                     }
                     .pickerStyle(PalettePickerStyle())
@@ -56,11 +52,7 @@ struct UPCIndustrialSandCoatOptions: View {
                 VStack {
                     Text("Thickness")
                     Picker(selection: $upcIndustrialSandSystem.thickness, label: Text("")) {
-                        ForEach(UPCIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
-                            let subType = UPCIndustrialSandSystem.Thickness.allCases[index]
-                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 1 {
-                                Text(subType.description).tag(subType)
-                            }
+                        ForEach(UPCIndustrialSandSystem.Thickness.allCases.suffix(2), id: \.self) { subType in Text(subType.description).tag(subType)
                         }
                     }
                     .pickerStyle(PalettePickerStyle())
@@ -77,7 +69,7 @@ struct UPCIndustrialSandCoatOptions: View {
                     Picker(selection: $upcIndustrialSandSystem.thickness, label: Text("")) {
                         ForEach(UPCIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
                             let subType = UPCIndustrialSandSystem.Thickness.allCases[index]
-                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 1 {
+                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 3 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 {
                                 Text(subType.description).tag(subType)
                             }
                         }
@@ -96,7 +88,7 @@ struct UPCIndustrialSandCoatOptions: View {
                     Picker(selection: $upcIndustrialSandSystem.thickness, label: Text("")) {
                         ForEach(UPCIndustrialSandSystem.Thickness.allCases.indices, id: \.self) { index in
                             let subType = UPCIndustrialSandSystem.Thickness.allCases[index]
-                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 1 {
+                            if index == UPCIndustrialSandSystem.Thickness.allCases.count - 3 || index == UPCIndustrialSandSystem.Thickness.allCases.count - 2 {
                                 Text(subType.description).tag(subType)
                             }
                         }

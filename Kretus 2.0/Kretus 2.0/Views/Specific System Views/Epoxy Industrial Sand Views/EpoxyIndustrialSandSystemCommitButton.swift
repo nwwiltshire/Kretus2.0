@@ -19,21 +19,26 @@ struct EpoxyIndustrialSandSystemCommitButton: View {
                 
                 if (epoxyIndustrialSandSystem.subType != .db) {
                     epoxyIndustrialSandSystem.baseCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.baseCoat1 = nil
+                    epoxyIndustrialSandSystem.baseCoat2 = nil
+                    
                     epoxyIndustrialSandSystem.broadcast = IndustrialSandBroadcast()
                     epoxyIndustrialSandSystem.broadcast!.squareFt = epoxyIndustrialSandSystem.squareFt
                     epoxyIndustrialSandSystem.broadcast!.sand = .twentyMesh
+                    epoxyIndustrialSandSystem.broadcast1 = nil
+                    epoxyIndustrialSandSystem.broadcast2 = nil
                 } else {
                     epoxyIndustrialSandSystem.baseCoat1 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base1, mattingAdditive: false)
                     epoxyIndustrialSandSystem.baseCoat2 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base2, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.baseCoat = nil
                     
                     epoxyIndustrialSandSystem.broadcast1 = IndustrialSandBroadcast()
                     epoxyIndustrialSandSystem.broadcast2 = IndustrialSandBroadcast()
+                    epoxyIndustrialSandSystem.broadcast = nil
                     
                     epoxyIndustrialSandSystem.broadcast1!.squareFt = epoxyIndustrialSandSystem.squareFt
-                    epoxyIndustrialSandSystem.broadcast1!.sand = .twentyMesh
                     
                     epoxyIndustrialSandSystem.broadcast2!.squareFt = epoxyIndustrialSandSystem.squareFt
-                    epoxyIndustrialSandSystem.broadcast2!.sand = .twentyMesh
                 }
                 
                 switch epoxyIndustrialSandSystem.capCoatSubType {

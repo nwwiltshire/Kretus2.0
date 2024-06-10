@@ -70,6 +70,10 @@ struct SystemBuilderView: View {
                             EpoxyIndustrialSandSystemSuite(epoxyIndustrialSandSystem: epoxyIndustrialSandSystem)
                         }
                         
+                        if let upcIndustrialSandSystem = currentBuild as? UPCIndustrialSandSystem {
+                            UPCIndustrialSandSystemSuite(upcIndustrialSandSystem: upcIndustrialSandSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

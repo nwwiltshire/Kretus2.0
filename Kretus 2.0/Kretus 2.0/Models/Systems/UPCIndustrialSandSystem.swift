@@ -165,9 +165,9 @@ class UPCIndustrialSandSystem: System {
         }
         
         if (baseCoat1 != nil) {
-            baseCoat!.setValues()
-            updateKits(with: baseCoat!.kitsNeeded)
-            totalWasteFactor += baseCoat!.wasteFactor
+            baseCoat1!.setValues()
+            updateKits(with: baseCoat1!.kitsNeeded)
+            totalWasteFactor += baseCoat1!.wasteFactor
         }
         
         if (baseCoat2 != nil) {

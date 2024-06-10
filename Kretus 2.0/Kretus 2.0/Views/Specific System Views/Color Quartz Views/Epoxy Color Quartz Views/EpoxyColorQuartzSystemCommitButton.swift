@@ -18,15 +18,23 @@ struct EpoxyColorQuartzSystemCommitButton: View {
                 
                 if (epoxyColorQuartzSystem.subType != .db) {
                     epoxyColorQuartzSystem.baseCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base, mattingAdditive: false)
+                    epoxyColorQuartzSystem.baseCoat1 = nil
+                    epoxyColorQuartzSystem.baseCoat2 = nil
+                    
                     epoxyColorQuartzSystem.broadcast = ColorChipBroadcast()
                     epoxyColorQuartzSystem.broadcast!.squareFt = epoxyColorQuartzSystem.squareFt
                     epoxyColorQuartzSystem.broadcast!.grade = .q
+                    epoxyColorQuartzSystem.broadcast1 = nil
+                    epoxyColorQuartzSystem.broadcast2 = nil
                 } else {
                     epoxyColorQuartzSystem.baseCoat1 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base1, mattingAdditive: false)
                     epoxyColorQuartzSystem.baseCoat2 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base2, mattingAdditive: false)
+                    epoxyColorQuartzSystem.baseCoat = nil
+
                     
                     epoxyColorQuartzSystem.broadcast1 = ColorChipBroadcast()
                     epoxyColorQuartzSystem.broadcast2 = ColorChipBroadcast()
+                    epoxyColorQuartzSystem.broadcast = nil
                     
                     epoxyColorQuartzSystem.broadcast1!.squareFt = epoxyColorQuartzSystem.squareFt
                     epoxyColorQuartzSystem.broadcast1!.grade = .q

@@ -814,11 +814,11 @@
 		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
 			isa = PBXGroup;
 			children = (
+				3005953F2C0902520098F779 /* Cove Views */,
 				30708B912C13C2CF00AB838B /* UPC Industrial Sand Views */,
 				30708B7E2C13A4A000AB838B /* Broadcast Views */,
 				30708B772C13A01E00AB838B /* Epoxy Industrial Sand Views */,
 				3005955E2C0E5E9D0098F779 /* Color Quartz Views */,
-				3005953F2C0902520098F779 /* Cove Views */,
 				3005952E2C081B5F0098F779 /* Epoxy MVR Views */,
 				30B966D52C06802100398E19 /* Color Splash Views */,
 				306822782BFFDF4000AF6CF8 /* PU Views */,
