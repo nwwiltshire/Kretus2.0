@@ -74,6 +74,10 @@ struct SystemBuilderView: View {
                             UPCIndustrialSandSystemSuite(upcIndustrialSandSystem: upcIndustrialSandSystem)
                         }
                         
+                        if let metallicSystem = currentBuild as? MetallicSystem {
+                            MetallicSystemSuite(metallicSystem: metallicSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

@@ -95,6 +95,13 @@
 		30708B972C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B902C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
+		308924A72C176FB200593487 /* MetallicSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924A62C176FB200593487 /* MetallicSystem.swift */; };
+		308924AA2C17774F00593487 /* MetallicCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924A92C17774F00593487 /* MetallicCoatOptions.swift */; };
+		308924AC2C177AAB00593487 /* MetallicSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924AB2C177AAB00593487 /* MetallicSystemSuite.swift */; };
+		308924AE2C177AF800593487 /* MetallicSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924AD2C177AF800593487 /* MetallicSystemCommitButton.swift */; };
+		308924B02C177B6800593487 /* MetallicCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924AF2C177B6800593487 /* MetallicCoatEditorView.swift */; };
+		308924B22C17888800593487 /* MetallicBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924B12C17888800593487 /* MetallicBuildSubmitButton.swift */; };
+		308924B42C1788D900593487 /* MetallicBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924B32C1788D900593487 /* MetallicBuildSuite.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
@@ -288,6 +295,13 @@
 		30708B902C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCIndustrialSandSystemSuite.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
+		308924A62C176FB200593487 /* MetallicSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSystem.swift; sourceTree = "<group>"; };
+		308924A92C17774F00593487 /* MetallicCoatOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCoatOptions.swift; sourceTree = "<group>"; };
+		308924AB2C177AAB00593487 /* MetallicSystemSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSystemSuite.swift; sourceTree = "<group>"; };
+		308924AD2C177AF800593487 /* MetallicSystemCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSystemCommitButton.swift; sourceTree = "<group>"; };
+		308924AF2C177B6800593487 /* MetallicCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCoatEditorView.swift; sourceTree = "<group>"; };
+		308924B12C17888800593487 /* MetallicBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicBuildSubmitButton.swift; sourceTree = "<group>"; };
+		308924B32C1788D900593487 /* MetallicBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicBuildSuite.swift; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
@@ -575,6 +589,19 @@
 			path = "UPC Industrial Sand Views";
 			sourceTree = "<group>";
 		};
+		308924A82C17773100593487 /* Metallic System */ = {
+			isa = PBXGroup;
+			children = (
+				308924A92C17774F00593487 /* MetallicCoatOptions.swift */,
+				308924AB2C177AAB00593487 /* MetallicSystemSuite.swift */,
+				308924AD2C177AF800593487 /* MetallicSystemCommitButton.swift */,
+				308924AF2C177B6800593487 /* MetallicCoatEditorView.swift */,
+				308924B12C17888800593487 /* MetallicBuildSubmitButton.swift */,
+				308924B32C1788D900593487 /* MetallicBuildSuite.swift */,
+			);
+			path = "Metallic System";
+			sourceTree = "<group>";
+		};
 		309B977C2B9FCF3600C4E51B /* Kits */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +841,7 @@
 		30CAD9292BFC38BF00060449 /* Specific System Views */ = {
 			isa = PBXGroup;
 			children = (
+				308924A82C17773100593487 /* Metallic System */,
 				3005953F2C0902520098F779 /* Cove Views */,
 				30708B912C13C2CF00AB838B /* UPC Industrial Sand Views */,
 				30708B7E2C13A4A000AB838B /* Broadcast Views */,
@@ -930,6 +958,7 @@
 				3005955C2C0E391F0098F779 /* UPCColorQuartzSystem.swift */,
 				30708B732C12399200AB838B /* EpoxyIndustrialSandSystem.swift */,
 				30708B892C13BAB100AB838B /* UPCIndustrialSandSystem.swift */,
+				308924A62C176FB200593487 /* MetallicSystem.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -1074,8 +1103,11 @@
 				3019218C2B89362F009DB65C /* SystemData.swift in Sources */,
 				300595582C092F810098F779 /* UPCCoveBuildSuite.swift in Sources */,
 				306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */,
+				308924B22C17888800593487 /* MetallicBuildSubmitButton.swift in Sources */,
 				30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
+				308924B42C1788D900593487 /* MetallicBuildSuite.swift in Sources */,
+				308924B02C177B6800593487 /* MetallicCoatEditorView.swift in Sources */,
 				30708B7D2C13A30400AB838B /* EpoxyIndustrialSandCoatEditorView.swift in Sources */,
 				300595632C0E62CD0098F779 /* UPCColorQuartzCoatOptions.swift in Sources */,
 				3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */,
@@ -1155,8 +1187,10 @@
 				306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */,
 				30708B922C13C2CF00AB838B /* UPCIndustrialSandBuildSubmitButton.swift in Sources */,
 				30A712C32B58968F009C0268 /* System.swift in Sources */,
+				308924AA2C17774F00593487 /* MetallicCoatOptions.swift in Sources */,
 				3005952D2C0817810098F779 /* EpoxyMVRSystem.swift in Sources */,
 				30CAD93E2BFE7C2C00060449 /* TSCoatSuite.swift in Sources */,
+				308924AC2C177AAB00593487 /* MetallicSystemSuite.swift in Sources */,
 				30CAD9462BFE8FB300060449 /* UPCCoatColorPicker.swift in Sources */,
 				30B2872B2BAA3D40006D3003 /* KitData.swift in Sources */,
 				30F3BA382B5C6DEA002EF4B5 /* UPCCoat.swift in Sources */,
@@ -1173,8 +1207,10 @@
 				30708B7B2C13A29900AB838B /* EpoxyIndustrialSandSystemCommitButton.swift in Sources */,
 				306822802BFFE7A800AF6CF8 /* TotalSystemView.swift in Sources */,
 				306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */,
+				308924AE2C177AF800593487 /* MetallicSystemCommitButton.swift in Sources */,
 				3068229E2C01332E00AF6CF8 /* CoatData.swift in Sources */,
 				30ED659F2B733825001E636D /* SqftForm.swift in Sources */,
+				308924A72C176FB200593487 /* MetallicSystem.swift in Sources */,
 				30F3BA3B2B5C9B50002EF4B5 /* SystemGridView.swift in Sources */,
 				30708B672C1110EA00AB838B /* EpoxyColorQuartzSystemCommitButton.swift in Sources */,
 				30AC30232B7EAE740073BB93 /* UPCSystemCommitButton.swift in Sources */,

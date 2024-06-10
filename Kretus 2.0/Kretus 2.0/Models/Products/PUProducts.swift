@@ -87,6 +87,11 @@ extension PUCoat {
             productsNeeded.append(Product(id: "Matting Additive",
                                           name: "Matting Additive"))
         }
+        
+        if (self.coatType == .metallicBody) {
+            productsNeeded.append(Product(id: "UV Color",
+                                          name: "See Kretus Color Chart, 8 oz"))
+        }
 
     }
     

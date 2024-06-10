@@ -97,7 +97,7 @@ class TSCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, base1, base2, prime, top, mvr, coat1, coat2, coat3, body, cap
+        case base, base1, base2, prime, top, mvr, coat1, coat2, coat3, body, cap, metallicBase, metallicAccent, metallicTop
         
         var id: Self { self }
         
@@ -114,6 +114,9 @@ class TSCoat: Coat {
             case .coat3: return "Coat 3"
             case .body: return "Body Coat"
             case .cap: return "Cap Coat"
+            case .metallicBase: return "Metallic Base Coat"
+            case .metallicAccent: return "Metallic Accent Coat"
+            case .metallicTop: return "Top Coat"
             }
         }
     }
@@ -174,7 +177,7 @@ class TSCoat: Coat {
     
     enum CoatColorant: CaseIterable, Identifiable, CustomStringConvertible {
         case noColor, beige, black, darkGray, enchantedGreen, handicapBlue, Latte, lightGray, mediumGray,
-             mocha, safetyBlue, safetyRed, safetyYellow, shadowGray, tan, tileRed, white
+             mocha, safetyBlue, safetyRed, safetyYellow, shadowGray, tan, tileRed, white, metallic
         
         var id: Self { self }
         
@@ -198,6 +201,7 @@ class TSCoat: Coat {
             case .tan: return "Tan Colorant"
             case .tileRed: return "Tile Red Colorant"
             case .white: return "White Colorant"
+            case .metallic: return "Metallic Pigment"
                 
             }
         }
@@ -266,6 +270,12 @@ class TSCoat: Coat {
         case .base1:
             break
         case .base2:
+            break
+        case .metallicBase:
+            break
+        case .metallicAccent:
+            break
+        case .metallicTop:
             break
         }
     }

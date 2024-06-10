@@ -65,6 +65,9 @@ struct SaveSystemView: View {
                                 if let upcIndustrialSandSystem = system as? UPCIndustrialSandSystem {
                                     UPCIndustrialSandConvertToData(upcIndustrialSandSystem: upcIndustrialSandSystem)
                                 }
+                                if let metallicSystem = system as? MetallicSystem {
+                                    metallicConvertToData(metallicSystem: metallicSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -536,6 +539,17 @@ struct SaveSystemView: View {
 
         return coats
         
+    }
+    
+    private func metallicConvertToData(metallicSystem: MetallicSystem) {
+        let newSystem = SystemData(name: metallicSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: metallicSystem.imageName, viewColor: metallicSystem.viewColor.description, coats: [], subType: metallicSystem.subType.description, systemColor: "", squareFt: metallicSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: metallicSystem.kitsNeeded)
+        
+        //newSystem.coats = epoxyColorQuartzConvertCoats(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+        
+        saveSystem(systemData: newSystem)
+
     }
 
 }

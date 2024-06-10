@@ -78,7 +78,7 @@ class PUCoat: Coat {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top1, top2, coat1, coat2, coat3, cap, top
+        case base, prime, top1, top2, coat1, coat2, coat3, cap, top, metallicBody
         
         var id: Self { self }
         
@@ -93,6 +93,7 @@ class PUCoat: Coat {
             case .coat3: return "Coat 3"
             case .cap: return "Cap Coat"
             case .top: return "Top Coat"
+            case .metallicBody: return "Metallic Body Coat"
             }
         }
     }
