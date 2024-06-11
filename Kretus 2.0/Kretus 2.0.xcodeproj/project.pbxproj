@@ -112,6 +112,7 @@
 		308924C52C18ECC200593487 /* ESDBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924C42C18ECC200593487 /* ESDBuildSuite.swift */; };
 		308924C82C19011A00593487 /* ConductivePrimerCoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924C72C19011A00593487 /* ConductivePrimerCoatSuite.swift */; };
 		308924CA2C19043900593487 /* ConductivePrimerCoatBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924C92C19043900593487 /* ConductivePrimerCoatBuild.swift */; };
+		308924CC2C190AEE00593487 /* WebPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924CB2C190AEE00593487 /* WebPDFView.swift */; };
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
@@ -322,6 +323,7 @@
 		308924C42C18ECC200593487 /* ESDBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESDBuildSuite.swift; sourceTree = "<group>"; };
 		308924C72C19011A00593487 /* ConductivePrimerCoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConductivePrimerCoatSuite.swift; sourceTree = "<group>"; };
 		308924C92C19043900593487 /* ConductivePrimerCoatBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConductivePrimerCoatBuild.swift; sourceTree = "<group>"; };
+		308924CB2C190AEE00593487 /* WebPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPDFView.swift; sourceTree = "<group>"; };
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
@@ -785,6 +787,7 @@
 				3086DDE62B8693AD00B94B38 /* HomeView.swift */,
 				3086DDE82B86953200B94B38 /* Splash View.swift */,
 				30CC558C2BF6BC7D00B7D409 /* PDFViewer.swift */,
+				308924CB2C190AEE00593487 /* WebPDFView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -1150,6 +1153,7 @@
 				300595582C092F810098F779 /* UPCCoveBuildSuite.swift in Sources */,
 				306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */,
 				308924BD2C18B8D300593487 /* ESDSystemSuite.swift in Sources */,
+				308924CC2C190AEE00593487 /* WebPDFView.swift in Sources */,
 				308924B22C17888800593487 /* MetallicBuildSubmitButton.swift in Sources */,
 				30CAD9342BFD4B1400060449 /* ColorChipCoatEditorView.swift in Sources */,
 				303C697B2B6B091F00C58041 /* SelectLineView.swift in Sources */,
