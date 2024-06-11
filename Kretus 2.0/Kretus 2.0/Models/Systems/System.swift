@@ -49,7 +49,8 @@ class System: ObservableObject, Identifiable {
                 UPCColorQuartzSystem(),
                 EpoxyIndustrialSandSystem(),
                 UPCIndustrialSandSystem(),
-                MetallicSystem()]
+                MetallicSystem(),
+                ESDSystem()]
         
     }
     

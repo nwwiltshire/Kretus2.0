@@ -78,6 +78,10 @@ struct SystemBuilderView: View {
                             MetallicSystemSuite(metallicSystem: metallicSystem)
                         }
                         
+                        if let esdSystem = currentBuild as? ESDSystem {
+                            ESDSystemSuite(esdSystem: esdSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

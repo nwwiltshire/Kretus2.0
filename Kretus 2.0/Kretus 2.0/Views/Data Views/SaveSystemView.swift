@@ -68,6 +68,9 @@ struct SaveSystemView: View {
                                 if let metallicSystem = system as? MetallicSystem {
                                     metallicConvertToData(metallicSystem: metallicSystem)
                                 }
+                                if let esdSystem = system as? ESDSystem {
+                                    esdConvertToData(esdSystem: esdSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -547,6 +550,15 @@ struct SaveSystemView: View {
         newSystem.kits = convertKits(systemData: newSystem, kits: metallicSystem.kitsNeeded)
         
         //newSystem.coats = epoxyColorQuartzConvertCoats(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func esdConvertToData(esdSystem: ESDSystem) {
+        let newSystem = SystemData(name: esdSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: esdSystem.imageName, viewColor: esdSystem.viewColor.description, coats: [], subType: esdSystem.subType.description, systemColor: "", squareFt: esdSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: esdSystem.kitsNeeded)
         
         saveSystem(systemData: newSystem)
 

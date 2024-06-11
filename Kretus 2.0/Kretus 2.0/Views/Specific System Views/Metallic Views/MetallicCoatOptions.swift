@@ -117,23 +117,3 @@ struct MetallicCoatOptions_Previews: PreviewProvider {
     }
 }
 
-/*
-struct MetallicCoatOptions: View {
-    
-    @ObservedObject var metallicSystem: MetallicSystem
-    
-    var body: some View {
-        
-        Text("Template")
-        
-    }
-    
-}
-struct MetallicCoatOptions_Previews: PreviewProvider {
-    static var previews: some View {
-        let mockSystem = MetallicSystem()
-        
-        MetallicCoatOptions(metallicSystem: mockSystem)
-    }
-}
- */

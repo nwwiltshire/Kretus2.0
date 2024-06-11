@@ -64,6 +64,7 @@ struct MetallicBuildSuite: View {
     }
     
 }
+
 struct MetallicBuildSuite_Previews: PreviewProvider {
     static var previews: some View {
         let mockSystem = MetallicSystem()
