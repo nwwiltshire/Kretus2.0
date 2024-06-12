@@ -93,6 +93,7 @@
 		30708B952C13C2CF00AB838B /* UPCIndustrialSandCoatOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B8E2C13C2CF00AB838B /* UPCIndustrialSandCoatOptions.swift */; };
 		30708B962C13C2CF00AB838B /* UPCIndustrialSandSystemCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B8F2C13C2CF00AB838B /* UPCIndustrialSandSystemCommitButton.swift */; };
 		30708B972C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30708B902C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift */; };
+		307D16DD2C1A48450022BAA5 /* PDFData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D16DC2C1A48450022BAA5 /* PDFData.swift */; };
 		3086DDE72B8693AD00B94B38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE62B8693AD00B94B38 /* HomeView.swift */; };
 		3086DDE92B86953200B94B38 /* Splash View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086DDE82B86953200B94B38 /* Splash View.swift */; };
 		308924A72C176FB200593487 /* MetallicSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308924A62C176FB200593487 /* MetallicSystem.swift */; };
@@ -304,6 +305,7 @@
 		30708B8E2C13C2CF00AB838B /* UPCIndustrialSandCoatOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCIndustrialSandCoatOptions.swift; sourceTree = "<group>"; };
 		30708B8F2C13C2CF00AB838B /* UPCIndustrialSandSystemCommitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCIndustrialSandSystemCommitButton.swift; sourceTree = "<group>"; };
 		30708B902C13C2CF00AB838B /* UPCIndustrialSandSystemSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCIndustrialSandSystemSuite.swift; sourceTree = "<group>"; };
+		307D16DC2C1A48450022BAA5 /* PDFData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFData.swift; sourceTree = "<group>"; };
 		3086DDE62B8693AD00B94B38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3086DDE82B86953200B94B38 /* Splash View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash View.swift"; sourceTree = "<group>"; };
 		308924A62C176FB200593487 /* MetallicSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSystem.swift; sourceTree = "<group>"; };
@@ -552,14 +554,6 @@
 				30708B712C12372E00AB838B /* IndustrialSandBroadcast.swift */,
 			);
 			path = Broadcasts;
-			sourceTree = "<group>";
-		};
-		3068229A2C0125CF00AF6CF8 /* Build Views */ = {
-			isa = PBXGroup;
-			children = (
-				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
-			);
-			path = "Build Views";
 			sourceTree = "<group>";
 		};
 		30708B622C1110EA00AB838B /* Epoxy Color Quartz Views */ = {
@@ -876,10 +870,13 @@
 		30CAD9282BFC2F1900060449 /* Color Chip Views */ = {
 			isa = PBXGroup;
 			children = (
-				3068229A2C0125CF00AF6CF8 /* Build Views */,
-				30CAD9362BFD7C9700060449 /* Coat Editors */,
-				30CAD9352BFD7C8400060449 /* System Editors */,
-				30CAD92A2BFC38F700060449 /* Suites */,
+				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
+				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
+				3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */,
+				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
+				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
+				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
+				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
 			);
 			path = "Color Chip Views";
 			sourceTree = "<group>";
@@ -904,33 +901,6 @@
 				30AC30272B8177590073BB93 /* UPC Views */,
 			);
 			path = "Specific System Views";
-			sourceTree = "<group>";
-		};
-		30CAD92A2BFC38F700060449 /* Suites */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
-			);
-			path = Suites;
-			sourceTree = "<group>";
-		};
-		30CAD9352BFD7C8400060449 /* System Editors */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
-				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
-				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
-			);
-			path = "System Editors";
-			sourceTree = "<group>";
-		};
-		30CAD9362BFD7C9700060449 /* Coat Editors */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
-				3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */,
-			);
-			path = "Coat Editors";
 			sourceTree = "<group>";
 		};
 		30CAD93B2BFE7B6E00060449 /* TS Views */ = {
@@ -976,6 +946,7 @@
 			isa = PBXGroup;
 			children = (
 				30CC55932BF6C57700B7D409 /* PDFUrl.swift */,
+				307D16DC2C1A48450022BAA5 /* PDFData.swift */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -1151,6 +1122,7 @@
 			files = (
 				3019218C2B89362F009DB65C /* SystemData.swift in Sources */,
 				300595582C092F810098F779 /* UPCCoveBuildSuite.swift in Sources */,
+				307D16DD2C1A48450022BAA5 /* PDFData.swift in Sources */,
 				306822842BFFEC7100AF6CF8 /* UPCCoatBuild.swift in Sources */,
 				308924BD2C18B8D300593487 /* ESDSystemSuite.swift in Sources */,
 				308924CC2C190AEE00593487 /* WebPDFView.swift in Sources */,
