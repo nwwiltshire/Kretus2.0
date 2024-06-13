@@ -154,21 +154,3 @@ struct EpoxyColorQuartzCoatOptions_Previews: PreviewProvider {
     }
 }
 
-/*
- struct EpoxyColorQuartzCoatOptions: View {
-     
-     @ObservedObject var epoxyColorQuartzSystem: EpoxyColorQuartzSystem
-     
-     var body: some View {
-         Text("Hello")
-     }
- }
-
- struct EpoxyColorQuartzCoatOptions_Previews: PreviewProvider {
-     static var previews: some View {
-         let mockSystem = EpoxyColorQuartzSystem()
-         
-         EpoxyColorQuartzCoatOptions(epoxyColorQuartzSystem: mockSystem)
-     }
- }
- */

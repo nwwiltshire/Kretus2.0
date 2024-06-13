@@ -22,7 +22,7 @@ struct ColorChipBuildSuite: View {
                 
                 TotalSystemView(system: colorChipSystem)
                 
-                ColorChipBroadcastBuild(broadCast: colorChipSystem.broadcast, viewColor: colorChipSystem.viewColor)
+                BroadcastBuild(broadcast: colorChipSystem.broadcast, viewColor: colorChipSystem.viewColor)
                 
                 if (colorChipSystem.subType == .rc ||
                     colorChipSystem.subType == .rcuv ||

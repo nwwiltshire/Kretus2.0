@@ -45,8 +45,12 @@ class System: ObservableObject, Identifiable {
                 EpoxyMVRSystem(),
                 EpoxyCoveSystem(),
                 UPCCoveSystem(),
+                EpoxyColorQuartzSystem(),
                 UPCColorQuartzSystem(),
-                EpoxyColorQuartzSystem()]
+                EpoxyIndustrialSandSystem(),
+                UPCIndustrialSandSystem(),
+                MetallicSystem(),
+                ESDSystem()]
         
     }
     

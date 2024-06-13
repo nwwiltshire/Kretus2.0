@@ -22,12 +22,12 @@ struct EpoxyColorQuartzBuildSuite: View {
             
             if (epoxyColorQuartzSystem.subType != .db) {
                 TSCoatBuild(tsCoat: epoxyColorQuartzSystem.baseCoat!, viewColor: epoxyColorQuartzSystem.viewColor)
-                ColorChipBroadcastBuild(broadCast: epoxyColorQuartzSystem.broadcast!, viewColor: epoxyColorQuartzSystem.viewColor)
+                BroadcastBuild(broadcast: epoxyColorQuartzSystem.broadcast!, viewColor: epoxyColorQuartzSystem.viewColor)
             } else {
                 TSCoatBuild(tsCoat: epoxyColorQuartzSystem.baseCoat1!, viewColor: epoxyColorQuartzSystem.viewColor)
-                ColorChipBroadcastBuild(broadCast: epoxyColorQuartzSystem.broadcast1!, viewColor: epoxyColorQuartzSystem.viewColor)
+                BroadcastBuild(broadcast: epoxyColorQuartzSystem.broadcast1!, viewColor: epoxyColorQuartzSystem.viewColor)
                 TSCoatBuild(tsCoat: epoxyColorQuartzSystem.baseCoat2!, viewColor: epoxyColorQuartzSystem.viewColor)
-                ColorChipBroadcastBuild(broadCast: epoxyColorQuartzSystem.broadcast2!, viewColor: epoxyColorQuartzSystem.viewColor)
+                BroadcastBuild(broadcast: epoxyColorQuartzSystem.broadcast2!, viewColor: epoxyColorQuartzSystem.viewColor)
             }
             
             if (epoxyColorQuartzSystem.capCoat is TSCoat) {

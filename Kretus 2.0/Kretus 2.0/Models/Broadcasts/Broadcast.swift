@@ -62,7 +62,7 @@ class Broadcast: ObservableObject {
 
 
     
-    func findProducts(products: [Product]) {
+    func findProducts() {
         
         // Switch to find products
         

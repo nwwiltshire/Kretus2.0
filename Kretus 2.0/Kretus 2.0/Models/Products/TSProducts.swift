@@ -149,6 +149,9 @@ extension TSCoat {
         case .white:
             self.colorant = Product(id: "EX-KTSECLWH-EA",
                                     name: "TSE Colorant: White, 16 oz")
+        case .metallic:
+            self.colorant = Product(id: "Metallic ID",
+                                    name: "Metallic Pigment: See Kretus Color Chart, 8 oz")
         }
         
         productsNeeded.removeAll()

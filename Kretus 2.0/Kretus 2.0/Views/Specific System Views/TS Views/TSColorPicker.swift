@@ -27,7 +27,7 @@ struct TSColorPicker: View {
         VStack {
             DisclosureGroup("Choose Coat Colorant", isExpanded: $isExpanded) {
                 LazyVGrid(columns: layout, spacing: 20) {
-                    ForEach(TSCoat.CoatColorant.allCases, id: \.self) { tsColor in
+                    ForEach(TSCoat.CoatColorant.allCases.prefix(17), id: \.self) { tsColor in
                         Button(action: {
                             self.tsSelectedColor = tsColor
                             tsCoat.coatColorant = tsSelectedColor

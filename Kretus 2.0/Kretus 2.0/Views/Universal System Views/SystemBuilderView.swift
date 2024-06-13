@@ -66,6 +66,22 @@ struct SystemBuilderView: View {
                             EpoxyColorQuartzSystemSuite(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
                         }
                         
+                        if let epoxyIndustrialSandSystem = currentBuild as? EpoxyIndustrialSandSystem {
+                            EpoxyIndustrialSandSystemSuite(epoxyIndustrialSandSystem: epoxyIndustrialSandSystem)
+                        }
+                        
+                        if let upcIndustrialSandSystem = currentBuild as? UPCIndustrialSandSystem {
+                            UPCIndustrialSandSystemSuite(upcIndustrialSandSystem: upcIndustrialSandSystem)
+                        }
+                        
+                        if let metallicSystem = currentBuild as? MetallicSystem {
+                            MetallicSystemSuite(metallicSystem: metallicSystem)
+                        }
+                        
+                        if let esdSystem = currentBuild as? ESDSystem {
+                            ESDSystemSuite(esdSystem: esdSystem)
+                        }
+                        
                     }
                     .padding(.all)
                     .navigationTitle("System Options")

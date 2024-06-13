@@ -59,6 +59,18 @@ struct SaveSystemView: View {
                                 if let epoxyColorQuartzSystem = system as? EpoxyColorQuartzSystem {
                                     epoxyColorQuartzConvertToData(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
                                 }
+                                if let epoxyIndustrialSandSystem = system as? EpoxyIndustrialSandSystem {
+                                    epoxyIndustrialSandConvertToData(epoxyIndustrialSandSystem: epoxyIndustrialSandSystem)
+                                }
+                                if let upcIndustrialSandSystem = system as? UPCIndustrialSandSystem {
+                                    UPCIndustrialSandConvertToData(upcIndustrialSandSystem: upcIndustrialSandSystem)
+                                }
+                                if let metallicSystem = system as? MetallicSystem {
+                                    metallicConvertToData(metallicSystem: metallicSystem)
+                                }
+                                if let esdSystem = system as? ESDSystem {
+                                    esdConvertToData(esdSystem: esdSystem)
+                                }
                                 showSuccessIcon = true
                                 _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
                                     dismiss()
@@ -407,7 +419,150 @@ struct SaveSystemView: View {
         return coats
         
     }
+    
+    private func epoxyIndustrialSandConvertToData(epoxyIndustrialSandSystem: EpoxyIndustrialSandSystem) {
+        let newSystem = SystemData(name: epoxyIndustrialSandSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: epoxyIndustrialSandSystem.imageName, viewColor: epoxyIndustrialSandSystem.viewColor.description, coats: [], subType: epoxyIndustrialSandSystem.subType.description, systemColor: "", squareFt: epoxyIndustrialSandSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: epoxyIndustrialSandSystem.kitsNeeded)
+        
+        newSystem.coats = epoxyIndustrialSandConvertCoats(epoxyIndustrialSandSystem: epoxyIndustrialSandSystem)
+        
+        saveSystem(systemData: newSystem)
 
+    }
+
+    private func epoxyIndustrialSandConvertCoats(epoxyIndustrialSandSystem: EpoxyIndustrialSandSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        if (epoxyIndustrialSandSystem.subType != .db) {
+            coats.append(CoatData(coatType: "Base Coat", subType: epoxyIndustrialSandSystem.baseCoat!.selectedPartA.description, speed: epoxyIndustrialSandSystem.baseCoat!.speed.description))
+        } else {
+            coats.append(CoatData(coatType: "Base Coat 1", subType: epoxyIndustrialSandSystem.baseCoat1!.selectedPartA.description, speed: epoxyIndustrialSandSystem.baseCoat1!.speed.description))
+            coats.append(CoatData(coatType: "Base Coat 2", subType: epoxyIndustrialSandSystem.baseCoat2!.selectedPartA.description, speed: epoxyIndustrialSandSystem.baseCoat2!.speed.description))
+        }
+        
+        if let tsCap = epoxyIndustrialSandSystem.capCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: tsCap.selectedPartA.description, speed: tsCap.speed.description))
+        }
+        
+        if let paCap = epoxyIndustrialSandSystem.capCoat as? PACoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: paCap.subType.description, speed: paCap.speed.description))
+        }
+        
+        if let puCap = epoxyIndustrialSandSystem.capCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: puCap.subType.description, speed: puCap.speed.description))
+        }
+        
+        if let tsTop = epoxyIndustrialSandSystem.topCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: tsTop.selectedPartA.description, speed: tsTop.speed.description))
+        }
+        
+        if let paTop = epoxyIndustrialSandSystem.topCoat as? PACoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: paTop.subType.description, speed: paTop.speed.description))
+        }
+        
+        if let puTop = epoxyIndustrialSandSystem.topCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: puTop.subType.description, speed: puTop.speed.description))
+        }
+        
+        if (epoxyIndustrialSandSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: epoxyIndustrialSandSystem.primeCoat!.selectedPartA.description, speed: epoxyIndustrialSandSystem.primeCoat!.speed.description))
+        }
+        
+        if (epoxyIndustrialSandSystem.mvrCoat != nil) {
+            coats.append(CoatData(coatType: "MVR Coat", subType: epoxyIndustrialSandSystem.mvrCoat!.selectedPartA.description, speed: epoxyIndustrialSandSystem.mvrCoat!.speed.description))
+        }
+
+        return coats
+        
+    }
+    
+    private func UPCIndustrialSandConvertToData(upcIndustrialSandSystem: UPCIndustrialSandSystem) {
+        let newSystem = SystemData(name: upcIndustrialSandSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: upcIndustrialSandSystem.imageName, viewColor: upcIndustrialSandSystem.viewColor.description, coats: [], subType: upcIndustrialSandSystem.subType.description, systemColor: "", squareFt: upcIndustrialSandSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: upcIndustrialSandSystem.kitsNeeded)
+        
+        newSystem.coats = upcIndustrialSandConvertCoats(upcIndustrialSandSystem: upcIndustrialSandSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func upcIndustrialSandConvertCoats(upcIndustrialSandSystem: UPCIndustrialSandSystem) -> [CoatData] {
+        
+        var coats: [CoatData] = []
+        
+        if (upcIndustrialSandSystem.subType != .dbrc) {
+            coats.append(CoatData(coatType: "Base Coat", subType: upcIndustrialSandSystem.baseCoat!.subType.description, speed: upcIndustrialSandSystem.baseCoat!.speed.description))
+        } else {
+            coats.append(CoatData(coatType: "Base Coat 1", subType: upcIndustrialSandSystem.baseCoat1!.subType.description, speed: upcIndustrialSandSystem.baseCoat1!.speed.description))
+            coats.append(CoatData(coatType: "Base Coat 2", subType: upcIndustrialSandSystem.baseCoat2!.subType.description, speed: upcIndustrialSandSystem.baseCoat2!.speed.description))
+        }
+        
+        if let tsCap = upcIndustrialSandSystem.capCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: tsCap.selectedPartA.description, speed: tsCap.speed.description))
+        }
+        
+        if let paCap = upcIndustrialSandSystem.capCoat as? PACoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: paCap.subType.description, speed: paCap.speed.description))
+        }
+        
+        if let puCap = upcIndustrialSandSystem.capCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: puCap.subType.description, speed: puCap.speed.description))
+        }
+        
+        if let upcCap = upcIndustrialSandSystem.capCoat as? UPCCoat {
+            coats.append(CoatData(coatType: "Cap Coat", subType: upcCap.subType.description, speed: upcCap.speed.description))
+        }
+        
+        if let tsTop = upcIndustrialSandSystem.topCoat as? TSCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: tsTop.selectedPartA.description, speed: tsTop.speed.description))
+        }
+        
+        if let paTop = upcIndustrialSandSystem.topCoat as? PACoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: paTop.subType.description, speed: paTop.speed.description))
+        }
+        
+        if let puTop = upcIndustrialSandSystem.topCoat as? PUCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: puTop.subType.description, speed: puTop.speed.description))
+        }
+        
+        if let upcTop = upcIndustrialSandSystem.topCoat as? UPCCoat {
+            coats.append(CoatData(coatType: "Top Coat", subType: upcTop.subType.description, speed: upcTop.speed.description))
+        }
+        
+        if (upcIndustrialSandSystem.primeCoat != nil) {
+            coats.append(CoatData(coatType: "Prime Coat", subType: upcIndustrialSandSystem.primeCoat!.subType.description, speed: upcIndustrialSandSystem.primeCoat!.speed.description))
+        }
+        
+        if (upcIndustrialSandSystem.mvrCoat != nil) {
+            coats.append(CoatData(coatType: "MVR Coat", subType: upcIndustrialSandSystem.mvrCoat!.subType.description, speed: upcIndustrialSandSystem.mvrCoat!.speed.description))
+        }
+
+        return coats
+        
+    }
+    
+    private func metallicConvertToData(metallicSystem: MetallicSystem) {
+        let newSystem = SystemData(name: metallicSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: metallicSystem.imageName, viewColor: metallicSystem.viewColor.description, coats: [], subType: metallicSystem.subType.description, systemColor: "", squareFt: metallicSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: metallicSystem.kitsNeeded)
+        
+        //newSystem.coats = epoxyColorQuartzConvertCoats(epoxyColorQuartzSystem: epoxyColorQuartzSystem)
+        
+        saveSystem(systemData: newSystem)
+
+    }
+    
+    private func esdConvertToData(esdSystem: ESDSystem) {
+        let newSystem = SystemData(name: esdSystem.name, nameFromUser: nameFromUser, descriptionFromUser: descriptionFromUser, imageName: esdSystem.imageName, viewColor: esdSystem.viewColor.description, coats: [], subType: esdSystem.subType.description, systemColor: "", squareFt: esdSystem.squareFt, kits: [])
+        
+        newSystem.kits = convertKits(systemData: newSystem, kits: esdSystem.kitsNeeded)
+        
+        saveSystem(systemData: newSystem)
+
+    }
 
 }
 

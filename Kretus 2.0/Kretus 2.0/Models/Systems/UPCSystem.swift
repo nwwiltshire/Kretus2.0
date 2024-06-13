@@ -61,7 +61,7 @@ class UPCSystem: System {
     }
     
     enum SubType: CaseIterable, Identifiable, CustomStringConvertible {
-        case rc, tt, sl, mf, wcvc
+        case rc, tt, sl, mf, wcvc, rcuv
         
         var id: Self { self }
         
@@ -72,6 +72,7 @@ class UPCSystem: System {
             case .sl: return "SL (Self Leveling)"
             case .mf: return "MF (Medium Fill SL)"
             case .wcvc: return "WC/VC"
+            case .rcuv: return "RC UV"
             }
         }
     }
@@ -150,13 +151,15 @@ class UPCSystem: System {
     }
     
     enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top, coat1, body, cap, mvr
+        case base, base1, base2, prime, top, coat1, body, cap, mvr
         
         var id: Self { self }
         
         var description: String {
             switch self {
             case .base: return "Base Coat"
+            case .base1: return "Base Coat 1"
+            case .base2: return "Base Coat 2"
             case .prime: return "Prime Coat"
             case .top: return "Top Coat"
             case .coat1: return "Coat 1"

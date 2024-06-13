@@ -22,7 +22,7 @@ struct EpoxyCoveBuildSuite: View {
             TSCoatBuild(tsCoat: epoxyCoveSystem.capCoat, viewColor: epoxyCoveSystem.viewColor)
             
             if (epoxyCoveSystem.broadcast != nil) {
-                ColorChipBroadcastBuild(broadCast: epoxyCoveSystem.broadcast!, viewColor: epoxyCoveSystem.viewColor)
+                BroadcastBuild(broadcast: epoxyCoveSystem.broadcast!, viewColor: epoxyCoveSystem.viewColor)
             }
             Button(action: {
                 isEditing = true

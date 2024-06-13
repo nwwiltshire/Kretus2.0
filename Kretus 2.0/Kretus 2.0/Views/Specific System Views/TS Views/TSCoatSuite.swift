@@ -18,7 +18,7 @@ struct TSCoatSuite: View {
                 .font(.title)
             Text("Top Shelf Epoxy")
                 .font(.title2)
-            if (tsCoat.selectedPartA != .coveResin) {
+            if (tsCoat.selectedPartA != .coveResin && tsCoat.coatType != .metallicAccent && tsCoat.coatType != .metallicTop) {
             HStack {
                 Text("Part A")
                     .font(.headline)
@@ -78,7 +78,9 @@ struct TSCoatSuite: View {
                 )
             }
             
-            TSColorPicker(tsCoat: tsCoat)
+            if (tsCoat.coatType != .metallicBase && tsCoat.coatType != .metallicAccent) {
+                TSColorPicker(tsCoat: tsCoat)
+            }
             
             CoatWasteFactorOptions(coat: tsCoat)
         }

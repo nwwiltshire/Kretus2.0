@@ -117,6 +117,8 @@ extension UPCCoat {
             }
         case .wcvc:
             break
+        case .rcuv:
+            break
         }
         
         switch self.coatColor {
@@ -124,31 +126,31 @@ extension UPCCoat {
             self.colorant = Product()
         case .black:
             self.colorant = Product(id: "EX-KUPCCLBK-EA",
-                                    name: "EX-KUPCCLBK-EA")
+                                    name: "UPC Colorant: Black, 4 oz")
         case .blue:
             self.colorant = Product(id: "EX-KUPCCLBL-EA",
-                                    name: "EX-KUPCCLBL-EA")
+                                    name: "UPC Colorant: Blue, 4 oz")
         case .bone:
             self.colorant = Product(id: "EX-KUPCCLWG-EA",
-                                    name: "EX-KUPCCLWG-EA")
+                                    name: "UPC Colorant: Bone, 4 oz")
         case .brown:
             self.colorant = Product(id: "EX-KUPCCLBR-EA",
-                                    name: "EX-KUPCCLBR-EA")
+                                    name: "UPC Colorant: Brown, 4 oz")
         case .clay:
             self.colorant = Product(id: "EX-KUPCCLCL-EA",
-                                    name: "EX-KUPCCLCL-EA")
+                                    name: "UPC Colorant: Clay, 4 oz")
         case .gray:
             self.colorant = Product(id: "EX-KUPCCLGY-EA",
-                                    name: "EX-KUPCCLGY-EA")
+                                    name: "UPC Colorant: Gray, 4 oz")
         case .green:
             self.colorant = Product(id: "EX-KUPCCLGR-EA",
-                                    name: "EX-KUPCCLGR-EA")
+                                    name: "UPC Colorant: Green, 4 oz")
         case .mustard:
             self.colorant = Product(id: "EX-KUPCCLCY-EA",
-                                    name: "EX-KUPCCLCY-EA")
+                                    name: "UPC Colorant: Mustard, 4 oz")
         case .red:
             self.colorant = Product(id: "EX-KUPCCLRD-EA",
-                                    name: "EX-KUPCCLRD-EA")
+                                    name: "UPC Colorant: Red, 4 oz")
         }
         
         productsNeeded.removeAll()
@@ -188,7 +190,7 @@ extension UPCCoat {
             
         }
         
-        if (self.uvResistance == true) {
+        if (self.uvResistance) {
             productsNeeded.append(Product(id: "EX-KPACEL-08",
                                           name: "Poly Accelerant, 8 oz"))
         }
@@ -196,6 +198,11 @@ extension UPCCoat {
         if (self.solventCleaner) {
             productsNeeded.append(Product(id: "Solvent Cleaner ID",
                                           name: "Solvent Cleaner"))
+        }
+        
+        if (self.mattingAdditive) {
+            productsNeeded.append(Product(id: "Matting Additive ID",
+                                          name: "Matting Additive"))
         }
 
     }

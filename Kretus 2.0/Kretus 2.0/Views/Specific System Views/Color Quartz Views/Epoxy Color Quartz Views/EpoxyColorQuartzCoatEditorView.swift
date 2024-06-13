@@ -15,7 +15,7 @@ struct EpoxyColorQuartzCoatEditorView: View {
     var body: some View {
         ScrollView {
             
-            if (epoxyColorQuartzSystem.subType != .db) {
+            if (epoxyColorQuartzSystem.baseCoat != nil) {
                 TSCoatSuite(tsCoat: epoxyColorQuartzSystem.baseCoat!)
                 ColorChipBroadcastPicker(colorChipBroadcast: epoxyColorQuartzSystem.broadcast!)
             }
