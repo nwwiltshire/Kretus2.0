@@ -554,14 +554,6 @@
 			path = Broadcasts;
 			sourceTree = "<group>";
 		};
-		3068229A2C0125CF00AF6CF8 /* Build Views */ = {
-			isa = PBXGroup;
-			children = (
-				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
-			);
-			path = "Build Views";
-			sourceTree = "<group>";
-		};
 		30708B622C1110EA00AB838B /* Epoxy Color Quartz Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,10 +868,13 @@
 		30CAD9282BFC2F1900060449 /* Color Chip Views */ = {
 			isa = PBXGroup;
 			children = (
-				3068229A2C0125CF00AF6CF8 /* Build Views */,
-				30CAD9362BFD7C9700060449 /* Coat Editors */,
-				30CAD9352BFD7C8400060449 /* System Editors */,
-				30CAD92A2BFC38F700060449 /* Suites */,
+				3068227D2BFFE6BD00AF6CF8 /* ColorChipBuildSuite.swift */,
+				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
+				3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */,
+				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
+				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
+				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
+				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
 			);
 			path = "Color Chip Views";
 			sourceTree = "<group>";
@@ -904,33 +899,6 @@
 				30AC30272B8177590073BB93 /* UPC Views */,
 			);
 			path = "Specific System Views";
-			sourceTree = "<group>";
-		};
-		30CAD92A2BFC38F700060449 /* Suites */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD92B2BFC390600060449 /* ColorChipSystemSuite.swift */,
-			);
-			path = Suites;
-			sourceTree = "<group>";
-		};
-		30CAD9352BFD7C8400060449 /* System Editors */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD92F2BFD401B00060449 /* ColorChipCoatOptions.swift */,
-				30CAD92D2BFD3BC600060449 /* ColorChipSubSystemPicker.swift */,
-				30CAD9312BFD447B00060449 /* ColorChipSystemCommitButton.swift */,
-			);
-			path = "System Editors";
-			sourceTree = "<group>";
-		};
-		30CAD9362BFD7C9700060449 /* Coat Editors */ = {
-			isa = PBXGroup;
-			children = (
-				30CAD9332BFD4B1400060449 /* ColorChipCoatEditorView.swift */,
-				3068227B2BFFE68700AF6CF8 /* ColorChipBuildSubmitButton.swift */,
-			);
-			path = "Coat Editors";
 			sourceTree = "<group>";
 		};
 		30CAD93B2BFE7B6E00060449 /* TS Views */ = {

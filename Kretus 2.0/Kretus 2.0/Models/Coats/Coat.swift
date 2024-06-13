@@ -47,8 +47,8 @@ class Coat: ObservableObject {
         
     }
     
-    // Update Later for coats that use sqft/gal
     func calcKitsPerKit(squareFt: Int, covRate: Int, products: [Product]) {
+        
       kitsNeeded.removeAll()
       
       for product in products {
@@ -59,6 +59,8 @@ class Coat: ObservableObject {
         kitsNeeded.append(Kit(product: product, quantity: quantity))
       }
     }
+    
+    // PA, PU, TS, ConductivePrimer: Add kit size variable, (kitSize(sqftPerGal)) = covRate (Ignore solvent cleaners, matting additives, etc. match these to part A)
     
     func setValues() {
         
