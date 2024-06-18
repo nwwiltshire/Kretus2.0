@@ -60,7 +60,8 @@ class Coat: ObservableObject {
       }
     }
     
-    // PA, PU, TS, ConductivePrimer: Add kit size variable, (kitSize(sqftPerGal)) = covRate (Ignore solvent cleaners, matting additives, etc. match these to part A)
+    // PA, PU, TS, ConductivePrimer: Add kit size variable and sqft/gal variable, (sqftPerGal * kitsize) = covRate (Ignore solvent cleaners, matting additives, etc. match these to part A (sqft/gal))
+    
     
     func setValues() {
         

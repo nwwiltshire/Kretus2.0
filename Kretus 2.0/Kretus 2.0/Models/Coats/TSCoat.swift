@@ -14,6 +14,9 @@ class TSCoat: Coat {
     @Published var speed: TSCoat.Speed
     @Published var covRate: Int
     
+    @Published var sqftPerGal: Int
+    @Published var kitSize: Double
+    
     @Published var selectedPartA: TSCoat.PartAs
     
     @Published var partA: Product
@@ -39,6 +42,8 @@ class TSCoat: Coat {
          coatType: TSCoat.CoatType,
          speed: TSCoat.Speed,
          covRate: Int,
+         sqftPerGal: Int,
+         kitSize: Double,
          selectedPartA: TSCoat.PartAs,
          partA: Product,
          partB: Product,
@@ -55,6 +60,8 @@ class TSCoat: Coat {
         self.coatType = coatType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.selectedPartA = selectedPartA
         self.partA = partA
         self.partB = partB
@@ -75,7 +82,9 @@ class TSCoat: Coat {
         
         self.coatType = .base
         self.speed = .ap
-        self.covRate = 235 // Default .base coverage rate
+        self.covRate = 0
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.selectedPartA = .arBeige
         self.partA = Product()
         self.partB = Product()
@@ -248,36 +257,20 @@ class TSCoat: Coat {
     
     // Update later (SQFT/GAL)
     private func updateCovRate() {
-        switch coatType {
+        
+        switch thickness {
         case .base:
-            covRate = 235
+            break
         case .prime:
-            covRate = 275
-        case .top:
             break
         case .mvr:
-            covRate = 100
-        case .coat1:
             break
-        case .coat2:
+        case .fourIn:
             break
-        case .coat3:
-            break
-        case .body:
-            break
-        case .cap:
-            break
-        case .base1:
-            break
-        case .base2:
-            break
-        case .metallicBase:
-            break
-        case .metallicAccent:
-            break
-        case .metallicTop:
+        case .sixIn:
             break
         }
+        
     }
     
     override func setValues() {
@@ -286,7 +279,7 @@ class TSCoat: Coat {
         
         findProducts()
         
-        // Update Later to sqft/gal
+        // This will work after sqft/gal implementation
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
         
     }
