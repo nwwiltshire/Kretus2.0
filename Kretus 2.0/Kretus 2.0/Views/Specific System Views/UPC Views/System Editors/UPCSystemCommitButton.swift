@@ -16,12 +16,12 @@ struct UPCSystemCommitButton: View {
     NavigationLink(destination: UPCCoatEditorView(upcSystem: upcSystem)
         // Creates base coat
         .onAppear {
-            upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType, coatColor: upcSystem.systemColor)
+            upcSystem.baseCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .base, subType: upcSystem.subType, coatColor: upcSystem.systemColor, thickness: .thin)
             if ((upcSystem.primeCoat) != nil) {
-                upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: .rc, coatColor: upcSystem.systemColor)
+                upcSystem.primeCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .prime, subType: .rc, coatColor: upcSystem.systemColor, thickness: .primeRC)
             }
             if ((upcSystem.topCoat) != nil) {
-                upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: .rc, coatColor: upcSystem.systemColor)
+                upcSystem.topCoat = upcSystem.createUPCCoat(squareFt: upcSystem.squareFt, coatType: .top, subType: .rc, coatColor: upcSystem.systemColor, thickness: .thinRC)
             }
         }) {
       HStack {

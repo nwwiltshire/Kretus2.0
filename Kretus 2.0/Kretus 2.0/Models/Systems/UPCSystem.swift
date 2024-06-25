@@ -101,7 +101,7 @@ class UPCSystem: System {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick
+        case thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick, primeRC
         
         var id: Self { self }
         
@@ -114,6 +114,7 @@ class UPCSystem: System {
             case .thin: return "1/8\""
             case .medium: return "3/16\""
             case .thick: return "1/4\""
+            case .primeRC: return "5-7 mils"
             }
         }
     }
@@ -201,12 +202,13 @@ class UPCSystem: System {
         return output
     }
 
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor, thickness: UPCSystem.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.subType = subType
         upcCoat.coatColor = coatColor
+        upcCoat.thickness = thickness
         
         if (subType != .rc) {
             upcCoat.thickness = .thin

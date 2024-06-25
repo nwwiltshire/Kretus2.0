@@ -136,6 +136,8 @@ class UPCCoat: Coat {
                     covRate = 1
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -154,6 +156,8 @@ class UPCCoat: Coat {
                     covRate = 10
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .sl:
                 switch thickness {
@@ -171,6 +175,8 @@ class UPCCoat: Coat {
                     covRate = 25
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -187,6 +193,8 @@ class UPCCoat: Coat {
                 case .thick:
                     covRate = 25
                 case .quartzTT:
+                    break
+                case .primeRC:
                     break
                 }
             case .wcvc:
@@ -212,6 +220,8 @@ class UPCCoat: Coat {
                     covRate = 1
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -228,6 +238,8 @@ class UPCCoat: Coat {
                 case .thick:
                     covRate = 36
                 case .quartzTT:
+                    break
+                case .primeRC:
                     break
                 }
             case .sl:
@@ -246,6 +258,8 @@ class UPCCoat: Coat {
                     covRate = 42
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -262,6 +276,8 @@ class UPCCoat: Coat {
                 case .thick:
                     covRate = 48
                 case .quartzTT:
+                    break
+                case .primeRC:
                     break
                 }
             case .wcvc:
@@ -287,6 +303,8 @@ class UPCCoat: Coat {
                     covRate = 1
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .tt:
                 switch thickness {
@@ -303,6 +321,8 @@ class UPCCoat: Coat {
                 case .thick:
                     covRate = 60
                 case .quartzTT:
+                    break
+                case .primeRC:
                     break
                 }
             case .sl:
@@ -321,6 +341,8 @@ class UPCCoat: Coat {
                     covRate = 66
                 case .quartzTT:
                     break
+                case .primeRC:
+                    break
                 }
             case .mf:
                 switch thickness {
@@ -337,6 +359,8 @@ class UPCCoat: Coat {
                 case .thick:
                     covRate = 72
                 case .quartzTT:
+                    break
+                case .primeRC:
                     break
                 }
             case .wcvc:
