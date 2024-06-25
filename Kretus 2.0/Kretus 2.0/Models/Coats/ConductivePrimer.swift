@@ -10,6 +10,8 @@ import Foundation
 class ConductivePrimer: Coat {
 
     @Published var covRate: Int
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
     
     @Published var partA: Product
     @Published var partB: Product
@@ -20,12 +22,16 @@ class ConductivePrimer: Coat {
          productsNeeded: [Product],
          kitsNeeded: [Kit],
          covRate: Int,
+         sqftPerGal: Double,
+         kitSize: Double,
          partA: Product,
          partB: Product,
          wasteFactor: Int
     ) {
         
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         
@@ -35,7 +41,9 @@ class ConductivePrimer: Coat {
     
     init() {
         
-        self.covRate = 1 // set to conductive primer coverage rate
+        self.covRate = 0
+        self.sqftPerGal = 100 // Set to conductive primer sqftpergal later
+        self.kitSize = 1.5
         self.partA = Product(id: "Conductive Primer", name: "Part A")
         self.partB = Product(id: "Conductive Primer", name: "Part B")
         
@@ -56,6 +64,12 @@ class ConductivePrimer: Coat {
         
         // Update Later to sqft/gal
         calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        
+    }
+    
+    private func updateCovRate() {
+        
+        covRate = Int(sqftPerGal * kitSize)
         
     }
 

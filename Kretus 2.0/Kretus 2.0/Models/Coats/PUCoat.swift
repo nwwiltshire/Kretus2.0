@@ -15,6 +15,9 @@ class PUCoat: Coat {
     @Published var speed: PUCoat.Speed
     @Published var covRate: Int
     
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
+    
     @Published var partA: Product
     @Published var partB: Product
     @Published var texture: Texture
@@ -33,6 +36,8 @@ class PUCoat: Coat {
          subType: PUCoat.SubType,
          speed: PUCoat.Speed,
          covRate: Int,
+         sqftPerGal: Double,
+         kitSize: Double,
          partA: Product,
          partB: Product,
          texture: Texture,
@@ -45,6 +50,8 @@ class PUCoat: Coat {
         self.subType = subType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         self.texture = texture
@@ -62,6 +69,8 @@ class PUCoat: Coat {
         self.subType = .polyHS
         self.speed = .ez
         self.covRate = 0 // set to default value for default thickness
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.partA = Product()
         self.partB = Product()
         self.texture = .noTexture
@@ -167,8 +176,11 @@ class PUCoat: Coat {
     private func updateCovRate() {
         switch self.thickness {
         case .top2:
-            covRate = 100
+            sqftPerGal = 100
         }
+        
+        covRate = Int(sqftPerGal * kitSize)
+        
     }
     
     override func setValues() {

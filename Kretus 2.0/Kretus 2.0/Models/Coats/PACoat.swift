@@ -15,6 +15,9 @@ class PACoat: Coat {
     @Published var speed: PACoat.Speed
     @Published var covRate: Int
     
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
+    
     @Published var partA: Product
     @Published var partB: Product
     
@@ -36,6 +39,8 @@ class PACoat: Coat {
          subType: PACoat.SubType,
          speed: PACoat.Speed,
          covRate: Int,
+         sqftPerGal: Double,
+         kitSize: Double,
          partA: Product,
          partB: Product,
          coatColorant: PACoat.CoatColorant,
@@ -50,6 +55,8 @@ class PACoat: Coat {
         self.subType = subType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         self.coatColorant = coatColorant
@@ -69,6 +76,8 @@ class PACoat: Coat {
         self.subType = .poly72
         self.speed = .ez
         self.covRate = 0 // set to default value for default thickness
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.partA = Product()
         self.partB = Product()
         self.coatColorant = .noColor
@@ -207,16 +216,20 @@ class PACoat: Coat {
     
     // Update later (SQFT/GAL)
     private func updateCovRate() {
+        
         switch self.thickness {
         case .base:
-            covRate = 165
+            sqftPerGal = 165
         case .prime:
-            covRate = 350
+            sqftPerGal = 350
         case .top1:
-            covRate = 185
+            sqftPerGal = 185
         case .top2:
-            covRate = 350
+            sqftPerGal = 350
         }
+        
+        covRate = Int(sqftPerGal * kitSize)
+        
     }
     
     override func setValues() {
