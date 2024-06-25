@@ -17,58 +17,58 @@ struct ColorChipSystemCommitButton: View {
         .onAppear {
             if (colorChipSystem.subType == .rc) {
                 
-                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .rc, uvResistance: false)
+                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .rc, uvResistance: false, thickness: .thinRC)
                 
                 if ((colorChipSystem.primeCoat) != nil) {
-                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .rc, uvResistance: false)
+                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .rc, uvResistance: false, thickness: .thinRC)
                 }
                 
             } else if (colorChipSystem.subType == .rcuv) {
                 
-                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .rc, uvResistance: true)
+                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .rc, uvResistance: true, thickness: .thinRC)
                 
                 if ((colorChipSystem.primeCoat) != nil) {
-                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .rc, uvResistance: true)
+                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .rc, uvResistance: true, thickness: .thinRC)
                 }
                 
             } else if (colorChipSystem.subType == .ts) {
                 
-                colorChipSystem.baseCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .base)
+                colorChipSystem.baseCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .base, thickness: .base)
                 
                 if ((colorChipSystem.primeCoat) != nil) {
-                    colorChipSystem.primeCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .prime)
+                    colorChipSystem.primeCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, thickness: .prime)
                 }
                 if ((colorChipSystem.mvrCoat) != nil) {
-                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr)
+                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr, thickness: .mvr)
                 }
                 
             } else if (colorChipSystem.subType == .sl) {
                 
-                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .sl, uvResistance: false)
+                colorChipSystem.baseCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .base, subType: .sl, uvResistance: false, thickness: .thin)
                 
                 if (colorChipSystem.primeCoat != nil) {
-                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .sl, uvResistance: false)
+                    colorChipSystem.primeCoat = colorChipSystem.createUPCCoat(squareFt: colorChipSystem.squareFt, coatType: .prime, subType: .sl, uvResistance: false, thickness: .thin)
                 }
                 
             } else if (colorChipSystem.subType == .pa){
-                colorChipSystem.baseCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .base)
+                colorChipSystem.baseCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .base, thickness: .base)
                 
                 if ((colorChipSystem.primeCoat) != nil) {
-                    colorChipSystem.primeCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .prime)
+                    colorChipSystem.primeCoat = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .prime, thickness: .prime)
                 }
                 if ((colorChipSystem.mvrCoat) != nil) {
-                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr)
+                    colorChipSystem.mvrCoat = colorChipSystem.createTSCoat(squareFt: colorChipSystem.squareFt, coatType: .mvr, thickness: .mvr)
                 }
             }
             
-            colorChipSystem.topCoat1 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top1)
+            colorChipSystem.topCoat1 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top1, thickness: .top1)
             
             if (colorChipSystem.topCoat2 != nil) {
                 switch colorChipSystem.topCoat2SubType {
                 case .polyaspartic:
-                    colorChipSystem.topCoat2 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top2)
+                    colorChipSystem.topCoat2 = colorChipSystem.createPACoat(squareFt: colorChipSystem.squareFt, coatType: .top2, thickness: .top2)
                 case .polyurethane:
-                    colorChipSystem.topCoat2 = colorChipSystem.createPUCoat(squareFt: colorChipSystem.squareFt, coatType: .top2)
+                    colorChipSystem.topCoat2 = colorChipSystem.createPUCoat(squareFt: colorChipSystem.squareFt, coatType: .top2, thickness: .top2)
                 }
             }
             
