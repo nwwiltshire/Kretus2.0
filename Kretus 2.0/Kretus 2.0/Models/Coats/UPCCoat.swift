@@ -392,7 +392,7 @@ class UPCCoat: Coat {
         
         findProducts()
         
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded, additiveCovRate: covRate)
         
     }
 

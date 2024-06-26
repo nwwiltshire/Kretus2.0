@@ -239,7 +239,7 @@ class PACoat: Coat {
         findProducts()
         
         // Update Later to sqft/gal
-        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded, additiveCovRate: Int(sqftPerGal))
         
     }
 

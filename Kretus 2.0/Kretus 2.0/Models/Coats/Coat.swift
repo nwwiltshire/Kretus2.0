@@ -47,16 +47,28 @@ class Coat: ObservableObject {
         
     }
     
-    func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
+    func calcKits(squareFt: Int, covRate: Int, products: [Product], additiveCovRate: Int) {
         
-      kitsNeeded.removeAll()
+        kitsNeeded.removeAll()
+        
+        var quantity = 0
       
-      for product in products {
-        // Calculate quantity using ceil to round up
-        let quantity = Int(ceil(Double(squareFt) / Double(covRate))) + wasteFactor
-        
-        // Create a Kit object and append it to the kitsNeeded array
-        kitsNeeded.append(Kit(product: product, quantity: quantity))
+        for product in products {
+            
+            if (product.type != .additive) {
+                  
+                // Calculate quantity using ceil to round up
+                quantity = Int(ceil(Double(squareFt) / Double(covRate))) + wasteFactor
+                  
+            } else {
+                  
+                quantity = Int(ceil(Double(squareFt) / Double(additiveCovRate))) + wasteFactor
+                  
+            }
+              
+            // Create a Kit object and append it to the kitsNeeded array
+            kitsNeeded.append(Kit(product: product, quantity: quantity))
+          
       }
     }
     

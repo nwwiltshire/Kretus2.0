@@ -165,17 +165,20 @@ extension TSCoat {
         
         if (self.solventCleaner) {
             productsNeeded.append(Product(id: "Solvent Cleaner",
-                                          name: "Solvent Cleaner"))
+                                          name: "Solvent Cleaner",
+                                          type: .additive))
         }
         
         if (self.mattingAdditive) {
             productsNeeded.append(Product(id: "Matting Additive",
-                                          name: "Matting Additive"))
+                                          name: "Matting Additive",
+                                          type: .additive))
         }
         
         if (self.hasColorQuartz) {
             productsNeeded.append(Product(id: "Color Quartz",
-                                          name: "Color Quartz"))
+                                          name: "Color Quartz",
+                                          type: .additive))
         }
 
     }
