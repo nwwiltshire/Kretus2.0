@@ -101,12 +101,13 @@ class UPCSystem: System {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick, primeRC
+        case prime, thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick, primeRC
         
         var id: Self { self }
         
         var description: String {
             switch self {
+            case .prime: return "3-5 mils"
             case .thinRC: return "8-12 mils"
             case .mediumRC: return "15-20 mils"
             case .thickRC: return "25-30 mils"

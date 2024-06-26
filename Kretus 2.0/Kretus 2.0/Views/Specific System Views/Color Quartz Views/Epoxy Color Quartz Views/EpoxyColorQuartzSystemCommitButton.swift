@@ -17,7 +17,7 @@ struct EpoxyColorQuartzSystemCommitButton: View {
             .onAppear {
                 
                 if (epoxyColorQuartzSystem.subType != .db) {
-                    epoxyColorQuartzSystem.baseCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base, mattingAdditive: false)
+                    epoxyColorQuartzSystem.baseCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base, mattingAdditive: false, thickness: .base)
                     epoxyColorQuartzSystem.baseCoat1 = nil
                     epoxyColorQuartzSystem.baseCoat2 = nil
                     
@@ -27,8 +27,8 @@ struct EpoxyColorQuartzSystemCommitButton: View {
                     epoxyColorQuartzSystem.broadcast1 = nil
                     epoxyColorQuartzSystem.broadcast2 = nil
                 } else {
-                    epoxyColorQuartzSystem.baseCoat1 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base1, mattingAdditive: false)
-                    epoxyColorQuartzSystem.baseCoat2 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base2, mattingAdditive: false)
+                    epoxyColorQuartzSystem.baseCoat1 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base1, mattingAdditive: false, thickness: .base)
+                    epoxyColorQuartzSystem.baseCoat2 = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .base2, mattingAdditive: false, thickness: .base2)
                     epoxyColorQuartzSystem.baseCoat = nil
 
                     
@@ -45,28 +45,28 @@ struct EpoxyColorQuartzSystemCommitButton: View {
                 
                 switch epoxyColorQuartzSystem.capCoatSubType {
                 case .ts:
-                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive)
+                    epoxyColorQuartzSystem.capCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: epoxyColorQuartzSystem.capMattingAdditive, thickness: .base)
                 }
                 
                 switch epoxyColorQuartzSystem.topCoatSubType {
                 case .ts:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPACoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive)
+                    epoxyColorQuartzSystem.topCoat = epoxyColorQuartzSystem.createPUCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: epoxyColorQuartzSystem.topMattingAdditive, thickness: .base)
                 }
                 
                 if (epoxyColorQuartzSystem.primeCoat != nil) {
-                    epoxyColorQuartzSystem.primeCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .prime, mattingAdditive: false)
+                    epoxyColorQuartzSystem.primeCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .prime, mattingAdditive: false, thickness: .prime)
                 }
                 
                 if (epoxyColorQuartzSystem.mvrCoat != nil) {
-                    epoxyColorQuartzSystem.mvrCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .mvr, mattingAdditive: false)
+                    epoxyColorQuartzSystem.mvrCoat = epoxyColorQuartzSystem.createTSCoat(squareFt: epoxyColorQuartzSystem.squareFt, coatType: .mvr, mattingAdditive: false, thickness: .mvr)
                 }
                 
             }) {

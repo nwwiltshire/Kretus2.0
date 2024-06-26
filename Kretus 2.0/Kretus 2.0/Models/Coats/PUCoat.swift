@@ -138,13 +138,14 @@ class PUCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case top2
+        case base, top2
         
         var id: Self { self }
         
         var description: String {
             switch self {
                 
+            case .base: return "8-12 mils"
             case .top2: return "3-5 mils"
                 
             }
@@ -177,6 +178,8 @@ class PUCoat: Coat {
         switch self.thickness {
         case .top2:
             sqftPerGal = 100
+        case .base:
+            break
         }
         
         covRate = Int(sqftPerGal * kitSize)

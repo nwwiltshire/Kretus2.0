@@ -217,7 +217,7 @@ class TSCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, mvr, fourIn, sixIn
+        case base, prime, primeThin, mvrThin, base2, mvr, mvrPrime, fourIn, sixIn, wftThin, wftMedium, wftThick
         
         var id: Self { self }
         
@@ -226,9 +226,16 @@ class TSCoat: Coat {
                 
             case .base: return "8-12 mils"
             case .prime: return "3-5 mils"
+            case .primeThin: return "8 mils"
+            case .mvrThin: return "12 mils"
+            case .base2: return "13-15 mils"
             case .mvr: return "16 mils"
+            case .mvrPrime: return "5 mils"
             case .fourIn: return "4\""
             case .sixIn: return "6\""
+            case .wftThin: return "15-20 WFT"
+            case .wftMedium: return "25-30 WFT"
+            case .wftThick: return "40-45 WFT"
                 
             }
         }
@@ -267,6 +274,20 @@ class TSCoat: Coat {
         case .fourIn:
             break
         case .sixIn:
+            break
+        case .mvrPrime:
+            break
+        case .mvrThin:
+            break
+        case .base2:
+            break
+        case .primeThin:
+            break
+        case .wftThin:
+            break
+        case .wftMedium:
+            break
+        case .wftThick:
             break
         }
         

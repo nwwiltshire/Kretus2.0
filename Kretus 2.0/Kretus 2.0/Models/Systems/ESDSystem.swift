@@ -91,19 +91,21 @@ class ESDSystem: System {
 
     }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
+        tsCoat.thickness = thickness
         
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
+        paCoat.thickness = thickness
         
         return paCoat
     }

@@ -18,7 +18,7 @@ struct UPCIndustrialSandSystemCommitButton: View {
             .onAppear {
                 
                 if (upcIndustrialSandSystem.subType != .dbrc) {
-                    upcIndustrialSandSystem.baseCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base, mattingAdditive: false, isUV: false)
+                    upcIndustrialSandSystem.baseCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base, mattingAdditive: false, isUV: false, thickness: .thinRC)
                     upcIndustrialSandSystem.baseCoat1 = nil
                     upcIndustrialSandSystem.baseCoat2 = nil
                     
@@ -28,8 +28,8 @@ struct UPCIndustrialSandSystemCommitButton: View {
                     upcIndustrialSandSystem.broadcast!.squareFt = upcIndustrialSandSystem.squareFt
                     upcIndustrialSandSystem.broadcast!.sand = .twentyMesh
                 } else {
-                    upcIndustrialSandSystem.baseCoat1 = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base1, mattingAdditive: false, isUV: false)
-                    upcIndustrialSandSystem.baseCoat2 = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base2, mattingAdditive: false, isUV: false)
+                    upcIndustrialSandSystem.baseCoat1 = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base1, mattingAdditive: false, isUV: false, thickness: .thinRC)
+                    upcIndustrialSandSystem.baseCoat2 = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .base2, mattingAdditive: false, isUV: false, thickness: .thinRC)
                     upcIndustrialSandSystem.baseCoat = nil
                     
                     upcIndustrialSandSystem.broadcast1 = IndustrialSandBroadcast()
@@ -45,36 +45,36 @@ struct UPCIndustrialSandSystemCommitButton: View {
                 
                 switch upcIndustrialSandSystem.capCoatSubType {
                 case .ts:
-                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createTSCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive)
+                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createTSCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createPACoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive)
+                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createPACoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createPUCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive)
+                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createPUCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .upc:
-                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, isUV: false)
+                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, isUV: false, thickness: .thinRC)
                 case .upcRCUV:
-                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, isUV: true)
+                    upcIndustrialSandSystem.capCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .cap, mattingAdditive: upcIndustrialSandSystem.capMattingAdditive, isUV: true, thickness: .thinRC)
                 }
                 
                 switch upcIndustrialSandSystem.topCoatSubType {
                 case .ts:
-                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createTSCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive)
+                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createTSCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createPACoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive)
+                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createPACoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createPUCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive)
+                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createPUCoat(squareFt: upcIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .upc:
-                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, isUV: false)
+                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, isUV: false, thickness: .thinRC)
                 case .upcRCUV:
-                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, isUV: true)
+                    upcIndustrialSandSystem.topCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: upcIndustrialSandSystem.subType, coatType: .top, mattingAdditive: upcIndustrialSandSystem.topMattingAdditive, isUV: true, thickness: .thinRC)
                 }
                 
                 if (upcIndustrialSandSystem.primeCoat != nil) {
-                    upcIndustrialSandSystem.primeCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: .rc, coatType: .prime, mattingAdditive: false, isUV: false)
+                    upcIndustrialSandSystem.primeCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: .rc, coatType: .prime, mattingAdditive: false, isUV: false, thickness: .prime)
                 }
                 
                 if (upcIndustrialSandSystem.mvrCoat != nil) {
-                    upcIndustrialSandSystem.mvrCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: .rc, coatType: .mvr, mattingAdditive: false, isUV: false)
+                    upcIndustrialSandSystem.mvrCoat = upcIndustrialSandSystem.createUPCCoat(squareFt: upcIndustrialSandSystem.squareFt, subType: .rc, coatType: .mvr, mattingAdditive: false, isUV: false, thickness: .thinRC)
                 }
                 
             }) {

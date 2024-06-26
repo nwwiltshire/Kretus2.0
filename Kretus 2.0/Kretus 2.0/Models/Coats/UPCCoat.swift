@@ -115,7 +115,9 @@ class UPCCoat: Coat {
                    wasteFactor: 0)
     }
     
+    
     private func updateCovRate() {
+        /*
         switch coatType {
         case .base:
             switch subType {
@@ -381,6 +383,7 @@ class UPCCoat: Coat {
         case .base2:
             break
         }
+         */
     }
     
     override func setValues() {
