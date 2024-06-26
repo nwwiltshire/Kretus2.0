@@ -47,7 +47,7 @@ class Coat: ObservableObject {
         
     }
     
-    func calcKitsPerKit(squareFt: Int, covRate: Int, products: [Product]) {
+    func calcKits(squareFt: Int, covRate: Int, products: [Product]) {
         
       kitsNeeded.removeAll()
       
