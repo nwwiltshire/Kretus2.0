@@ -9,14 +9,14 @@ import Foundation
 
 class UPCCoat: Coat {
     
-    @Published var coatType: UPCSystem.CoatType {
+    @Published var coatType: CoatType {
         didSet {
             updateCovRate()
         }
     }
     
     @Published var subType: UPCSystem.SubType
-    @Published var speed: UPCSystem.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
     
     @Published var partA: Product
@@ -26,14 +26,14 @@ class UPCCoat: Coat {
     @Published var coatColor: UPCSystem.SystemColor
     @Published var colorant: Product
     
-    @Published var thickness: UPCSystem.Thickness {
+    @Published var thickness: Thickness {
             didSet {
                 updateCovRate()
             }
         }
     
-    @Published var texture1: UPCSystem.Texture
-    @Published var texture2: UPCSystem.Texture
+    @Published var texture1: Texture
+    @Published var texture2: Texture
     @Published var uvResistance: Bool
     
     @Published var solventCleaner: Bool
@@ -48,18 +48,18 @@ class UPCCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: UPCSystem.CoatType,
+         coatType: CoatType,
          subType: UPCSystem.SubType,
-         speed: UPCSystem.Speed,
+         speed: Speed,
          covRate: Int,
          partA: Product,
          partB: Product,
          partC: Product,
          coatColor: UPCSystem.SystemColor,
          colorant: Product,
-         thickness: UPCSystem.Thickness,
-         texture1: UPCSystem.Texture,
-         texture2: UPCSystem.Texture,
+         thickness: Thickness,
+         texture1: Texture,
+         texture2: Texture,
          uvResistance: Bool,
          wasteFactor: Int,
          solventCleaner: Bool,
@@ -113,6 +113,77 @@ class UPCCoat: Coat {
                    wasteFactor: 0)
     }
     
+    enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
+        case prime, thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick, primeRC
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .prime: return "3-5 mils"
+            case .thinRC: return "8-12 mils"
+            case .mediumRC: return "15-20 mils"
+            case .thickRC: return "25-30 mils"
+            case .quartzTT: return "3/8\""
+            case .thin: return "1/8\""
+            case .medium: return "3/16\""
+            case .thick: return "1/4\""
+            case .primeRC: return "5-7 mils"
+            }
+        }
+    }
+    
+    enum Speed: CaseIterable, Identifiable, CustomStringConvertible {
+        case ez, ap, fc
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .ez: return "EZ (Easy)"
+            case .ap: return "AP (Average Pace)"
+            case .fc: return "FC (Fast Cure)"
+            }
+        }
+    }
+    
+    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
+        case none, antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .none: return "No Texture"
+            case .antiSlip60: return "Anti Slip 60"
+            case .antiSlip36: return "Anti Slip 36"
+            case .antiSlip24: return "Anti Slip 24"
+            case .industrialSand60: return "Industrial Sand 60"
+            case .industrialSand30: return "Industrial Sand 30"
+            case .industrialSand20: return "Industrial Sand 20"
+            }
+        }
+    }
+    
+    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
+        case base, base1, base2, prime, top, coat1, body, cap, mvr
+        
+        var id: Self { self }
+        
+        var description: String {
+            switch self {
+            case .base: return "Base Coat"
+            case .base1: return "Base Coat 1"
+            case .base2: return "Base Coat 2"
+            case .prime: return "Prime Coat"
+            case .top: return "Top Coat"
+            case .coat1: return "Coat 1"
+            case .body: return "Body Coat"
+            case .cap: return "Cap Coat"
+            case .mvr: return "MVR Coat"
+            }
+        }
+    }
     
     private func updateCovRate() {
         /*
@@ -413,25 +484,5 @@ class UPCCoat: Coat {
         output += "Texture 1: \(texture1)\n"
         output += "Texture 2: \(texture2)\n"
         return output
-    }
-    
-    func findTexture(texture: UPCSystem.Texture, products: [Product]) -> Product {
-        
-        switch texture {
-        case .none:
-            return Product()
-        case .antiSlip60:
-            return products.first(where: {$0.id == "EX-KASAO60-01"})!
-        case .antiSlip36:
-            return products.first(where: {$0.id == "EX-KASAO36-01"})!
-        case .antiSlip24:
-            return products.first(where: {$0.id == "EX-KASA246-01"})!
-        case .industrialSand60:
-            return products.first(where: {$0.id == "116"})!
-        case .industrialSand30:
-            return products.first(where: {$0.id == "115"})!
-        case .industrialSand20:
-            return products.first(where: {$0.id == "114"})!
-        }
     }
 }

@@ -187,7 +187,7 @@ class ColorChipSystem: System {
         }
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, uvResistance: Bool, thickness: UPCSystem.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCSystem.SubType, uvResistance: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

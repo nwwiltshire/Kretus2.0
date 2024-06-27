@@ -22,7 +22,7 @@ struct UPCTexturePicker: View {
                 Spacer()
                 
                 Picker(selection: $coat.texture1, label: Text("")) {
-                    ForEach(UPCSystem.Texture.allCases, id: \.self) { subType in
+                    ForEach(UPCCoat.Texture.allCases, id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }
@@ -42,7 +42,7 @@ struct UPCTexturePicker: View {
                 Spacer()
                 
                 Picker(selection: $coat.texture2, label: Text("")) {
-                    ForEach(UPCSystem.Texture.allCases, id: \.self) { subType in
+                    ForEach(UPCCoat.Texture.allCases, id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }

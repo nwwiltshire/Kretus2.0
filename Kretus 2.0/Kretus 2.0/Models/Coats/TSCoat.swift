@@ -9,23 +9,23 @@ import Foundation
 
 class TSCoat: Coat {
     
-    @Published var coatType: TSCoat.CoatType
+    @Published var coatType: CoatType
     
-    @Published var speed: TSCoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
     
     @Published var sqftPerGal: Double
     @Published var kitSize: Double
     
-    @Published var selectedPartA: TSCoat.PartAs
+    @Published var selectedPartA: PartAs
     
     @Published var partA: Product
     @Published var partB: Product
     
-    @Published var coatColorant: TSCoat.CoatColorant
+    @Published var coatColorant: CoatColorant
     @Published var colorant: Product
     
-    @Published var thickness: TSCoat.Thickness
+    @Published var thickness: Thickness
     @Published var coveHeight: EpoxyCoveSystem.Height
     
     @Published var solventCleaner: Bool
@@ -38,17 +38,17 @@ class TSCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: TSCoat.CoatType,
-         speed: TSCoat.Speed,
+         coatType: CoatType,
+         speed: Speed,
          covRate: Int,
          sqftPerGal: Double,
          kitSize: Double,
-         selectedPartA: TSCoat.PartAs,
+         selectedPartA: PartAs,
          partA: Product,
          partB: Product,
-         coatColorant: TSCoat.CoatColorant,
+         coatColorant: CoatColorant,
          colorant: Product,
-         thickness: TSCoat.Thickness,
+         thickness: Thickness,
          coveHeight: EpoxyCoveSystem.Height,
          wasteFactor: Int,
          solventCleaner: Bool,

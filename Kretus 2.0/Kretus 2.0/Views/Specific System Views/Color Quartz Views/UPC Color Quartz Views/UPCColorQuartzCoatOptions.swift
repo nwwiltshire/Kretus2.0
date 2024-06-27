@@ -38,14 +38,14 @@ struct UPCColorQuartzCoatOptions: View {
                     Text("Thickness")
                     Picker(selection: $upcColorQuartzSystem.thickness, label: Text("")) {
                         if (upcColorQuartzSystem.subType == .tt) {
-                            ForEach(UPCSystem.Thickness.allCases.indices, id: \.self) { index in
-                                let subType = UPCSystem.Thickness.allCases[index]
-                                if index == UPCSystem.Thickness.allCases.count - 4 || index == UPCSystem.Thickness.allCases.count - 1 {
+                            ForEach(UPCCoat.Thickness.allCases.indices, id: \.self) { index in
+                                let subType = UPCCoat.Thickness.allCases[index]
+                                if index == UPCCoat.Thickness.allCases.count - 4 || index == UPCCoat.Thickness.allCases.count - 1 {
                                     Text(subType.description).tag(subType)
                                 }
                             }
                         } else if (upcColorQuartzSystem.subType == .sl || upcColorQuartzSystem.subType == .mf) {
-                            ForEach(UPCSystem.Thickness.allCases.suffix(2), id: \.self) { subType in Text(subType.description).tag(subType)
+                            ForEach(UPCCoat.Thickness.allCases.suffix(2), id: \.self) { subType in Text(subType.description).tag(subType)
                             }
                         }
                     }

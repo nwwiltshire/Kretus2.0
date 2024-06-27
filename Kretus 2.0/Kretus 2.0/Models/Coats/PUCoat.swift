@@ -9,10 +9,10 @@ import Foundation
 
 class PUCoat: Coat {
     
-    @Published var coatType: PUCoat.CoatType
-    @Published var subType: PUCoat.SubType
+    @Published var coatType: CoatType
+    @Published var subType: SubType
     
-    @Published var speed: PUCoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
     
     @Published var sqftPerGal: Double
@@ -22,7 +22,7 @@ class PUCoat: Coat {
     @Published var partB: Product
     @Published var texture: Texture
     
-    @Published var thickness: PUCoat.Thickness
+    @Published var thickness: Thickness
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
@@ -31,16 +31,16 @@ class PUCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: PUCoat.CoatType,
-         subType: PUCoat.SubType,
-         speed: PUCoat.Speed,
+         coatType: CoatType,
+         subType: SubType,
+         speed: Speed,
          covRate: Int,
          sqftPerGal: Double,
          kitSize: Double,
          partA: Product,
          partB: Product,
          texture: Texture,
-         thickness: PUCoat.Thickness,
+         thickness: Thickness,
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool) {

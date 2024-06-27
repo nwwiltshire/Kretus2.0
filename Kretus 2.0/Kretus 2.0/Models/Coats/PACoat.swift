@@ -9,10 +9,10 @@ import Foundation
 
 class PACoat: Coat {
     
-    @Published var coatType: PACoat.CoatType
-    @Published var subType: PACoat.SubType
+    @Published var coatType: CoatType
+    @Published var subType: SubType
     
-    @Published var speed: PACoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
     
     @Published var sqftPerGal: Double
@@ -21,11 +21,11 @@ class PACoat: Coat {
     @Published var partA: Product
     @Published var partB: Product
     
-    @Published var coatColorant: PACoat.CoatColorant
+    @Published var coatColorant: CoatColorant
     @Published var colorant: Product
     @Published var texture: Texture
     
-    @Published var thickness: PACoat.Thickness
+    @Published var thickness: Thickness
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
@@ -34,18 +34,18 @@ class PACoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: PACoat.CoatType,
-         subType: PACoat.SubType,
-         speed: PACoat.Speed,
+         coatType: CoatType,
+         subType: SubType,
+         speed: Speed,
          covRate: Int,
          sqftPerGal: Double,
          kitSize: Double,
          partA: Product,
          partB: Product,
-         coatColorant: PACoat.CoatColorant,
+         coatColorant: CoatColorant,
          colorant: Product,
          texture: Texture,
-         thickness: PACoat.Thickness,
+         thickness: Thickness,
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool) {

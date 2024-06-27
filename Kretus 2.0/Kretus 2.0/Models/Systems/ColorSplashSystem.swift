@@ -142,7 +142,7 @@ class ColorSplashSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, solventCleaner: Bool, thickness: UPCSystem.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, solventCleaner: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

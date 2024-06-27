@@ -17,7 +17,7 @@ class UPCColorQuartzSystem: System {
        }
    }
     
-    @Published var thickness: UPCSystem.Thickness
+    @Published var thickness: UPCCoat.Thickness
     
     @Published var baseCoat: UPCCoat
     @Published var broadcast: ColorChipBroadcast
@@ -40,7 +40,7 @@ class UPCColorQuartzSystem: System {
          kitsNeeded: [Kit],
          totalWasteFactor: Int,
          subType: SubType,
-         thickness: UPCSystem.Thickness,
+         thickness: UPCCoat.Thickness,
          baseCoat: UPCCoat,
          broadcast: ColorChipBroadcast,
          capCoat: Coat,
@@ -156,7 +156,7 @@ class UPCColorQuartzSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCSystem.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

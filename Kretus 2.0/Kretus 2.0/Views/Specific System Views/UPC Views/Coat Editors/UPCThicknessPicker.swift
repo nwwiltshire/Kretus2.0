@@ -20,14 +20,14 @@ struct UPCThicknessPicker: View {
             
             if (coat.subType == .rc) {
                 Picker(selection: $coat.thickness, label: Text("")) {
-                    ForEach(UPCSystem.Thickness.allCases.prefix(3), id: \.self) { subType in
+                    ForEach(UPCCoat.Thickness.allCases.prefix(3), id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }
                 .pickerStyle(PalettePickerStyle())
             } else {
                 Picker(selection: $coat.thickness, label: Text("")) {
-                    ForEach(UPCSystem.Thickness.allCases.suffix(3), id: \.self) { subType in
+                    ForEach(UPCCoat.Thickness.allCases.suffix(3), id: \.self) { subType in
                         Text(subType.description).tag(subType)
                     }
                 }
