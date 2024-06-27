@@ -9,7 +9,6 @@ import Foundation
 
 class Coat: ObservableObject {
     
-    let id: Int
     var name: String
     var squareFt: Int
     
@@ -18,14 +17,12 @@ class Coat: ObservableObject {
     
     @Published var wasteFactor: Int
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
          wasteFactor: Int) {
         
-        self.id = id
         self.name = name
         self.squareFt = squareFt
         self.productsNeeded = productsNeeded
@@ -37,7 +34,6 @@ class Coat: ObservableObject {
     func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

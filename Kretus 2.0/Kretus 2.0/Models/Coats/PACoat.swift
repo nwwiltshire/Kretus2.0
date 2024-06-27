@@ -30,8 +30,7 @@ class PACoat: Coat {
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
@@ -66,7 +65,7 @@ class PACoat: Coat {
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -87,8 +86,7 @@ class PACoat: Coat {
         self.solventCleaner = false
         self.mattingAdditive = false
         
-        super.init(id: 0,
-                   name: "Polyaspartic",
+        super.init(name: "Polyaspartic",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -246,7 +244,6 @@ class PACoat: Coat {
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

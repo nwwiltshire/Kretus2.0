@@ -44,8 +44,7 @@ class UPCCoat: Coat {
     // Coverage Rate (focus is more on just how much product you need)
     // Coverage Rate is only dependent on thickness
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
@@ -84,7 +83,7 @@ class UPCCoat: Coat {
         self.mattingAdditive = mattingAdditive
         self.coveHeight = coveHeight
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -107,8 +106,7 @@ class UPCCoat: Coat {
         self.mattingAdditive = false
         self.coveHeight = .na
         
-        super.init(id: 0,
-                   name: "Default",
+        super.init(name: "Default",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -399,7 +397,6 @@ class UPCCoat: Coat {
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

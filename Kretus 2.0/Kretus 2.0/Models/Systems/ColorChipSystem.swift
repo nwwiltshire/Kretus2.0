@@ -10,8 +10,6 @@ import SwiftUI
 
 class ColorChipSystem: System {
     
-    let availableSubTypes: [SubType]
-    
     @Published var subType: SubType
     @Published var baseCoat: Coat
     @Published var primeCoat: Coat?
@@ -28,7 +26,6 @@ class ColorChipSystem: System {
          viewColor: String,
          squareFt: Int,
          kitsNeeded: [Kit],
-         availableSubTypes: [SubType],
          subType: SubType,
          baseCoat: Coat,
          primeCoat: Coat,
@@ -39,7 +36,6 @@ class ColorChipSystem: System {
          broadcast: ColorChipBroadcast,
          totalWasteFactor: Int) {
         
-        self.availableSubTypes = availableSubTypes
         self.subType = subType
         self.baseCoat = baseCoat
         self.primeCoat = primeCoat
@@ -55,7 +51,6 @@ class ColorChipSystem: System {
     
     init() {
         
-        self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
         self.subType = .ts
         self.baseCoat = TSCoat() // updates later
         self.topCoat1 = PACoat()
@@ -125,7 +120,6 @@ class ColorChipSystem: System {
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Total Kits Needed: \(kitsNeeded)\n"
-        output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Sub Type: \(subType)\n"
         baseCoat.setValues()
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"

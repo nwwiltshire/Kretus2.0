@@ -34,8 +34,7 @@ class TSCoat: Coat {
     @Published var hasColorQuartz: Bool
     @Published var texture: Texture
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
@@ -74,7 +73,7 @@ class TSCoat: Coat {
         self.hasColorQuartz = hasColorQuartz
         self.texture = texture
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -97,8 +96,7 @@ class TSCoat: Coat {
         self.hasColorQuartz = false
         self.texture = .noTexture
         
-        super.init(id: 0,
-                   name: "Top Shelf Epoxy",
+        super.init(name: "Top Shelf Epoxy",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -308,7 +306,6 @@ class TSCoat: Coat {
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"
