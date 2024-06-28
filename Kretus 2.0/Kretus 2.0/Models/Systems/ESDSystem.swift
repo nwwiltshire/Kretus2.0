@@ -49,7 +49,7 @@ class ESDSystem: System {
         self.cpWasteFactor = 0
         
         super.init(name: "ESD System",
-                   description: "Description",
+                   description: "Shield employees, equipment, and processes against harmful ESD (electrostatic discharge).",
                    imageName: "esd-background",
                    viewColor: "ESD",
                    squareFt: 50,

@@ -11,12 +11,15 @@ import SwiftData
 @Model
 final class CoatData {
     let coatType: String
-    let subType: String
-    let speed: String
+    let coatProduct: String
+    let covRate: Int
     
-    init(coatType: String, subType: String, speed: String) {
+    var kits: [CoatKitRelationship]
+    
+    init(coatType: String, coatProduct: String, covRate: Int, kits: [CoatKitRelationship]) {
         self.coatType = coatType
-        self.subType = subType
-        self.speed = speed
+        self.coatProduct = coatProduct
+        self.covRate = covRate
+        self.kits = kits
     }
 }

@@ -14,7 +14,7 @@ struct Product: Identifiable {
     var type: ProductType = .other
 
     enum ProductType: CaseIterable, Identifiable, CustomStringConvertible {
-        case ts, pa, pu, upc, additive, other
+        case ts, pa, pu, upc, additive, select, other
         
         var id: Self { self }
         
@@ -25,6 +25,7 @@ struct Product: Identifiable {
             case .pu: return "Polyurethane"
             case .upc: return "Urethane Polymer Concrete"
             case .additive: return "Additive"
+            case .select: return "Select Line"
             case .other: return "Other"
             }
         }

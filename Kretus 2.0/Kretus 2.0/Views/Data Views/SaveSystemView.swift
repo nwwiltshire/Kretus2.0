@@ -115,6 +115,61 @@ struct SaveSystemView: View {
       }
 
       return convertedKits
+        
+    }
+    
+    private func coatConvertKits(coatData: CoatData, kits: [Kit]) -> [CoatKitRelationship] {
+        
+      var convertedKits: [CoatKitRelationship] = []
+
+      for kit in kits {
+        let kitData = KitData(id: kit.product.id, name: kit.product.name, quantity: kit.quantity)
+        let relationship = CoatKitRelationship(coatData: coatData, kit: kitData)
+        convertedKits.append(relationship)
+      }
+
+      return convertedKits
+        
+    }
+    
+    private func tsCoatConvertToData(tsCoat: TSCoat) -> CoatData {
+        
+        let newCoat = CoatData(coatType: tsCoat.coatType.description, coatProduct: "Top Shelf Epoxy", covRate: tsCoat.covRate, kits: [])
+        
+        newCoat.kits = coatConvertKits(coatData: newCoat, kits: tsCoat.kitsNeeded)
+        
+        return newCoat
+
+    }
+    
+    private func upcCoatConvertToData(upcCoat: UPCCoat) -> CoatData {
+        
+        let newCoat = CoatData(coatType: "\(upcCoat.subType.description) \(upcCoat.speed.description)", coatProduct: "Urethane Polymer Concrete", covRate: upcCoat.covRate, kits: [])
+        
+        newCoat.kits = coatConvertKits(coatData: newCoat, kits: upcCoat.kitsNeeded)
+        
+        return newCoat
+
+    }
+    
+    private func paCoatConvertToData(tsCoat: TSCoat) -> CoatData {
+        
+        let newCoat = CoatData(coatType: tsCoat.coatType.description, coatProduct: "Top Shelf Epoxy", covRate: tsCoat.covRate, kits: [])
+        
+        newCoat.kits = coatConvertKits(coatData: newCoat, kits: tsCoat.kitsNeeded)
+        
+        return newCoat
+
+    }
+    
+    private func puCoatConvertToData(tsCoat: TSCoat) -> CoatData {
+        
+        let newCoat = CoatData(coatType: tsCoat.coatType.description, coatProduct: "Top Shelf Epoxy", covRate: tsCoat.covRate, kits: [])
+        
+        newCoat.kits = coatConvertKits(coatData: newCoat, kits: tsCoat.kitsNeeded)
+        
+        return newCoat
+
     }
     
     private func upcConvertToData(upcSystem: UPCSystem) {
@@ -129,9 +184,12 @@ struct SaveSystemView: View {
     }
     
     private func upcConvertCoats(upcSystem: UPCSystem) -> [CoatData] {
+        
         var coats: [CoatData] = []
         
         coats.append(CoatData(coatType: "Base Coat", subType: upcSystem.baseCoat.subType.description, speed: upcSystem.baseCoat.speed.description))
+        
+        coats.append(CoatData(coatType: "Default", coatProduct: "Default", covRate: 0, kits: coatConvertKits(coatData: <#T##CoatData#>, kits: <#T##[Kit]#>)))
         
         if (upcSystem.primeCoat != nil) {
             coats.append(CoatData(coatType: "Prime Coat", subType: (upcSystem.primeCoat?.subType.description)!, speed: (upcSystem.primeCoat?.speed.description)!))

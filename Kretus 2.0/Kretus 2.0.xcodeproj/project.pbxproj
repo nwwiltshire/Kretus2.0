@@ -116,6 +116,7 @@
 		309B977E2B9FCF4100C4E51B /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977D2B9FCF4100C4E51B /* Kit.swift */; };
 		309B97802BA4D2B100C4E51B /* UPCBuildSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */; };
 		309B97822BA4D31A00C4E51B /* UPCBuildSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */; };
+		30A015202C2F3A19003F8495 /* CoatKitRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0151F2C2F3A19003F8495 /* CoatKitRelationship.swift */; };
 		30A712B42B589654009C0268 /* Kretus_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B32B589654009C0268 /* Kretus_2_0App.swift */; };
 		30A712B62B589654009C0268 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A712B52B589654009C0268 /* ContentView.swift */; };
 		30A712B82B589656009C0268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A712B72B589656009C0268 /* Assets.xcassets */; };
@@ -327,6 +328,7 @@
 		309B977D2B9FCF4100C4E51B /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		309B977F2BA4D2B100C4E51B /* UPCBuildSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSubmitButton.swift; sourceTree = "<group>"; };
 		309B97812BA4D31A00C4E51B /* UPCBuildSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCBuildSuite.swift; sourceTree = "<group>"; };
+		30A0151F2C2F3A19003F8495 /* CoatKitRelationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatKitRelationship.swift; sourceTree = "<group>"; };
 		30A712B02B589654009C0268 /* Kretus 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kretus 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A712B32B589654009C0268 /* Kretus_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kretus_2_0App.swift; sourceTree = "<group>"; };
 		30A712B52B589654009C0268 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				3068229F2C01335900AF6CF8 /* BroadcastData.swift */,
 				30B2872A2BAA3D40006D3003 /* KitData.swift */,
 				302F51F02BF7F200005CC281 /* KitRelationship.swift */,
+				30A0151F2C2F3A19003F8495 /* CoatKitRelationship.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1209,6 +1212,7 @@
 				30CAD9442BFE8F1800060449 /* UPCUniversalCoatSuite.swift in Sources */,
 				30AC302F2B8439050073BB93 /* UPCSpeedPicker.swift in Sources */,
 				30708B702C121D9F00AB838B /* PUProducts.swift in Sources */,
+				30A015202C2F3A19003F8495 /* CoatKitRelationship.swift in Sources */,
 				306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */,
 				30708B922C13C2CF00AB838B /* UPCIndustrialSandBuildSubmitButton.swift in Sources */,
 				30A712C32B58968F009C0268 /* System.swift in Sources */,
