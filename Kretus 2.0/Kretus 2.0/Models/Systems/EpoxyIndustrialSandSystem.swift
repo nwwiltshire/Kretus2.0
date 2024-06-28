@@ -214,7 +214,7 @@ class EpoxyIndustrialSandSystem: System {
 
     }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool, thickness: TSCoat.Thickness) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: Coat.CoatType, mattingAdditive: Bool, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
@@ -224,7 +224,7 @@ class EpoxyIndustrialSandSystem: System {
         return tsCoat
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, mattingAdditive: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: Coat.CoatType, mattingAdditive: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
@@ -235,7 +235,7 @@ class EpoxyIndustrialSandSystem: System {
         return upcCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, mattingAdditive: Bool, thickness: PACoat.Thickness) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: Coat.CoatType, mattingAdditive: Bool, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
@@ -245,7 +245,7 @@ class EpoxyIndustrialSandSystem: System {
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, mattingAdditive: Bool, thickness: PUCoat.Thickness) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: Coat.CoatType, mattingAdditive: Bool, thickness: PUCoat.Thickness) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
         puCoat.coatType = coatType

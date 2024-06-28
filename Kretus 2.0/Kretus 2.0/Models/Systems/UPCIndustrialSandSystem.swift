@@ -227,7 +227,7 @@ class UPCIndustrialSandSystem: System {
         return tsCoat
     }
     
-    func createUPCCoat(squareFt: Int, subType: SubType, coatType: UPCCoat.CoatType, mattingAdditive: Bool, isUV: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, subType: SubType, coatType: Coat.CoatType, mattingAdditive: Bool, isUV: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

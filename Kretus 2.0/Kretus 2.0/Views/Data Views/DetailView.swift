@@ -153,12 +153,13 @@ struct DetailView: View {
             .navigationTitle(system.nameFromUser)
         }
         .onAppear() {
-            relevantPDFs = checkForPDFs(system: system)
+            //relevantPDFs = checkForPDFs(system: system)
         }
     }
         
     // Split into different functions, for each respective coating. Maybe add something to coatData to represent what kind of actual coat or system it belongs to.
     
+    /*
     private func checkForPDFs(system: SystemData) -> [PDFUrl] {
         
         var pdfs: [PDFUrl] = []
@@ -306,11 +307,13 @@ struct DetailView: View {
         
         return pdfs
     }
-    
+     */
+    /*
     func appendIfNotExists(string: String, to array: inout [String]) {
       if !array.contains(string) {
         array.append(string)
       }
     }
+     */
     
 }

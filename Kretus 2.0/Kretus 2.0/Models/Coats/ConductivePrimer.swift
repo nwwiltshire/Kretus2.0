@@ -9,7 +9,6 @@ import Foundation
 
 class ConductivePrimer: Coat {
 
-    @Published var covRate: Int
     @Published var sqftPerGal: Double
     @Published var kitSize: Double
     
@@ -19,6 +18,7 @@ class ConductivePrimer: Coat {
     init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
+         coatType: Coat.CoatType,
          kitsNeeded: [Kit],
          covRate: Int,
          sqftPerGal: Double,
@@ -28,19 +28,17 @@ class ConductivePrimer: Coat {
          wasteFactor: Int
     ) {
         
-        self.covRate = covRate
         self.sqftPerGal = sqftPerGal
         self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         
-        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, covRate: covRate, coatType: coatType, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
     init() {
         
-        self.covRate = 0
         self.sqftPerGal = 100 // Set to conductive primer sqftpergal later
         self.kitSize = 1.5
         self.partA = Product(id: "Conductive Primer", name: "Part A")
@@ -48,6 +46,8 @@ class ConductivePrimer: Coat {
         
         super.init(name: "Conductive Primer",
                    squareFt: 0,
+                   covRate: 0, // Set to default later
+                   coatType: .conductivePrimer,
                    productsNeeded: [],
                    kitsNeeded: [],
                    wasteFactor: 0)

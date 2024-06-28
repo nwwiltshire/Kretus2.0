@@ -9,15 +9,8 @@ import Foundation
 
 class UPCCoat: Coat {
     
-    @Published var coatType: CoatType {
-        didSet {
-            updateCovRate()
-        }
-    }
-    
     @Published var subType: UPCSystem.SubType
     @Published var speed: Speed
-    @Published var covRate: Int
     
     @Published var partA: Product
     @Published var partB: Product
@@ -48,7 +41,7 @@ class UPCCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: CoatType,
+         coatType: Coat.CoatType,
          subType: UPCSystem.SubType,
          speed: Speed,
          covRate: Int,
@@ -66,10 +59,8 @@ class UPCCoat: Coat {
          mattingAdditive: Bool,
          coveHeight: UPCCoveSystem.Height) {
         
-        self.coatType = coatType
         self.subType = subType
         self.speed = speed
-        self.covRate = covRate
         self.partA = partA
         self.partB = partB
         self.partC = partC
@@ -83,16 +74,14 @@ class UPCCoat: Coat {
         self.mattingAdditive = mattingAdditive
         self.coveHeight = coveHeight
         
-        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, covRate: covRate, coatType: coatType, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
     init() {
         
-        self.coatType = .base
         self.subType = .rc
         self.speed = .ap
-        self.covRate = 190 // set to default value for default thickness
         self.partA = Product()
         self.partB = Product()
         self.partC = Product()
@@ -106,8 +95,10 @@ class UPCCoat: Coat {
         self.mattingAdditive = false
         self.coveHeight = .na
         
-        super.init(name: "Default",
+        super.init(name: "UPC",
                    squareFt: 0,
+                   covRate: 190, // set to default value for default thickness
+                   coatType: .base,
                    productsNeeded: [],
                    kitsNeeded: [],
                    wasteFactor: 0)

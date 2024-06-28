@@ -101,7 +101,7 @@ class UPCCoveSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCSystem.SubType, coveHeight: Height) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: Coat.CoatType, subType: UPCSystem.SubType, coveHeight: Height) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

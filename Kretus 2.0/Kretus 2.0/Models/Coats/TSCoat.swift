@@ -9,10 +9,7 @@ import Foundation
 
 class TSCoat: Coat {
     
-    @Published var coatType: CoatType
-    
     @Published var speed: Speed
-    @Published var covRate: Int
     
     @Published var sqftPerGal: Double
     @Published var kitSize: Double
@@ -38,7 +35,7 @@ class TSCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: CoatType,
+         coatType: Coat.CoatType,
          speed: Speed,
          covRate: Int,
          sqftPerGal: Double,
@@ -56,9 +53,7 @@ class TSCoat: Coat {
          hasColorQuartz: Bool,
          texture: Texture) {
         
-        self.coatType = coatType
         self.speed = speed
-        self.covRate = covRate
         self.sqftPerGal = sqftPerGal
         self.kitSize = kitSize
         self.selectedPartA = selectedPartA
@@ -73,15 +68,13 @@ class TSCoat: Coat {
         self.hasColorQuartz = hasColorQuartz
         self.texture = texture
         
-        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, covRate: covRate, coatType: coatType, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
     init() {
         
-        self.coatType = .base
         self.speed = .ap
-        self.covRate = 0
         self.sqftPerGal = 1
         self.kitSize = 1.5
         self.selectedPartA = .arBeige
@@ -98,34 +91,11 @@ class TSCoat: Coat {
         
         super.init(name: "Top Shelf Epoxy",
                    squareFt: 0,
+                   covRate: 0,
+                   coatType: .base,
                    productsNeeded: [],
                    kitsNeeded: [],
                    wasteFactor: 0)
-    }
-    
-    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, base1, base2, prime, top, mvr, coat1, coat2, coat3, body, cap, metallicBase, metallicAccent, metallicTop
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .base: return "Base Coat"
-            case .base1: return "Base Coat 1"
-            case .base2: return "Base Coat 2"
-            case .prime: return "Prime Coat"
-            case .top: return "Top Coat"
-            case .mvr: return "MVR Coat"
-            case .coat1: return "Coat 1"
-            case .coat2: return "Coat 2"
-            case .coat3: return "Coat 3"
-            case .body: return "Body Coat"
-            case .cap: return "Cap Coat"
-            case .metallicBase: return "Metallic Base Coat"
-            case .metallicAccent: return "Metallic Accent Coat"
-            case .metallicTop: return "Top Coat"
-            }
-        }
     }
     
     enum Speed: CaseIterable, Identifiable, CustomStringConvertible {

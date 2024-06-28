@@ -156,7 +156,7 @@ class UPCColorQuartzSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCCoat.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: Coat.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType

@@ -9,11 +9,9 @@ import Foundation
 
 class PUCoat: Coat {
     
-    @Published var coatType: CoatType
     @Published var subType: SubType
     
     @Published var speed: Speed
-    @Published var covRate: Int
     
     @Published var sqftPerGal: Double
     @Published var kitSize: Double
@@ -31,7 +29,7 @@ class PUCoat: Coat {
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: CoatType,
+         coatType: Coat.CoatType,
          subType: SubType,
          speed: Speed,
          covRate: Int,
@@ -45,10 +43,8 @@ class PUCoat: Coat {
          solventCleaner: Bool,
          mattingAdditive: Bool) {
         
-        self.coatType = coatType
         self.subType = subType
         self.speed = speed
-        self.covRate = covRate
         self.sqftPerGal = sqftPerGal
         self.kitSize = kitSize
         self.partA = partA
@@ -58,16 +54,14 @@ class PUCoat: Coat {
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         
-        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, covRate: covRate, coatType: coatType, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
     init() {
         
-        self.coatType = .base
         self.subType = .polyHS
         self.speed = .ez
-        self.covRate = 0 // set to default value for default thickness
         self.sqftPerGal = 1
         self.kitSize = 1.5
         self.partA = Product()
@@ -79,30 +73,11 @@ class PUCoat: Coat {
         
         super.init(name: "Polyurethane",
                    squareFt: 0,
+                   covRate: 0, // Set to default thickness later
+                   coatType: .base,
                    productsNeeded: [],
                    kitsNeeded: [],
                    wasteFactor: 0)
-    }
-    
-    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, top1, top2, coat1, coat2, coat3, cap, top, metallicBody
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .base: return "Base Coat"
-            case .prime: return "Prime Coat"
-            case .top1: return "Top Coat"
-            case .top2: return "Top Coat 2"
-            case .coat1: return "Coat 1"
-            case .coat2: return "Coat 2"
-            case .coat3: return "Coat 3"
-            case .cap: return "Cap Coat"
-            case .top: return "Top Coat"
-            case .metallicBody: return "Metallic Body Coat"
-            }
-        }
     }
     
     enum Speed: CaseIterable, Identifiable, CustomStringConvertible {
