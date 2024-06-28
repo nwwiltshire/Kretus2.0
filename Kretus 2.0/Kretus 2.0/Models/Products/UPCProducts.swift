@@ -170,39 +170,48 @@ extension UPCCoat {
                 break
             case .antiSlip60:
                 productsNeeded.append(Product(id: "EX-KASAO60-01",
-                                              name: "Anti-Slip A.O. 60, 10 lbs"))
+                                              name: "Anti-Slip A.O. 60, 10 lbs",
+                                              type: .additive))
             case .antiSlip36:
                 productsNeeded.append(Product(id: "EX-KASAO36-01",
-                                              name: "Anti-Slip A.O. 36, 10 lbs"))
+                                              name: "Anti-Slip A.O. 36, 10 lbs",
+                                              type: .additive))
             case .antiSlip24:
                 productsNeeded.append(Product(id: "EX-KASA246-01",
-                                              name: "Anti-Slip A.O. 24, 10 lbs"))
+                                              name: "Anti-Slip A.O. 24, 10 lbs",
+                                              type: .additive))
             case .industrialSand60:
                 productsNeeded.append(Product(id: "116",
-                                              name: "Industrial Sand #60"))
+                                              name: "Industrial Sand #60",
+                                              type: .additive))
             case .industrialSand30:
                 productsNeeded.append(Product(id: "115",
-                                              name: "Industrial Sand #30"))
+                                              name: "Industrial Sand #30",
+                                              type: .additive))
             case .industrialSand20:
                 productsNeeded.append(Product(id: "114",
-                                              name: "Industrial Sand #20"))
+                                              name: "Industrial Sand #20",
+                                              type: .additive))
             }
             
         }
         
         if (self.uvResistance) {
             productsNeeded.append(Product(id: "EX-KPACEL-08",
-                                          name: "Poly Accelerant, 8 oz"))
+                                          name: "Poly Accelerant, 8 oz",
+                                          type: .additive))
         }
         
         if (self.solventCleaner) {
             productsNeeded.append(Product(id: "Solvent Cleaner ID",
-                                          name: "Solvent Cleaner"))
+                                          name: "Solvent Cleaner",
+                                          type: .additive))
         }
         
         if (self.mattingAdditive) {
             productsNeeded.append(Product(id: "Matting Additive ID",
-                                          name: "Matting Additive"))
+                                          name: "Matting Additive",
+                                          type: .additive))
         }
 
     }

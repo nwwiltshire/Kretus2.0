@@ -18,31 +18,31 @@ struct ColorSplashSystemCommitButton: View {
             
             switch colorSplashSystem.selectedSubType1 {
             case .ts:
-                colorSplashSystem.coat1 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false)
+                colorSplashSystem.coat1 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false, thickness: .base)
             case .pa:
-                colorSplashSystem.coat1 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false)
+                colorSplashSystem.coat1 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false, thickness: .base)
             case .pu:
-                colorSplashSystem.coat1 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false)
+                colorSplashSystem.coat1 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, mattingAdditive: false, thickness: .base)
             case .upc:
-                colorSplashSystem.coat1 = colorSplashSystem.createUPCCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner)
+                colorSplashSystem.coat1 = colorSplashSystem.createUPCCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat1, solventCleaner: colorSplashSystem.solventCleaner, thickness: .thinRC)
             }
             
             switch colorSplashSystem.selectedSubType2 {
             case .ts:
-                colorSplashSystem.coat2 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2)
+                colorSplashSystem.coat2 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2, thickness: .base)
             case .pa:
-                colorSplashSystem.coat2 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2)
+                colorSplashSystem.coat2 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2, thickness: .base)
             case .pu:
-                colorSplashSystem.coat2 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2)
+                colorSplashSystem.coat2 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat2, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive2, thickness: .base)
             }
             
             switch colorSplashSystem.selectedSubType3 {
             case .ts:
-                colorSplashSystem.coat3 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3)
+                colorSplashSystem.coat3 = colorSplashSystem.createTSCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3, thickness: .base)
             case .pa:
-                colorSplashSystem.coat3 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3)
+                colorSplashSystem.coat3 = colorSplashSystem.createPACoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3, thickness: .base)
             case .pu:
-                colorSplashSystem.coat3 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3)
+                colorSplashSystem.coat3 = colorSplashSystem.createPUCoat(squareFt: colorSplashSystem.squareFt, coatType: .coat3, solventCleaner: false, mattingAdditive: colorSplashSystem.mattingAdditive3, thickness: .base)
             }
             
         }) {

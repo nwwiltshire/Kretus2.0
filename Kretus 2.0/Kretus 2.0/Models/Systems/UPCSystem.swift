@@ -99,76 +99,6 @@ class UPCSystem: System {
             }
         }
     }
-    
-    enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case thinRC, mediumRC, thickRC, quartzTT, thin, medium, thick
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .thinRC: return "8-12 mils"
-            case .mediumRC: return "15-20 mils"
-            case .thickRC: return "25-30 mils"
-            case .quartzTT: return "3/8\""
-            case .thin: return "1/8\""
-            case .medium: return "3/16\""
-            case .thick: return "1/4\""
-            }
-        }
-    }
-    
-    enum Speed: CaseIterable, Identifiable, CustomStringConvertible {
-        case ez, ap, fc
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .ez: return "EZ (Easy)"
-            case .ap: return "AP (Average Pace)"
-            case .fc: return "FC (Fast Cure)"
-            }
-        }
-    }
-    
-    enum Texture: CaseIterable, Identifiable, CustomStringConvertible {
-        case none, antiSlip60, antiSlip36, antiSlip24, industrialSand60, industrialSand30, industrialSand20
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .none: return "No Texture"
-            case .antiSlip60: return "Anti Slip 60"
-            case .antiSlip36: return "Anti Slip 36"
-            case .antiSlip24: return "Anti Slip 24"
-            case .industrialSand60: return "Industrial Sand 60"
-            case .industrialSand30: return "Industrial Sand 30"
-            case .industrialSand20: return "Industrial Sand 20"
-            }
-        }
-    }
-    
-    enum CoatType: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, base1, base2, prime, top, coat1, body, cap, mvr
-        
-        var id: Self { self }
-        
-        var description: String {
-            switch self {
-            case .base: return "Base Coat"
-            case .base1: return "Base Coat 1"
-            case .base2: return "Base Coat 2"
-            case .prime: return "Prime Coat"
-            case .top: return "Top Coat"
-            case .coat1: return "Coat 1"
-            case .body: return "Body Coat"
-            case .cap: return "Cap Coat"
-            case .mvr: return "MVR Coat"
-            }
-        }
-    }
 
     override func printSystemTest() -> String {
         var output = ""
@@ -201,12 +131,13 @@ class UPCSystem: System {
         return output
     }
 
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, coatColor: UPCSystem.SystemColor) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: SubType, coatColor: SystemColor, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.subType = subType
         upcCoat.coatColor = coatColor
+        upcCoat.thickness = thickness
         
         if (subType != .rc) {
             upcCoat.thickness = .thin

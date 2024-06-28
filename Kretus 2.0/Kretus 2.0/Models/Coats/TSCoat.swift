@@ -9,20 +9,23 @@ import Foundation
 
 class TSCoat: Coat {
     
-    @Published var coatType: TSCoat.CoatType
+    @Published var coatType: CoatType
     
-    @Published var speed: TSCoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
     
-    @Published var selectedPartA: TSCoat.PartAs
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
+    
+    @Published var selectedPartA: PartAs
     
     @Published var partA: Product
     @Published var partB: Product
     
-    @Published var coatColorant: TSCoat.CoatColorant
+    @Published var coatColorant: CoatColorant
     @Published var colorant: Product
     
-    @Published var thickness: TSCoat.Thickness
+    @Published var thickness: Thickness
     @Published var coveHeight: EpoxyCoveSystem.Height
     
     @Published var solventCleaner: Bool
@@ -31,20 +34,21 @@ class TSCoat: Coat {
     @Published var hasColorQuartz: Bool
     @Published var texture: Texture
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: TSCoat.CoatType,
-         speed: TSCoat.Speed,
+         coatType: CoatType,
+         speed: Speed,
          covRate: Int,
-         selectedPartA: TSCoat.PartAs,
+         sqftPerGal: Double,
+         kitSize: Double,
+         selectedPartA: PartAs,
          partA: Product,
          partB: Product,
-         coatColorant: TSCoat.CoatColorant,
+         coatColorant: CoatColorant,
          colorant: Product,
-         thickness: TSCoat.Thickness,
+         thickness: Thickness,
          coveHeight: EpoxyCoveSystem.Height,
          wasteFactor: Int,
          solventCleaner: Bool,
@@ -55,6 +59,8 @@ class TSCoat: Coat {
         self.coatType = coatType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.selectedPartA = selectedPartA
         self.partA = partA
         self.partB = partB
@@ -67,7 +73,7 @@ class TSCoat: Coat {
         self.hasColorQuartz = hasColorQuartz
         self.texture = texture
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -75,7 +81,9 @@ class TSCoat: Coat {
         
         self.coatType = .base
         self.speed = .ap
-        self.covRate = 235 // Default .base coverage rate
+        self.covRate = 0
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.selectedPartA = .arBeige
         self.partA = Product()
         self.partB = Product()
@@ -88,8 +96,7 @@ class TSCoat: Coat {
         self.hasColorQuartz = false
         self.texture = .noTexture
         
-        super.init(id: 0,
-                   name: "Top Shelf Epoxy",
+        super.init(name: "Top Shelf Epoxy",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -208,7 +215,7 @@ class TSCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case base, prime, mvr, fourIn, sixIn
+        case base, prime, primeThin, mvrThin, base2, mvr, mvrPrime, fourIn, sixIn, wftThin, wftMedium, wftThick
         
         var id: Self { self }
         
@@ -217,9 +224,16 @@ class TSCoat: Coat {
                 
             case .base: return "8-12 mils"
             case .prime: return "3-5 mils"
+            case .primeThin: return "8 mils"
+            case .mvrThin: return "12 mils"
+            case .base2: return "13-15 mils"
             case .mvr: return "16 mils"
+            case .mvrPrime: return "5 mils"
             case .fourIn: return "4\""
             case .sixIn: return "6\""
+            case .wftThin: return "15-20 WFT"
+            case .wftMedium: return "25-30 WFT"
+            case .wftThick: return "40-45 WFT"
                 
             }
         }
@@ -246,38 +260,37 @@ class TSCoat: Coat {
         }
     }
     
-    // Update later (SQFT/GAL)
     private func updateCovRate() {
-        switch coatType {
+        
+        switch thickness {
         case .base:
-            covRate = 235
+            sqftPerGal = 100
         case .prime:
-            covRate = 275
-        case .top:
             break
         case .mvr:
-            covRate = 100
-        case .coat1:
             break
-        case .coat2:
+        case .fourIn:
             break
-        case .coat3:
+        case .sixIn:
             break
-        case .body:
+        case .mvrPrime:
             break
-        case .cap:
-            break
-        case .base1:
+        case .mvrThin:
             break
         case .base2:
             break
-        case .metallicBase:
+        case .primeThin:
             break
-        case .metallicAccent:
+        case .wftThin:
             break
-        case .metallicTop:
+        case .wftMedium:
+            break
+        case .wftThick:
             break
         }
+        
+        covRate = Int(kitSize * sqftPerGal)
+        
     }
     
     override func setValues() {
@@ -286,15 +299,13 @@ class TSCoat: Coat {
         
         findProducts()
         
-        // Update Later to sqft/gal
-        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded, additiveCovRate: Int(sqftPerGal))
         
     }
 
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

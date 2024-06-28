@@ -11,6 +11,7 @@ import SwiftUI
 class EpoxyMVRSystem: System {
     
     @Published var mvrCoat: TSCoat
+    @Published var thickness: TSCoat.Thickness
     @Published var primeCoat: TSCoat?
     
     @Published var hasPrimeCoat: Bool
@@ -23,10 +24,12 @@ class EpoxyMVRSystem: System {
          kitsNeeded: [Kit],
          totalWasteFactor: Int,
          mvrCoat: TSCoat,
+         thickness: TSCoat.Thickness,
          primeCoat: TSCoat,
          hasPrimeCoat: Bool) {
         
         self.mvrCoat = mvrCoat
+        self.thickness = thickness
         self.primeCoat = primeCoat
         self.hasPrimeCoat = hasPrimeCoat
         
@@ -38,6 +41,7 @@ class EpoxyMVRSystem: System {
         
         self.mvrCoat = TSCoat()
         self.hasPrimeCoat = false
+        self.thickness = .mvrThin
 
         
         super.init(
@@ -85,10 +89,11 @@ class EpoxyMVRSystem: System {
 
     }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
+        tsCoat.thickness = thickness
         
         return tsCoat
     }

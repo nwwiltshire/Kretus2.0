@@ -17,10 +17,10 @@ struct EpoxyMVRSystemCommitButton: View {
         NavigationLink(destination: EpoxyMVRCoatEditorView(epoxyMVRSystem: epoxyMVRSystem)
             .onAppear {
                 
-                epoxyMVRSystem.mvrCoat = epoxyMVRSystem.createTSCoat(squareFt: epoxyMVRSystem.squareFt, coatType: .mvr)
+                epoxyMVRSystem.mvrCoat = epoxyMVRSystem.createTSCoat(squareFt: epoxyMVRSystem.squareFt, coatType: .mvr, thickness: epoxyMVRSystem.thickness)
                 
                 if (epoxyMVRSystem.hasPrimeCoat) {
-                    epoxyMVRSystem.primeCoat = epoxyMVRSystem.createTSCoat(squareFt: epoxyMVRSystem.squareFt, coatType: .prime)
+                    epoxyMVRSystem.primeCoat = epoxyMVRSystem.createTSCoat(squareFt: epoxyMVRSystem.squareFt, coatType: .prime, thickness: .mvrPrime)
                 }
                 
             }) {

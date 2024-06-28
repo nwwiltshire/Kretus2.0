@@ -17,27 +17,27 @@ struct MetallicSystemCommitButton: View {
           .onAppear {
               
               if (metallicSystem.subType == .metallic) {
-                  metallicSystem.metallicBaseCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicBase, mattingAdditive: false, solventCleaner: false)
+                  metallicSystem.metallicBaseCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicBase, mattingAdditive: false, solventCleaner: false, thickness: .base)
                   
-                  metallicSystem.metallicAccentCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicAccent, mattingAdditive: false, solventCleaner: false)
+                  metallicSystem.metallicAccentCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicAccent, mattingAdditive: false, solventCleaner: false, thickness: .base)
                   
                   metallicSystem.metallicBodyCoat = nil
               } else {
-                  metallicSystem.metallicBodyCoat = metallicSystem.createPUCoat(squareFt: metallicSystem.squareFt, coatType: .metallicBody, mattingAdditive: false)
+                  metallicSystem.metallicBodyCoat = metallicSystem.createPUCoat(squareFt: metallicSystem.squareFt, coatType: .metallicBody, mattingAdditive: false, thickness: .base)
                   
                   metallicSystem.metallicBaseCoat = nil
                   metallicSystem.metallicAccentCoat = nil
               }
               
-              metallicSystem.primeCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .prime, mattingAdditive: false, solventCleaner: metallicSystem.primeSolventCleaner)
+              metallicSystem.primeCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .prime, mattingAdditive: false, solventCleaner: metallicSystem.primeSolventCleaner, thickness: .primeThin)
               
               switch metallicSystem.topCoatSubType {
               case .ts:
-                  metallicSystem.topCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicTop, mattingAdditive: metallicSystem.topMattingAdditive, solventCleaner: false)
+                  metallicSystem.topCoat = metallicSystem.createTSCoat(squareFt: metallicSystem.squareFt, coatType: .metallicTop, mattingAdditive: metallicSystem.topMattingAdditive, solventCleaner: false, thickness: .base)
               case .pa:
-                  metallicSystem.topCoat = metallicSystem.createPACoat(squareFt: metallicSystem.squareFt, coatType: .top, mattingAdditive: metallicSystem.topMattingAdditive)
+                  metallicSystem.topCoat = metallicSystem.createPACoat(squareFt: metallicSystem.squareFt, coatType: .top, mattingAdditive: metallicSystem.topMattingAdditive, thickness: .base)
               case .pu:
-                  metallicSystem.topCoat = metallicSystem.createPUCoat(squareFt: metallicSystem.squareFt, coatType: .top, mattingAdditive: metallicSystem.topMattingAdditive)
+                  metallicSystem.topCoat = metallicSystem.createPUCoat(squareFt: metallicSystem.squareFt, coatType: .top, mattingAdditive: metallicSystem.topMattingAdditive, thickness: .base)
               }
               
           }) {

@@ -18,7 +18,7 @@ struct EpoxyIndustrialSandSystemCommitButton: View {
             .onAppear {
                 
                 if (epoxyIndustrialSandSystem.subType != .db) {
-                    epoxyIndustrialSandSystem.baseCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.baseCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base, mattingAdditive: false, thickness: .base)
                     epoxyIndustrialSandSystem.baseCoat1 = nil
                     epoxyIndustrialSandSystem.baseCoat2 = nil
                     
@@ -28,8 +28,8 @@ struct EpoxyIndustrialSandSystemCommitButton: View {
                     epoxyIndustrialSandSystem.broadcast1 = nil
                     epoxyIndustrialSandSystem.broadcast2 = nil
                 } else {
-                    epoxyIndustrialSandSystem.baseCoat1 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base1, mattingAdditive: false)
-                    epoxyIndustrialSandSystem.baseCoat2 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base2, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.baseCoat1 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base1, mattingAdditive: false, thickness: .base)
+                    epoxyIndustrialSandSystem.baseCoat2 = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .base2, mattingAdditive: false, thickness: .base)
                     epoxyIndustrialSandSystem.baseCoat = nil
                     
                     epoxyIndustrialSandSystem.broadcast1 = IndustrialSandBroadcast()
@@ -43,32 +43,32 @@ struct EpoxyIndustrialSandSystemCommitButton: View {
                 
                 switch epoxyIndustrialSandSystem.capCoatSubType {
                 case .ts:
-                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive)
+                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createPACoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive)
+                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createPACoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createPUCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive)
+                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createPUCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive, thickness: .base)
                 case .upcRCUV:
-                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createUPCCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive)
+                    epoxyIndustrialSandSystem.capCoat = epoxyIndustrialSandSystem.createUPCCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .cap, mattingAdditive: epoxyIndustrialSandSystem.capMattingAdditive, thickness: .thinRC)
                 }
                 
                 switch epoxyIndustrialSandSystem.topCoatSubType {
                 case .ts:
-                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive)
+                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createPACoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive)
+                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createPACoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createPUCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive)
+                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createPUCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive, thickness: .base)
                 case .upcRCUV:
-                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createUPCCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive)
+                    epoxyIndustrialSandSystem.topCoat = epoxyIndustrialSandSystem.createUPCCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .top, mattingAdditive: epoxyIndustrialSandSystem.topMattingAdditive, thickness: .thinRC)
                 }
                 
                 if (epoxyIndustrialSandSystem.primeCoat != nil) {
-                    epoxyIndustrialSandSystem.primeCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .prime, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.primeCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .prime, mattingAdditive: false, thickness: .prime)
                 }
                 
                 if (epoxyIndustrialSandSystem.mvrCoat != nil) {
-                    epoxyIndustrialSandSystem.mvrCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .mvr, mattingAdditive: false)
+                    epoxyIndustrialSandSystem.mvrCoat = epoxyIndustrialSandSystem.createTSCoat(squareFt: epoxyIndustrialSandSystem.squareFt, coatType: .mvr, mattingAdditive: false, thickness: .mvr)
                 }
                 
             }) {

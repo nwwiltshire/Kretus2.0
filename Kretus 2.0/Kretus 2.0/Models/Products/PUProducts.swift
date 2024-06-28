@@ -49,22 +49,28 @@ extension PUCoat {
             textureProduct = Product()
         case .asAo120:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 10#")
+                                     name: "\(texture.description), 10#",
+                                     type: .additive)
         case .asAo220:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 10#")
+                                     name: "\(texture.description), 10#",
+                                     type: .additive)
         case .asAo60:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 10#")
+                                     name: "\(texture.description), 10#",
+                                     type: .additive)
         case .asAo80:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 10#")
+                                     name: "\(texture.description), 10#",
+                                     type: .additive)
         case .asB100:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 32 oz")
+                                     name: "\(texture.description), 32 oz",
+                                     type: .additive)
         case .asB50:
             textureProduct = Product(id: "Contact Distributor",
-                                     name: "\(texture.description), 32 oz")
+                                     name: "\(texture.description), 32 oz",
+                                     type: .additive)
         case .asT50:
             break
         }
@@ -80,17 +86,20 @@ extension PUCoat {
         
         if (self.solventCleaner) {
             productsNeeded.append(Product(id: "Solvent Cleaner",
-                                          name: "Solvent Cleaner"))
+                                          name: "Solvent Cleaner",
+                                          type: .additive))
         }
         
         if (self.mattingAdditive) {
             productsNeeded.append(Product(id: "Matting Additive",
-                                          name: "Matting Additive"))
+                                          name: "Matting Additive",
+                                          type: .additive))
         }
         
         if (self.coatType == .metallicBody) {
             productsNeeded.append(Product(id: "UV Color",
-                                          name: "See Kretus Color Chart, 8 oz"))
+                                          name: "See Kretus Color Chart, 8 oz",
+                                          type: .additive))
         }
 
     }

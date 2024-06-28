@@ -159,12 +159,24 @@ class MetallicSystem: System {
 
     }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool, solventCleaner: Bool) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool, solventCleaner: Bool, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
         tsCoat.mattingAdditive = mattingAdditive
         tsCoat.solventCleaner = solventCleaner
+        tsCoat.thickness = thickness
+        
+        if (coatType == .metallicAccent) {
+            switch self.thickness {
+            case .thin:
+                tsCoat.thickness = .wftThin
+            case .medium:
+                tsCoat.thickness = .wftMedium
+            case .thick:
+                tsCoat.thickness = .wftThick
+            }
+        }
         
         if (coatType == .metallicBase || coatType == .metallicAccent) {
             tsCoat.coatColorant = .metallic
@@ -177,20 +189,22 @@ class MetallicSystem: System {
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, mattingAdditive: Bool) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, mattingAdditive: Bool, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
         paCoat.mattingAdditive = mattingAdditive
+        paCoat.thickness = thickness
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, mattingAdditive: Bool) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, mattingAdditive: Bool, thickness: PUCoat.Thickness) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
         puCoat.coatType = coatType
         puCoat.mattingAdditive = mattingAdditive
+        puCoat.thickness = thickness
         
         return puCoat
     }

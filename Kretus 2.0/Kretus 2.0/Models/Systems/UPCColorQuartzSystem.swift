@@ -17,7 +17,7 @@ class UPCColorQuartzSystem: System {
        }
    }
     
-    @Published var thickness: UPCSystem.Thickness
+    @Published var thickness: UPCCoat.Thickness
     
     @Published var baseCoat: UPCCoat
     @Published var broadcast: ColorChipBroadcast
@@ -40,7 +40,7 @@ class UPCColorQuartzSystem: System {
          kitsNeeded: [Kit],
          totalWasteFactor: Int,
          subType: SubType,
-         thickness: UPCSystem.Thickness,
+         thickness: UPCCoat.Thickness,
          baseCoat: UPCCoat,
          broadcast: ColorChipBroadcast,
          capCoat: Coat,
@@ -156,7 +156,7 @@ class UPCColorQuartzSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCSystem.Thickness) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCColorQuartzSystem.SubType, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
@@ -177,29 +177,32 @@ class UPCColorQuartzSystem: System {
         return upcCoat
       }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, mattingAdditive: Bool, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
         tsCoat.mattingAdditive = mattingAdditive
+        tsCoat.thickness = thickness
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, mattingAdditive: Bool) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, mattingAdditive: Bool, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
         paCoat.mattingAdditive = mattingAdditive
+        paCoat.thickness = thickness
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, mattingAdditive: Bool) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, mattingAdditive: Bool, thickness: PUCoat.Thickness) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
         puCoat.coatType = coatType
         puCoat.mattingAdditive = mattingAdditive
+        puCoat.thickness = thickness
         
         return puCoat
     }

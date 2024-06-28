@@ -9,39 +9,43 @@ import Foundation
 
 class PACoat: Coat {
     
-    @Published var coatType: PACoat.CoatType
-    @Published var subType: PACoat.SubType
+    @Published var coatType: CoatType
+    @Published var subType: SubType
     
-    @Published var speed: PACoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
+    
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
     
     @Published var partA: Product
     @Published var partB: Product
     
-    @Published var coatColorant: PACoat.CoatColorant
+    @Published var coatColorant: CoatColorant
     @Published var colorant: Product
     @Published var texture: Texture
     
-    @Published var thickness: PACoat.Thickness
+    @Published var thickness: Thickness
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: PACoat.CoatType,
-         subType: PACoat.SubType,
-         speed: PACoat.Speed,
+         coatType: CoatType,
+         subType: SubType,
+         speed: Speed,
          covRate: Int,
+         sqftPerGal: Double,
+         kitSize: Double,
          partA: Product,
          partB: Product,
-         coatColorant: PACoat.CoatColorant,
+         coatColorant: CoatColorant,
          colorant: Product,
          texture: Texture,
-         thickness: PACoat.Thickness,
+         thickness: Thickness,
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool) {
@@ -50,6 +54,8 @@ class PACoat: Coat {
         self.subType = subType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         self.coatColorant = coatColorant
@@ -59,7 +65,7 @@ class PACoat: Coat {
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -69,6 +75,8 @@ class PACoat: Coat {
         self.subType = .poly72
         self.speed = .ez
         self.covRate = 0 // set to default value for default thickness
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.partA = Product()
         self.partB = Product()
         self.coatColorant = .noColor
@@ -78,8 +86,7 @@ class PACoat: Coat {
         self.solventCleaner = false
         self.mattingAdditive = false
         
-        super.init(id: 0,
-                   name: "Polyaspartic",
+        super.init(name: "Polyaspartic",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -207,16 +214,20 @@ class PACoat: Coat {
     
     // Update later (SQFT/GAL)
     private func updateCovRate() {
+        
         switch self.thickness {
         case .base:
-            covRate = 165
+            sqftPerGal = 165
         case .prime:
-            covRate = 350
+            sqftPerGal = 350
         case .top1:
-            covRate = 185
+            sqftPerGal = 185
         case .top2:
-            covRate = 350
+            sqftPerGal = 350
         }
+        
+        covRate = Int(sqftPerGal * kitSize)
+        
     }
     
     override func setValues() {
@@ -226,14 +237,13 @@ class PACoat: Coat {
         findProducts()
         
         // Update Later to sqft/gal
-        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded, additiveCovRate: Int(sqftPerGal))
         
     }
 
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

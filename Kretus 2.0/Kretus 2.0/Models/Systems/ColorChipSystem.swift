@@ -10,8 +10,6 @@ import SwiftUI
 
 class ColorChipSystem: System {
     
-    let availableSubTypes: [SubType]
-    
     @Published var subType: SubType
     @Published var baseCoat: Coat
     @Published var primeCoat: Coat?
@@ -28,7 +26,6 @@ class ColorChipSystem: System {
          viewColor: String,
          squareFt: Int,
          kitsNeeded: [Kit],
-         availableSubTypes: [SubType],
          subType: SubType,
          baseCoat: Coat,
          primeCoat: Coat,
@@ -39,7 +36,6 @@ class ColorChipSystem: System {
          broadcast: ColorChipBroadcast,
          totalWasteFactor: Int) {
         
-        self.availableSubTypes = availableSubTypes
         self.subType = subType
         self.baseCoat = baseCoat
         self.primeCoat = primeCoat
@@ -55,7 +51,6 @@ class ColorChipSystem: System {
     
     init() {
         
-        self.availableSubTypes = [.rc, .rcuv, .sl, .pa, .ts]
         self.subType = .ts
         self.baseCoat = TSCoat() // updates later
         self.topCoat1 = PACoat()
@@ -125,7 +120,6 @@ class ColorChipSystem: System {
         output += "View Color: \(viewColor)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Total Kits Needed: \(kitsNeeded)\n"
-        output += "Available Sub Types: \(availableSubTypes)\n"
         output += "Sub Type: \(subType)\n"
         baseCoat.setValues()
         output += "\nBase Coat:\n\n\(baseCoat.printCoatTest())\n"
@@ -193,15 +187,12 @@ class ColorChipSystem: System {
         }
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, subType: UPCSystem.SubType, uvResistance: Bool) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, subType: UPCSystem.SubType, uvResistance: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.subType = subType
-        
-        if (subType != .rc) {
-            upcCoat.thickness = .thin
-        }
+        upcCoat.thickness = thickness
         
         if (coatType == .base && uvResistance == true) {
             upcCoat.uvResistance = uvResistance
@@ -210,26 +201,29 @@ class ColorChipSystem: System {
         return upcCoat
       }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
+        tsCoat.thickness = thickness
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
+        paCoat.thickness = thickness
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, thickness: PUCoat.Thickness) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
         puCoat.coatType = coatType
+        puCoat.thickness = thickness
         
         return puCoat
     }

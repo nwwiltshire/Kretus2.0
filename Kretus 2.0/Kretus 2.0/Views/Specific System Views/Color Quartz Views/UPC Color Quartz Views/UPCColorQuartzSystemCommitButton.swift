@@ -29,28 +29,28 @@ struct UPCColorQuartzSystemCommitButton: View {
                 
                 switch upcColorQuartzSystem.capCoatSubType {
                 case .ts:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.capCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .cap, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 }
                 
                 switch upcColorQuartzSystem.topCoatSubType {
                 case .ts:
-                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createTSCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyaspartic:
-                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPACoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 case .polyurethane:
-                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive)
+                    upcColorQuartzSystem.topCoat = upcColorQuartzSystem.createPUCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .top, mattingAdditive: upcColorQuartzSystem.capMattingAdditive, thickness: .base)
                 }
                 
                 if (upcColorQuartzSystem.primeCoat != nil) {
-                    upcColorQuartzSystem.primeCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .prime, subType: upcColorQuartzSystem.subType, thickness: upcColorQuartzSystem.thickness)
+                    upcColorQuartzSystem.primeCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .prime, subType: upcColorQuartzSystem.subType, thickness: .prime)
                 }
                 
                 if (upcColorQuartzSystem.mvrCoat != nil) {
-                    upcColorQuartzSystem.mvrCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .mvr, subType: upcColorQuartzSystem.subType, thickness: upcColorQuartzSystem.thickness)
+                    upcColorQuartzSystem.mvrCoat = upcColorQuartzSystem.createUPCCoat(squareFt: upcColorQuartzSystem.squareFt, coatType: .mvr, subType: upcColorQuartzSystem.subType, thickness: .thinRC)
                 }
                 
                 upcColorQuartzSystem.broadcast.squareFt = upcColorQuartzSystem.squareFt

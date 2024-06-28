@@ -9,34 +9,38 @@ import Foundation
 
 class PUCoat: Coat {
     
-    @Published var coatType: PUCoat.CoatType
-    @Published var subType: PUCoat.SubType
+    @Published var coatType: CoatType
+    @Published var subType: SubType
     
-    @Published var speed: PUCoat.Speed
+    @Published var speed: Speed
     @Published var covRate: Int
+    
+    @Published var sqftPerGal: Double
+    @Published var kitSize: Double
     
     @Published var partA: Product
     @Published var partB: Product
     @Published var texture: Texture
     
-    @Published var thickness: PUCoat.Thickness
+    @Published var thickness: Thickness
     
     @Published var solventCleaner: Bool
     @Published var mattingAdditive: Bool
     
-    init(id: Int,
-         name: String,
+    init(name: String,
          squareFt: Int,
          productsNeeded: [Product],
          kitsNeeded: [Kit],
-         coatType: PUCoat.CoatType,
-         subType: PUCoat.SubType,
-         speed: PUCoat.Speed,
+         coatType: CoatType,
+         subType: SubType,
+         speed: Speed,
          covRate: Int,
+         sqftPerGal: Double,
+         kitSize: Double,
          partA: Product,
          partB: Product,
          texture: Texture,
-         thickness: PUCoat.Thickness,
+         thickness: Thickness,
          wasteFactor: Int,
          solventCleaner: Bool,
          mattingAdditive: Bool) {
@@ -45,6 +49,8 @@ class PUCoat: Coat {
         self.subType = subType
         self.speed = speed
         self.covRate = covRate
+        self.sqftPerGal = sqftPerGal
+        self.kitSize = kitSize
         self.partA = partA
         self.partB = partB
         self.texture = texture
@@ -52,7 +58,7 @@ class PUCoat: Coat {
         self.solventCleaner = solventCleaner
         self.mattingAdditive = mattingAdditive
         
-        super.init(id: id, name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
+        super.init(name: name, squareFt: squareFt, productsNeeded: productsNeeded, kitsNeeded: kitsNeeded, wasteFactor: wasteFactor)
         
     }
     
@@ -62,6 +68,8 @@ class PUCoat: Coat {
         self.subType = .polyHS
         self.speed = .ez
         self.covRate = 0 // set to default value for default thickness
+        self.sqftPerGal = 1
+        self.kitSize = 1.5
         self.partA = Product()
         self.partB = Product()
         self.texture = .noTexture
@@ -69,8 +77,7 @@ class PUCoat: Coat {
         self.solventCleaner = false
         self.mattingAdditive = false
         
-        super.init(id: 0,
-                   name: "Polyurethane",
+        super.init(name: "Polyurethane",
                    squareFt: 0,
                    productsNeeded: [],
                    kitsNeeded: [],
@@ -129,13 +136,14 @@ class PUCoat: Coat {
     }
     
     enum Thickness: CaseIterable, Identifiable, CustomStringConvertible {
-        case top2
+        case base, top2
         
         var id: Self { self }
         
         var description: String {
             switch self {
                 
+            case .base: return "8-12 mils"
             case .top2: return "3-5 mils"
                 
             }
@@ -167,8 +175,13 @@ class PUCoat: Coat {
     private func updateCovRate() {
         switch self.thickness {
         case .top2:
-            covRate = 100
+            sqftPerGal = 100
+        case .base:
+            break
         }
+        
+        covRate = Int(sqftPerGal * kitSize)
+        
     }
     
     override func setValues() {
@@ -178,14 +191,13 @@ class PUCoat: Coat {
         findProducts()
         
         // Update Later to sqft/gal
-        calcKitsPerKit(squareFt: squareFt, covRate: covRate, products: productsNeeded)
+        calcKits(squareFt: squareFt, covRate: covRate, products: productsNeeded, additiveCovRate: Int(sqftPerGal))
         
     }
 
     override func printCoatTest() -> String {
         
         var output = ""
-        output += "Coat ID: \(id)\n"
         output += "Coat Name: \(name)\n"
         output += "Square Feet: \(squareFt)\n"
         output += "Products Needed: \(productsNeeded)\n"

@@ -142,41 +142,45 @@ class ColorSplashSystem: System {
 
     }
     
-    func createUPCCoat(squareFt: Int, coatType: UPCSystem.CoatType, solventCleaner: Bool) -> UPCCoat {
+    func createUPCCoat(squareFt: Int, coatType: UPCCoat.CoatType, solventCleaner: Bool, thickness: UPCCoat.Thickness) -> UPCCoat {
         let upcCoat = UPCCoat()
         upcCoat.squareFt = squareFt
         upcCoat.coatType = coatType
         upcCoat.solventCleaner = solventCleaner
+        upcCoat.thickness = thickness
         
         return upcCoat
       }
     
-    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> TSCoat {
+    func createTSCoat(squareFt: Int, coatType: TSCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool, thickness: TSCoat.Thickness) -> TSCoat {
         let tsCoat = TSCoat()
         tsCoat.squareFt = squareFt
         tsCoat.coatType = coatType
         tsCoat.solventCleaner = solventCleaner
         tsCoat.mattingAdditive = mattingAdditive
+        tsCoat.thickness = thickness
         
         return tsCoat
     }
     
-    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> PACoat {
+    func createPACoat(squareFt: Int, coatType: PACoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool, thickness: PACoat.Thickness) -> PACoat {
         let paCoat = PACoat()
         paCoat.squareFt = squareFt
         paCoat.coatType = coatType
         paCoat.solventCleaner = solventCleaner
         paCoat.mattingAdditive = mattingAdditive
+        paCoat.thickness = thickness
         
         return paCoat
     }
     
-    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool) -> PUCoat {
+    func createPUCoat(squareFt: Int, coatType: PUCoat.CoatType, solventCleaner: Bool, mattingAdditive: Bool, thickness: PUCoat.Thickness) -> PUCoat {
         let puCoat = PUCoat()
         puCoat.squareFt = squareFt
         puCoat.coatType = coatType
         puCoat.solventCleaner = solventCleaner
         puCoat.mattingAdditive = mattingAdditive
+        puCoat.thickness = thickness
         
         return puCoat
     }

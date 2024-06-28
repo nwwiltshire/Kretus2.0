@@ -21,7 +21,7 @@ struct UPCSpeedPicker: View {
             Spacer()
             
             Picker(selection: $coat.speed, label: Text("")) {
-                ForEach(UPCSystem.Speed.allCases, id: \.self) { subType in
+                ForEach(UPCCoat.Speed.allCases, id: \.self) { subType in
                     Text(subType.description).tag(subType)
                 }
             }

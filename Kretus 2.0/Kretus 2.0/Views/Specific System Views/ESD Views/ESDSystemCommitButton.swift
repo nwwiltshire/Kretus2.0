@@ -15,9 +15,10 @@ struct ESDSystemCommitButton: View {
     var body: some View {
       NavigationLink(destination: ESDCoatEditorView(esdSystem: esdSystem)
           .onAppear {
-              esdSystem.mvrCoat = esdSystem.createTSCoat(squareFt: esdSystem.squareFt, coatType: .mvr)
               
-              esdSystem.topCoat = esdSystem.createPACoat(squareFt: esdSystem.squareFt, coatType: .top)
+              esdSystem.mvrCoat = esdSystem.createTSCoat(squareFt: esdSystem.squareFt, coatType: .mvr, thickness: .base)
+              
+              esdSystem.topCoat = esdSystem.createPACoat(squareFt: esdSystem.squareFt, coatType: .top, thickness: .base)
               
               if (esdSystem.subType == .conductive) {
                   esdSystem.conductivePrimer = esdSystem.createCP(squareFt: esdSystem.squareFt)
