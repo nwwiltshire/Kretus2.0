@@ -74,83 +74,120 @@ struct DetailView: View {
     var body: some View {
         
         NavigationStack {
-            VStack {
-                Text("System Type: \(system.name)")
-                    .font(.headline)
-                Text("Description: \(system.descriptionFromUser)")
-                Text("Square Feet: \(system.squareFt)")
-                if (system.systemColor != "") {
-                    Text("System Color: \(system.systemColor)")
-                }
-                Text("SubType: \(system.subType)")
+            ScrollView {
                 VStack {
-                    Text("\nTotal Kits Needed:")
-                    HStack {
-                        Text("ID")
-                        Spacer()
-                        Text("Name")
-                        Spacer()
-                        Text("Quantity")
+                    Text("System Type: \(system.name)")
+                        .font(.headline)
+                    Text("Description: \(system.descriptionFromUser)")
+                    Text("Square Feet: \(system.squareFt)")
+                    if (system.systemColor != "") {
+                        Text("System Color: \(system.systemColor)")
                     }
-                    ForEach(system.kits, id: \.id) { kitRelationship in
-                        VStack {
-                            HStack {
-                                Text(kitRelationship.kit.id)
-                                    .font(.caption)
-                                Spacer()
-                                Text(kitRelationship.kit.name)
-                                    .font(.caption)
-                                Spacer()
-                                Text(kitRelationship.kit.quantity.description)
-                                    .font(.caption)
+                    Text("SubType: \(system.subType)")
+                    VStack {
+                        Text("\nTotal Kits Needed:")
+                        HStack {
+                            Text("ID")
+                            Spacer()
+                            Text("Name")
+                            Spacer()
+                            Text("Quantity")
+                        }
+                        ForEach(system.kits, id: \.id) { kitRelationship in
+                            VStack {
+                                HStack {
+                                    Text(kitRelationship.kit.id)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kitRelationship.kit.name)
+                                        .font(.caption)
+                                    Spacer()
+                                    Text(kitRelationship.kit.quantity.description)
+                                        .font(.caption)
+                                }
                             }
                         }
                     }
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(system.viewColor).opacity(0.25))
-                )
-            }
-            VStack {
-                Text("Relevant Documentation:")
-                    .font(.title)
-                List {
-                    Section(header: Text("Installation Guides")) {
-                      ForEach(relevantPDFs.filter { $0.type == .ig }) { pdf in
-                        NavigationLink(
-                          destination: PDFViewer(url: pdf.url),
-                          label: {
-                            Text(pdf.title)
-                          }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(system.viewColor).opacity(0.25))
+                    )
+                    ForEach(system.coats, id: \.id) { coat in
+                        VStack {
+                            Text("\(coat.coatType)")
+                            Text("\(coat.coatProduct)")
+                            Text("Coverage Rate: \(coat.covRate)")
+                            Text("\nTotal Kits Needed:")
+                            HStack {
+                                Text("ID")
+                                Spacer()
+                                Text("Name")
+                                Spacer()
+                                Text("Quantity")
+                            }
+                            ForEach(coat.kits, id: \.id) { coatKitRelationship in
+                                VStack {
+                                    HStack {
+                                        Text(coatKitRelationship.kit.id)
+                                            .font(.caption)
+                                        Spacer()
+                                        Text(coatKitRelationship.kit.name)
+                                            .font(.caption)
+                                        Spacer()
+                                        Text(coatKitRelationship.kit.quantity.description)
+                                            .font(.caption)
+                                    }
+                                }
+                            }
+                        }
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(system.viewColor).opacity(0.25))
                         )
-                      }
                     }
-                  Section(header: Text("Technical Data Sheets")) {
-                    ForEach(relevantPDFs.filter { $0.type == .tds }) { pdf in
-                      NavigationLink(
-                        destination: PDFViewer(url: pdf.url),
-                        label: {
-                          Text(pdf.title)
-                        }
-                      )
-                    }
-                  }
-                  Section(header: Text("Safety Data Sheets")) {
-                    ForEach(relevantPDFs.filter { $0.type == .sds }) { pdf in
-                      NavigationLink(
-                        destination: PDFViewer(url: pdf.url),
-                        label: {
-                          Text(pdf.title)
-                        }
-                      )
-                    }
-                  }
                 }
-
+                
+                VStack {
+                    Text("Relevant Documentation:")
+                        .font(.title)
+                    List {
+                        Section(header: Text("Installation Guides")) {
+                            ForEach(relevantPDFs.filter { $0.type == .ig }) { pdf in
+                                NavigationLink(
+                                    destination: PDFViewer(url: pdf.url),
+                                    label: {
+                                        Text(pdf.title)
+                                    }
+                                )
+                            }
+                        }
+                        Section(header: Text("Technical Data Sheets")) {
+                            ForEach(relevantPDFs.filter { $0.type == .tds }) { pdf in
+                                NavigationLink(
+                                    destination: PDFViewer(url: pdf.url),
+                                    label: {
+                                        Text(pdf.title)
+                                    }
+                                )
+                            }
+                        }
+                        Section(header: Text("Safety Data Sheets")) {
+                            ForEach(relevantPDFs.filter { $0.type == .sds }) { pdf in
+                                NavigationLink(
+                                    destination: PDFViewer(url: pdf.url),
+                                    label: {
+                                        Text(pdf.title)
+                                    }
+                                )
+                            }
+                        }
+                    }
+                    
+                }
+                .navigationTitle(system.nameFromUser)
             }
-            .navigationTitle(system.nameFromUser)
         }
         .onAppear() {
             //relevantPDFs = checkForPDFs(system: system)
