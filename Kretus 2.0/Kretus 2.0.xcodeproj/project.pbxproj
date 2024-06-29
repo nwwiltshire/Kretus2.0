@@ -47,6 +47,7 @@
 		303C697F2B6B0CA200C58041 /* YourSystemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C697E2B6B0CA200C58041 /* YourSystemsView.swift */; };
 		303C69882B6B3A2600C58041 /* SystemBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69872B6B3A2600C58041 /* SystemBuilderView.swift */; };
 		303C698A2B6B3F6900C58041 /* UPCCoatEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */; };
+		304DCD342C2F78F3006F1760 /* CreatePDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DCD332C2F78F3006F1760 /* CreatePDF.swift */; };
 		306822732BFFBB6500AF6CF8 /* PACoatSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */; };
 		306822752BFFBDE700AF6CF8 /* PAColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */; };
 		306822772BFFD12B00AF6CF8 /* PUCoat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306822762BFFD12B00AF6CF8 /* PUCoat.swift */; };
@@ -259,6 +260,7 @@
 		303C697E2B6B0CA200C58041 /* YourSystemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSystemsView.swift; sourceTree = "<group>"; };
 		303C69872B6B3A2600C58041 /* SystemBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBuilderView.swift; sourceTree = "<group>"; };
 		303C69892B6B3F6900C58041 /* UPCCoatEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCCoatEditorView.swift; sourceTree = "<group>"; };
+		304DCD332C2F78F3006F1760 /* CreatePDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePDF.swift; sourceTree = "<group>"; };
 		306822722BFFBB6500AF6CF8 /* PACoatSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACoatSuite.swift; sourceTree = "<group>"; };
 		306822742BFFBDE700AF6CF8 /* PAColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAColorPicker.swift; sourceTree = "<group>"; };
 		306822762BFFD12B00AF6CF8 /* PUCoat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUCoat.swift; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 			isa = PBXGroup;
 			children = (
 				30CC55932BF6C57700B7D409 /* PDFUrl.swift */,
+				304DCD332C2F78F3006F1760 /* CreatePDF.swift */,
 			);
 			path = PDFs;
 			sourceTree = "<group>";
@@ -1148,6 +1151,7 @@
 				306822862C002E6700AF6CF8 /* TSCoatBuild.swift in Sources */,
 				30AC302B2B817ED10073BB93 /* UPCSystemSuite.swift in Sources */,
 				3005953C2C081F160098F779 /* EpoxyMVRSystemSuite.swift in Sources */,
+				304DCD342C2F78F3006F1760 /* CreatePDF.swift in Sources */,
 				30B966DB2C0695A700398E19 /* ColorSplashSystemCommitButton.swift in Sources */,
 				302E56812B7211BC0063EB5C /* UPCSystemColorPicker.swift in Sources */,
 				3068228C2C011BFF00AF6CF8 /* ColorChipBroadcastPicker.swift in Sources */,

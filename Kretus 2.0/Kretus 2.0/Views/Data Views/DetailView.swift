@@ -7,12 +7,18 @@
 
 import Foundation
 import SwiftUI
+import PDFKit
 
 struct DetailView: View {
     
     let system: SystemData
     
     @State var relevantPDFs: [PDFUrl] = []
+    @State private var pdfData: Data? = nil
+    @State private var showShareSheet = false
+    
+    let document = PDFDocument(data: createPDF())
+    
     
     static var pdfURLs: [PDFUrl] = [PDFUrl(url: Bundle.main.url(forResource: "Kretus-Product-Catalog", withExtension: "pdf")!, title: "Product Catalog", group: .general, type: .general),
                                     PDFUrl(url: Bundle.main.url(forResource: "Kretus-Systems-Brochure", withExtension: "pdf")!, title: "Systems Brochure", group: .general, type: .brochure),
@@ -76,6 +82,7 @@ struct DetailView: View {
         NavigationStack {
             ScrollView {
                 VStack {
+                    ShareLink(item: document!, preview: SharePreview("PDF"))
                     Text("System Type: \(system.name)")
                         .font(.headline)
                     Text("Description: \(system.descriptionFromUser)")
