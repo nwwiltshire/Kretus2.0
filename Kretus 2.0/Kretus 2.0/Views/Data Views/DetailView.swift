@@ -83,6 +83,12 @@ struct DetailView: View {
             ScrollView {
                 VStack {
                     ShareLink(item: document!, preview: SharePreview("PDF"))
+                    NavigationLink(
+                        destination: PDFFileViewer(document: document!),
+                        label: {
+                            Text("PDF")
+                        }
+                    )
                     Text("System Type: \(system.name)")
                         .font(.headline)
                     Text("Description: \(system.descriptionFromUser)")
@@ -92,7 +98,8 @@ struct DetailView: View {
                     }
                     Text("SubType: \(system.subType)")
                     VStack {
-                        Text("\nTotal Kits Needed:")
+                        Text("\nTotal Kits Needed")
+                            .font(.headline)
                         HStack {
                             Text("ID")
                             Spacer()
@@ -123,6 +130,7 @@ struct DetailView: View {
                     ForEach(system.coats, id: \.id) { coat in
                         VStack {
                             Text("\(coat.coatType)")
+                                .font(.headline)
                             Text("\(coat.coatProduct)")
                             Text("Coverage Rate: \(coat.covRate)")
                             Text("\nTotal Kits Needed:")

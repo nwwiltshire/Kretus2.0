@@ -26,3 +26,21 @@ struct PDFViewer: UIViewRepresentable {
     }
 }
 
+struct PDFFileViewer: UIViewRepresentable {
+    
+    let document: PDFDocument
+    
+    func makeUIView(context: Context) -> PDFView {
+        let pdfView = PDFView()
+
+        pdfView.document = self.document
+
+        pdfView.autoScales = true
+        return pdfView
+    }
+    
+    func updateUIView(_ pdfView: PDFView, context: Context) {
+        // Update the view if needed (If you change the pdf)
+    }
+}
+

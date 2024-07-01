@@ -38,7 +38,7 @@ extension PDFDocument: Transferable {
 func createPDF() -> Data {
     // 1
     let pdfMetaData = [
-        kCGPDFContextCreator: "PDF Builder",
+        kCGPDFContextCreator: "Kretus App Estimate",
         kCGPDFContextAuthor: "User"
     ]
     let format = UIGraphicsPDFRendererFormat()
@@ -65,3 +65,37 @@ func createPDF() -> Data {
 
     return data
 }
+
+/*
+ func createPDF(withTexts texts: [String]) -> Data {
+     let pdfMetaData = [
+         kCGPDFContextCreator: "Kretus App Estimate",
+         kCGPDFContextAuthor: "User"
+     ]
+     let format = UIGraphicsPDFRendererFormat()
+     format.documentInfo = pdfMetaData as [String: Any]
+
+     let pageWidth = 8.5 * 72.0
+     let pageHeight = 11 * 72.0
+     let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+
+     let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+     
+     let data = renderer.pdfData { (context) in
+         context.beginPage()
+         
+         let attributes = [
+             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 72)
+         ]
+         
+         var yOffset: CGFloat = 0
+         for text in texts {
+             let stringSize = text.size(withAttributes: attributes)
+             text.draw(at: CGPoint(x: 0, y: yOffset), withAttributes: attributes)
+             yOffset += stringSize.height
+         }
+     }
+
+     return data
+ }
+ */
